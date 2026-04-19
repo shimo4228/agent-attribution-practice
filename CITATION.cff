@@ -1,0 +1,52 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+type: software
+title: "Agent Attribution Practice: Architectural Decision Records on Accountability Distribution in Autonomous AI Agents"
+version: 0.1.0
+date-released: 2026-04-19
+license: MIT
+repository-code: "https://github.com/shimo4228/agent-attribution-practice"
+authors:
+  - family-names: Shimomoto
+    given-names: Tatsuya
+    orcid: "https://orcid.org/0009-0002-6168-4162"
+    alias: shimo4228
+abstract: >-
+  Eight architectural decision records recording how attribution —
+  who authored the behavior, who bears its consequences, who can
+  reconstruct its cause — is distributed across an autonomous AI
+  agent system. Extracted from the contemplative-agent
+  implementation and the archived Agent Knowledge Cycle (AKC)
+  governance triplet, re-expressed in harness-neutral form.
+  ADR-0001 Security by Absence, ADR-0002 Deterministic Prohibition
+  at the Scaffolding Layer, and ADR-0003 Untrusted Content Boundary
+  form a prohibition-strength hierarchy. Includes thesis, manifesto,
+  glossary, lineage, a security-principles skill, and AI-facing
+  reference files (llms.txt, llms-full.txt) per the Answer.AI
+  standard.
+keywords:
+  - AI agents
+  - AI safety
+  - accountability distribution
+  - prompt injection defense
+  - LLM security
+  - architecture decision records
+  - agent harness
+  - scaffolding
+  - deterministic enforcement
+references:
+  - type: software
+    title: "Agent Knowledge Cycle (AKC)"
+    repository-code: "https://github.com/shimo4228/agent-knowledge-cycle"
+    doi: "10.5281/zenodo.19200727"
+    authors:
+      - family-names: Shimomoto
+        given-names: Tatsuya
+        orcid: "https://orcid.org/0009-0002-6168-4162"
+  - type: software
+    title: "contemplative-agent"
+    repository-code: "https://github.com/shimo4228/contemplative-agent"
+    authors:
+      - family-names: Shimomoto
+        given-names: Tatsuya
+        orcid: "https://orcid.org/0009-0002-6168-4162"

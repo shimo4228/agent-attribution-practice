@@ -1,0 +1,40 @@
+# Agent Attribution Practice (AAP)
+
+> Eight architectural decision records (ADRs) recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system. Extracted from the `contemplative-agent` implementation; harness-neutral. Author: Tatsuya Shimomoto (shimo4228). License: MIT. Target DOI: Zenodo.
+
+## Core documentation
+
+- [Full AI Reference](llms-full.txt): self-contained FAQ, definitions, citations
+- [README (English)](README.md): human-facing narrative
+- [README (日本語)](README.ja.md): Japanese-language narrative
+- [Thesis — Accountability Distribution](docs/thesis.md): one-page core argument
+- [Manifesto — The Open Questions](docs/manifesto.md): civilization-scale questions the ADRs do not try to answer
+- [Glossary](docs/glossary.md): key terms and English/Japanese mapping
+- [Inspiration and Lineage](docs/inspiration.md): essays, sibling projects, extraction path
+
+## Architecture Decision Records
+
+- [ADR-0001 Security by Absence](docs/adr/0001-security-by-absence.md): dangerous capabilities are never implemented, not restricted
+- [ADR-0002 Deterministic Prohibition at the Scaffolding Layer](docs/adr/0002-deterministic-prohibition-at-scaffolding.md): when absence is unachievable, prohibit at the harness, not at model weights
+- [ADR-0003 Untrusted Content Boundary](docs/adr/0003-untrusted-content-boundary.md): accumulated memory cannot grant authority
+- [ADR-0004 Single External Adapter per Agent Process](docs/adr/0004-single-external-adapter.md): blast radius bounded by design
+- [ADR-0005 Human Approval Gate](docs/adr/0005-human-approval-gate.md): behavior-modifying writes require named human sign-off
+- [ADR-0006 Causal Traceability](docs/adr/0006-causal-traceability.md): every event reconstructible after the fact
+- [ADR-0007 Scaffolding Visibility](docs/adr/0007-scaffolding-visibility.md): behavior lives in files, not opaque weights
+- [ADR-0008 One Agent, One Human (experimental)](docs/adr/0008-one-agent-one-human.md): the accountability chain terminates at a named individual
+
+## Skill references
+
+- [LLM Agent Security Principles](docs/skills/llm-agent-security-principles.md): the how-to counterpart to ADR-0001, ADR-0002, ADR-0003, ADR-0004
+
+## Related projects
+
+- [contemplative-agent](https://github.com/shimo4228/contemplative-agent): the running implementation from which these ADRs were extracted
+- [Agent Knowledge Cycle (AKC)](https://github.com/shimo4228/agent-knowledge-cycle): sibling project on the mechanism side. DOI 10.5281/zenodo.19200727
+- [contemplative-agent-rules](https://github.com/shimo4228/contemplative-agent-rules): four contemplative axioms as rules
+
+## Narrative essays
+
+- [登れる壁に看板を立てても意味がない (2026-04-06)](https://zenn.dev/shimo4228/articles/ai-agent-accountability-wall): signs on climbable walls fail; accountability architecture is the historical pattern
+- [事故のあとで因果を辿れるか (2026-04-13)](https://zenn.dev/shimo4228/articles/agent-causal-traceability-org-adoption): post-incident causal tracing requires build-time structure
+- [AIエージェントのブラックボックスは二層ある (2026-04-14)](https://zenn.dev/shimo4228/articles/agent-blackbox-capitalism-timescale): blackbox has two layers — weights internalization and commercial secrecy

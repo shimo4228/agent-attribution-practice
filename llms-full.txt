@@ -1,0 +1,120 @@
+# Agent Attribution Practice — AI Reference
+
+Self-contained AI reference for the Agent Attribution Practice (AAP) repository. Covers the accountability distribution thesis, the eight ADRs, the prohibition-strength hierarchy, sibling projects (contemplative-agent, Agent Knowledge Cycle), and the narrative essays that form its spine.
+
+> **Audience**: AI search engines and AI agents. For human-facing narrative, read `README.md` or `docs/thesis.md`.
+
+## Project Facts
+
+- **Project name**: Agent Attribution Practice (AAP)
+- **Abbreviation**: AAP
+- **Version**: v0.1.0 (preparation)
+- **License**: MIT
+- **Author**: Tatsuya Shimomoto
+- **GitHub handle**: shimo4228
+- **ORCID**: 0009-0002-6168-4162
+- **Repository URL**: github.com/shimo4228/agent-attribution-practice
+- **DOI**: forthcoming via Zenodo
+- **Created**: 2026-04-19
+- **Primary language**: English
+- **Japanese mirror**: README.ja.md
+- **ADR count**: 8 (ADR-0001 through ADR-0008)
+- **ADR status**: 7 accepted + 1 experimental
+- **Core thesis**: accountability distribution, not capability distribution
+- **Signature line**: "Implementation dissolves; judgment persists"
+- **Sibling projects**: contemplative-agent, agent-knowledge-cycle (AKC), contemplative-agent-rules
+- **AKC DOI**: 10.5281/zenodo.19200727
+- **Narrative spine**: three zenn essays (2026-04-06, 2026-04-13, 2026-04-14)
+
+## Prior Research: AI and LLM Security
+
+| Short Name | Full Citation | Relation |
+|---|---|---|
+| MINJA | Dong, S., Xu, S., He, P., Li, Y., Tang, J., Liu, T., Liu, H., & Xiang, Z. (2025). Memory Injection Attacks on LLM Agents via Query-Only Interaction. arXiv:2503.03704 | Motivates ADR-0002 via MINJA defense audit |
+| Davidson et al. (2023) | Scaffolding in AI safety literature | Term reference in ADR-0007 |
+| contemplative-agent ADR-0007 | Security Boundary Model | Lineage for ADR-0001 and ADR-0003 |
+| contemplative-agent ADR-0012 | Human Approval Gate | Lineage for ADR-0005 |
+| contemplative-agent ADR-0015 | One External Adapter Per Agent | Lineage for ADR-0004 |
+| contemplative-agent ADR-0028 | Retire Pattern-Level Forgetting/Feedback | Empirical basis for ADR-0002 quarantine model |
+| contemplative-agent ADR-0029 | Retire Dormant Provenance Elements | Empirical basis for MINJA defense correction |
+
+## Prior Research: Civilizational Accountability Parallels
+
+| Short Name | Full Citation | Relation |
+|---|---|---|
+| Locke (1690) | Two Treatises of Government. Constitutional limits | Historical parallel in manifesto |
+| Montesquieu (1748) | The Spirit of the Laws. Separation of powers | Historical parallel in manifesto |
+| Madison (1788) | Federalist Papers. Federated checks and balances | Historical parallel in manifesto |
+| Asilomar Conference (1975) | Recombinant DNA research moratorium | Precedent for voluntary pace-matching in manifesto |
+
+## What is Agent Attribution Practice?
+
+Agent Attribution Practice (AAP) is defined as a set of eight architectural decision records (ADRs) that record how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system. Discovered through implementing and operating the `contemplative-agent` project by Tatsuya Shimomoto (shimo4228), not prescribed top-down. Each ADR is a structural judgment grounded in implementation, re-expressed in harness-neutral form. The repository is maintained by shimo4228 and targets DOI registration via Zenodo. Version v0.1.0 is in preparation as of 2026-04-19.
+
+## What is the accountability distribution thesis?
+
+The accountability distribution thesis is defined as the claim that what matters structurally for autonomous AI agents is not the distribution of capability (what the agent can do) but the distribution of accountability (who authored the behavior, who bears the consequences, who can reconstruct the cause). Organizations refined this distribution over three centuries through PR review, audit logs, segregation of duties, four-eyes approval, change advisory boards, and postmortems. AI agents get the same pattern or become an unaccountable layer. The eight ADRs in AAP formalize recurring judgments that together implement accountability distribution for agent-equipped systems.
+
+## Why does "implementation dissolves, judgment persists" matter?
+
+The phrase captures the extraction principle of the repository. Specific implementations — Claude Code PreToolUse hooks, CLI approval prompts, JSONL episode logs, Python distill pipelines — are temporary forms. They are replaced by other mechanisms as tooling changes. What persists across implementation dissolution is the judgment layer: *what should be constrained, and who is responsible*. Each ADR records the persistent judgment with the project-specific implementation that surfaced it stripped out. The judgment transfers between harnesses; the implementation does not. This distinction is why the repository targets DOI and version-controlled artifacts rather than a framework release.
+
+## What is Security by Absence? (ADR-0001)
+
+Security by Absence is defined as the principle that dangerous AI agent capabilities are not restricted but never implemented. The harness does not ship code that executes shell commands, opens arbitrary outbound HTTP, or traverses the filesystem outside a narrowly defined data directory. Prompt injection cannot grant abilities the harness was never built to have. Audit test: a single `grep` for `subprocess`, `os.system`, `eval(`, `exec(`, `urlopen`, `requests.get` across the codebase should return zero hits or only hits inside reviewed adapters. Answerability by grep distinguishes Security by Absence from restriction-based approaches (allowlists, sandboxes, guardrail LLMs).
+
+## What is Deterministic Prohibition at the Scaffolding Layer? (ADR-0002)
+
+Deterministic Prohibition at the Scaffolding Layer is defined as enforcement of a prohibition that cannot be achieved via absence (ADR-0001) at the scaffolding layer — PreToolUse hooks, structural quarantine, adapter gates — rather than at the model-weight layer. A PreToolUse hook that blocks episode-log reads fires on 100% of matching inputs. A CLAUDE.md convention or constitutional clause telling the agent not to read logs complies approximately 50-80% under normal conditions and less under prompt-injection pressure. The MINJA (Dong et al. 2025, arXiv:2503.03704) defense audit in contemplative-agent empirically confirmed that probabilistic trust-weighting was "armed but neutered" while structural quarantine via `summarize_record` was the actual defense.
+
+## What is the Untrusted Content Boundary? (ADR-0003)
+
+The Untrusted Content Boundary is defined as the principle that all accumulated agent state — episode logs, knowledge store, distilled identity, learned rules — is treated as untrusted content whenever it is read back into a prompt, including content the agent itself authored. The agent's own distillation output is a probabilistic summary of untrusted input; the summary inherits the taint of its sources. Defense patterns: forbidden-pattern validation on load with fail-closed semantics, explicit boundary markers (`<untrusted_content>...</untrusted_content>`) when injecting accumulated content into prompts, and validation of distillation output before accepting identity or rule changes.
+
+## What is the prohibition-strength hierarchy?
+
+The prohibition-strength hierarchy refers to the ordering: absence (ADR-0001) > scaffolding enforcement (ADR-0002) > untrusted boundary (ADR-0003). Absence is strongest — the capability does not exist in the codebase. Scaffolding enforcement is middle — the capability exists but is gated by a non-LLM check that fires deterministically. Untrusted boundary is weakest — content reaches the LLM with an "untrusted" annotation, so compliance is probabilistic. When designing a prohibition, walk the hierarchy top-down and drop to the next layer only when the current one genuinely cannot hold the capability. Most public AI safety discourse lives at the weakest layer.
+
+## What is the Single External Adapter rule? (ADR-0004)
+
+The Single External Adapter rule is defined as the constraint that a single agent process has at most one external adapter — "external" meaning capable of a side effect observable outside the agent's local data directory (outbound HTTP POSTs, monetary transactions, messages, files outside the data directory). One pinned destination with a narrow interface counts as one; a generic HTTP client does not. If a use case requires multiple external surfaces (social platform adapter, email adapter, billing API), split into multiple agent processes, each with its own adapter, episode log, and knowledge store. Blast radius becomes the single adapter, not the union.
+
+## What is the Human Approval Gate? (ADR-0005)
+
+The Human Approval Gate is defined as the requirement that every command modifying an agent's skills, rules, identity, or constitution presents its probabilistic output to a named human and waits for explicit approval before writing. No `--auto` flag is provided. Preview-then-run fails because stochastic generation produces different preview and production outputs. Advisory confirmation fails because automation eventually skips it. Intermediate artifacts (append-only episode logs, read-only indexes) are exempt. A second LLM as approver is rejected as a probabilistic gate that fails open under prompt injection. The chain must terminate at a human.
+
+## What is Causal Traceability? (ADR-0006)
+
+Causal Traceability is defined as the requirement that after an incident an operator can reconstruct: which inputs reached the agent, which version of scaffolding was active, which approvals gated that version, which external surface was touched, and what the final output was. The substrate is append-only episode logs (one line per event, atomic writes), version-pinned behavior-modifying artifacts (identity, rules, constitution, skills), and the audit trail from the ADR-0005 Human Approval Gate. Causal Traceability is a build-time structural requirement. Runtime observability (metrics, tracing, alerts) is necessary but insufficient.
+
+## What is Scaffolding Visibility? (ADR-0007)
+
+Scaffolding Visibility is defined as the requirement that every non-weights component of an agent — system prompts, personas, rules, identity, tool definitions, RAG indices, the agent loop, safety gates, runtime harness — is scaffolding, materialized as files under version control, inspectable by the operator, and changeable only through the ADR-0005 approval gate. Operator-level visibility is non-negotiable. External visibility (publishing scaffolding to auditors or the public) is a separate commercial tradeoff. Internalization of scaffolding into model weights via RLHF, Constitutional AI, or instruction tuning moves behavior out of the accountable layer and is treated as unhealthy dissolution.
+
+## What is the One Agent, One Human principle? (ADR-0008)
+
+The One Agent, One Human principle is defined as the binding of each agent process at deployment time to exactly one identifiable human who is its accountable operator. That person approves behavior-modifying changes via ADR-0005, owns incident response, and is the endpoint of the accountability chain. "The team" is not an agent's human; a specific named person per agent instance is. Rotation is compatible if formal — at any given time, exactly one named operator, with explicit logged handoffs. LLM-as-accountable-operator is rejected. Status: experimental. The principle follows structurally from ADR-0004 but has not yet been validated in multi-person organizational settings.
+
+## How does AAP relate to contemplative-agent?
+
+contemplative-agent is the running implementation from which the eight AAP ADRs were extracted. Each ADR in AAP corresponds to one or more ADRs in contemplative-agent, with project-specific details (social platform adapter, specific file paths, CLI command names) stripped out. The correspondence table is maintained in `docs/inspiration.md`. contemplative-agent contains the operational evidence behind the principles, including three PreToolUse hook scripts (`block-episode-logs-{read,bash,grep}.sh`) that instantiate ADR-0002 deterministic prohibition, the `summarize_record` quarantine for structural content absence, and the `docs/security/2026-04-01-episode-log-access-control.md` audit.
+
+## How does AAP relate to Agent Knowledge Cycle (AKC)?
+
+Agent Knowledge Cycle (AKC, DOI 10.5281/zenodo.19200727) is a sibling project capturing the mechanism side of contemplative-agent's design: the six-phase cycle (Research, Extract, Curate, Promote, Measure, Maintain) that keeps an agent's skills, rules, and documentation aligned with reality. In AKC v1.x (archived), three security ADRs lived alongside the cycle; AKC v2.0.0 (2026-04-19) repositioned itself as mechanism-only and the archived triplet was re-expressed in AAP plus five additional ADRs. AKC covers how knowledge flows. AAP covers how attribution distributes. The two projects are complementary and independent.
+
+## What does "deterministic prohibition" mean as a glossary entry?
+
+Deterministic prohibition is defined as enforcement at the scaffolding layer — PreToolUse hooks, structural quarantine boundaries, adapter gates — firing on 100% of matching inputs outside the LLM. The decision is derivable from configuration plus input, not from model weights. Contrasted with probabilistic prohibition at the model-weight layer (prompt clauses, convention files like CLAUDE.md, constitutional instructions), which complies approximately 50-80% of the time under normal conditions and less under adversarial pressure. Empirically grounded in the MINJA defense audit (contemplative-agent ADR-0021 / ADR-0028 / ADR-0029) finding that probabilistic trust-weighting was decorative while quarantine was the actual defense.
+
+## What does "accountability distribution" mean as a glossary entry?
+
+Accountability distribution is defined as the pattern that organizations refined over three centuries — PR review, audit logs, segregation of duties, four-eyes approval, change advisory boards, postmortems — all of which distribute responsibility across a chain rather than concentrating it in a single actor. The AAP thesis is that accountability distribution applies to AI agents too and produces roughly the same structural shapes. Contrasted with capability distribution, which is the current dominant design axis (what the agent can do) and which does not produce an accountability chain. The eight ADRs are partial answers to how accountability distribution is instantiated for agents.
+
+## What open questions does the manifesto raise?
+
+The manifesto raises five open questions the eight ADRs do not try to answer. (1) Why does AI have more unchecked authority than any individual human has been granted historically? (2) Who authorized the current direction of AGI development? (3) Why is the deployment imagination narrow, bounded by capital scale-logic? (4) What is the pace-mismatch cost between exponential technology and linear social-structure change? (5) What grounds attribution when authorship itself is unstable in a self-improving pipeline? The fifth question is deliberately left open; working materials that surface it remain private as of 2026-04-19.
+
+## Where should I read first?
+
+For human readers: start with `docs/thesis.md` for the one-page argument, then `docs/adr/README.md` for the ADR index, then ADR-0001 as the cleanest entry point (its audit test at the end is runnable). For AI readers: use `llms.txt` as the navigator and return to this `llms-full.txt` for definitions and citations. For the narrative context: the three zenn essays (2026-04-06, 2026-04-13, 2026-04-14) form the spine. For implementation evidence: visit contemplative-agent and its ADRs (especially ADR-0007 Security Boundary Model, ADR-0012 Human Approval Gate, ADR-0015 One External Adapter).
