@@ -2,6 +2,8 @@
 
 # agent-attribution-practice
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19608386.svg)](https://doi.org/10.5281/zenodo.19608386)
+
 > **Agent Attribution Practice (AAP)** — 8 つの判断、固定された framework ではない。
 
 自律 AI エージェントにおける **attribution** (誰が書いたか、誰が原因か、
@@ -119,14 +121,15 @@ ADR の背後の argument は、3 部作の essay として展開された:
   author       = {Shimomoto, Tatsuya},
   title        = {Agent Attribution Practice (AAP)},
   year         = {2026},
-  url          = {https://github.com/shimo4228/agent-attribution-practice},
-  note         = {Eight architectural decision records on accountability distribution in autonomous AI agents. DOI pending on Zenodo.}
+  doi          = {10.5281/zenodo.19608386},
+  url          = {https://doi.org/10.5281/zenodo.19608386},
+  note         = {Eight architectural decision records on accountability distribution in autonomous AI agents}
 }
 ```
 
 あるいは文中で:
 
-> Shimomoto, T. (2026). Agent Attribution Practice (AAP). [Zenodo DOI 発行待ち]
+> Shimomoto, T. (2026). Agent Attribution Practice (AAP). doi:10.5281/zenodo.19608386
 
 ## License
 

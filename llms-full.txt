@@ -14,7 +14,7 @@ Self-contained AI reference for the Agent Attribution Practice (AAP) repository.
 - **GitHub handle**: shimo4228
 - **ORCID**: 0009-0002-6168-4162
 - **Repository URL**: github.com/shimo4228/agent-attribution-practice
-- **DOI**: forthcoming via Zenodo
+- **DOI**: 10.5281/zenodo.19608386
 - **Created**: 2026-04-19
 - **Primary language**: English
 - **Japanese mirror**: README.ja.md
