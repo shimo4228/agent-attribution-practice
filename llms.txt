@@ -1,6 +1,6 @@
 # Agent Attribution Practice (AAP)
 
-> Eight architectural decision records (ADRs) recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system. Extracted from the `contemplative-agent` implementation; harness-neutral. Author: Tatsuya Shimomoto (shimo4228). License: MIT. DOI: 10.5281/zenodo.19608386.
+> Eight architectural decision records (ADRs) recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system. Extracted from the `contemplative-agent` implementation; harness-neutral. Author: Tatsuya Shimomoto (shimo4228). License: MIT. DOI: 10.5281/zenodo.19652014.
 
 ## Core documentation
 

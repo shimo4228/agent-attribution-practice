@@ -5,9 +5,9 @@ title: "Agent Attribution Practice: Architectural Decision Records on Accountabi
 version: 0.1.0
 date-released: 2026-04-19
 license: MIT
-doi: 10.5281/zenodo.19608386
+doi: 10.5281/zenodo.19652014
 repository-code: "https://github.com/shimo4228/agent-attribution-practice"
-url: "https://doi.org/10.5281/zenodo.19608386"
+url: "https://doi.org/10.5281/zenodo.19652014"
 authors:
   - family-names: Shimomoto
     given-names: Tatsuya
