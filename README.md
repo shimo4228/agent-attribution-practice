@@ -51,16 +51,16 @@ endpoint.
 
 The argument behind the ADRs was developed in a trilogy:
 
-1. **[登れる壁に看板を立てても意味がない — AIエージェントに必要なのはガードレールではなくアカウンタビリティだ](https://zenn.dev/shimo4228/articles/ai-agent-accountability-wall)** (2026-04-06)
+1. **[A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails](https://dev.to/shimo4228/a-sign-on-a-climbable-wall-why-ai-agents-need-accountability-not-just-guardrails-17ak)** (2026-04-06)
    *The problem.* Signs on climbable walls fail. The civilizational
    pattern is accountability architecture, not rule-by-prompt.
 
-2. **[事故のあとで因果を辿れるか — エージェント設計が組織論に収斂するまで](https://zenn.dev/shimo4228/articles/agent-causal-traceability-org-adoption)** (2026-04-13)
+2. **[Can You Trace the Cause After an Incident?](https://dev.to/shimo4228/can-you-trace-the-cause-after-an-incident-neo)** (2026-04-13)
    *The application.* Post-incident causal tracing requires build-time
    structure. Structures that emerge converge with centuries of
    organizational practice.
 
-3. **[AIエージェントのブラックボックスは二層ある — 技術の限界とビジネスの都合](https://zenn.dev/shimo4228/articles/agent-blackbox-capitalism-timescale)** (2026-04-14)
+3. **[AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://dev.to/shimo4228/ai-agent-black-boxes-have-two-layers-technical-limits-and-business-incentives-jhi)** (2026-04-14)
    *The obstacles.* Weights internalization (technical) and commercial
    secrecy (business) both block transparency. The resolution is a
    minimum visibility set, not all-or-nothing.

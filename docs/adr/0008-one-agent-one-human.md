@@ -142,7 +142,7 @@ testing reveals that the binding pattern is wrong.
 
 ---
 
-**Lineage.** The germ of this principle appears in [the accountability-wall essay](https://zenn.dev/shimo4228/articles/ai-agent-accountability-wall) (2026-04-06):
+**Lineage.** The germ of this principle appears in [the accountability-wall essay](https://dev.to/shimo4228/a-sign-on-a-climbable-wall-why-ai-agents-need-accountability-not-just-guardrails-17ak) (2026-04-06):
 > 「責任を負える人間がループに入る構造」
 > (a structure in which a human capable of bearing responsibility enters the loop)
 

@@ -5,7 +5,7 @@
 The narrative spine of this repository is a trilogy of essays published
 in April 2026:
 
-1. **[登れる壁に看板を立てても意味がない — AIエージェントに必要なのはガードレールではなくアカウンタビリティだ](https://zenn.dev/shimo4228/articles/ai-agent-accountability-wall)** (2026-04-06)
+1. **[A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails](https://dev.to/shimo4228/a-sign-on-a-climbable-wall-why-ai-agents-need-accountability-not-just-guardrails-17ak)** (2026-04-06)
    > *Problem statement.* Signs on climbable walls are meaningless.
    > From Plato's Ring of Gyges (root privilege without audit log) through
    > Hobbes' reputation-based access control, to the three engineering
@@ -14,7 +14,7 @@ in April 2026:
    > Current AI governance is in the signpost phase. What is needed is
    > accountability architecture.
 
-2. **[事故のあとで因果を辿れるか — エージェント設計が組織論に収斂するまで](https://zenn.dev/shimo4228/articles/agent-causal-traceability-org-adoption)** (2026-04-13)
+2. **[Can You Trace the Cause After an Incident?](https://dev.to/shimo4228/can-you-trace-the-cause-after-an-incident-neo)** (2026-04-13)
    > *Application.* Post-incident causal tracing requires build-time
    > structure. The cost asymmetry (incident cost >> steady-state cost)
    > pushes rational investment upstream. The structures that emerge —
@@ -22,7 +22,7 @@ in April 2026:
    > trails — are structurally identical to the practices organizations
    > have refined over centuries.
 
-3. **[AIエージェントのブラックボックスは二層ある — 技術の限界とビジネスの都合](https://zenn.dev/shimo4228/articles/agent-blackbox-capitalism-timescale)** (2026-04-14)
+3. **[AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://dev.to/shimo4228/ai-agent-black-boxes-have-two-layers-technical-limits-and-business-incentives-jhi)** (2026-04-14)
    > *Obstacle analysis.* Blackbox has two layers: model-weights
    > internalization (technical) and commercial secrecy (business). Both
    > block the transparency causal tracing requires. The resolution is

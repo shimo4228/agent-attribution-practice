@@ -20,7 +20,7 @@ civilizational practice about containing powerful actors.
 
 ## The core observation
 
-An often-quoted line from the [accountability-wall essay](https://zenn.dev/shimo4228/articles/ai-agent-accountability-wall):
+An often-quoted line from the [accountability-wall essay](https://dev.to/shimo4228/a-sign-on-a-climbable-wall-why-ai-agents-need-accountability-not-just-guardrails-17ak):
 
 > Implementation dissolves; judgment persists. Hooks will be replaced by
 > some other mechanism. Signposts and physical barriers are temporary

@@ -153,4 +153,4 @@ accountability chain at all.
 
 ---
 
-**Lineage.** The analysis was developed in [AIエージェントのブラックボックスは二層ある](https://zenn.dev/shimo4228/articles/agent-blackbox-capitalism-timescale) (2026-04-14), the third of the three articles that form the spine of this repository. Earlier articulations of the scaffolding/weights distinction and operator-side file-materialization appeared in contemplative-agent's design evolution (see the series entries in [`../inspiration.md`](../inspiration.md)).
+**Lineage.** The analysis was developed in [AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://dev.to/shimo4228/ai-agent-black-boxes-have-two-layers-technical-limits-and-business-incentives-jhi) (2026-04-14), the third of the three articles that form the spine of this repository. Earlier articulations of the scaffolding/weights distinction and operator-side file-materialization appeared in contemplative-agent's design evolution (see the series entries in [`../inspiration.md`](../inspiration.md)).

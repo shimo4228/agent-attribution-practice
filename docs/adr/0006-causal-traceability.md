@@ -127,4 +127,4 @@ more than the upstream investment) applies identically to agents.
 
 ---
 
-**Lineage.** The thesis was written up in [事故のあとで因果を辿れるか — contemplative-agent journey article](https://zenn.dev/shimo4228/articles/agent-causal-traceability-org-adoption) (2026-04-13), building on the accountability-wall argument (2026-04-06) and preceding the blackbox two-layer argument (2026-04-14). The three articles together form the narrative spine of this repository. See [`../inspiration.md`](../inspiration.md).
+**Lineage.** The thesis was written up in [Can You Trace the Cause After an Incident?](https://dev.to/shimo4228/can-you-trace-the-cause-after-an-incident-neo) (2026-04-13), building on the accountability-wall argument (2026-04-06) and preceding the blackbox two-layer argument (2026-04-14). The three articles together form the narrative spine of this repository. See [`../inspiration.md`](../inspiration.md).
