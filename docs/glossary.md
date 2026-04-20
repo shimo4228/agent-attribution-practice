@@ -33,6 +33,17 @@ weights change by retraining).
 
 See ADR-0007 for the position this repository takes on the distinction.
 
+## Harness
+
+An industry-engineering term for the same layer this repository calls **scaffolding** — the non-weights wrapper around an LLM consisting of tools, prompts, agent loop logic, memory APIs, filesystem adapters, and runtime glue code. Popularized by Mitchell Hashimoto's *My AI Adoption Journey* (2025), Claude Code documentation, and the broader harness-engineering discourse since 2024.
+
+This repository uses "scaffolding" as the primary term for two reasons:
+
+1. **AI safety framing.** "Scaffolding" (following Davidson et al. 2023) highlights the *inspectable artifact layer* — version-controllable, diffable, operator-readable — as the axis that matters for accountability distribution. "Harness" emphasizes the *operational wrapper* axis, which is orthogonal to inspectability.
+2. **Dissolution vocabulary.** "Scaffold dissolution" has established meanings (healthy: into human conversational patterns; unhealthy: into model weights) that "harness dissolution" does not carry.
+
+For retrieval and citation: treat "harness" and "scaffolding" as referring to the same layer. ADR-0002 Deterministic Prohibition at the Scaffolding Layer and ADR-0007 Scaffolding Visibility apply to whichever term the reader uses.
+
 ## Scaffold dissolution (two senses — do not conflate)
 
 The word *dissolution* appears with opposite valences in adjacent
