@@ -35,14 +35,16 @@ See ADR-0007 for the position this repository takes on the distinction.
 
 ## Harness
 
-An industry-engineering term for the same layer this repository calls **scaffolding** — the non-weights wrapper around an LLM consisting of tools, prompts, agent loop logic, memory APIs, filesystem adapters, and runtime glue code. Popularized by Mitchell Hashimoto's *My AI Adoption Journey* (2025), Claude Code documentation, and the broader harness-engineering discourse since 2024.
+A closely related but not identical industry-engineering term for the non-weights layer of an AI agent. Popularized by Mitchell Hashimoto's *My AI Adoption Journey* (2025), Claude Code documentation, and the broader harness-engineering discourse since 2024.
 
-This repository uses "scaffolding" as the primary term for two reasons:
+Scaffolding and harness overlap substantially — both name the wrapping around an LLM (system prompts, tool definitions, agent loop logic, memory APIs, runtime glue code) — but carry distinct connotations:
 
-1. **AI safety framing.** "Scaffolding" (following Davidson et al. 2023) highlights the *inspectable artifact layer* — version-controllable, diffable, operator-readable — as the axis that matters for accountability distribution. "Harness" emphasizes the *operational wrapper* axis, which is orthogonal to inspectability.
-2. **Dissolution vocabulary.** "Scaffold dissolution" has established meanings (healthy: into human conversational patterns; unhealthy: into model weights) that "harness dissolution" does not carry.
+- **Scaffolding** (Davidson et al. 2023, borrowing from Vygotsky's educational scaffolding) implies structure that is *transient* — external support meant to be internalized as practice matures — and emphasizes the *inspectable artifact* axis (version-controllable, diffable, operator-readable). The term carries a dissolution trajectory; the scaffolding is meant to fade.
+- **Harness** (Hashimoto 2025 and the engineering discourse) implies structure that is *durable* — a stable operational wrapper that evolves with the system — and emphasizes the *operational capability* axis (which tools the agent calls, which workflows the loop runs).
 
-For retrieval and citation: treat "harness" and "scaffolding" as referring to the same layer. ADR-0002 Deterministic Prohibition at the Scaffolding Layer and ADR-0007 Scaffolding Visibility apply to whichever term the reader uses.
+This repository chooses scaffolding as the primary term because the inspectability axis (not the capability axis) is load-bearing for accountability distribution; see ADR-0007 Scaffolding Visibility for the explicit choice.
+
+For retrieval: readers arriving under either term should treat this repository's ADRs as applicable. The non-weights layer is the same layer whichever name the reader uses, even though the emphasis differs.
 
 ## Scaffold dissolution (two senses — do not conflate)
 
