@@ -75,18 +75,28 @@ ADR の背後の argument は、3 部作の essay として展開された:
   contemplative-agent 設計の *mechanism* 側を genre-neutral に保った sibling。
   AKC v2.0.0 (2026-04-19) が governance triplet を本 repo のために抽出した。
 
-層構造:
+層構造 — 3 つは相互フィードバックで共進化する:
 
 ```
-                  contemplative-agent         (動いている system)
-                          ↓
-   ┌──────────────────────┴──────────────────────┐
-   ↓                                             ↓
-   AKC                                AAP
-   (mechanism — サイクル)              (content — 実践)
-   ↓                                             ↓
-   知識の流れ方                         attribution の分配
+  ─── theory layer ────────────────────────────────────────────
+
+        AKC  ◄─────────────────────────────────►  AAP
+        (mechanism — サイクル)                    (content — 実践)
+        知識の流れ方                              attribution の分配
+
+              ▲                                         ▲
+              │                                         │
+              ▼                                         ▼
+
+  ─── implementation layer ────────────────────────────────────
+
+                         contemplative-agent
+                         (動いている system)
 ```
+
+実装を動かすと摩擦が surface する。摩擦が mechanism pattern (AKC) と
+attribution judgment (AAP) を生み、磨かれた理論がまた実装に戻って
+形を変える。
 
 ## 読む順序
 

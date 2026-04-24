@@ -29,8 +29,8 @@
 
 ## Related projects
 
-- [contemplative-agent](https://github.com/shimo4228/contemplative-agent): the running implementation from which these ADRs were extracted
-- [Agent Knowledge Cycle (AKC)](https://github.com/shimo4228/agent-knowledge-cycle): sibling project on the mechanism side. DOI 10.5281/zenodo.19200727
+- [contemplative-agent](https://github.com/shimo4228/contemplative-agent): the running implementation (implementation layer) — surfaces friction that feeds AKC and AAP, and is reshaped by their refined judgments
+- [Agent Knowledge Cycle (AKC)](https://github.com/shimo4228/agent-knowledge-cycle): sibling project on the mechanism side (theory layer — how knowledge flows). Co-evolves with AAP and contemplative-agent via bidirectional feedback. DOI 10.5281/zenodo.19200727
 - [contemplative-agent-rules](https://github.com/shimo4228/contemplative-agent-rules): four contemplative axioms as rules
 
 ## Narrative essays

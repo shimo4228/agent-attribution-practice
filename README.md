@@ -81,18 +81,28 @@ This repository is a **sibling** to two existing projects, not a fork:
   AKC v2.0.0 (2026-04-19) extracted the governance triplet from itself to
   make room for this repository.
 
-A layered view:
+A layered view — the three co-evolve through mutual feedback:
 
 ```
-                  contemplative-agent         (the running system)
-                          ↓
-   ┌──────────────────────┴──────────────────────┐
-   ↓                                             ↓
-   AKC                                AAP
-   (mechanism — the cycle)            (content — the practice)
-   ↓                                             ↓
-   how knowledge flows                 how attribution distributes
+  ─── theory layer ────────────────────────────────────────────
+
+        AKC  ◄─────────────────────────────────►  AAP
+        (mechanism — the cycle)                   (content — the practice)
+        how knowledge flows                       how attribution distributes
+
+              ▲                                         ▲
+              │                                         │
+              ▼                                         ▼
+
+  ─── implementation layer ────────────────────────────────────
+
+                         contemplative-agent
+                         (the running system)
 ```
+
+Running the implementation surfaces friction; friction yields
+mechanism patterns (AKC) and attribution judgments (AAP); refined
+theory loops back to reshape the implementation.
 
 ## Reading order
 
