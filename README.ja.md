@@ -45,9 +45,9 @@ untrusted boundary。次の 2 本 (0004, 0005) が topology と human-in-the-loo
 を足す。中央の 2 本 (0006, 0007) はそれら制約が要求する artifact — 辿るべき
 記録と、検査可能な scaffolding。8 本目は人間側の終端。
 
-## 3 記事の narrative
+## narrative (記事系譜)
 
-ADR の背後の argument は、3 部作の essay として展開された:
+ADR の背後の argument は、3 部作 + architectural follow-up の essay として展開された:
 
 1. **[登れる壁に看板を立てても意味がない — AIエージェントに必要なのはガードレールではなくアカウンタビリティだ](https://zenn.dev/shimo4228/articles/ai-agent-accountability-wall)** (2026-04-06)
    *問題提起*: 登れる壁の看板は効かない。文明的パターンはプロンプト統治ではなく
@@ -61,6 +61,11 @@ ADR の背後の argument は、3 部作の essay として展開された:
    *障害分析*: weights への internalization (技術) と商業的秘匿 (ビジネス) が
    ともに透明性を阻害する。解は「全部見せる」でも「全部隠す」でもなく、
    因果遡行に必要な最小可視セットの定義。
+
+4. **[ReAct エージェントが本当に必要な業務はどれか](https://zenn.dev/shimo4228/articles/react-agent-business-quadrant)** (2026-04-29)
+   *architectural follow-up*: 業務 AI を 4 象限で腑分けすると、ReAct エージェントが
+   正当に必要な領域は (4) 探索的タスクのみ。現行 ecosystem が (3) 業務に (4) アーキテクチャを
+   被せる category error は、accountability picture を破壊する根本原因の一つだと示す。
 
 全系譜は [`docs/inspiration.md`](docs/inspiration.md) を参照。
 

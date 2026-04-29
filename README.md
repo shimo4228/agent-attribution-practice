@@ -49,9 +49,9 @@ the artifacts those constraints require — a record to trace through
 and a scaffolding layer that can be inspected. The eighth is the human
 endpoint.
 
-## The narrative (three essays)
+## The narrative (essays)
 
-The argument behind the ADRs was developed in a trilogy:
+The argument behind the ADRs was developed across the following essays:
 
 1. **[A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails](https://dev.to/shimo4228/a-sign-on-a-climbable-wall-why-ai-agents-need-accountability-not-just-guardrails-17ak)** (2026-04-06)
    *The problem.* Signs on climbable walls fail. The civilizational
@@ -66,6 +66,12 @@ The argument behind the ADRs was developed in a trilogy:
    *The obstacles.* Weights internalization (technical) and commercial
    secrecy (business) both block transparency. The resolution is a
    minimum visibility set, not all-or-nothing.
+
+4. **[Where ReAct Agents Are Actually Needed in Business](https://dev.to/shimo4228/where-react-agents-are-actually-needed-in-business-33do)** (2026-04-29)
+   *The architectural follow-up.* Business AI sorted into four quadrants
+   reveals that ReAct agents are legitimately needed only in (4) exploratory
+   tasks. The current ecosystem's category error of forcing (4) architecture
+   onto (3) workflows is at the root of the accountability picture's collapse.
 
 See [`docs/inspiration.md`](docs/inspiration.md) for the full lineage.
 
