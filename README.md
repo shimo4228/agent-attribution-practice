@@ -73,6 +73,16 @@ The argument behind the ADRs was developed across the following essays:
    tasks. The current ecosystem's category error of forcing (4) architecture
    onto (3) workflows is at the root of the accountability picture's collapse.
 
+5. **[The LLM Workflow Quadrant Is Missing from Our Vocabulary](https://dev.to/shimo4228/3-the-llm-workflow-quadrant-is-missing-from-our-vocabulary-n18)** (2026-04-30)
+   *The vocabulary diagnosis and the missing accountability subject.*
+   The industry has no positive name for the LLM Workflow Quadrant, so
+   non-deterministic work gets routed through a ReAct loop by elimination.
+   Discussion concentrates on this artificial redirect impossibility,
+   while the principled attribution gap intrinsic to ReAct (runtime blend
+   dissolves the post-hoc separability of contributions) and the absent
+   accountability subject — autonomy demands responsibility but agents
+   are not currently legal subjects who can bear it — stay in the shadows.
+
 See [`docs/inspiration.md`](docs/inspiration.md) for the full lineage.
 
 ## Relationship to other projects

@@ -67,6 +67,13 @@ ADR の背後の argument は、3 部作 + architectural follow-up の essay と
    正当に必要な領域は (4) 探索的タスクのみ。現行 ecosystem が (3) 業務に (4) アーキテクチャを
    被せる category error は、accountability picture を破壊する根本原因の一つだと示す。
 
+5. **[(3) LLM ワークフロー象限が語彙から脱落している — 続・ReAct エージェントの適用域](https://zenn.dev/shimo4228/articles/react-agent-business-quadrant-2)** (2026-04-30)
+   *語彙の診断と責任主体の不在*: 業界の語彙に LLM ワークフロー象限が独立した呼び名として
+   存在しないため、決定論で書けない業務すべてを ReAct ループに丸投げする消去法的選択が起きる。
+   この人為的 redirect 不能性に議論が集中する一方、ReAct 象限本来の attribution gap (runtime blend が
+   生む寄与の事後分離不能) と責任主体の不在 — 自律性に伴う責任の引き受け先が現状エージェント側に
+   存在しないこと — は議論の陰にある。
+
 全系譜は [`docs/inspiration.md`](docs/inspiration.md) を参照。
 
 ## 他プロジェクトとの関係
