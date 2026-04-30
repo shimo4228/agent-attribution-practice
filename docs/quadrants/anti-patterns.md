@@ -1,3 +1,5 @@
+Language: English | [日本語](anti-patterns.ja.md)
+
 # Anti-patterns — How the Quadrant Choice Goes Wrong
 
 > **Purpose.** Document the recurring ways business AI deployments

@@ -1,6 +1,8 @@
+Language: English | [日本語](glossary.ja.md)
+
 # Glossary
 
-Key terms used across the eight ADRs and the accompanying essays. Where
+Key terms used across the ten ADRs and the accompanying essays. Where
 a term is load-bearing (carries argumentative weight, not just naming
 convenience), an example is included.
 

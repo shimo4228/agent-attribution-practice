@@ -1,3 +1,5 @@
+Language: English | [日本語](case-studies.ja.md)
+
 # Case Studies — Quadrant Routing in Practice
 
 > **Purpose.** Concrete examples of routing common business AI work

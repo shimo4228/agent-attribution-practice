@@ -1,3 +1,5 @@
+Language: English | [日本語](thesis.ja.md)
+
 # Thesis — Accountability Distribution
 
 > The project is named **Agent Attribution Practice (AAP)**. The name

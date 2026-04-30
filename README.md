@@ -180,6 +180,13 @@ theory loops back to reshape the implementation.
 6. [`docs/manifesto.md`](docs/manifesto.md) — civilization-scale questions
    the ADRs do not attempt to answer.
 
+**Japanese readers:** see [`README.ja.md`](README.ja.md),
+[`docs/thesis.ja.md`](docs/thesis.ja.md),
+[`docs/glossary.ja.md`](docs/glossary.ja.md), and the Japanese
+mirrors of the quadrants navigator
+([`docs/quadrants/README.ja.md`](docs/quadrants/README.ja.md) and
+its siblings). ADRs remain English-only per repository convention.
+
 ## What this repository does not claim
 
 - That these ten are complete.

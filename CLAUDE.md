@@ -107,19 +107,19 @@ ADR 本文が扱うのは *judgment* (persistent)。*implementation* (Hooks、CL
 ├── CLAUDE.md              # 本ファイル (Claude Code 用 context)
 ├── .notes/                # WIP (gitignored)
 ├── docs/
-│   ├── thesis.md          # accountability distribution thesis (二軸構造の宣言を含む)
+│   ├── thesis.md / thesis.ja.md          # accountability distribution thesis (二軸構造の宣言を含む、ja 同期)
 │   ├── manifesto.md       # civilization-scale open questions (draft)
-│   ├── glossary.md        # key terms (4 quadrants + attribution mechanics を含む)
-│   ├── inspiration.md     # 5 記事 + moltbook + AKC 系譜
+│   ├── glossary.md / glossary.ja.md      # key terms (4 quadrants + attribution mechanics を含む、ja 同期)
+│   ├── inspiration.md     # 6 記事 + moltbook + AKC 系譜
 │   ├── adr/
 │   │   ├── README.md
-│   │   └── 0001-0010.md   # 10 本の ADR (0001/0002/0003 は prohibition-strength hierarchy、0009/0010 は triage pair)
-│   ├── quadrants/         # adoption navigator (Business AI Quadrants)
-│   │   ├── README.md
-│   │   ├── decision-tree.md
-│   │   ├── governance-mapping.md
-│   │   ├── case-studies.md
-│   │   └── anti-patterns.md
+│   │   └── 0001-0010.md   # 10 本の ADR (0001/0002/0003 は prohibition-strength hierarchy、0009/0010 は triage pair) — 英語のみ
+│   ├── quadrants/         # adoption navigator (Business AI Quadrants) — 各 file に ja.md ペア
+│   │   ├── README.md / README.ja.md
+│   │   ├── decision-tree.md / decision-tree.ja.md
+│   │   ├── governance-mapping.md / governance-mapping.ja.md
+│   │   ├── case-studies.md / case-studies.ja.md
+│   │   └── anti-patterns.md / anti-patterns.ja.md
 │   └── skills/
 │       └── llm-agent-security-principles.md
 └── examples/

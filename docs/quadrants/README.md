@@ -1,3 +1,5 @@
+Language: English | [日本語](README.ja.md)
+
 # Business AI Quadrants — Adoption Navigator
 
 > **What this directory is.** A practical navigator for routing a

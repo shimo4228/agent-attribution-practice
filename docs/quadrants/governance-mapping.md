@@ -1,3 +1,5 @@
+Language: English | [日本語](governance-mapping.ja.md)
+
 # Governance Mapping — Quadrants × ADRs × Controls
 
 > **Purpose.** Dense reference of which ADRs apply to each quadrant,

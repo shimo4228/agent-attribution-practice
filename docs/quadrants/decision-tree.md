@@ -1,3 +1,5 @@
+Language: English | [日本語](decision-tree.ja.md)
+
 # Decision Tree — Routing a Piece of Work to a Quadrant
 
 > **Purpose.** Convert ADR-0009 [Triage Before
