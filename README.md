@@ -2,7 +2,7 @@ Language: English | [日本語](README.ja.md)
 
 # agent-attribution-practice
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19652014.svg)](https://doi.org/10.5281/zenodo.19652014)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19920228.svg)](https://doi.org/10.5281/zenodo.19920228)
 
 > **Agent Attribution Practice (AAP)** — ten judgments paired with four Business AI Quadrants, not a fixed framework.
 
@@ -177,15 +177,15 @@ If you use or reference these architectural decision records, please cite:
   author       = {Shimomoto, Tatsuya},
   title        = {Agent Attribution Practice (AAP)},
   year         = {2026},
-  doi          = {10.5281/zenodo.19652014},
-  url          = {https://doi.org/10.5281/zenodo.19652014},
+  doi          = {10.5281/zenodo.19920228},
+  url          = {https://doi.org/10.5281/zenodo.19920228},
   note         = {Ten architectural decision records on accountability distribution in autonomous AI agents (two experimental), paired with four Business AI Quadrants as the diagnostic frame and a Phase / Quadrant two-axis structure}
 }
 ```
 
 Or in text:
 
-> Shimomoto, T. (2026). Agent Attribution Practice (AAP). doi:10.5281/zenodo.19652014
+> Shimomoto, T. (2026). Agent Attribution Practice (AAP). doi:10.5281/zenodo.19920228
 
 ## License
 
