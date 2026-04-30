@@ -2,10 +2,15 @@
 
 > **What this directory is.** A practical navigator for routing a
 > piece of work to the architecture that preserves accountability
-> distribution. Together with the nine ADRs, the four quadrants form
+> distribution. Together with the ten ADRs, the four quadrants form
 > the **two-axis structure** of this repository: the ADRs answer
 > per-question (*what should be constrained, who is responsible*);
 > the quadrants route the work to where those answers apply.
+>
+> **Phase is independent of Quadrant.** Each Quadrant can appear in
+> either the design phase or the operation phase of a deployment.
+> ADR-0010 adds a narrow rule about one placement (operation-phase
+> Quadrant 4) without partitioning Quadrants by phase.
 
 The four quadrants were introduced in the 2026-04-29 essay and given
 their accountability-attribution treatment in the 2026-04-30 essay.
@@ -102,18 +107,34 @@ Read in order:
 
 The two artifacts answer different questions:
 
-- **The nine ADRs** answer "what should be constrained, and who is
+- **The ten ADRs** answer "what should be constrained, and who is
   responsible" *given that we are operating in a quadrant where
   accountability distribution is meaningful.*
 - **The four quadrants** answer "is accountability distribution
   meaningful for this work, and if so, in which architectural
   regime?"
 
-The two-axis posture preserves AAP's "*nine judgments, not a fixed
+The two-axis posture preserves AAP's "*ten judgments, not a fixed
 framework*" stance: the quadrants are a diagnostic frame for routing,
 not a prescriptive taxonomy. Different quadrants apply different
 *subsets* of the ADR set with different load-bearing weight; the ADR
 set itself is not partitioned by quadrant.
+
+### Phase is a third dimension, not a partition
+
+Phase (design vs operation) is independent of Quadrant. Every
+Quadrant can appear in either phase: a workflow prototyped in design
+and promoted to operation traverses both phases of the LLM Workflow
+Quadrant; an autonomous loop used to explore a domain (design)
+before its findings are encoded into a workflow (operation)
+traverses both phases of Quadrant 4 → Quadrant 3.
+
+ADR-0010 surfaces the Phase-crossing decision for one specific
+placement: **operation-phase Autonomous Agentic Loop Quadrant
+deployments**. There, the deploying team must record whether new
+patterns surfacing in operation are handled dynamically in place or
+routed back to design as feedback. The rule is procedural, not
+architectural — it does not partition Quadrants by Phase.
 
 ## Status
 

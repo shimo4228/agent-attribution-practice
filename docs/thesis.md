@@ -50,7 +50,7 @@ This is not inherently wrong. Some dissolutions preserve what matters —
 inspectability, reversibility, locus of human agency. Others do not. The
 ADRs in this repository describe the dissolutions that preserve.
 
-## What the nine principles answer
+## What the ten principles answer
 
 Each ADR answers a version of "what should be constrained, and who is
 responsible":
@@ -66,6 +66,7 @@ responsible":
 | 0007 Scaffolding Visibility | Behavior lives in files, not weights | Operator can inspect what they run |
 | 0008 One Agent, One Human | One named human per agent process | The endpoint of the accountability chain |
 | 0009 Triage Before Autonomy *(experimental)* | Adopting an autonomous-loop architecture commits the system to a non-removable attribution gap | The triage decision and the named gap-bearer are recorded at deployment time |
+| 0010 Phase Separation *(experimental)* | Operation-phase placements of the Autonomous Agentic Loop Quadrant carry costs ADR-0009's design-time commitment alone does not cover | A Phase-crossing decision is recorded explicitly at deployment time |
 
 ADRs 0001, 0002, and 0003 form a **prohibition-strength hierarchy**:
 absence > scaffolding enforcement > untrusted boundary. When a prohibition
@@ -81,10 +82,16 @@ question of whether the autonomy is required at all. ADR-0009
 formalizes that prior triage and pairs it with the four
 **Business AI Quadrants** (Script, Algorithmic Search, LLM Workflow,
 Autonomous Agentic Loop) that route a piece of work to the
-architecture preserving accountability distribution. The nine ADRs
-plus the four quadrants form a **two-axis structure**: the ADRs
-answer per-question; the quadrants route the work to where those
-answers apply. See [`quadrants/`](quadrants/) for the navigator.
+architecture preserving accountability distribution. ADR-0010 adds
+a temporal layer to the triage: when a Quadrant 4 component is
+placed in the operation phase of a deployment, the Phase-crossing
+decision (will new operation-phase patterns be handled in place or
+routed back to design as feedback?) is recorded explicitly. Phase
+and Quadrant remain independent dimensions; the rule is procedural,
+not architectural. The ten ADRs plus the four quadrants form a
+**two-axis structure**: the ADRs answer per-question; the quadrants
+route the work to where those answers apply. See
+[`quadrants/`](quadrants/) for the navigator.
 
 ## What this repository does not claim
 
@@ -109,7 +116,7 @@ For readers new to the material:
 3. [`adr/0001-security-by-absence.md`](adr/0001-security-by-absence.md)
    as the cleanest entry point — the audit test at the end makes the
    principle concrete in a way that applies regardless of stack.
-4. The five essays linked in [`inspiration.md`](inspiration.md), in
+4. The six essays linked in [`inspiration.md`](inspiration.md), in
    publication order, for the narrative that the ADRs encode.
 5. [`quadrants/`](quadrants/) for the adoption navigator — decision
    tree, governance mapping, case studies, anti-patterns.

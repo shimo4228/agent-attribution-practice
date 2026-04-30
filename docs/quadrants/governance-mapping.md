@@ -12,7 +12,24 @@
 | (1) Script | Light (out of scope for AAP) | — | code review, tests | code author / pipeline owner |
 | (2) Algorithmic Search | Light (out of scope for AAP) | — | algorithm validation, search-space audit | algorithm author |
 | (3) LLM Workflow | Medium | 0001, 0003, 0004, 0005, 0006, 0007 | scaffolding visibility, audit log, approval on behavior change, schema-conformant calls | role owner of the failing LLM call → routing-logic designer → upstream-data owner |
-| (4) Autonomous Agentic Loop | High | **all nine ADRs** | + pre-named gap-bearer (0008 + 0009), human approval on every external action (0005), full causal trace (0006), one accountable operator (0008) | the pre-named gap-bearer (principled gap; redirect at component level is foreclosed) |
+| (4) Autonomous Agentic Loop | High | **all ten ADRs** | + pre-named gap-bearer (0008 + 0009), human approval on every external action (0005), full causal trace (0006), one accountable operator (0008), **operation-phase placement requires a recorded Phase-crossing decision (0010)** | the pre-named gap-bearer (principled gap; redirect at component level is foreclosed) |
+
+### Phase note (orthogonal to Quadrant)
+
+Phase (design vs operation) is independent of Quadrant. Any Quadrant
+can appear in either phase. The governance levels above apply
+regardless of phase, with one phase-specific addition: **placing
+Quadrant 4 in the operation phase invokes ADR-0010**. The
+operation-phase placement is admissible but adds the Phase-crossing
+decision (recorded at deployment time) to the controls listed for
+Quadrant 4. Design-phase Quadrant 4 placements (coding agents, Deep
+Research) satisfy this automatically — design phase *is* where
+Phase-crossing happens.
+
+The empirical default for operation-phase workflows is a composition
+of Quadrant 1 + 3 (+ 2 where applicable). This is a default, not a
+rule; deviations are surfaced through the
+[`decision tree`](decision-tree.md) Q0 + Q4 path.
 
 ## Per-quadrant detail
 
@@ -71,9 +88,10 @@ Each step has a single owner. Distribution succeeds.
 
 ### (4) Autonomous Agentic Loop Quadrant — High governance
 
-All nine ADRs apply. ADRs 0005, 0006, 0008, 0009 carry the most
+All ten ADRs apply. ADRs 0005, 0006, 0008, 0009 carry the most
 weight because they are what makes the named gap-bearer's commitment
-operational.
+operational. ADR-0010 adds the Phase-crossing decision when the
+placement is operation-phase.
 
 | ADR | What it requires for this quadrant |
 |---|---|
@@ -86,6 +104,7 @@ operational.
 | [0007 Scaffolding Visibility](../adr/0007-scaffolding-visibility.md) | The loop's prompt template, available tools, system prompt, and termination criteria are version-controlled files. |
 | [0008 One Agent, One Human](../adr/0008-one-agent-one-human.md) | **Load-bearing.** Exactly one named human is bound to the agent process. Rotation is compatible if formal. |
 | [0009 Triage Before Autonomy](../adr/0009-triage-before-autonomy.md) | **Load-bearing.** The triage decision and the named gap-bearer are recorded at deployment time. Defaulting into this quadrant or naming the gap-bearer post-incident are forbidden. |
+| [0010 Phase Separation](../adr/0010-phase-separation.md) | **Load-bearing for operation-phase placements.** A Phase-crossing decision is recorded at deployment time: when a new pattern surfaces in operation, will the autonomous loop handle it dynamically in place, or route it back to design as feedback? Both answers admissible; "we'll figure it out" is not. Design-phase placements (coding agents, Deep Research) satisfy this automatically. |
 
 #### Redirect path for Autonomous Agentic Loop Quadrant
 

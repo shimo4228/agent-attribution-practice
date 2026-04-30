@@ -5,6 +5,66 @@
 > anti-pattern names the failure mode, why it happens, what breaks,
 > and how the [`decision-tree.md`](decision-tree.md) recovers it.
 
+## Operation-phase autonomous loop without a Phase-crossing decision
+
+> "We deployed an autonomous research / triage / analysis agent into
+> the production workflow. New patterns? It handles them
+> dynamically."
+
+- **Failure mode.** Autonomous Agentic Loop Quadrant component
+  placed in operation phase as the default route, without an
+  explicit Phase-crossing decision recorded at deployment time.
+  The configuration ADR-0010 surfaces (not bans) — it must be
+  consciously chosen, not slid into.
+- **Why it happens.** "Autonomous agents handle business workflows"
+  is the dominant vendor framing. Teams accept it as the default
+  framing without naming the cost. New patterns appearing in
+  operation are absorbed silently by the loop, not surfaced as
+  design-phase feedback.
+- **What breaks.** The
+  [`attribution gap`](../glossary.md#attribution-gap) fires inside
+  production runtime. Each new pattern absorbed dynamically blends
+  the attribution further; redirect at the component level is
+  foreclosed *and* the deployment record does not say why this
+  configuration was chosen. Post-incident review finds an
+  autonomous loop running operation-phase work with the gap-bearer
+  named (per ADR-0009) but no Phase-crossing decision recorded —
+  the failure mode the *moral crumple zone* literature describes.
+- **Recovery.** Run Q0 + Q4 of the
+  [`decision tree`](decision-tree.md) explicitly. If the work
+  genuinely needs Quadrant 4 in operation, record the
+  Phase-crossing decision: *"new patterns are routed back to design
+  as feedback"* or *"new patterns are handled in the loop in
+  place, accepting the recurring attribution gap."* Both are
+  admissible. If neither is acceptable, the work belongs in Q3
+  (LLM Workflow Quadrant) and the autonomous loop should be
+  removed from the operation surface.
+
+## Operation patterns absorbed in place instead of routed to design
+
+> "We hit a new edge case last week — the agent figured it out."
+
+- **Failure mode.** New patterns surfacing in operation are
+  absorbed by the autonomous loop's runtime instead of being
+  surfaced as design-phase feedback. ADR-0010 calls the explicit
+  routing-back-to-design path the *recommended* response; this
+  anti-pattern is the alternative being chosen by default rather
+  than by decision.
+- **Why it happens.** Autonomous loops appear to "just handle"
+  novel cases, which is what the architecture is for. The
+  problem is that this masks design feedback that would have
+  surfaced an upstream fix.
+- **What breaks.** Layer 3 of the three-layer diagnosis (phase
+  conflation): design and operation become indistinguishable in
+  practice. Teams stop maintaining the design phase as a separate
+  activity. Future workflow improvements stop happening because
+  every pattern is "already handled" by the runtime.
+- **Recovery.** Make the routing-back-to-design path explicit and
+  log it. New patterns surfaced in operation are tagged, escalated
+  to a design-phase review, and either encoded into the existing
+  workflow (LLM Workflow Quadrant) or accepted as a domain that
+  legitimately requires in-place handling (recorded as such).
+
 ## Bounded work on autonomous loop
 
 > "Implement customer support / FAQ classification / invoice matching

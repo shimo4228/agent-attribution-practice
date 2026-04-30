@@ -1,13 +1,13 @@
 # Inspiration and Lineage
 
-## The five articles
+## The six articles
 
-The narrative spine of this repository is a five-essay sequence
-published in April 2026. The first three form the original trilogy
-(problem / application / obstacle); the next two are the
+The narrative spine of this repository is a six-essay sequence
+published in April–May 2026. The first three form the original
+trilogy (problem / application / obstacle); the next three are the
 architectural follow-up that introduced the four-quadrant
-decomposition and named the principled vs artificial redirect
-impossibility:
+decomposition, named the principled vs artificial redirect
+impossibility, and added the design / operation phase distinction:
 
 1. **[A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails](https://dev.to/shimo4228/a-sign-on-a-climbable-wall-why-ai-agents-need-accountability-not-just-guardrails-17ak)** (2026-04-06)
    > *Problem statement.* Signs on climbable walls are meaningless.
@@ -54,15 +54,31 @@ impossibility:
    > agents. Distribution then bottoms out on a subject the legal
    > system does not yet recognize.
 
-Together, these five form the argument: current AI governance is
-signpost-era; structural accountability is what works; the obstacles
-are internalization into weights and commercial opacity; *and* the
+6. **[Is ReAct Needed in Production? — Separating Design and Operation Phases](https://dev.to/shimo4228/is-react-needed-in-production-separating-design-and-operation-phases-4ll0)** (2026-05-01)
+   > *The temporal axis.* Business work splits into a design phase and
+   > an operation phase. Design demands flexibility (the path is
+   > unknown); operation demands predictability (the path is known) —
+   > their optimization axes are inverted. Compressing both phases
+   > into one system is the deepest layer of the agent ecosystem's
+   > confusion. The proposal: surface the Phase-crossing decision
+   > explicitly when an autonomous loop is placed in operation, and
+   > recommend routing new operation-phase patterns back to design as
+   > feedback rather than absorbing them in place. The argument is
+   > offered as observation and proposal, not prohibition.
+
+Together, these six form the argument in three layers. Surface
+(essays 1–3): current AI governance is signpost-era; structural
+accountability is what works; the obstacles are internalization
+into weights and commercial opacity. Middle (essays 4–5): the
 architectural triage is itself prior to the accountability question
 — routing work to the wrong quadrant generates artificial
 accountability problems that are resolvable by re-architecting,
 while choosing the Autonomous Agentic Loop Quadrant commits the
-deploying organization to a principled attribution gap that cannot
-be resolved architecturally and requires a pre-named gap-bearer.
+deploying organization to a principled attribution gap that
+requires a pre-named gap-bearer. Deep (essay 6): the misapplication
+diagnosed at the surface grows from the vocabulary gap diagnosed in
+the middle, which in turn grows from the *phase conflation* of
+treating design and operation as the same activity.
 
 ## Related repositories
 
@@ -85,6 +101,7 @@ details that were removed during extraction here:
 | ADR-0007 Scaffolding Visibility | Implicit in the fully-materialized scaffolding design; first named in the 2026-04-14 essay |
 | ADR-0008 One Agent, One Human | First formalized in this repository (experimental) |
 | ADR-0009 Triage Before Autonomy | First formalized in this repository (experimental); essays 4 and 5 are its lineage |
+| ADR-0010 Phase Separation Between Design and Operation | First formalized in this repository (experimental); essay 6 is its lineage |
 
 ### agent-knowledge-cycle (AKC)
 

@@ -231,6 +231,65 @@ this configuration.
 > Human-Robot Interaction. *Engaging Science, Technology, and
 > Society* 5: 40–60.
 
+## Design phase
+
+The lifecycle phase in which a workflow's structure is being
+discovered or built — the path is not fully known, exploration is
+the requirement, and the optimization axis is *flexibility*.
+Includes prototyping, requirements analysis, exploratory R&D, and
+each session of a coding agent or Deep Research tool. Distinct from
+the operation phase, with which it is not interchangeable. See
+ADR-0010.
+
+## Operation phase
+
+The lifecycle phase in which a deployed workflow runs on its known
+path — the path is fixed, predictability is the requirement, and
+the optimization axis is *predictability* (audit-tracing,
+attribution, cost stability, SLA conformance). The empirical
+default composition for operation-phase workflows is Quadrant 1 + 3
+(+ 2 where applicable). See ADR-0010.
+
+## Phase Separation
+
+The observation that the design phase and the operation phase
+optimize for opposite properties (flexibility vs predictability),
+and that compressing both into one system trades one for the other.
+ADR-0010's load-bearing rule: operation-phase placements of the
+Autonomous Agentic Loop Quadrant require a recorded Phase-crossing
+decision in addition to ADR-0009's gap-bearer naming. Phase and
+Quadrant remain independent dimensions; the rule is procedural,
+not architectural.
+
+## Phase-crossing decision
+
+A deployment-time record stating, in one sentence, what happens to
+a new pattern that surfaces in the operation phase: *handle it
+dynamically in the autonomous loop in place* (animating the
+runtime, accepting recurring attribution gaps), or *route it back
+to design as feedback* (returning the operation surface to the
+default composition until the design phase decides where the
+pattern fits). Both answers are admissible. "We'll figure it out
+when it happens" is not. Required by ADR-0010 for operation-phase
+Quadrant 4 placements.
+
+## Three-layer diagnosis (essays 4–6)
+
+The diagnostic frame the architectural-follow-up essays produce
+together: misapplication (essay 4) grows from the vocabulary gap
+(essay 5), which in turn grows from phase conflation (essay 6).
+The deepest layer is treating the design phase and operation phase
+as the same activity — the framing that makes "always-on autonomous
+agent runs business" sound coherent. The middle layer is the
+absence of a positive name for the LLM Workflow Quadrant, which
+forces non-deterministic work through autonomous loops by
+elimination. The surface layer is the resulting category error
+(LLM Workflow Quadrant work routed through Autonomous Agentic Loop
+architecture). The frame is used in design reviews: when an
+autonomous loop is proposed for operation, walk the layers; most
+resolutions surface a misapplication or a vocabulary gap before the
+phase question even arises.
+
 ---
 
 ## Dissolution signature checklist (provisional)

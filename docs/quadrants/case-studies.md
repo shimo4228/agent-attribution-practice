@@ -1,21 +1,79 @@
 # Case Studies — Quadrant Routing in Practice
 
 > **Purpose.** Concrete examples of routing common business AI work
-> to a quadrant, with the architecture and applicable ADRs spelled
-> out. The cases below are *illustrative* — actual deployments will
-> require running [`decision-tree.md`](decision-tree.md) on the
-> specific work, not pattern-matching on the case name.
+> to a quadrant — with the architecture, applicable ADRs, and (where
+> relevant) typical phase placement spelled out. The cases below are
+> *illustrative*, designed to stimulate the team's thinking, not to
+> be pattern-matched. Phase ≠ Quadrant: the same Quadrant can appear
+> in both design and operation phases, and the cases note which
+> placement is *typical*, not *exclusive*.
 >
 > **Currency.** Each case carries a publication date. The choices
 > reflect what is sensible given current LLM and tooling capability
 > as of that date. Re-evaluate when capabilities shift.
 
-## (LLM Workflow Quadrant) FAQ classification
+## (Autonomous Agentic Loop Quadrant, *Typical placement: Design phase*) Coding agent
+
+*Published 2026-05-01.*
+
+- **Work.** A developer asks a coding agent to investigate, modify,
+  test, and commit code in a repository. Each session ends when the
+  task is complete.
+- **Phase.** Design phase resident. Even when the agent is "always
+  on" (Devin, GitHub Copilot Coding Agent in CI/CD), each session is
+  an *independent design session* that completes when its
+  exploration finishes; state does not accumulate across sessions in
+  operation-relevant ways.
+- **Quadrant.** Autonomous Agentic Loop Quadrant.
+  - Q0 (phase?) — Design.
+  - Q1 (deterministic?) — No.
+  - Q3 (workflow definable?) — No; the next action depends on what
+    the previous file read or test result returned.
+  - Q4 (gap-bearer + Phase-crossing) — Both must be answered. The
+    gap-bearer is typically the developer who initiated the
+    session; for unattended CI runs, the gap-bearer is the
+    repository owner. The Phase-crossing decision is automatic
+    (this *is* the design phase).
+- **Architecture.** ReAct-style autonomous loop with a controlled
+  tool set (file read, file edit, shell, test runner) and an
+  explicit termination criterion (task complete / approval gate).
+- **Applicable ADRs.** All ten. ADRs 0005, 0006, 0008, 0009 carry
+  weight; ADR-0010's Phase-crossing condition is satisfied
+  automatically.
+- **Why this is *not* an exception to ADR-0010.** Coding sessions
+  are sequences of independent design sessions. Their continuous
+  availability is a deployment-level fact, not a phase-level fact.
+  Treating coding agents as operation-phase deployments is the
+  category error ADR-0010 names.
+
+## (Autonomous Agentic Loop Quadrant, *Typical placement: Design phase*) Deep Research for ad-hoc analysis
+
+*Published 2026-05-01.*
+
+- **Work.** A user submits a research question whose answer requires
+  iterative search, retrieval, and synthesis across an unbounded
+  knowledge corpus. Each query ends when the synthesis is complete.
+- **Phase.** Design phase resident (per-query design session).
+- **Quadrant.** Autonomous Agentic Loop Quadrant.
+- **Architecture.** ReAct-style autonomous loop with retrieval
+  tools (search, fetch, cite) and a synthesis step.
+- **Applicable ADRs.** All ten. The session-level gap-bearer is
+  the user (or the user's employer for paid deployments); the
+  Phase-crossing decision is automatic.
+- **Why this is *not* operation-phase.** A query session is
+  exploratory; the next search depends on what the previous result
+  returned. The deployment's appearance of being "operation phase"
+  (the service is always available) is a delivery property, not a
+  phase property.
+
+## (LLM Workflow Quadrant, *Typical placement: Operation phase*) FAQ classification
 
 *Published 2026-04-30.*
 
 - **Work.** A user submits a question; the system classifies it into
   one of N FAQ categories and returns the matching answer.
+- **Phase.** Operation phase. Default composition (no Phase-crossing
+  decision needed; Quadrant 4 is not in the composition).
 - **Quadrant.** LLM Workflow Quadrant.
   - Q1 (deterministic?) — No, semantic judgment required.
   - Q3 (workflow definable?) — Yes; one classification call, one
@@ -32,13 +90,14 @@
   which FAQ to retrieve." See
   [`anti-patterns.md#bounded-work-on-autonomous-loop`](anti-patterns.md#bounded-work-on-autonomous-loop).
 
-## (LLM Workflow Quadrant) Customer support specialist chat
+## (LLM Workflow Quadrant, *Typical placement: Operation phase*) Customer support specialist chat
 
 *Published 2026-04-30.*
 
 - **Work.** A multi-turn chat with a user, grounded in a product
   knowledge base. Escalates to a human when the conversation reaches
   a topic outside the scope.
+- **Phase.** Operation phase. Default composition.
 - **Quadrant.** LLM Workflow Quadrant (multi-turn but bounded — see
   the boundary discussion below).
   - Q1 (deterministic?) — No.
@@ -62,12 +121,13 @@
   holds, this is (3). If not, it has drifted into (4) and the
   ADR-0009 triage applies.
 
-## (LLM Workflow Quadrant) Invoice matching
+## (LLM Workflow Quadrant, *Typical placement: Operation phase*) Invoice matching
 
 *Published 2026-04-30. Source: 2026-04-29 essay.*
 
 - **Work.** Match incoming invoices against purchase orders;
   approve, escalate, or reject.
+- **Phase.** Operation phase. Default composition.
 - **Quadrant.** LLM Workflow Quadrant.
   - Q1 (deterministic?) — Mostly yes (PO existence, expiry,
     duplicate, exact-match amount), but the line-item matching step
@@ -83,14 +143,19 @@
   function's role owner or the pipeline's logic owner. Both are
   identifiable.
 
-## (Autonomous Agentic Loop Quadrant) Research assistant for open-ended literature exploration
+## (Autonomous Agentic Loop Quadrant, *Typical placement: Design phase*) Research assistant for open-ended literature exploration
 
-*Published 2026-04-30.*
+*Published 2026-04-30; phase note added 2026-05-01.*
 
 - **Work.** A user submits a research question whose answer requires
   iteratively searching, reading, and synthesizing across a
   knowledge corpus whose structure cannot be enumerated in advance.
+- **Phase.** Design phase resident (per-query design session, like
+  the Deep Research case above; included separately because it
+  documents the team-deployed variant rather than the consumer-tool
+  variant).
 - **Quadrant.** Autonomous Agentic Loop Quadrant.
+  - Q0 (phase?) — Design (per query).
   - Q1 (deterministic?) — No.
   - Q3 (workflow definable?) — No; the next search depends on what
     the previous search returned. Bounding the call's role would
@@ -98,8 +163,9 @@
 - **Architecture.** ReAct-style autonomous loop (Thought → Action →
   Observation), with a controlled tool set (search, retrieve, cite)
   and an explicit termination criterion.
-- **Applicable ADRs.** All nine. ADRs 0005, 0006, 0008, 0009
-  load-bearing.
+- **Applicable ADRs.** All ten. ADRs 0005, 0006, 0008, 0009
+  load-bearing; ADR-0010's Phase-crossing decision is satisfied
+  automatically (design phase).
 - **Required commitments at deployment time.**
   - **ADR-0009.** The triage decision is recorded; the work is
     explicitly named as Autonomous Agentic Loop Quadrant work.

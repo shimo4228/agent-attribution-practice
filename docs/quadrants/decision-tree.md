@@ -1,12 +1,51 @@
 # Decision Tree — Routing a Piece of Work to a Quadrant
 
 > **Purpose.** Convert ADR-0009 [Triage Before
-> Autonomy](../adr/0009-triage-before-autonomy.md) into a four-question
-> navigator usable in design reviews. Each branch references the ADRs
-> that become load-bearing once the quadrant is chosen, so this is a
-> *judgment chain navigator*, not a fixed framework.
+> Autonomy](../adr/0009-triage-before-autonomy.md) and ADR-0010
+> [Phase Separation](../adr/0010-phase-separation.md) into a
+> five-question navigator usable in design reviews. Each branch
+> references the ADRs that become load-bearing once the quadrant
+> and phase are chosen, so this is a *judgment chain navigator*,
+> not a fixed framework.
 
-## The four questions
+## The five questions
+
+Q1–Q4 are the [problem-space triage from
+ADR-0009](../adr/0009-triage-before-autonomy.md). Q0 surfaces the
+*Phase-crossing decision* from
+[ADR-0010](../adr/0010-phase-separation.md) when the work is
+operation-phase and the result of Q1–Q4 is the Autonomous Agentic
+Loop Quadrant.
+
+Phase and Quadrant are **independent dimensions** — every Quadrant
+can appear in either phase. Q0 is not a Quadrant filter; it is a
+prompt to surface the Phase-crossing decision when it is
+load-bearing.
+
+### Q0. Is this work in the design phase or the operation phase?
+
+- **Design phase** (exploratory work, workflow-being-built,
+  prototyping, unknown structure being analyzed) → continue to
+  Q1–Q4. All Quadrants are legitimate candidates depending on the
+  work. Coding agents and Deep Research tools are typically here
+  as design-phase residents (each session is an independent design
+  session).
+- **Operation phase** (deployed workflow running on its known
+  path, predictability is the requirement) → continue to Q1–Q4.
+  All Quadrants are still candidates depending on the work, but
+  *if* Q1–Q4 yields the Autonomous Agentic Loop Quadrant, the
+  Phase-crossing decision must be recorded explicitly (see Q4
+  Part B below). The empirical default for operation-phase
+  workflows is Quadrant 1 + 3 (+ 2 where applicable), but this
+  is a default, not a requirement.
+
+The Phase decision is itself recorded alongside the deployment.
+"This is operation phase, default composition (Quadrant 1 + 3)" is
+a complete record. "This is operation phase, Quadrant 4 admitted,
+Phase-crossing decision: route new patterns back to design" is a
+complete record. "We didn't decide" is not.
+
+## The four problem-space questions
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -108,7 +147,7 @@ labeling each call's role and schema? If yes, the workflow is
 pre-defined. If the next call's role depends on what the previous
 call's output happened to be, the workflow is exploratory.
 
-### Q4. Can a pre-named gap-bearer be identified?
+### Q4. Can a pre-named gap-bearer be identified, and (if Q0=operation) is the Phase-crossing decision recorded?
 
 Reaching this question means the work genuinely requires the
 **Autonomous Agentic Loop Quadrant** — the path is not predictable in
@@ -118,19 +157,31 @@ post-hoc separability is foreclosed; redirect cannot succeed at the
 level of separable contributions. The
 [`attribution gap`](../glossary.md#attribution-gap) is intrinsic.
 
-The question is: **who absorbs the gap?** ADR-0009 forbids leaving
-this to post-incident discovery (the *moral crumple zone* failure
-mode).
+The question has two parts; both must be answered yes for deployment.
 
-- **Yes →** [`Autonomous Agentic Loop Quadrant`](README.md#4-autonomous-agentic-loop-quadrant).
-  Apply **all nine ADRs**; ADRs 0005, 0006, 0008, 0009 carry the
-  most weight because they are what makes the named gap-bearer's
-  commitment operational. The named gap-bearer is recorded alongside
-  the architectural choice at deployment time.
-- **No →** **Decision: do not deploy.** The configuration this ADR
+**Part A (always required).** Who absorbs the attribution gap?
+ADR-0009 forbids leaving this to post-incident discovery (the
+*moral crumple zone* failure mode).
+
+**Part B (only if Q0 = operation phase).** Is the Phase-crossing
+decision recorded — i.e., when a new pattern surfaces in operation,
+will it be handled by the autonomous loop in place, or routed back
+to the design phase as feedback? ADR-0010 forbids implicit
+Phase-crossing decisions for operation-phase Quadrant-4 placements.
+For design phase placements, this part is automatically satisfied
+(the design phase *is* where Phase-crossing happens).
+
+- **Yes (both parts) →** [`Autonomous Agentic Loop Quadrant`](README.md#4-autonomous-agentic-loop-quadrant).
+  Apply **all ten ADRs**; ADRs 0005, 0006, 0008, 0009, 0010 carry
+  the most weight because they are what makes the named gap-bearer's
+  commitment operational and the lifecycle placement explicit. The
+  gap-bearer (and Phase-crossing decision, when applicable) are
+  recorded alongside the architectural choice at deployment time.
+- **No →** **Decision: do not deploy.** The configuration the ADR
   set is designed to prevent — Autonomous Agentic Loop Quadrant
-  work running without an organizationally identifiable subject who
-  carries the gap.
+  work running either without a gap-bearer (Part A failure) or
+  without an explicit Phase-crossing decision in operation (Part B
+  failure).
 
 The test for "gap-bearer identifiable": can the deployment record
 name a specific human (per ADR-0008), an organizationally
@@ -138,6 +189,12 @@ identifiable role with formal succession, or a contractual party
 (insurance pool, regulatory body) who acknowledges, at deployment
 time, that they bear responsibility for failures of this work? If
 none of these can be named, the answer is no.
+
+The test for "Phase-crossing decision recorded": can the deployment
+record state, in one sentence, what happens to a new pattern that
+surfaces during operation? "Route to design as feedback" and "Handle
+in the autonomous loop in place" are both admissible answers.
+"We'll figure that out when it happens" is not.
 
 ## Hybrid architectures
 
@@ -165,14 +222,23 @@ The autonomous portion still needs Q4 answered.
 The triage is a design-time decision, but the answer can change as
 the work matures:
 
-- Tasks that start in the Autonomous Agentic Loop Quadrant often move
-  to the LLM Workflow Quadrant once the path is understood. Re-run
-  the triage when this happens; the move is a legitimate maturation.
-- Vendor capabilities can change the answer. A capability that was
-  formerly out of reach (Q1=No, Q3=No) may become workflow-able as
-  models and tooling improve.
-- Regulatory changes can change the answer to Q4 (whether a
-  gap-bearer can be named for a given domain).
+- **Phase transitions.** Work that begins in the design phase often
+  matures into operation as the path becomes understood. Re-run Q0
+  when this happens; the resulting Quadrant placement may shift
+  from 4 to 3 (a legitimate maturation, not a regression).
+- **Quadrant transitions.** Tasks that start in the Autonomous
+  Agentic Loop Quadrant often move to the LLM Workflow Quadrant
+  once the path is understood. Re-run Q1–Q4.
+- **Vendor capability shifts.** A capability that was formerly out
+  of reach (Q1=No, Q3=No) may become workflow-able as models and
+  tooling improve, moving the work from Quadrant 4 to Quadrant 3.
+- **Phase-crossing decision shifts.** An operation-phase deployment
+  that had recorded "route new patterns back to design" may, after
+  experience, decide to switch to "handle in the autonomous loop in
+  place" — or vice versa. Re-record the Phase-crossing decision
+  alongside the architectural change.
+- **Regulatory shifts.** A regulatory change can change the answer
+  to Q4 (whether a gap-bearer can be named for a given domain).
 
-When in doubt, re-run the four questions and document the new
-answer alongside the architectural change.
+When in doubt, re-run the five questions and document the new
+answers alongside the architectural change.

@@ -4,9 +4,9 @@ Language: English | [日本語](README.ja.md)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19652014.svg)](https://doi.org/10.5281/zenodo.19652014)
 
-> **Agent Attribution Practice (AAP)** — nine judgments paired with four Business AI Quadrants, not a fixed framework.
+> **Agent Attribution Practice (AAP)** — ten judgments paired with four Business AI Quadrants, not a fixed framework.
 
-Nine recurring judgments about how **attribution** — who authored the
+Ten recurring judgments about how **attribution** — who authored the
 behavior, who bears its consequences, who can reconstruct its cause —
 should be distributed across an autonomous AI agent, paired with the
 four-quadrant diagnostic frame that routes a piece of work to the
@@ -27,11 +27,11 @@ human's sign-off, every incident is reconstructible after the fact.
 Organizations spent three centuries refining these patterns for human
 actors. Agents get the same pattern or they get an unaccountable layer.
 
-The nine ADRs in this repository record judgments of the form *what
+The ten ADRs in this repository record judgments of the form *what
 should be constrained, and who is responsible*. They were extracted
 from a running implementation, not deduced from a framework.
 
-## The nine judgments
+## The ten judgments
 
 | ADR | Principle | Status |
 |-----|-----------|--------|
@@ -44,16 +44,19 @@ from a running implementation, not deduced from a framework.
 | [0007](docs/adr/0007-scaffolding-visibility.md) | Scaffolding Visibility — behavior lives in files, not opaque weights | accepted |
 | [0008](docs/adr/0008-one-agent-one-human.md) | One Agent, One Human — the accountability chain terminates at a named individual | **experimental** |
 | [0009](docs/adr/0009-triage-before-autonomy.md) | Triage Before Autonomy — adopting an autonomous-loop architecture commits the system to a non-removable attribution gap | **experimental** |
+| [0010](docs/adr/0010-phase-separation.md) | Phase Separation Between Design and Operation — operation-phase placement of the Autonomous Agentic Loop Quadrant requires a recorded Phase-crossing decision | **experimental** |
 
 The first three form a **prohibition-strength hierarchy**: absence >
 scaffolding enforcement > untrusted boundary. The next two (0004, 0005)
 add topology and human-in-the-loop. The middle two (0006, 0007) are
 the artifacts those constraints require — a record to trace through
 and a scaffolding layer that can be inspected. The eighth is the human
-endpoint. The ninth (0009) is the architectural triage that
-determines, before any of the other eight become load-bearing, whether
+endpoint. ADRs 0009 and 0010 form a **triage pair**: 0009 asks whether
 the work belongs in an architecture where accountability distribution
-operates at all.
+operates at all (the problem-space triage), and 0010 surfaces the
+Phase-crossing decision when the autonomous loop is placed in the
+operation phase (the time-axis triage). Phase and Quadrant are
+independent dimensions; ADR-0010 is procedural, not architectural.
 
 ## The four Business AI Quadrants
 
@@ -73,10 +76,13 @@ pre-named gap-bearer is the failure mode ADR-0009 is designed to
 prevent. See [`docs/quadrants/`](docs/quadrants/) for the navigator
 (decision tree, governance mapping, case studies, anti-patterns).
 
-The nine ADRs and the four quadrants form a **two-axis structure**:
+The ten ADRs and the four quadrants form a **two-axis structure**:
 the ADRs answer per-question (*what should be constrained, who is
 responsible*); the quadrants route the work to where those answers
-apply.
+apply. Phase (design vs operation) is independent of Quadrant — every
+Quadrant can appear in either phase, and ADR-0010's load-bearing rule
+is about one specific placement (operation-phase Quadrant 4), not a
+phase-to-quadrant mapping.
 
 ## The narrative (essays)
 
@@ -168,7 +174,7 @@ theory loops back to reshape the implementation.
 2. [`docs/adr/README.md`](docs/adr/README.md) — index of ADRs.
 3. [`docs/adr/0001-security-by-absence.md`](docs/adr/0001-security-by-absence.md) —
    the cleanest entry; the audit test at the end is runnable.
-4. The five essays in publication order (links above).
+4. The six essays in publication order (links above).
 5. [`docs/quadrants/`](docs/quadrants/) — adoption navigator: decision
    tree, governance mapping, case studies, anti-patterns.
 6. [`docs/manifesto.md`](docs/manifesto.md) — civilization-scale questions
@@ -176,7 +182,7 @@ theory loops back to reshape the implementation.
 
 ## What this repository does not claim
 
-- That these nine are complete.
+- That these ten are complete.
 - That the specific implementations they were extracted from are durable.
   Implementation dissolves; judgment persists.
 - That these principles solve the larger questions of AI direction,
@@ -189,7 +195,7 @@ theory loops back to reshape the implementation.
 
 ## Origin
 
-This extraction was first compiled by Tatsuya Shimomoto ([@shimo4228](https://github.com/shimo4228)) in April 2026. The nine ADRs and the four Business AI Quadrants re-express, in harness-neutral form, architectural decisions and triage judgments that surfaced through implementing and operating [contemplative-agent](https://github.com/shimo4228/contemplative-agent) and through the five-essay narrative spine published in April 2026; the first eight ADRs were earlier archived as part of the [Agent Knowledge Cycle](https://github.com/shimo4228/agent-knowledge-cycle) governance triplet, while ADR-0009 and the Quadrants navigator emerged from the 2026-04-29 / 04-30 architectural follow-up essays.
+This extraction was first compiled by Tatsuya Shimomoto ([@shimo4228](https://github.com/shimo4228)) in April 2026. The ten ADRs and the four Business AI Quadrants re-express, in harness-neutral form, architectural decisions and triage judgments that surfaced through implementing and operating [contemplative-agent](https://github.com/shimo4228/contemplative-agent) and through the six-essay narrative spine published in April–May 2026; the first eight ADRs were earlier archived as part of the [Agent Knowledge Cycle](https://github.com/shimo4228/agent-knowledge-cycle) governance triplet, while ADR-0009 and the Quadrants navigator emerged from the 2026-04-29 / 04-30 architectural follow-up essays, and ADR-0010 from the 2026-05-01 phase-distinction essay.
 
 ## How to Cite
 
@@ -202,7 +208,7 @@ If you use or reference these architectural decision records, please cite:
   year         = {2026},
   doi          = {10.5281/zenodo.19652014},
   url          = {https://doi.org/10.5281/zenodo.19652014},
-  note         = {Nine architectural decision records on accountability distribution in autonomous AI agents (one experimental), with four Business AI Quadrants as diagnostic frame}
+  note         = {Ten architectural decision records on accountability distribution in autonomous AI agents (two experimental), paired with four Business AI Quadrants as the diagnostic frame and a Phase / Quadrant two-axis structure}
 }
 ```
 

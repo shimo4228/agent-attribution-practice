@@ -15,10 +15,11 @@ Each ADR records a structural judgment about how autonomous AI agents should be 
 | [0007](0007-scaffolding-visibility.md) | Scaffolding Visibility | accepted |
 | [0008](0008-one-agent-one-human.md) | One Agent, One Human (experimental) | experimental |
 | [0009](0009-triage-before-autonomy.md) | Triage Before Autonomy (experimental) | experimental |
+| [0010](0010-phase-separation.md) | Phase Separation Between Design and Operation (experimental) | experimental |
 
 ADR-0001, 0002, and 0003 form a **prohibition-strength hierarchy**: absence (strongest) → scaffolding enforcement → untrusted boundary (probabilistic, weakest). Walk the hierarchy top-down when designing a prohibition.
 
-ADR-0009 sits *before* the other eight in the order of application: it triages whether the work is in the Autonomous Agentic Loop Quadrant (where all nine ADRs are load-bearing), the LLM Workflow Quadrant (where 0001–0007 apply), or out of scope (Script / Algorithmic Search Quadrants). See [`../quadrants/`](../quadrants/) for the navigator. Together, the nine ADRs and the four Business AI Quadrants form the repository's **two-axis structure**.
+ADRs 0009 and 0010 form a **triage pair**. ADR-0009 sits *before* the other ADRs in the order of application: it triages whether the work is in the Autonomous Agentic Loop Quadrant (where all ten ADRs are load-bearing), the LLM Workflow Quadrant (where 0001–0007 apply), or out of scope (Script / Algorithmic Search Quadrants). ADR-0010 surfaces the *Phase-crossing decision* when an Autonomous Agentic Loop Quadrant component is placed in the operation phase of a deployment. Phase (design vs operation) is independent of Quadrant — every Quadrant can appear in either phase. See [`../quadrants/`](../quadrants/) for the navigator. Together, the ten ADRs and the four Business AI Quadrants form the repository's **two-axis structure**.
 
 ## Format
 
