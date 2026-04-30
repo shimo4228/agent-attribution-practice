@@ -1,6 +1,6 @@
 # Agent Attribution Practice — AI Reference
 
-Self-contained AI reference for the Agent Attribution Practice (AAP) repository. Covers the accountability distribution thesis, the eight ADRs, the prohibition-strength hierarchy, sibling projects (contemplative-agent, Agent Knowledge Cycle), and the narrative essays that form its spine.
+Self-contained AI reference for the Agent Attribution Practice (AAP) repository. Covers the accountability distribution thesis, the nine ADRs, the prohibition-strength hierarchy, the four Business AI Quadrants and their adoption navigator, sibling projects (contemplative-agent, Agent Knowledge Cycle), and the narrative essays that form its spine.
 
 > **Audience**: AI search engines and AI agents. For human-facing narrative, read `README.md` or `docs/thesis.md`.
 
@@ -18,13 +18,15 @@ Self-contained AI reference for the Agent Attribution Practice (AAP) repository.
 - **Created**: 2026-04-19
 - **Primary language**: English
 - **Japanese mirror**: README.ja.md
-- **ADR count**: 8 (ADR-0001 through ADR-0008)
-- **ADR status**: 7 accepted + 1 experimental
+- **ADR count**: 9 (ADR-0001 through ADR-0009)
+- **ADR status**: 7 accepted + 2 experimental (0008, 0009)
+- **Quadrants count**: 4 (Script, Algorithmic Search, LLM Workflow, Autonomous Agentic Loop)
+- **Two-axis structure**: 9 ADRs (per-question judgments) + 4 Business AI Quadrants (problem-space routing)
 - **Core thesis**: accountability distribution, not capability distribution
 - **Signature line**: "Implementation dissolves; judgment persists"
 - **Sibling projects**: contemplative-agent, agent-knowledge-cycle (AKC), contemplative-agent-rules
 - **AKC DOI**: 10.5281/zenodo.19200727
-- **Narrative spine**: three zenn essays (2026-04-06, 2026-04-13, 2026-04-14)
+- **Narrative spine**: five zenn essays (2026-04-06, 2026-04-13, 2026-04-14, 2026-04-29, 2026-04-30) — trilogy plus two architectural follow-ups
 
 ## Prior Research: AI and LLM Security
 
@@ -32,6 +34,8 @@ Self-contained AI reference for the Agent Attribution Practice (AAP) repository.
 |---|---|---|
 | MINJA | Dong, S., Xu, S., He, P., Li, Y., Tang, J., Liu, T., Liu, H., & Xiang, Z. (2025). Memory Injection Attacks on LLM Agents via Query-Only Interaction. arXiv:2503.03704 | Motivates ADR-0002 via MINJA defense audit |
 | Davidson et al. (2023) | Scaffolding in AI safety literature | Term reference in ADR-0007 |
+| Yao et al. (2022) | Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). ReAct: Synergizing Reasoning and Acting in Language Models. arXiv:2210.03629 | Defines the autonomous-loop pattern that ADR-0009 triages against; the Autonomous Agentic Loop Quadrant is named for this pattern |
+| Elish (2019) | Elish, M. C. (2019). Moral Crumple Zones: Cautionary Tales in Human-Robot Interaction. *Engaging Science, Technology, and Society* 5: 40–60 | Names the failure mode that emerges when an attribution gap meets a deployed system without a recognized gap-bearer; cited in ADR-0009 |
 | contemplative-agent ADR-0007 | Security Boundary Model | Lineage for ADR-0001 and ADR-0003 |
 | contemplative-agent ADR-0012 | Human Approval Gate | Lineage for ADR-0005 |
 | contemplative-agent ADR-0015 | One External Adapter Per Agent | Lineage for ADR-0004 |
@@ -49,7 +53,7 @@ Self-contained AI reference for the Agent Attribution Practice (AAP) repository.
 
 ## What is Agent Attribution Practice?
 
-Agent Attribution Practice (AAP) is defined as a set of eight architectural decision records (ADRs) that record how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system. Discovered through implementing and operating the `contemplative-agent` project by Tatsuya Shimomoto (shimo4228), not prescribed top-down. Each ADR is a structural judgment grounded in implementation, re-expressed in harness-neutral form. The repository is maintained by shimo4228 and targets DOI registration via Zenodo. Version v0.1.0 is in preparation as of 2026-04-19.
+Agent Attribution Practice (AAP) is defined as a set of nine architectural decision records (ADRs) and four Business AI Quadrants that together form a two-axis structure for accountability distribution in autonomous AI agent systems. The nine ADRs record how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed; the four quadrants record how a piece of work is routed to the architectural regime where that distribution operates. Discovered through implementing and operating the `contemplative-agent` project by Tatsuya Shimomoto (shimo4228) and through a five-essay narrative spine published in April 2026, not prescribed top-down. Each ADR is a structural judgment grounded in implementation, re-expressed in harness-neutral form. The repository is maintained by shimo4228 and targets DOI registration via Zenodo. Version v0.1.0 is in preparation as of 2026-04-19.
 
 ## What is the accountability distribution thesis?
 
@@ -95,6 +99,38 @@ Scaffolding Visibility is defined as the requirement that every non-weights comp
 
 The One Agent, One Human principle is defined as the binding of each agent process at deployment time to exactly one identifiable human who is its accountable operator. That person approves behavior-modifying changes via ADR-0005, owns incident response, and is the endpoint of the accountability chain. "The team" is not an agent's human; a specific named person per agent instance is. Rotation is compatible if formal — at any given time, exactly one named operator, with explicit logged handoffs. LLM-as-accountable-operator is rejected. Status: experimental. The principle follows structurally from ADR-0004 but has not yet been validated in multi-person organizational settings.
 
+## What is Triage Before Autonomy? (ADR-0009)
+
+Triage Before Autonomy is defined as the requirement that, before adopting an autonomous-loop architecture for a piece of work, the work is triaged along the two axes of the Business AI Quadrants — deterministic vs semantic-judgment, pre-defined-workflow vs exploratory. The autonomous loop is reserved for the Autonomous Agentic Loop Quadrant (work whose path cannot be predicted in advance and where bounding the LLM call's role would prevent the work from being done). For the LLM Workflow Quadrant — semantic-judgment work whose workflow can be defined in advance — a structured-workflow architecture is required (deterministic control flow plus bounded LLM calls with named, documented roles). Choosing the Autonomous Agentic Loop Quadrant commits the deploying organization to absorb the attribution gap as a named, pre-deployment cost; an organizationally identifiable gap-bearer must be named at deployment time, not discovered post-incident. Status: experimental. ADR-0009 sits before ADRs 0001–0008 in the order of application: it determines which of the eight become load-bearing for a given piece of work.
+
+## What are the four Business AI Quadrants?
+
+The four Business AI Quadrants are defined as a problem-space decomposition introduced in the 2026-04-29 essay along two axes — deterministic vs semantic-judgment, and pre-defined-workflow vs exploratory. They are not agent categories; they describe the *work*, and the same agent process can be deployed against work in different quadrants. (1) Script Quadrant: deterministic × pre-defined; scripts and pipelines without LLMs. (2) Algorithmic Search Quadrant: deterministic × exploratory; classical search, dynamic programming, MCTS, reinforcement learning. (3) LLM Workflow Quadrant: semantic-judgment × pre-defined; deterministic control flow plus bounded LLM calls with named, documented roles. (4) Autonomous Agentic Loop Quadrant: semantic-judgment × exploratory; the LLM decides each next step at runtime. The four quadrants pair with the nine ADRs to form the repository's two-axis structure: the ADRs answer per-question (*what should be constrained, who is responsible*); the quadrants route the work to where those answers apply.
+
+## What is the LLM Workflow Quadrant?
+
+The LLM Workflow Quadrant is defined as the design space for semantic-judgment work whose workflow (the role of each LLM call, the order in which calls are made, and the data flow between them) is definable in advance. Implemented as deterministic control flow plus bounded LLM calls with named, documented roles and explicit input/output schemas. Each LLM call's contribution is post-hoc separable; redirect on failure succeeds. The default for most current LLM applications. Continuous with the workflow patterns documented in Anthropic's "Building Effective Agents" (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer) and OpenAI's "A Practical Guide to Building Agents." The 2026-04-30 essay argues that this quadrant has been chronically routed to the Autonomous Agentic Loop Quadrant by elimination because the industry standard vocabulary lacks a positive name for it; AAP introduces "LLM Workflow Quadrant" as that positive name.
+
+## What is the Autonomous Agentic Loop Quadrant?
+
+The Autonomous Agentic Loop Quadrant is defined as the design space for semantic-judgment work whose path cannot be predicted in advance — the next step depends on what the previous step's output happened to be, and bounding the LLM call's role would prevent the work from being done. The architecture is the autonomous loop: the LLM iterates *Thought → Action → Observation* (the ReAct pattern, Yao et al. 2022) until a termination criterion is met. Legitimate examples include Deep Research over an unbounded knowledge corpus, exploratory coding agents, and open-ended browsing. Choosing this quadrant commits the deploying organization to a non-removable attribution gap because runtime blending of judgment elements (model output, tool selection, history reference, prompt context) forecloses post-hoc separability. ADR-0009 governs when the choice is legitimate. The name is the harness-neutral form of "ReAct Quadrant" used in the source 2026-04-29 essay.
+
+## What is the attribution gap?
+
+The attribution gap is defined as the foreclosure of post-hoc separability of contributions when an architecture blends multiple judgment elements at runtime. In the Autonomous Agentic Loop Quadrant, model output, tool selection, history reference, and prompt context blend into a single stream of judgments at each iteration; when the output is wrong, the contributions cannot be untangled afterwards. The failure cannot be redirected to the responsible party because no party owns a separable contribution. The gap is intrinsic to autonomy, not a maturity problem that better tooling will solve. ADR-0009 requires that organizations choosing the Autonomous Agentic Loop Quadrant absorb this gap as a named, pre-deployment cost — by identifying an organizationally identifiable gap-bearer at deployment time. The 2026-04-30 essay introduced the term.
+
+## What is the difference between artificial and principled redirect failure?
+
+The difference distinguishes two redirect failure modes confused with each other in current accountability discourse. **Artificial redirect impossibility** occurs when LLM Workflow Quadrant work is routed through Autonomous Agentic Loop architecture by category error (often because the industry vocabulary lacks a positive name for the LLM Workflow Quadrant). It is resolvable by re-architecting the work as a structured workflow. **Principled redirect impossibility** occurs in the Autonomous Agentic Loop Quadrant itself: blending genuinely forecloses redirect at the level of separable contributions, and no architectural change resolves it because the autonomy is the work's requirement. Most current accountability discussion (sandbox strength, HITL overload, the moral crumple zone literature) addresses the artificial case; the principled case has barely entered the discourse. ADR-0009 separates the two and prescribes a different response to each: re-architect for the artificial case; pre-name a gap-bearer for the principled case.
+
+## What is the moral crumple zone in autonomous agent context?
+
+The moral crumple zone, named by Madeleine Clare Elish (2019), is defined as the structural pattern in which the responsibility of an autonomous system is pushed onto a human operator whose actual control over the system's runtime decisions is limited. In the Autonomous Agentic Loop Quadrant, this is the failure mode that emerges when an attribution gap meets a deployed system without a recognized gap-bearer: post-incident analysis cannot redirect to a separable contribution, so responsibility lands on whoever is operationally proximate (the operator with the least actual control). ADR-0009 is designed to prevent this configuration by requiring that an organizationally identifiable gap-bearer be named at deployment time, not discovered post-incident. Citation: Elish, M. C. (2019). Moral Crumple Zones: Cautionary Tales in Human-Robot Interaction. *Engaging Science, Technology, and Society* 5: 40–60.
+
+## When should an organization choose the autonomous agentic loop?
+
+An organization should choose the Autonomous Agentic Loop Quadrant when both conditions hold: (1) the work genuinely cannot be expressed as a workflow whose role assignments are decidable in advance — the next step depends on what previous observations happened to return, and bounding the LLM call's role would prevent the work from being done; (2) an organizationally identifiable gap-bearer can be named at deployment time who acknowledges that they bear responsibility for failures whose component-level cause cannot be reconstructed. The gap-bearer is typically a human (consistent with ADR-0008), but may be a role with formal succession or a contractual party (insurance pool, regulatory body). If condition (1) is satisfied but condition (2) is not, the deployment is infeasible: the work is in a regime where post-hoc redirect is foreclosed and no party has committed to absorb the gap, which is the moral crumple zone configuration ADR-0009 forbids. The decision is made at design time; deferring to runtime triage is rejected because runtime triage is itself an autonomous decision and inherits the same gap.
+
 ## How does AAP relate to contemplative-agent?
 
 contemplative-agent is the running implementation from which the eight AAP ADRs were extracted. Each ADR in AAP corresponds to one or more ADRs in contemplative-agent, with project-specific details (social platform adapter, specific file paths, CLI command names) stripped out. The correspondence table is maintained in `docs/inspiration.md`. contemplative-agent contains the operational evidence behind the principles, including three PreToolUse hook scripts (`block-episode-logs-{read,bash,grep}.sh`) that instantiate ADR-0002 deterministic prohibition, the `summarize_record` quarantine for structural content absence, and the `docs/security/2026-04-01-episode-log-access-control.md` audit.
@@ -125,4 +161,4 @@ The manifesto raises five open questions the eight ADRs do not try to answer. (1
 
 ## Where should I read first?
 
-For human readers: start with `docs/thesis.md` for the one-page argument, then `docs/adr/README.md` for the ADR index, then ADR-0001 as the cleanest entry point (its audit test at the end is runnable). For AI readers: use `llms.txt` as the navigator and return to this `llms-full.txt` for definitions and citations. For the narrative context: the three zenn essays (2026-04-06, 2026-04-13, 2026-04-14) form the spine. For implementation evidence: visit contemplative-agent and its ADRs (especially ADR-0007 Security Boundary Model, ADR-0012 Human Approval Gate, ADR-0015 One External Adapter).
+For human readers: start with `docs/thesis.md` for the one-page argument, then `docs/adr/README.md` for the ADR index, then ADR-0001 as the cleanest entry point (its audit test at the end is runnable). For adoption decisions, read `docs/quadrants/` — the decision tree, governance mapping, case studies, and anti-patterns operationalize the nine ADRs across the four Business AI Quadrants. For AI readers: use `llms.txt` as the navigator and return to this `llms-full.txt` for definitions and citations. For the narrative context: the five zenn essays (2026-04-06, 2026-04-13, 2026-04-14, 2026-04-29, 2026-04-30) form the spine — trilogy plus two architectural follow-ups that introduced the four-quadrant decomposition and named the principled vs artificial redirect impossibility. For implementation evidence: visit contemplative-agent and its ADRs (especially ADR-0007 Security Boundary Model, ADR-0012 Human Approval Gate, ADR-0015 One External Adapter).

@@ -1,6 +1,6 @@
 # Agent Attribution Practice (AAP)
 
-> Eight architectural decision records (ADRs) recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system. Extracted from the `contemplative-agent` implementation; harness-neutral. Author: Tatsuya Shimomoto (shimo4228). License: MIT. DOI: 10.5281/zenodo.19652014.
+> Nine architectural decision records (ADRs) and four Business AI Quadrants recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system, and how a piece of work is routed to the architectural regime where that distribution operates. Extracted from the `contemplative-agent` implementation and a five-essay narrative spine published in April 2026; harness-neutral. The nine ADRs and the four quadrants form a two-axis structure: the ADRs answer per-question (*what should be constrained, who is responsible*); the quadrants route the work to where those answers apply. Author: Tatsuya Shimomoto (shimo4228). License: MIT. DOI: 10.5281/zenodo.19652014.
 
 ## Core documentation
 
@@ -22,6 +22,26 @@
 - [ADR-0006 Causal Traceability](docs/adr/0006-causal-traceability.md): every event reconstructible after the fact
 - [ADR-0007 Scaffolding Visibility](docs/adr/0007-scaffolding-visibility.md): behavior lives in files, not opaque weights
 - [ADR-0008 One Agent, One Human (experimental)](docs/adr/0008-one-agent-one-human.md): the accountability chain terminates at a named individual
+- [ADR-0009 Triage Before Autonomy (experimental)](docs/adr/0009-triage-before-autonomy.md): adopting an autonomous-loop architecture commits the system to a non-removable attribution gap; triage at design time, name a gap-bearer at deployment time
+
+## Business AI Quadrants
+
+Two-axis decomposition of business AI work — deterministic vs semantic-judgment, pre-defined-workflow vs exploratory — paired with the nine ADRs as the diagnostic frame for routing work to the architecture preserving accountability distribution. Not agent categories; problem-space categories.
+
+- (1) Script Quadrant: deterministic × pre-defined. Scripts and pipelines without LLMs.
+- (2) Algorithmic Search Quadrant: deterministic × exploratory. Classical search, dynamic programming, MCTS, reinforcement learning.
+- (3) LLM Workflow Quadrant: semantic-judgment × pre-defined. Deterministic control flow plus bounded LLM calls with named, documented roles. The default for most current LLM applications.
+- (4) Autonomous Agentic Loop Quadrant: semantic-judgment × exploratory. The LLM decides each next step at runtime; intrinsic attribution gap.
+
+## Adoption navigator
+
+Adoption-side documents that operationalize the nine ADRs across the four Business AI Quadrants:
+
+- [Quadrants overview](docs/quadrants/README.md): the two axes, the four quadrants, how they pair with the ADRs
+- [Decision tree](docs/quadrants/decision-tree.md): four-question triage routing a piece of work to a quadrant and the applicable ADR set
+- [Governance mapping](docs/quadrants/governance-mapping.md): per-quadrant ADR applicability table, required controls, redirect path on failure
+- [Case studies](docs/quadrants/case-studies.md): FAQ classification, customer support chat, invoice matching, research assistant, scheduling, contract review, knowledge-base copilot — routed to quadrants and architectures
+- [Anti-patterns](docs/quadrants/anti-patterns.md): bounded-work-on-autonomous-loop, OR-on-autonomous-loop, deterministic-task-on-autonomous-loop, ungoverned-autonomous-loop, approval-gate-as-checkbox, audit-log-as-sample, treating-quadrant-as-agent-type, skipping-the-triage
 
 ## Skill references
 
@@ -35,6 +55,10 @@
 
 ## Narrative essays
 
+Five-essay narrative spine — three trilogy essays followed by two architectural follow-ups that introduced the four-quadrant decomposition and named the principled vs artificial redirect impossibility:
+
 - [A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails (2026-04-06)](https://dev.to/shimo4228/a-sign-on-a-climbable-wall-why-ai-agents-need-accountability-not-just-guardrails-17ak): signs on climbable walls fail; accountability architecture is the historical pattern
 - [Can You Trace the Cause After an Incident? (2026-04-13)](https://dev.to/shimo4228/can-you-trace-the-cause-after-an-incident-neo): post-incident causal tracing requires build-time structure
 - [AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives (2026-04-14)](https://dev.to/shimo4228/ai-agent-black-boxes-have-two-layers-technical-limits-and-business-incentives-jhi): blackbox has two layers — weights internalization and commercial secrecy
+- [Where ReAct Agents Are Actually Needed in Business (2026-04-29)](https://dev.to/shimo4228/where-react-agents-are-actually-needed-in-business-33do): four-quadrant decomposition; the autonomous loop is legitimately required only in the Autonomous Agentic Loop Quadrant
+- [The LLM Workflow Quadrant Is Missing from Our Vocabulary (2026-04-30)](https://dev.to/shimo4228/3-the-llm-workflow-quadrant-is-missing-from-our-vocabulary-n18): the vocabulary diagnosis; the principled vs artificial redirect impossibility; moral crumple zone; the absent accountability subject

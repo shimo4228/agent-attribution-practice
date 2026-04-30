@@ -14,11 +14,14 @@ Each ADR records a structural judgment about how autonomous AI agents should be 
 | [0006](0006-causal-traceability.md) | Causal Traceability | accepted |
 | [0007](0007-scaffolding-visibility.md) | Scaffolding Visibility | accepted |
 | [0008](0008-one-agent-one-human.md) | One Agent, One Human (experimental) | experimental |
+| [0009](0009-triage-before-autonomy.md) | Triage Before Autonomy (experimental) | experimental |
 
 ADR-0001, 0002, and 0003 form a **prohibition-strength hierarchy**: absence (strongest) → scaffolding enforcement → untrusted boundary (probabilistic, weakest). Walk the hierarchy top-down when designing a prohibition.
+
+ADR-0009 sits *before* the other eight in the order of application: it triages whether the work is in the Autonomous Agentic Loop Quadrant (where all nine ADRs are load-bearing), the LLM Workflow Quadrant (where 0001–0007 apply), or out of scope (Script / Algorithmic Search Quadrants). See [`../quadrants/`](../quadrants/) for the navigator. Together, the nine ADRs and the four Business AI Quadrants form the repository's **two-axis structure**.
 
 ## Format
 
 Each ADR follows: Status / Date / Context / Decision / Alternatives Considered / Consequences. The intent is that the *decision* — what should be constrained, and who is responsible — persists across implementation changes.
 
-See [../thesis.md](../thesis.md) for the underlying thesis (*accountability distribution*, not capability distribution) and [../manifesto.md](../manifesto.md) for the open questions this work does not attempt to answer.
+See [../thesis.md](../thesis.md) for the underlying thesis (*accountability distribution*, not capability distribution), [../quadrants/](../quadrants/) for the adoption navigator, and [../manifesto.md](../manifesto.md) for the open questions this work does not attempt to answer.

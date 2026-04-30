@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
 type: software
-title: "Agent Attribution Practice: Architectural Decision Records on Accountability Distribution in Autonomous AI Agents"
+title: "Agent Attribution Practice: Nine Architectural Decision Records and Four Business AI Quadrants on Accountability Distribution in Autonomous AI Agents"
 version: 0.1.0
 date-released: 2026-04-19
 license: MIT
@@ -14,16 +14,24 @@ authors:
     orcid: "https://orcid.org/0009-0002-6168-4162"
     alias: shimo4228
 abstract: >-
-  Eight architectural decision records recording how attribution —
-  who authored the behavior, who bears its consequences, who can
-  reconstruct its cause — is distributed across an autonomous AI
-  agent system. Extracted from the contemplative-agent
-  implementation and the archived Agent Knowledge Cycle (AKC)
-  governance triplet, re-expressed in harness-neutral form.
-  ADR-0001 Security by Absence, ADR-0002 Deterministic Prohibition
-  at the Scaffolding Layer, and ADR-0003 Untrusted Content Boundary
-  form a prohibition-strength hierarchy. Includes thesis, manifesto,
-  glossary, lineage, a security-principles skill, and AI-facing
+  Nine architectural decision records (one experimental) and four
+  Business AI Quadrants recording how attribution — who authored
+  the behavior, who bears its consequences, who can reconstruct its
+  cause — is distributed across an autonomous AI agent system, and
+  how a piece of work is routed to the architectural regime where
+  that distribution operates. Extracted from the contemplative-agent
+  implementation, the archived Agent Knowledge Cycle (AKC)
+  governance triplet, and a five-essay narrative spine published in
+  April 2026; re-expressed in harness-neutral form. ADR-0001
+  Security by Absence, ADR-0002 Deterministic Prohibition at the
+  Scaffolding Layer, and ADR-0003 Untrusted Content Boundary form a
+  prohibition-strength hierarchy. ADR-0009 Triage Before Autonomy
+  pairs with the four Business AI Quadrants (Script, Algorithmic
+  Search, LLM Workflow, Autonomous Agentic Loop) as the diagnostic
+  frame for routing work to the architecture preserving accountability
+  distribution. Includes thesis, manifesto, glossary, lineage, a
+  security-principles skill, an adoption navigator (decision tree,
+  governance mapping, case studies, anti-patterns), and AI-facing
   reference files (llms.txt, llms-full.txt) per the Answer.AI
   standard.
 keywords:
@@ -36,6 +44,11 @@ keywords:
   - agent harness
   - scaffolding
   - deterministic enforcement
+  - LLM Workflow Quadrant
+  - Autonomous Agentic Loop Quadrant
+  - Business AI Quadrants
+  - attribution gap
+  - moral crumple zone
 references:
   - type: software
     title: "Agent Knowledge Cycle (AKC)"

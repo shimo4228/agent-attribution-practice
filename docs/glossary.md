@@ -137,6 +137,100 @@ Not a team, not a role, not a committee — a named individual. Rotation
 is compatible if the rotation is formal and each rotation slot has
 exactly one named person. See ADR-0008 (experimental).
 
+## Business AI Quadrants
+
+Two-axis decomposition of business AI work introduced in the
+2026-04-29 essay: deterministic vs semantic-judgment along one axis,
+and pre-defined-workflow vs exploratory along the other. Not agent
+categories — *problem-space* categories that determine which
+architecture preserves accountability distribution. The four
+quadrants form the diagnostic frame paired with the nine ADRs in
+this repository's two-axis structure. See [`../quadrants/`](../quadrants/).
+
+## Script Quadrant
+
+Deterministic × pre-defined. Implemented as scripts and pipelines
+without LLMs. Form filling, data normalization, lookup, validation.
+The nine ADRs are largely out of scope; classical software
+engineering accountability applies.
+
+## Algorithmic Search Quadrant
+
+Deterministic × exploratory. Implemented with classical search,
+dynamic programming, MCTS, reinforcement learning, integer
+programming, constraint solvers. Routing optimization, scheduling,
+combinatorial allocation. Out of scope for this repository's
+LLM-focused ADRs. Renamed in this repository from "Classical AI
+Quadrant" in the source 2026-04-29 essay; the modern term *AI* now
+subsumes LLM-based systems and produced retrieval ambiguity.
+
+## LLM Workflow Quadrant
+
+Semantic-judgment × pre-defined. The positive name introduced in the
+2026-04-29 essay for the design space the industry has been routing
+through autonomous loops by elimination. Implemented as deterministic
+control flow plus bounded LLM calls with named, documented roles and
+explicit input/output schemas (each LLM call's role is bounded by the
+surrounding workflow). Each call's contribution is post-hoc separable;
+redirect succeeds. The default for most current LLM applications.
+Continuous with the workflow patterns documented in Anthropic's
+"Building Effective Agents" (prompt chaining, routing, parallelization,
+orchestrator-workers, evaluator-optimizer) and OpenAI's "A Practical
+Guide to Building Agents."
+
+## Autonomous Agentic Loop Quadrant
+
+Semantic-judgment × exploratory. The architecture in which the LLM
+decides each next step at runtime — the "ReAct" pattern (Yao et al.
+2022) and its descendants (Deep Research, exploratory coding agents,
+open-ended browsing). Legitimately required only when the work itself
+demands open-ended exploration. Choosing this quadrant commits the
+deploying organization to a non-removable attribution gap; see
+ADR-0009. Renamed in this repository from "ReAct Quadrant" in the
+source essays; the harness-neutral form names the architectural
+property rather than a specific framework.
+
+## Attribution gap
+
+When an architecture blends multiple judgment elements at runtime
+(model output, tool selection, history reference, prompt context),
+the post-hoc separability of contributions is foreclosed. Failure
+modes cannot be redirected to the responsible party because no party
+owns a separable contribution. The gap is intrinsic to the
+Autonomous Agentic Loop Quadrant, not a maturity problem that better
+tooling will solve. See ADR-0009 and the 2026-04-30 essay.
+
+## Redirect (attribution context)
+
+The operator's act, after an incident, of routing responsibility to
+the appropriate party (model selection lead, routing-logic designer,
+upstream-data owner, etc.) rather than absorbing it. Distribution
+succeeds when redirect succeeds. Two redirect failure modes are
+distinguished:
+
+- **Artificial redirect impossibility** — LLM Workflow Quadrant work
+  routed through Autonomous Agentic Loop architecture; resolvable by
+  re-architecting.
+- **Principled redirect impossibility** — Autonomous Agentic Loop
+  Quadrant work, where blending forecloses redirect; not resolvable
+  architecturally. The gap-bearer commitment (ADR-0008 + ADR-0009)
+  is the deliberate fallback.
+
+From the 2026-04-30 essay.
+
+## Moral crumple zone
+
+Elish (2019). The structural pattern in which the responsibility of
+an autonomous system is pushed onto a human operator whose actual
+control over the system's runtime decisions is limited. The failure
+mode that emerges when an attribution gap meets a deployed system
+without a recognized gap-bearer; ADR-0009 is designed to prevent
+this configuration.
+
+> Elish, M. C. (2019). Moral Crumple Zones: Cautionary Tales in
+> Human-Robot Interaction. *Engaging Science, Technology, and
+> Society* 5: 40–60.
+
 ---
 
 ## Dissolution signature checklist (provisional)

@@ -1,0 +1,199 @@
+# Case Studies — Quadrant Routing in Practice
+
+> **Purpose.** Concrete examples of routing common business AI work
+> to a quadrant, with the architecture and applicable ADRs spelled
+> out. The cases below are *illustrative* — actual deployments will
+> require running [`decision-tree.md`](decision-tree.md) on the
+> specific work, not pattern-matching on the case name.
+>
+> **Currency.** Each case carries a publication date. The choices
+> reflect what is sensible given current LLM and tooling capability
+> as of that date. Re-evaluate when capabilities shift.
+
+## (LLM Workflow Quadrant) FAQ classification
+
+*Published 2026-04-30.*
+
+- **Work.** A user submits a question; the system classifies it into
+  one of N FAQ categories and returns the matching answer.
+- **Quadrant.** LLM Workflow Quadrant.
+  - Q1 (deterministic?) — No, semantic judgment required.
+  - Q3 (workflow definable?) — Yes; one classification call, one
+    lookup, one return.
+- **Architecture.** Single-purpose LLM function: `classify(question)
+  -> category` with a documented schema. Followed by a deterministic
+  lookup `category -> answer`. No autonomous loop.
+- **Applicable ADRs.** 0001, 0003, 0006, 0007 (full list in
+  [`governance-mapping.md`](governance-mapping.md)).
+- **Redirect path.** If the classification is wrong, the role owner
+  of `classify()` (model selection, prompt design) is the redirect
+  target.
+- **Anti-pattern.** Implementing as an autonomous agent that "decides
+  which FAQ to retrieve." See
+  [`anti-patterns.md#bounded-work-on-autonomous-loop`](anti-patterns.md#bounded-work-on-autonomous-loop).
+
+## (LLM Workflow Quadrant) Customer support specialist chat
+
+*Published 2026-04-30.*
+
+- **Work.** A multi-turn chat with a user, grounded in a product
+  knowledge base. Escalates to a human when the conversation reaches
+  a topic outside the scope.
+- **Quadrant.** LLM Workflow Quadrant (multi-turn but bounded — see
+  the boundary discussion below).
+  - Q1 (deterministic?) — No.
+  - Q3 (workflow definable?) — Yes: each turn is a bounded LLM call
+    (system prompt + retrieval + history) followed by an escalation
+    check.
+- **Architecture.** Specialist chat agent: a single LLM call per
+  turn with a fixed role (answer questions about product X using
+  retrieved context). The escalation check is itself a bounded
+  classification call.
+- **Applicable ADRs.** 0001, 0003 (RAG content is untrusted), 0006,
+  0007.
+- **Redirect path.** Wrong answer → role owner of the answer call
+  (RAG curator if the wrong document was retrieved; prompt designer
+  if the prompt encouraged the wrong synthesis).
+- **Boundary note.** Multi-turn chat agents sit on the boundary
+  between (3) and (4) — see ADR-0009 open question 1. The test:
+  does the role of each turn's LLM call stay bounded under unusual
+  user input, or does the agent start "deciding what to do next"
+  beyond answering questions about product X? If the role bound
+  holds, this is (3). If not, it has drifted into (4) and the
+  ADR-0009 triage applies.
+
+## (LLM Workflow Quadrant) Invoice matching
+
+*Published 2026-04-30. Source: 2026-04-29 essay.*
+
+- **Work.** Match incoming invoices against purchase orders;
+  approve, escalate, or reject.
+- **Quadrant.** LLM Workflow Quadrant.
+  - Q1 (deterministic?) — Mostly yes (PO existence, expiry,
+    duplicate, exact-match amount), but the line-item matching step
+    requires semantic judgment.
+  - Q3 (workflow definable?) — Yes; control flow is a deterministic
+    pipeline with one LLM call at the line-item-matching point.
+- **Architecture.** Deterministic pipeline (`process_invoice()` in
+  the source essay) with a single-purpose LLM function
+  `match_line_items(invoice_lines, po_lines) -> Verdict`.
+- **Applicable ADRs.** 0001, 0003, 0005 (changes to the matching
+  prompt/schema go through approval), 0006, 0007.
+- **Redirect path.** A wrong match isolates to either the LLM
+  function's role owner or the pipeline's logic owner. Both are
+  identifiable.
+
+## (Autonomous Agentic Loop Quadrant) Research assistant for open-ended literature exploration
+
+*Published 2026-04-30.*
+
+- **Work.** A user submits a research question whose answer requires
+  iteratively searching, reading, and synthesizing across a
+  knowledge corpus whose structure cannot be enumerated in advance.
+- **Quadrant.** Autonomous Agentic Loop Quadrant.
+  - Q1 (deterministic?) — No.
+  - Q3 (workflow definable?) — No; the next search depends on what
+    the previous search returned. Bounding the call's role would
+    prevent the work.
+- **Architecture.** ReAct-style autonomous loop (Thought → Action →
+  Observation), with a controlled tool set (search, retrieve, cite)
+  and an explicit termination criterion.
+- **Applicable ADRs.** All nine. ADRs 0005, 0006, 0008, 0009
+  load-bearing.
+- **Required commitments at deployment time.**
+  - **ADR-0009.** The triage decision is recorded; the work is
+    explicitly named as Autonomous Agentic Loop Quadrant work.
+  - **ADR-0008.** The accountable operator is named. *Alice is the
+    accountable operator for this research assistant deployment.*
+  - **Pre-named gap-bearer.** Same operator (or a higher-level role
+    if the work crosses individual authority).
+  - **ADR-0005.** Every external action (publishing the report,
+    sending email, posting to a channel) passes through Alice's
+    approval gate.
+- **Redirect path.** Component-level redirect is foreclosed. If the
+  report is wrong, Alice is the redirect target (per the gap-bearer
+  commitment). Post-incident options: retrain, re-architect (move
+  parts of the work to LLM Workflow Quadrant), retire.
+
+## (Algorithmic Search Quadrant) Resource scheduling
+
+*Published 2026-04-30.*
+
+- **Work.** Allocate a finite set of resources (rooms, machines,
+  staff) across a finite set of demands subject to constraints.
+- **Quadrant.** Algorithmic Search Quadrant.
+  - Q1 (deterministic?) — Yes; the constraints and objective are
+    fully specifiable.
+  - Q2 (search space static and finite?) — No; combinatorial
+    enumeration is required.
+- **Architecture.** Constraint solver, integer programming, or
+  metaheuristic search. No LLM in the loop.
+- **Out of scope for AAP.** Standard SE accountability applies; the
+  algorithm author and the constraint specification owner are the
+  redirect targets.
+- **Anti-pattern.** Implementing as an autonomous agent that "asks
+  an LLM to schedule." See
+  [`anti-patterns.md#or-problem-on-autonomous-loop`](anti-patterns.md#or-problem-on-autonomous-loop).
+
+## (Hybrid) Contract review
+
+*Published 2026-04-30.*
+
+- **Work.** Review a contract: extract clauses, check against a
+  policy library, flag novel-pattern clauses for human attention.
+- **Quadrant.** Hybrid.
+  - **Clause extraction** — LLM Workflow Quadrant. Each clause type
+    is a bounded call with a documented schema.
+  - **Policy comparison** — LLM Workflow Quadrant. Each policy
+    check is a bounded call.
+  - **Novel-clause analysis** — Autonomous Agentic Loop Quadrant
+    *only if* the analysis genuinely requires open-ended
+    exploration of legal precedent. In practice, this part is often
+    handed to a human rather than an autonomous loop, because the
+    cost of a hallucinated precedent citation is high.
+- **Architecture.** Pipeline of LLM Workflow Quadrant calls, with an
+  approval-gated escalation to either a human or (with ADR-0008/0009
+  satisfied) an Autonomous Agentic Loop for the novel-clause
+  portion.
+- **Applicable ADRs for the LLM Workflow portion.** 0001, 0003,
+  0005, 0006, 0007.
+- **Applicable ADRs for the Autonomous Agentic Loop portion (if
+  used).** All nine.
+- **Boundary discipline.** The handoff between the two portions is
+  itself a structural choice and is logged. The Autonomous Agentic
+  Loop portion has its own named gap-bearer, distinct from the
+  workflow operator if the role separation matters.
+
+## (Autonomous Agentic Loop Quadrant, with the operator-experience caveat) Knowledge-base copilot
+
+*Published 2026-04-30. Source: implementation experience cited in
+the 2026-04-29 essay.*
+
+- **Work.** A vast official documentation set; users ask questions
+  whose answers require traversing the knowledge graph in ways that
+  cannot be planned in advance.
+- **Quadrant.** Autonomous Agentic Loop Quadrant.
+  - Q3 (workflow definable?) — No. The next search depends on
+    observations. Bounding would prevent the work.
+- **Architecture.** ReAct-style loop with retrieval tools.
+- **Applicable ADRs.** All nine.
+- **Reported operator experience.** Strong results on the work
+  itself; reduced predictability under operation. The number of
+  iterations and the path the loop takes vary across runs. This is
+  the intrinsic property of the quadrant, not a tooling limitation.
+  Plan for it.
+- **Required commitments.** ADR-0008 named operator + ADR-0009 named
+  gap-bearer. ADR-0005 approval gate on any external publication of
+  the constructed answer (some deployments treat each answer as
+  itself an approval-gated artifact; others treat the deployment
+  envelope as approval-gated and let answers stream).
+
+## A note on what these cases are not
+
+The case studies above are *illustrative routings*, not endorsed
+reference architectures. The repository does not maintain a
+"reference architecture" file because reference architectures
+dissolve faster than the routing judgment behind them. Once the
+quadrant is identified, the architecture follows from the quadrant's
+properties (post-hoc separability, named gap-bearer commitment) and
+the applicable ADRs — not from a template.

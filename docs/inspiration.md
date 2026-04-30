@@ -1,9 +1,13 @@
 # Inspiration and Lineage
 
-## The three articles
+## The five articles
 
-The narrative spine of this repository is a trilogy of essays published
-in April 2026:
+The narrative spine of this repository is a five-essay sequence
+published in April 2026. The first three form the original trilogy
+(problem / application / obstacle); the next two are the
+architectural follow-up that introduced the four-quadrant
+decomposition and named the principled vs artificial redirect
+impossibility:
 
 1. **[A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails](https://dev.to/shimo4228/a-sign-on-a-climbable-wall-why-ai-agents-need-accountability-not-just-guardrails-17ak)** (2026-04-06)
    > *Problem statement.* Signs on climbable walls are meaningless.
@@ -29,11 +33,36 @@ in April 2026:
    > not "publish everything" or "hide everything," but defining the
    > minimum set that makes causal tracing possible.
 
-Together, these three form the argument: current AI governance is
+4. **[Where ReAct Agents Are Actually Needed in Business](https://dev.to/shimo4228/where-react-agents-are-actually-needed-in-business-33do)** (2026-04-29)
+   > *Architectural triage by quadrant.* Business AI sorts along two
+   > axes (deterministic vs semantic-judgment, pre-defined workflow vs
+   > exploratory) into four quadrants — Script, Algorithmic Search, LLM
+   > Workflow, and Autonomous Agentic Loop. Most current LLM applications
+   > belong to the LLM Workflow Quadrant, where deterministic control
+   > flow with bounded LLM calls suffices. Forcing those workloads into
+   > the Autonomous Agentic Loop Quadrant's architecture is a structural
+   > source of much of the accountability collapse the trilogy diagnosed.
+
+5. **[The LLM Workflow Quadrant Is Missing from Our Vocabulary](https://dev.to/shimo4228/3-the-llm-workflow-quadrant-is-missing-from-our-vocabulary-n18)** (2026-04-30)
+   > *The vocabulary diagnosis and the principled attribution gap.*
+   > The industry has no positive name for the LLM Workflow Quadrant,
+   > so non-deterministic work is routed through the Autonomous Agentic
+   > Loop by elimination. Even when the quadrant mismatch is corrected,
+   > a deeper layer remains: Autonomous Agentic Loop Quadrant work
+   > blends judgment elements at runtime, foreclosing post-hoc
+   > separability — Elish's *moral crumple zone* applied to autonomous
+   > agents. Distribution then bottoms out on a subject the legal
+   > system does not yet recognize.
+
+Together, these five form the argument: current AI governance is
 signpost-era; structural accountability is what works; the obstacles
-are internalization into weights and commercial opacity; the way
-forward is defining the minimum structural set that makes
-accountability chains possible.
+are internalization into weights and commercial opacity; *and* the
+architectural triage is itself prior to the accountability question
+— routing work to the wrong quadrant generates artificial
+accountability problems that are resolvable by re-architecting,
+while choosing the Autonomous Agentic Loop Quadrant commits the
+deploying organization to a principled attribution gap that cannot
+be resolved architecturally and requires a pre-named gap-bearer.
 
 ## Related repositories
 
@@ -55,6 +84,7 @@ details that were removed during extraction here:
 | ADR-0006 Causal Traceability | Implicit across the codebase; first named in the 2026-04-13 essay |
 | ADR-0007 Scaffolding Visibility | Implicit in the fully-materialized scaffolding design; first named in the 2026-04-14 essay |
 | ADR-0008 One Agent, One Human | First formalized in this repository (experimental) |
+| ADR-0009 Triage Before Autonomy | First formalized in this repository (experimental); essays 4 and 5 are its lineage |
 
 ### agent-knowledge-cycle (AKC)
 

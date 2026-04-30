@@ -24,8 +24,11 @@
 | ADR-0006 Causal Traceability | (暗黙、essay で言語化) |
 | ADR-0007 Scaffolding Visibility | (暗黙、essay で言語化) |
 | ADR-0008 One Agent, One Human | (新規、本 repo で初形式化、experimental) |
+| ADR-0009 Triage Before Autonomy | (新規、本 repo で初形式化、experimental — 5 部作 essay の 4-5 から派生) |
 
 ADR-0001 / 0002 / 0003 は「**禁止強度の階層**」を成す: absence > scaffolding enforcement > untrusted boundary。改訂時にこの順序関係を壊さない。
+
+ADR-0009 は ADR 群の **手前** に位置する triage で、Autonomous Agentic Loop Quadrant を選んだ場合のみ ADR 0001-0008 が full set として load-bearing になる。9 ADRs と 4 Business AI Quadrants は **二軸構造** を成す (judgments は問いへの応答、Quadrants は問いを切る軸)。`docs/quadrants/` 参照。
 
 本 repo で ADR を改訂する時は、必要に応じて contemplative-agent 側の対応 ADR も確認する。逆方向 (contemplative-agent の ADR 改訂時に本 repo を更新) も同様。
 
@@ -42,15 +45,17 @@ ADR-0001 / 0002 / 0003 は「**禁止強度の階層**」を成す: absence > sc
 - 四公理ルール、アダプタ、ベンチマーク
 - content 面で重複領域が生じたら、双方の positioning を確認 (四公理 values は rules 側、attribution practice は本 repo)
 
-## 3 記事の narrative spine
+## 5 記事の narrative spine
 
-この repo の argument は zenn 記事 3 部作として展開された。ADR 改訂・新規追加の際、この spine との整合を必ず確認する:
+この repo の argument は zenn 記事 5 部作として展開された。最初の 3 つが trilogy (問題提起 / 応用 / 障害分析)、後の 2 つが architectural follow-up (4 象限 triage と principled attribution gap)。ADR 改訂・新規追加の際、この spine との整合を必ず確認する:
 
-1. [登れる壁に看板を立てても意味がない](https://zenn.dev/shimo4228/articles/ai-agent-accountability-wall) (2026-04-06) — 問題提起
-2. [事故のあとで因果を辿れるか](https://zenn.dev/shimo4228/articles/agent-causal-traceability-org-adoption) (2026-04-13) — 応用
-3. [AIエージェントのブラックボックスは二層ある](https://zenn.dev/shimo4228/articles/agent-blackbox-capitalism-timescale) (2026-04-14) — 障害分析
+1. [登れる壁に看板を立てても意味がない](https://zenn.dev/shimo4228/articles/ai-agent-accountability-wall) (2026-04-06) — 問題提起 (signpost-era 診断)
+2. [事故のあとで因果を辿れるか](https://zenn.dev/shimo4228/articles/agent-causal-traceability-org-adoption) (2026-04-13) — 応用 (post-incident causal tracing → ADR 構造)
+3. [AIエージェントのブラックボックスは二層ある](https://zenn.dev/shimo4228/articles/agent-blackbox-capitalism-timescale) (2026-04-14) — 障害分析 (blackbox 二層: 技術 / 商業)
+4. [ReAct エージェントが本当に必要な業務はどれか](https://zenn.dev/shimo4228/articles/react-agent-business-quadrant) (2026-04-29) — architectural triage (業務 4 象限と autonomy 採用判断)
+5. [(3) LLM ワークフロー象限が語彙から脱落している](https://zenn.dev/shimo4228/articles/react-agent-business-quadrant-2) (2026-04-30) — vocabulary 診断 + principled attribution gap (autonomy 採用時の責任主体の不在)
 
-記事本文 `/Users/shimomoto_tatsuya/MyAI_Lab/zenn-content/articles/` にローカルコピーあり。
+記事本文 `/Users/shimomoto_tatsuya/MyAI_Lab/zenn-content/articles/` にローカルコピーあり。記事 4-5 が ADR-0009 と `docs/quadrants/` の navigator の lineage。
 
 ## Core thesis
 
@@ -100,13 +105,19 @@ ADR 本文が扱うのは *judgment* (persistent)。*implementation* (Hooks、CL
 ├── CLAUDE.md              # 本ファイル (Claude Code 用 context)
 ├── .notes/                # WIP (gitignored)
 ├── docs/
-│   ├── thesis.md          # accountability distribution thesis
+│   ├── thesis.md          # accountability distribution thesis (二軸構造の宣言を含む)
 │   ├── manifesto.md       # civilization-scale open questions (draft)
-│   ├── glossary.md        # key terms (dissolution 健全性 5 軸は provisional)
-│   ├── inspiration.md     # 3 記事 + moltbook + AKC 系譜
+│   ├── glossary.md        # key terms (4 quadrants + attribution mechanics を含む)
+│   ├── inspiration.md     # 5 記事 + moltbook + AKC 系譜
 │   ├── adr/
 │   │   ├── README.md
-│   │   └── 0001-0008.md   # 8 本の ADR (0001/0002/0003 は prohibition-strength hierarchy)
+│   │   └── 0001-0009.md   # 9 本の ADR (0001/0002/0003 は prohibition-strength hierarchy、0009 は triage)
+│   ├── quadrants/         # adoption navigator (Business AI Quadrants)
+│   │   ├── README.md
+│   │   ├── decision-tree.md
+│   │   ├── governance-mapping.md
+│   │   ├── case-studies.md
+│   │   └── anti-patterns.md
 │   └── skills/
 │       └── llm-agent-security-principles.md
 └── examples/
