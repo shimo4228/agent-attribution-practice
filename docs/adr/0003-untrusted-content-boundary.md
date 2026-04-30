@@ -1,3 +1,5 @@
+Language: English | [日本語](0003-untrusted-content-boundary.ja.md)
+
 # ADR-0003: Untrusted Content Boundary
 
 > **Summary.** All accumulated agent state — episode logs, knowledge store, distilled identity — is treated as untrusted content when read back into a prompt, including content the agent itself authored. Distillation output inherits the taint of its sources.

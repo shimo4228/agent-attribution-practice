@@ -1,3 +1,5 @@
+Language: English | [日本語](0002-deterministic-prohibition-at-scaffolding.ja.md)
+
 # ADR-0002: Deterministic Prohibition at the Scaffolding Layer
 
 > **Summary.** When a dangerous capability cannot be made absent (ADR-0001), the prohibition must still be enforced deterministically — at the scaffolding layer (hooks, quarantine, adapter gates) rather than at the model-weight layer (prompts, guidelines, constitutional clauses). Probabilistic constraint against irreversible action is decorative.

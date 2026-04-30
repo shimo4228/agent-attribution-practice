@@ -1,3 +1,5 @@
+Language: English | [日本語](0005-human-approval-gate.ja.md)
+
 # ADR-0005: Human Approval Gate for Behavior-Modifying Commands
 
 > **Summary.** Every command that modifies an agent's skills, rules, identity, or constitution must present its probabilistic output to a human and wait for explicit approval before writing. No `--auto` flag. Intermediate artifacts (append-only logs, read-only indexes) are exempt.

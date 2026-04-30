@@ -80,8 +80,9 @@ ADR-0009 / ADR-0010 は triage pair: 0009 は ADR 群の **手前** に位置す
 ### 英語 primary / 日本語 subordinate
 
 - README.md は英語正本、README.ja.md が日本語
-- ADR は英語のみ (contemplative-agent は ja 版もあるが、本 repo は簡素化)
-- manifesto / thesis は英語正本。日本語版は v0.2.0 以降の判断
+- ADR は英語正本 + 日本語 subordinate。各 ADR に `*.ja.md` ペアを併存させる (contemplative-agent と同じ方針、2026-05-01 から)
+- manifesto は英語正本。日本語版は v0.2.0 以降の判断
+- thesis / glossary / quadrants は英語正本 + 日本語 subordinate (`*.ja.md` ペア)
 
 ### ADR format
 
@@ -112,8 +113,8 @@ ADR 本文が扱うのは *judgment* (persistent)。*implementation* (Hooks、CL
 │   ├── glossary.md / glossary.ja.md      # key terms (4 quadrants + attribution mechanics を含む、ja 同期)
 │   ├── inspiration.md     # 6 記事 + moltbook + AKC 系譜
 │   ├── adr/
-│   │   ├── README.md
-│   │   └── 0001-0010.md   # 10 本の ADR (0001/0002/0003 は prohibition-strength hierarchy、0009/0010 は triage pair) — 英語のみ
+│   │   ├── README.md / README.ja.md
+│   │   └── 0001-0010.md / 0001-0010.ja.md   # 10 本の ADR (0001/0002/0003 は prohibition-strength hierarchy、0009/0010 は triage pair) — 英日ペア
 │   ├── quadrants/         # adoption navigator (Business AI Quadrants) — 各 file に ja.md ペア
 │   │   ├── README.md / README.ja.md
 │   │   ├── decision-tree.md / decision-tree.ja.md

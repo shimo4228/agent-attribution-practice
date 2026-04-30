@@ -1,3 +1,5 @@
+Language: English | [日本語](0008-one-agent-one-human.ja.md)
+
 # ADR-0008: One Agent, One Human (experimental)
 
 > **Summary.** An agent process is bound to exactly one identifiable human who is accountable for it. That human approves behavior-modifying changes (ADR-0005), owns incident response, and is the endpoint of the accountability chain. "The team" is not an agent's human; a specific named person per agent instance is.

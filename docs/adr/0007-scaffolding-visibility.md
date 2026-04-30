@@ -1,3 +1,5 @@
+Language: English | [日本語](0007-scaffolding-visibility.ja.md)
+
 # ADR-0007: Scaffolding Visibility
 
 > **Summary.** Every non-weights component of an agent — system prompts, personas, rules, identity, tool definitions, agent loop, harness logic — is **scaffolding**. Scaffolding must be materialized as files under version control, inspectable by the operator, and changeable only through the approval gate. Operator-level visibility is non-negotiable. External visibility is a separate question with its own tradeoffs.

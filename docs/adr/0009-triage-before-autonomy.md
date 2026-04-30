@@ -1,3 +1,5 @@
+Language: English | [日本語](0009-triage-before-autonomy.ja.md)
+
 # ADR-0009: Triage Before Autonomy (experimental)
 
 > **Summary.** Before adopting an autonomous-loop architecture (one in

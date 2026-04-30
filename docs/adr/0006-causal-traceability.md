@@ -1,3 +1,5 @@
+Language: English | [日本語](0006-causal-traceability.ja.md)
+
 # ADR-0006: Causal Traceability
 
 > **Summary.** After an incident, you must be able to reconstruct *which version of the agent did what, in response to what input, producing what output, approved by whom*. This is not achievable at runtime — it has to be designed into the artifact layer at build time. Append-only logs, versioned behavior-modifying artifacts, and the audit trail from the approval gate are the minimum substrate.

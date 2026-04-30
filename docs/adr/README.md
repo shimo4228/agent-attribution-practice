@@ -1,3 +1,5 @@
+Language: English | [日本語](README.ja.md)
+
 # Architecture Decision Records
 
 Each ADR records a structural judgment about how autonomous AI agents should be built and operated — discovered through implementation and operation of `contemplative-agent`, not prescribed top-down.

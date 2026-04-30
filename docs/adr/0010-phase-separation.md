@@ -1,3 +1,5 @@
+Language: English | [日本語](0010-phase-separation.ja.md)
+
 # ADR-0010: Phase Separation Between Design and Operation (experimental)
 
 > **Summary.** *Phase* (design vs operation) and *Quadrant*

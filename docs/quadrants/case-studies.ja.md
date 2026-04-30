@@ -103,12 +103,12 @@
 - **適用 ADR。** 0001, 0003 (RAG content は untrusted), 0006, 0007。
 - **Redirect 経路。** 誤った答え → answer 呼び出しの role owner
   (誤った doc が retrieve された場合は RAG curator; prompt が誤った
-  synthesis を encourage した場合は prompt designer)。
+  synthesis を促した場合は prompt designer)。
 - **境界注記。** Multi-turn chat agent は (3) と (4) の境界に座る —
   ADR-0009 の open question 1 参照。テスト: 不通常な user input 下で
   各 turn の LLM 呼び出し role が bounded のままか、それとも agent が
   「次に何をするか」を product X 質問の答えを越えて決め始めるか?
-  Role の bound が hold すれば (3)、hold しなければ (4) に drift して
+  Role の bound が hold すれば (3)、hold しなければ (4) に流れて
   いて ADR-0009 triage が要る。
 
 ## (LLM Workflow Quadrant、*Typical placement: Operation phase*) 請求書マッチング
@@ -129,7 +129,7 @@
 - **適用 ADR。** 0001, 0003, 0005 (matching prompt/schema 変更は
   approval を通る), 0006, 0007。
 - **Redirect 経路。** 誤った match は LLM 関数の role owner か
-  pipeline logic owner のどちらかに isolate される。両方とも
+  pipeline logic owner のどちらかに切り分けられる。両方とも
   identifiable。
 
 ## (Autonomous Agentic Loop Quadrant、*Typical placement: Design phase*) Open-ended 文献探索のリサーチアシスタント
@@ -154,11 +154,11 @@
     Loop Quadrant 業務として明示。
   - **ADR-0008.** Accountable operator を指名。*Alice がこのリサーチ
     アシスタント deployment の accountable operator*。
-  - **Pre-named gap-bearer.** 同じ operator (個人権限を超える業務なら
+  - **Pre-named gap-bearer。** 同じ operator (個人権限を超える業務なら
     上位の role)。
   - **ADR-0005.** あらゆる external action (report 公開、email 送信、
     channel 投稿) が Alice の approval gate を通る。
-- **Redirect 経路。** 部品レベル redirect は foreclose。Report が
+- **Redirect 経路。** 部品レベル redirect は閉ざされる。Report が
   誤っていたら Alice が redirect 先 (gap-bearer commitment 通り)。
   Post-incident options: 再訓練、re-architect (一部業務を LLM
   Workflow Quadrant に移す)、retire。
@@ -202,9 +202,9 @@
   を満たした Autonomous Agentic Loop)。
 - **LLM Workflow 部分の適用 ADR。** 0001, 0003, 0005, 0006, 0007。
 - **Autonomous Agentic Loop 部分の適用 ADR (使う場合)。** 全 10 本。
-- **境界の規律。** 両部分間の handoff は structural choice として
-  log。Autonomous Agentic Loop 部分は workflow operator とは別の
-  named gap-bearer を持つ (役割分離が重要なら)。
+- **境界の規律。** 両部分間の handoff は構造的選択として log。
+  Autonomous Agentic Loop 部分は workflow operator とは別の named
+  gap-bearer を持つ (役割分離が重要なら)。
 
 ## (Autonomous Agentic Loop Quadrant、operator 経験留保付き) ナレッジベース copilot
 
@@ -221,8 +221,8 @@
 - **適用 ADR。** 全 10 本。
 - **報告された operator 経験。** 業務自体には強力な結果; 運用での
   予測可能性は低下。Iteration 数や loop の経路は run 間でばらつく。
-  これはこの象限の intrinsic property で、tooling 限界ではない。
-  計画に織り込む。
+  これはこの象限の本質的な性質で、tooling 限界ではない。計画に織り
+  込む。
 - **Required commitments。** ADR-0008 named operator + ADR-0009 named
   gap-bearer。構築された答えの external publication にあたっては
   ADR-0005 approval gate (deployment ごとに、各答えを approval-gated
@@ -234,6 +234,6 @@
 上記の case は *illustrative routing* であり、推奨 reference
 architecture ではない。本 repository は「reference architecture」
 ファイルを維持しない — reference architecture は背景の routing
-judgment より早く dissolve するから。象限が identify されたら、
-アーキテクチャは template ではなく象限 property (post-hoc separability、
+judgment より早く溶けて消えるから。象限が identify されたら、
+アーキテクチャは template ではなく象限の性質 (post-hoc separability、
 named gap-bearer commitment) と適用 ADR から導かれる。
