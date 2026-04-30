@@ -155,4 +155,9 @@ accountability chain at all.
 
 ---
 
-**Lineage.** The analysis was developed in [AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-blackbox-capitalism-timescale-en.md) (2026-04-14), the third of the trilogy articles in the six-essay narrative spine of this repository (extended by the 2026-04-29 / 04-30 architectural follow-ups). Earlier articulations of the scaffolding/weights distinction and operator-side file-materialization appeared in contemplative-agent's design evolution (see the series entries in [`../inspiration.md`](../inspiration.md)).
+**Lineage.** The analysis was developed in
+[AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-blackbox-capitalism-timescale-en.md)
+(2026-04-14, Article 3 of the trilogy). Earlier articulations of the
+scaffolding/weights distinction and operator-side file-materialization
+appeared in contemplative-agent's design evolution. See
+[`../inspiration.md`](../inspiration.md) for the spine context.

@@ -43,6 +43,13 @@ team.
 
 ### Phase and Quadrant are independent
 
+The Phase / Quadrant landscape is two-dimensional — every Quadrant
+appears in both phases of real systems. See
+[`quadrants/README.md` — Phase is a third dimension](../quadrants/README.md#phase-is-a-third-dimension-not-a-partition)
+for the framing and orthogonality argument.
+
+The 4×2 cross-product names typical placements:
+
 | | Design phase | Operation phase |
 |---|---|---|
 | Script Quadrant | prototype scripts | production pipelines |
@@ -50,18 +57,11 @@ team.
 | LLM Workflow Quadrant | prototype workflows in design reviews | production-default LLM workflows |
 | Autonomous Agentic Loop Quadrant | coding agents, Deep Research, exploratory R&D | continuously-evolving research operations, exploratory analytics |
 
-Every cell exists in real systems. A team building a customer-support
-chat workflow uses the LLM Workflow Quadrant in *design phase*
-(prototyping the routing prompt) before promoting it into the
-*operation phase*. A research operation continuously surfacing new
-investigation paths legitimately runs an Autonomous Agentic Loop in
-*operation phase*. The 4×2 matrix is not a 1-to-1 mapping; it is a
-landscape.
-
-The narrow judgment AAP records is not "Quadrant N is the X-phase
-tool." It is: *the operation-phase placement of the Autonomous
-Agentic Loop Quadrant has a structural cost ADR-0009's design-time
-commitment alone does not cover.*
+The 4×2 matrix is a landscape, not a 1-to-1 mapping. The narrow
+judgment AAP records is not "Quadrant N is the X-phase tool." It
+is: *the operation-phase placement of the Autonomous Agentic Loop
+Quadrant has a structural cost ADR-0009's design-time commitment
+alone does not cover.*
 
 ### Why operation-phase autonomous loops are the load-bearing case
 
@@ -273,21 +273,16 @@ operation distinction turns out not to be the right cut.
 
 ---
 
-**Lineage.** The 2026-05-01 essay
-([Is ReAct Needed in Production? — Separating Design and Operation
-Phases](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-3.md))
+**Lineage.** Article 6 of the
+[six-essay narrative spine](../inspiration.md) (2026-05-01)
 articulated the design / operation distinction and the three-layer
 diagnosis (misapplication → vocabulary gap → phase conflation). The
-Japanese original is at
-[`articles/react-agent-business-quadrant-3.md`](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-3.md).
-The argument is offered as observation and proposal, not as a
-categorical phase-to-quadrant mapping; ADR-0010 preserves that
-posture. ADR-0010 sits parallel to
-[ADR-0009](0009-triage-before-autonomy.md): 0009 triages whether the
-work adopts the autonomous loop; 0010 surfaces the Phase-crossing
+argument is offered as observation and proposal, not as a categorical
+phase-to-quadrant mapping; ADR-0010 preserves that posture. Parallel
+to [ADR-0009](0009-triage-before-autonomy.md): 0009 triages whether
+the work adopts the autonomous loop; 0010 surfaces the Phase-crossing
 decision when 0009's answer is yes and the placement is
-operation-phase. The earlier observation that the design / operation
-distinction exists outside the agent context (development vs
-production, as-is vs operation, design-time vs runtime) is what
-gives the cut its structural weight; the agent context did not
-invent the cut, it imported it.
+operation-phase. The design / operation distinction exists outside
+the agent context (development vs production, as-is vs operation,
+design-time vs runtime); the agent context imported the cut rather
+than inventing it.

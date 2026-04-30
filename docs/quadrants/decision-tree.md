@@ -19,10 +19,10 @@ ADR-0009](../adr/0009-triage-before-autonomy.md). Q0 surfaces the
 operation-phase and the result of Q1–Q4 is the Autonomous Agentic
 Loop Quadrant.
 
-Phase and Quadrant are **independent dimensions** — every Quadrant
-can appear in either phase. Q0 is not a Quadrant filter; it is a
-prompt to surface the Phase-crossing decision when it is
-load-bearing.
+Phase and Quadrant are independent dimensions (see
+[README — Phase is a third dimension](README.md#phase-is-a-third-dimension-not-a-partition)).
+Q0 is not a Quadrant filter; it is a prompt to surface the
+Phase-crossing decision when it is load-bearing.
 
 ### Q0. Is this work in the design phase or the operation phase?
 
@@ -110,14 +110,11 @@ and the same specification? If yes, no semantic judgment is required.
 For deterministic work, distinguish *enumerable* tasks from
 *exploratory* tasks.
 
-- **Yes →** [`Script Quadrant`](README.md#1-script-quadrant). Use
-  scripts, pipelines, workflow engines. The ten ADRs are largely out
-  of scope for this work.
+- **Yes →** [`Script Quadrant`](README.md#1-script-quadrant). The
+  ten ADRs are largely out of scope.
 - **No →** [`Algorithmic Search Quadrant`](README.md#2-algorithmic-search-quadrant).
-  Use classical search algorithms — A*, dynamic programming, MCTS,
-  reinforcement learning, integer programming, constraint solvers.
-  Out of scope for this repository's LLM-focused ADRs; standard SE
-  accountability applies.
+  Out of scope for AAP's LLM-focused ADRs; standard SE accountability
+  applies.
 
 ### Q3. Can the workflow be defined in advance?
 
@@ -126,21 +123,10 @@ For LLM-involved work, this is the central triage question. The
 calls are made, and the data flow between them.*
 
 - **Yes →** [`LLM Workflow Quadrant`](README.md#3-llm-workflow-quadrant).
-  Use deterministic control flow plus bounded LLM calls with
-  named, documented roles and explicit input/output schemas. This is
-  the default for most current LLM applications. **Apply ADRs:**
-  - [ADR-0001](../adr/0001-security-by-absence.md) — capabilities not
-    in the codebase cannot be invoked
-  - [ADR-0003](../adr/0003-untrusted-content-boundary.md) —
-    accumulated state cannot grant authority
-  - [ADR-0004](../adr/0004-single-external-adapter.md) — blast
-    radius bounded by design
-  - [ADR-0005](../adr/0005-human-approval-gate.md) — behavior
-    changes need human sign-off
-  - [ADR-0006](../adr/0006-causal-traceability.md) — every event
-    reconstructible
-  - [ADR-0007](../adr/0007-scaffolding-visibility.md) — behavior
-    lives in files
+  The default for most current LLM applications. Apply ADRs 0001,
+  0003, 0004, 0005, 0006, 0007. See
+  [`governance-mapping.md`](governance-mapping.md#3-llm-workflow-quadrant--medium-governance)
+  for what each ADR requires for this quadrant.
 - **No →** continue to Q4.
 
 The test for "workflow definable in advance": can you draw the
@@ -152,12 +138,9 @@ call's output happened to be, the workflow is exploratory.
 ### Q4. Can a pre-named gap-bearer be identified, and (if Q0=operation) is the Phase-crossing decision recorded?
 
 Reaching this question means the work genuinely requires the
-**Autonomous Agentic Loop Quadrant** — the path is not predictable in
-advance, and bounding the LLM call's role would prevent the work from
-being done. The architecture will blend judgment elements at runtime;
-post-hoc separability is foreclosed; redirect cannot succeed at the
-level of separable contributions. The
-[`attribution gap`](../glossary.md#attribution-gap) is intrinsic.
+[**Autonomous Agentic Loop Quadrant**](README.md#4-autonomous-agentic-loop-quadrant).
+The [`attribution gap`](../glossary.md#attribution-gap) is intrinsic;
+redirect cannot succeed at the level of separable contributions.
 
 The question has two parts; both must be answered yes for deployment.
 
@@ -174,11 +157,12 @@ For design phase placements, this part is automatically satisfied
 (the design phase *is* where Phase-crossing happens).
 
 - **Yes (both parts) →** [`Autonomous Agentic Loop Quadrant`](README.md#4-autonomous-agentic-loop-quadrant).
-  Apply **all ten ADRs**; ADRs 0005, 0006, 0008, 0009, 0010 carry
-  the most weight because they are what makes the named gap-bearer's
-  commitment operational and the lifecycle placement explicit. The
-  gap-bearer (and Phase-crossing decision, when applicable) are
-  recorded alongside the architectural choice at deployment time.
+  Apply **all ten ADRs** (see
+  [`governance-mapping.md`](governance-mapping.md#4-autonomous-agentic-loop-quadrant--high-governance)
+  for the per-ADR breakdown; ADRs 0005, 0006, 0008, 0009, 0010 carry
+  the most weight). The gap-bearer (and Phase-crossing decision,
+  when applicable) are recorded alongside the architectural choice
+  at deployment time.
 - **No →** **Decision: do not deploy.** The configuration the ADR
   set is designed to prevent — Autonomous Agentic Loop Quadrant
   work running either without a gap-bearer (Part A failure) or

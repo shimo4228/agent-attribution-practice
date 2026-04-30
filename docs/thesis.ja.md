@@ -70,11 +70,12 @@ ADR 群は保つ側の dissolution を述べる。
 | 0009 Triage Before Autonomy *(experimental)* | Autonomous-loop アーキテクチャの採用は除去できない attribution gap（寄与の事後分離不能ギャップ）を引き受ける commitment になる | Triage decision と named gap-bearer（事前命名された責任引受者）が deployment 時に記録される |
 | 0010 Phase Separation *(experimental)* | Autonomous Agentic Loop Quadrant の operation phase 配置は ADR-0009 の design-time commitment 単独でカバーできない cost を持つ | Phase-crossing decision（フェーズ越境判定）が deployment 時に明示記録される |
 
-ADRs 0001, 0002, 0003 が **prohibition-strength hierarchy（禁止強度の
-階層）** を成す: absence > scaffolding enforcement > untrusted boundary。
-Prohibition がある層で抱えきれなければ次の層に降りる。公開されている
-AI safety 研究の多くは最弱層 (probabilistic な text 制約) に住んでおり、
-より強い層が存在し利用可能であることを認識していない。
+ADRs 0001, 0002, 0003 が
+[**prohibition-strength hierarchy（禁止強度の階層）**](glossary.ja.md#prohibition-strength-hierarchy禁止強度の階層)
+を成す: absence > scaffolding enforcement > untrusted boundary。
+公開されている AI safety 研究の多くは最弱層 (probabilistic な text
+制約) に住んでおり、より強い層が存在し利用可能であることを認識して
+いない。
 
 Distribution は redirect される subject を要求する。アーキテクチャが
 runtime で判断をブレンドする形を選ぶと — **Autonomous Agentic Loop

@@ -31,7 +31,8 @@ Language: English | [日本語](anti-patterns.ja.md)
   configuration was chosen. Post-incident review finds an
   autonomous loop running operation-phase work with the gap-bearer
   named (per ADR-0009) but no Phase-crossing decision recorded —
-  the failure mode the *moral crumple zone* literature describes.
+  the [*moral crumple zone*](../glossary.md#moral-crumple-zone)
+  failure mode.
 - **Recovery.** Run Q0 + Q4 of the
   [`decision tree`](decision-tree.md) explicitly. If the work
   genuinely needs Quadrant 4 in operation, record the
@@ -144,11 +145,11 @@ Language: English | [日本語](anti-patterns.ja.md)
   configuration rather than as a structural commitment. "We'll
   figure out responsibility post-incident" is the implicit (and
   forbidden) plan.
-- **What breaks.** The *moral crumple zone* failure mode (Elish
-  2019). When something goes wrong, responsibility lands on whoever
-  is operationally proximate — typically the operator with the
-  least actual control over the loop's runtime decisions — rather
-  than on a party who committed to bear the gap.
+- **What breaks.** The [*moral crumple zone*](../glossary.md#moral-crumple-zone)
+  failure mode (Elish 2019): responsibility lands on whoever is
+  operationally proximate — typically the operator with the least
+  actual control over the loop's runtime decisions — rather than on
+  a party who committed to bear the gap.
 - **Recovery.** Run Q4 explicitly. Either name an
   organizationally identifiable gap-bearer (per ADR-0008 +
   ADR-0009), or *do not deploy*. If the work genuinely requires the

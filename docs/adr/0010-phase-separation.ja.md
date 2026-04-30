@@ -41,6 +41,13 @@ Essay の argument は categorical な mapping ではなく観察と提案とし
 
 ### Phase and Quadrant are independent（Phase と Quadrant は独立）
 
+Phase / Quadrant landscape は二次元 — 各 Quadrant は実 system では
+両 phase に出現する。Framing と orthogonality 議論は
+[`quadrants/README.ja.md` — Phase は第 3 の dimension](../quadrants/README.ja.md#phase-は第-3-の-dimension-partition-ではない)
+を参照。
+
+4×2 cross-product は典型的な配置を named する:
+
 | | Design phase | Operation phase |
 |---|---|---|
 | Script Quadrant | prototype スクリプト | production pipeline |
@@ -48,17 +55,11 @@ Essay の argument は categorical な mapping ではなく観察と提案とし
 | LLM Workflow Quadrant | design review での prototype workflow | production-default の LLM workflow |
 | Autonomous Agentic Loop Quadrant | コーディングエージェント、Deep Research、探索的 R&D | 連続的に進化する research operation、探索的 analytics |
 
-各セルは実 system に存在する。カスタマーサポート chat workflow を
-build する team は LLM Workflow Quadrant を *design phase* で使い
-(routing prompt を prototype)、それから *operation phase* に promote
-する。新しい調査経路を連続的に表に出す research operation は、正当に
-Autonomous Agentic Loop を *operation phase* で動かす。4×2 matrix は
-1-to-1 の mapping ではない; landscape である。
-
-AAP が記録する narrow な判断は「Quadrant N は X-phase の道具」では
-ない。それは: *Autonomous Agentic Loop Quadrant の operation-phase
-配置は、ADR-0009 の design-time commitment 単独ではカバーできない
-構造的 cost を持つ*。
+4×2 matrix は landscape であって 1-to-1 mapping ではない。AAP が記録
+する narrow な判断は「Quadrant N は X-phase の道具」ではない。それは:
+*Autonomous Agentic Loop Quadrant の operation-phase 配置は、
+ADR-0009 の design-time commitment 単独ではカバーできない構造的 cost
+を持つ*。
 
 ### Why operation-phase autonomous loops are the load-bearing case（なぜ operation-phase autonomous loop が load-bearing case か）
 
@@ -249,18 +250,15 @@ superseded に動く。
 
 ---
 
-**Lineage。** 2026-05-01 essay
-([Is ReAct Needed in Production? — Separating Design and Operation
-Phases](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-3.md))
+**Lineage。**
+[6 部作 narrative spine](../inspiration.md) の記事 6 (2026-05-01)
 が design / operation 区別と 3 層診断 (誤適用 → 語彙 gap → phase
-混同) を articulate した。日本語原稿は
-[`articles/react-agent-business-quadrant-3.md`](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-3.md)
-にある。Argument は categorical な phase-to-quadrant mapping としてで
-なく、観察と提案として提示されている; ADR-0010 はその姿勢を保つ。
-ADR-0010 は [ADR-0009](0009-triage-before-autonomy.ja.md) と parallel:
-0009 は業務が autonomous loop を採用するかを triage し、0010 は
-0009 の答えが yes で placement が operation-phase の時に Phase-crossing
-decision を表に出す。Design / operation 区別が agent context の外に
-存在する (development vs production、as-is vs operation、design-time
-vs runtime) という先行観察が、この cut に構造的 weight を与える;
-agent context は cut を発明したのではなく、import した。
+混同) を articulate した。Argument は categorical な phase-to-quadrant
+mapping としてではなく、観察と提案として提示されている; ADR-0010 は
+その姿勢を保つ。ADR-0010 は
+[ADR-0009](0009-triage-before-autonomy.ja.md) と parallel: 0009 は
+業務が autonomous loop を採用するかを triage し、0010 は 0009 の答え
+が yes で placement が operation-phase の時に Phase-crossing decision
+を表に出す。Design / operation 区別は agent context の外に存在する
+(development vs production、as-is vs operation、design-time vs
+runtime); agent context は cut を発明したのではなく、import した。

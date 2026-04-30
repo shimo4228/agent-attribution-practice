@@ -48,16 +48,14 @@ ADR-0009 / ADR-0010 は triage pair: 0009 は ADR 群の **手前** に位置す
 
 ## 6 記事の narrative spine
 
-この repo の argument は zenn 記事 6 部作として展開された。最初の 3 つが trilogy (問題提起 / 応用 / 障害分析)、後の 3 つが architectural follow-up (4 象限 triage、principled attribution gap、設計 / 運用 phase の区別)。ADR 改訂・新規追加の際、この spine との整合を必ず確認する:
+この repo の argument は zenn 記事 6 部作として展開された。最初の 3 つが trilogy (問題提起 / 応用 / 障害分析)、後の 3 つが architectural follow-up (4 象限 triage、principled attribution gap、設計 / 運用 phase の区別)。ADR 改訂・新規追加の際、この spine との整合を必ず確認する。
 
-1. [登れる壁に看板を立てても意味がない](https://github.com/shimo4228/zenn-content/blob/main/articles/ai-agent-accountability-wall.md) (2026-04-06) — 問題提起 (signpost-era 診断)
-2. [事故のあとで因果を辿れるか](https://github.com/shimo4228/zenn-content/blob/main/articles/agent-causal-traceability-org-adoption.md) (2026-04-13) — 応用 (post-incident causal tracing → ADR 構造)
-3. [AIエージェントのブラックボックスは二層ある](https://github.com/shimo4228/zenn-content/blob/main/articles/agent-blackbox-capitalism-timescale.md) (2026-04-14) — 障害分析 (blackbox 二層: 技術 / 商業)
-4. [ReAct エージェントが本当に必要な業務はどれか](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant.md) (2026-04-29) — architectural triage (業務 4 象限と autonomy 採用判断)
-5. [(3) LLM ワークフロー象限が語彙から脱落している](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-2.md) (2026-04-30) — vocabulary 診断 + principled attribution gap (autonomy 採用時の責任主体の不在)
-6. [本番運用に ReAct は必要か — 設計フェーズと運用フェーズを分ける](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-3.md) (2026-05-01) — temporal axis (設計 / 運用 phase の区別、3 層構造の整理)
+ADR との lineage 対応:
+- 記事 1-3 (trilogy, 2026-04-06 / 04-13 / 04-14) → ADRs 0001-0008 の問題意識・正当化の背景
+- 記事 4-5 (2026-04-29 / 04-30) → ADR-0009 と `docs/quadrants/` navigator の lineage
+- 記事 6 (2026-05-01) → ADR-0010 の lineage
 
-記事本文 `/Users/shimomoto_tatsuya/MyAI_Lab/zenn-content/articles/` にローカルコピーあり。記事 4-5 が ADR-0009 と `docs/quadrants/` の navigator の lineage、記事 6 が ADR-0010 の lineage。
+各記事の URL・タイトル・1 文サマリは [`docs/inspiration.md`](docs/inspiration.md) を正本として参照。記事本文ローカルコピーは `/Users/shimomoto_tatsuya/MyAI_Lab/zenn-content/articles/`。
 
 ## Core thesis
 

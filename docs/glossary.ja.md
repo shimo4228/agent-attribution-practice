@@ -202,7 +202,7 @@ operator (ADR-0008 の named individual) と一致することもあれば、
 事前定義可能な workflow vs 探索的 軸。Agent のカテゴリではない —
 *問題空間* のカテゴリで、accountability distribution を保つ
 アーキテクチャを決定する。10 本の ADR と pair にして本 repository の
-二軸構造の診断フレームを成す。[`../quadrants/`](../quadrants/) 参照。
+二軸構造の診断フレームを成す。[`quadrants/`](quadrants/) 参照。
 
 ## Script Quadrant（スクリプト象限）
 

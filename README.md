@@ -86,51 +86,15 @@ phase-to-quadrant mapping.
 
 ## The narrative (essays)
 
-The argument behind the ADRs was developed across the following essays:
+The argument behind the ADRs was developed across a six-essay
+sequence published in April–May 2026. The first three form the
+original trilogy (problem statement → post-incident causal tracing →
+two-layer blackbox analysis); the next three are the architectural
+follow-up (four-quadrant triage → vocabulary diagnosis with the
+principled attribution gap → design / operation phase distinction).
 
-1. **[A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails](https://github.com/shimo4228/zenn-content/blob/main/articles-en/ai-agent-accountability-wall-en.md)** (2026-04-06)
-   *The problem.* Signs on climbable walls fail. The civilizational
-   pattern is accountability architecture, not rule-by-prompt.
-
-2. **[Can You Trace the Cause After an Incident?](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-causal-traceability-org-adoption-en.md)** (2026-04-13)
-   *The application.* Post-incident causal tracing requires build-time
-   structure. Structures that emerge converge with centuries of
-   organizational practice.
-
-3. **[AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-blackbox-capitalism-timescale-en.md)** (2026-04-14)
-   *The obstacles.* Weights internalization (technical) and commercial
-   secrecy (business) both block transparency. The resolution is a
-   minimum visibility set, not all-or-nothing.
-
-4. **[Where ReAct Agents Are Actually Needed in Business](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant.md)** (2026-04-29)
-   *The architectural follow-up.* Business AI sorted into four quadrants
-   reveals that ReAct agents are legitimately needed only in (4) exploratory
-   tasks. The current ecosystem's category error of forcing (4) architecture
-   onto (3) workflows is at the root of the accountability picture's collapse.
-
-5. **[The LLM Workflow Quadrant Is Missing from Our Vocabulary](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-2.md)** (2026-04-30)
-   *The vocabulary diagnosis and the missing accountability subject.*
-   The industry has no positive name for the LLM Workflow Quadrant, so
-   non-deterministic work gets routed through a ReAct loop by elimination.
-   Discussion concentrates on this artificial redirect impossibility,
-   while the principled attribution gap intrinsic to ReAct (runtime blend
-   dissolves the post-hoc separability of contributions) and the absent
-   accountability subject — autonomy demands responsibility but agents
-   are not currently legal subjects who can bear it — stay in the shadows.
-
-6. **[Is ReAct Needed in Production? — Separating Design and Operation Phases](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-3.md)** (2026-05-01)
-   *The temporal axis.* Business work splits into a design phase and an
-   operation phase. Design demands flexibility, operation demands
-   predictability — their optimization axes are inverted. ReAct belongs
-   to the design phase. The category error of routing (3) work to (4)
-   architecture, diagnosed in the previous two essays, descends one
-   layer: it is rooted in the conflation of these two phases. ReAct's
-   legitimate domain narrows to design-phase exploratory tasks
-   (coding, Deep Research, unknown-environment exploration); production
-   systems run on (1) Script + (3) LLM Workflow combinations once design
-   is complete.
-
-See [`docs/inspiration.md`](docs/inspiration.md) for the full lineage.
+See [`docs/inspiration.md`](docs/inspiration.md) for the full lineage
+with per-essay summaries and URLs.
 
 ## Relationship to other projects
 

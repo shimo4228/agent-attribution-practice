@@ -156,4 +156,9 @@ accountability chain がそもそも存在しない。
 
 ---
 
-**Lineage。** 分析は [AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-blackbox-capitalism-timescale-en.md) (2026-04-14) で展開された。本 repository の 6 部作 narrative spine の trilogy articles のうち 3 本目 (2026-04-29 / 04-30 の architectural follow-up で延長された)。Scaffolding/weights 区別と operator 側 file 実体化の早期言語化は contemplative-agent の design evolution に登場した ([`../inspiration.md`](../inspiration.md) のシリーズ entries 参照)。
+**Lineage。** 分析は
+[AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-blackbox-capitalism-timescale-en.md)
+(2026-04-14、trilogy の 3 本目) で展開された。Scaffolding/weights
+区別と operator 側 file 実体化の早期言語化は contemplative-agent の
+design evolution に登場した。Spine の context は
+[`../inspiration.md`](../inspiration.md) を参照。

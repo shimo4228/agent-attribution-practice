@@ -17,38 +17,33 @@
 
 ### Phase 注記 (Quadrant とは独立)
 
-Phase (design / operation) は Quadrant と独立。各 Quadrant は両 phase
-に出現しうる。上記の governance level は phase に関係なく適用されるが、
-1 つの phase 固有の追加: **Quadrant 4 を operation phase に置くと
-ADR-0010 が呼び出される**。Operation 配置は admissible だが、Quadrant 4
-の controls に Phase-crossing decision (deployment 時に記録) が加わる。
-Design phase の Quadrant 4 配置 (コーディングエージェント、Deep
-Research) は自動的に満たす — design phase が Phase-crossing が起きる
-場所そのもの。
+Phase (design / operation) は Quadrant と独立 — framing は
+[README — Phase は第 3 の dimension (partition ではない)](README.ja.md#phase-は第-3-の-dimension-partition-ではない)
+参照。Governance 固有の帰結: **Quadrant 4 を operation phase に置くと
+ADR-0010 が呼び出される**。Quadrant 4 の controls に Phase-crossing
+decision (deployment 時に記録) が加わる。Design phase の Quadrant 4
+配置は自動的に満たす。
 
 Operation phase workflow の経験的 default は Quadrant 1 + 3 (+ 該当時
-2)。これは default であって rule ではない; deviation は
-[`decision tree`](decision-tree.ja.md) Q0 + Q4 path で表に出る。
+2)。Deviation は [`decision tree`](decision-tree.ja.md) Q0 + Q4 path
+で表に出る。
 
 ## 象限ごとの詳細
 
 ### (1) Script Quadrant — 射程外
 
-LLM 関連 ADR は適用されない。古典的なソフトウェア工学のアカウンタビリティ
-を使う: code review、unit test、integration test、deploy 時の audit。
-失敗分析は通常の SE channel を通じて code author か pipeline owner に
-ルーティングされる。
+LLM 関連 ADR は適用されない。失敗分析は通常の SE channel を通じて
+code author か pipeline owner にルーティングされる。
 
 ### (2) Algorithmic Search Quadrant — 射程外
 
-本 repository の LLM 中心 ADR の射程外。関心事はアルゴリズム正当性、
-探索空間カバレッジ、制約仕様。失敗は algorithm author か上流仕様
-owner に行く。
+本 repository の LLM 中心 ADR の射程外。失敗は algorithm author か
+上流仕様 owner に行く。
 
 ### (3) LLM Workflow Quadrant — Medium governance
 
-6 本の ADR が適用される。各 LLM 呼び出しが documented role と schema
-を持ち、失敗が単一の呼び出しに切り分けられる。
+[README — LLM Workflow Quadrant](README.ja.md#3-llm-workflow-quadrant)
+参照 (operational signal)。6 本の ADR が適用される:
 
 | ADR | この象限で要求すること |
 |---|---|
@@ -85,7 +80,9 @@ Workflow が誤った出力を出した時、operator は audit log を辿って
 
 ### (4) Autonomous Agentic Loop Quadrant — High governance
 
-10 本の ADR すべてが適用される。ADRs 0005, 0006, 0008, 0009 が最も
+[README — Autonomous Agentic Loop Quadrant](README.ja.md#4-autonomous-agentic-loop-quadrant)
+参照 (operational signal と attribution-gap commitment)。10 本の
+ADR すべてが適用される。ADRs 0005, 0006, 0008, 0009 が最も
 load-bearing — これらが named gap-bearer の commitment を operational
 にする。ADR-0010 は配置が operation phase の場合 Phase-crossing
 decision を加える。
@@ -132,15 +129,11 @@ output、tool 選択、history reference、prompt context が runtime で
 ## Cross-quadrant 注: prohibition-strength hierarchy
 
 ADR 0001 → 0002 → 0003 が [prohibition-strength
-hierarchy](../glossary.ja.md#prohibition-strength-hierarchy禁止強度の階層) を成す:
-*absence > scaffolding enforcement > untrusted boundary*。Hierarchy は
-象限を跨いで適用:
+hierarchy](../glossary.ja.md#prohibition-strength-hierarchy禁止強度の階層)
+を成す。象限固有の帰結:
 
 - LLM Workflow Quadrant では、scaffolding enforcement (0002) が
   workflow が誤って呼び出すべきでない capability を gate する。
 - Autonomous Agentic Loop Quadrant では、scaffolding enforcement
   (0002) が essential — runtime tool 選択は probabilistic prohibition
   が prompt injection 下で hold しないことを意味する。
-
-両象限で prohibition を設計する時は、hierarchy を top-down で歩く:
-現層が capability を抱えきれない時だけ次の層に降りる。

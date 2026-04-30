@@ -18,41 +18,34 @@ Language: English | [日本語](governance-mapping.ja.md)
 
 ### Phase note (orthogonal to Quadrant)
 
-Phase (design vs operation) is independent of Quadrant. Any Quadrant
-can appear in either phase. The governance levels above apply
-regardless of phase, with one phase-specific addition: **placing
-Quadrant 4 in the operation phase invokes ADR-0010**. The
-operation-phase placement is admissible but adds the Phase-crossing
-decision (recorded at deployment time) to the controls listed for
-Quadrant 4. Design-phase Quadrant 4 placements (coding agents, Deep
-Research) satisfy this automatically — design phase *is* where
-Phase-crossing happens.
+Phase (design vs operation) is independent of Quadrant — see
+[README — Phase is a third dimension](README.md#phase-is-a-third-dimension-not-a-partition)
+for the framing. The governance-specific consequence: **placing
+Quadrant 4 in the operation phase invokes ADR-0010**, adding the
+Phase-crossing decision (recorded at deployment time) to the
+controls listed above for Quadrant 4. Design-phase Quadrant 4
+placements satisfy this automatically.
 
 The empirical default for operation-phase workflows is a composition
-of Quadrant 1 + 3 (+ 2 where applicable). This is a default, not a
-rule; deviations are surfaced through the
-[`decision tree`](decision-tree.md) Q0 + Q4 path.
+of Quadrant 1 + 3 (+ 2 where applicable). Deviations are surfaced
+through the [`decision tree`](decision-tree.md) Q0 + Q4 path.
 
 ## Per-quadrant detail
 
 ### (1) Script Quadrant — out of scope
 
-LLM-related ADRs do not apply. Use classical software engineering
-accountability: code review, unit tests, integration tests, audit on
-deploy. Failure analysis routes to the code author or pipeline owner
-through normal SE channels.
+LLM-related ADRs do not apply. Failure analysis routes to the code
+author or pipeline owner through normal SE channels.
 
 ### (2) Algorithmic Search Quadrant — out of scope
 
-Out of scope for this repository's LLM-focused ADRs. Concerns are
-algorithm correctness, search-space coverage, and constraint
-specification. Failure routes to the algorithm author or the
-upstream specification owner.
+Out of scope for this repository's LLM-focused ADRs. Failure routes
+to the algorithm author or the upstream specification owner.
 
 ### (3) LLM Workflow Quadrant — Medium governance
 
-Six ADRs apply. Each LLM call has a documented role and schema;
-failure isolates to a single call.
+See [README — LLM Workflow Quadrant](README.md#3-llm-workflow-quadrant)
+for the operational signal. Six ADRs apply:
 
 | ADR | What it requires for this quadrant |
 |---|---|
@@ -90,8 +83,10 @@ Each step has a single owner. Distribution succeeds.
 
 ### (4) Autonomous Agentic Loop Quadrant — High governance
 
-All ten ADRs apply. ADRs 0005, 0006, 0008, 0009 carry the most
-weight because they are what makes the named gap-bearer's commitment
+See [README — Autonomous Agentic Loop Quadrant](README.md#4-autonomous-agentic-loop-quadrant)
+for the operational signal and the attribution-gap commitment. All
+ten ADRs apply. ADRs 0005, 0006, 0008, 0009 carry the most weight
+because they are what makes the named gap-bearer's commitment
 operational. ADR-0010 adds the Phase-crossing decision when the
 placement is operation-phase.
 
@@ -139,16 +134,11 @@ committed to bear it.
 ## Cross-quadrant note: prohibition-strength hierarchy
 
 ADRs 0001 → 0002 → 0003 form a [prohibition-strength
-hierarchy](../glossary.md#prohibition-strength-hierarchy): *absence >
-scaffolding enforcement > untrusted boundary*. The hierarchy applies
-across quadrants:
+hierarchy](../glossary.md#prohibition-strength-hierarchy). Quadrant-specific
+consequences:
 
 - In the LLM Workflow Quadrant, scaffolding enforcement (0002) gates
   capabilities the workflow should not invoke even by mistake.
 - In the Autonomous Agentic Loop Quadrant, scaffolding enforcement
   (0002) is essential because runtime tool selection means
   probabilistic prohibition will not hold under prompt injection.
-
-When designing a prohibition for either quadrant, walk the hierarchy
-top-down: drop to the next layer only when the current one genuinely
-cannot hold the capability.

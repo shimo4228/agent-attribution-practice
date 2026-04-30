@@ -132,4 +132,8 @@ agent にも同様にあてはまる。
 
 ---
 
-**Lineage。** Thesis は [Can You Trace the Cause After an Incident?](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-causal-traceability-org-adoption-en.md) (2026-04-13) で書き上げられ、accountability-wall argument (2026-04-06) を踏まえ、blackbox two-layer argument (2026-04-14) に先行する。この 3 本の記事が本 repository の 6 部作 narrative spine を開く trilogy を成す (2026-04-29 / 04-30 の architectural follow-up が spine を延ばし、ADR-0009 を表に出した)。[`../inspiration.md`](../inspiration.md) 参照。
+**Lineage。** Thesis は
+[Can You Trace the Cause After an Incident?](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-causal-traceability-org-adoption-en.md)
+(2026-04-13、trilogy の 2 本目) で書き上げられた。Trilogy と
+architectural-follow-up spine の context は
+[`../inspiration.md`](../inspiration.md) を参照。

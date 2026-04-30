@@ -147,7 +147,7 @@ and pre-defined-workflow vs exploratory along the other. Not agent
 categories — *problem-space* categories that determine which
 architecture preserves accountability distribution. The four
 quadrants form the diagnostic frame paired with the ten ADRs in
-this repository's two-axis structure. See [`../quadrants/`](../quadrants/).
+this repository's two-axis structure. See [`quadrants/`](quadrants/).
 
 ## Script Quadrant
 

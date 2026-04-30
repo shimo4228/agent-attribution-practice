@@ -28,8 +28,9 @@
   *かつ* deployment record にこの configuration を選んだ理由が記載
   されていない。Post-incident review が、autonomous loop を運用業務で
   動かしていたが gap-bearer は named (ADR-0009 通り)、Phase-crossing
-  decision は未記録の状態を発見する — *moral crumple zone（道徳的
-  クランプルゾーン）* 文献が記す失敗モード。
+  decision は未記録の状態を発見する —
+  [*moral crumple zone*](../glossary.ja.md#moral-crumple-zone道徳的クランプルゾーン)
+  失敗モード。
 - **回復。** [`decision tree`](decision-tree.ja.md) の Q0 + Q4 を
   明示実行する。業務が本当に Quadrant 4 を operation で要求するなら、
   Phase-crossing decision を記録: *「新パターンを design に feedback
@@ -128,10 +129,10 @@
 - **なぜ起きる。** Triage decision が configuration として扱われる
   (structural commitment ではなく)。「Post-incident に責任を figure
   out する」が暗黙の (禁止された) 計画。
-- **何が壊れる。** *Moral crumple zone* 失敗 (Elish 2019)。何かが
-  起きた時、責任は operationally proximate な人間 — 通常 loop の
-  runtime 判断に対するコントロールが最も限定的な operator — に着地
-  する; Gap を引き受けると commit した party ではない。
+- **何が壊れる。** [*Moral crumple zone*](../glossary.ja.md#moral-crumple-zone道徳的クランプルゾーン)
+  失敗 (Elish 2019): 責任は operationally proximate な人間 — 通常
+  loop の runtime 判断に対するコントロールが最も限定的な operator —
+  に着地する; Gap を引き受けると commit した party ではない。
 - **回復。** Q4 を明示実行。Organizationally identifiable gap-bearer
   を named (ADR-0008 + ADR-0009 通り) するか、*deploy しない*。業務が
   本当に Autonomous Agentic Loop Quadrant を要求し gap-bearer が named

@@ -70,11 +70,12 @@ responsible":
 | 0009 Triage Before Autonomy *(experimental)* | Adopting an autonomous-loop architecture commits the system to a non-removable attribution gap | The triage decision and the named gap-bearer are recorded at deployment time |
 | 0010 Phase Separation *(experimental)* | Operation-phase placements of the Autonomous Agentic Loop Quadrant carry costs ADR-0009's design-time commitment alone does not cover | A Phase-crossing decision is recorded explicitly at deployment time |
 
-ADRs 0001, 0002, and 0003 form a **prohibition-strength hierarchy**:
-absence > scaffolding enforcement > untrusted boundary. When a prohibition
-cannot hold at a layer, it drops to the next. Most published AI safety
-work lives at the weakest layer (probabilistic text constraints) without
-acknowledging that the stronger layers exist and are available.
+ADRs 0001, 0002, and 0003 form a
+[**prohibition-strength hierarchy**](glossary.md#prohibition-strength-hierarchy):
+absence > scaffolding enforcement > untrusted boundary. Most published
+AI safety work lives at the weakest layer (probabilistic text
+constraints) without acknowledging that the stronger layers exist
+and are available.
 
 Distribution requires a subject who can be redirected to. When the
 architecture is chosen so that judgments blend at runtime — the

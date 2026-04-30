@@ -84,48 +84,14 @@ load-bearing rule は operation phase × Quadrant 4 の placement に
 
 ## narrative (記事系譜)
 
-ADR の背後の argument は、6 部作 essay として展開された (trilogy +
-architectural follow-up):
+ADR の背後の argument は、2026 年 4-5 月に zenn で公開された 6 部作
+essay として展開された。最初の 3 つは trilogy (問題提起 → 事故後の
+因果遡行 → ブラックボックス二層分析)、後の 3 つは architectural
+follow-up (4 象限 triage → 語彙の診断と principled attribution gap →
+設計 / 運用 phase の区別)。
 
-1. **[登れる壁に看板を立てても意味がない — AIエージェントに必要なのはガードレールではなくアカウンタビリティだ](https://github.com/shimo4228/zenn-content/blob/main/articles/ai-agent-accountability-wall.md)** (2026-04-06)
-   *問題提起*: 登れる壁の看板は効かない。文明的パターンはプロンプト統治
-   ではなく accountability architecture だ。
-
-2. **[事故のあとで因果を辿れるか — エージェント設計が組織論に収斂するまで](https://github.com/shimo4228/zenn-content/blob/main/articles/agent-causal-traceability-org-adoption.md)** (2026-04-13)
-   *応用*: 事故後の因果遡行は build time の構造を要求する。浮かび上がる
-   構造は組織論の数世紀の蓄積と収斂する。
-
-3. **[AIエージェントのブラックボックスは二層ある — 技術の限界とビジネスの都合](https://github.com/shimo4228/zenn-content/blob/main/articles/agent-blackbox-capitalism-timescale.md)** (2026-04-14)
-   *障害分析*: weights への internalization (技術) と商業的秘匿
-   (ビジネス) が共に透明性を阻害する。解は「全部見せる」でも「全部
-   隠す」でもなく、因果遡行に必要な最小可視セットの定義。
-
-4. **[ReAct エージェントが本当に必要な業務はどれか](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant.md)** (2026-04-29)
-   *architectural follow-up*: 業務 AI を 4 象限で腑分けすると、ReAct
-   エージェントが正当に必要な領域は (4) 探索的タスクのみ。現行
-   ecosystem が (3) 業務に (4) アーキテクチャを被せる category error
-   は、accountability picture を破壊する根本原因の一つだと示す。
-
-5. **[(3) LLM ワークフロー象限が語彙から脱落している — 続・ReAct エージェントの適用域](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-2.md)** (2026-04-30)
-   *語彙の診断と責任主体の不在*: 業界の語彙に LLM ワークフロー象限が
-   独立した呼び名として存在しないため、決定論で書けない業務すべてを
-   ReAct ループに丸投げする消去法的選択が起きる。この人為的 redirect
-   不能性に議論が集中する一方、ReAct 象限本来の attribution gap
-   (runtime blend が生む寄与の事後分離不能性) と責任主体の不在 —
-   自律性に伴う責任の引き受け先が現状エージェント側に存在しない
-   こと — は議論の陰にある。
-
-6. **[本番運用に ReAct は必要か — 設計フェーズと運用フェーズを分ける](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-3.md)** (2026-05-01)
-   *時間軸の追加*: 業務は設計フェーズと運用フェーズに分かれる。設計
-   フェーズは柔軟性を、運用フェーズは予測可能性を求め、両者の最適化
-   軸は逆を向く。ReAct は設計フェーズの道具で、前 2 作が診断した
-   (3) 業務に (4) アーキテクチャを被せる category error の根は、この
-   2 つのフェーズの混同にある。ReAct の正当領域は設計フェーズの
-   探索的タスク (コーディング、Deep Research、未知環境の探索) に
-   絞り込まれ、本番運用に入った業務は (1) スクリプト象限と (3) LLM
-   ワークフロー象限の組み合わせで動く。
-
-全系譜は [`docs/inspiration.md`](docs/inspiration.md) を参照。
+各記事の URL とタイトル、1 段落のサマリは
+[`docs/inspiration.md`](docs/inspiration.md) を正本として参照。
 
 ## 他プロジェクトとの関係
 

@@ -81,22 +81,19 @@ ADRs become applicable.
 Before adopting an autonomous-loop architecture, triage the work
 along the two axes of the four quadrants:
 
-1. **Script Quadrant** (deterministic × pre-defined). Use scripts
-   and pipelines. No LLM required.
+1. **Script Quadrant** (deterministic × pre-defined).
 2. **Algorithmic Search Quadrant** (deterministic × exploratory).
-   Use classical algorithms — search, dynamic programming, MCTS,
-   reinforcement learning. Out of scope for this repository's
-   LLM-focused ADRs.
-3. **LLM Workflow Quadrant** (semantic-judgment × pre-defined). Use a
-   structured-workflow architecture: deterministic control flow
-   plus bounded LLM calls with named, documented roles and explicit
-   input/output schemas. This is the documented default for most
-   current LLM applications.
+3. **LLM Workflow Quadrant** (semantic-judgment × pre-defined). The
+   documented default for most current LLM applications.
 4. **Autonomous Agentic Loop Quadrant** (semantic-judgment ×
-   exploratory). Use the autonomous loop *only when the work itself
-   requires open-ended exploration* — the path is not predictable in
-   advance, and bounding the LLM call's role would prevent the work
-   from being done at all.
+   exploratory). Use *only when the work itself requires open-ended
+   exploration* — bounding the LLM call's role would prevent the
+   work from being done at all.
+
+See [`quadrants/README.md`](../quadrants/README.md#the-four-quadrants)
+for the operational signal of each quadrant, and
+[`quadrants/decision-tree.md`](../quadrants/decision-tree.md) for the
+five-question triage that operationalizes this Decision.
 
 Choosing the Autonomous Agentic Loop Quadrant commits the deploying
 organization to absorb the attribution gap as a **named,
@@ -237,17 +234,15 @@ be the wrong frame.
 
 ## Consequences for the other ADRs
 
-ADR-0009 sits before ADRs 0001–0008 in the order of application:
-
-- **Script Quadrant** — ADRs 0001–0008 are largely out of scope; the
-  work does not involve an LLM-equipped agent.
-- **Algorithmic Search Quadrant** — out of scope for this repository.
-- **LLM Workflow Quadrant** — ADRs 0001–0007 apply. ADR-0008 applies
-  if the workflow has an external adapter that sends side effects;
-  the operator binding is meaningful but lighter weight.
-- **Autonomous Agentic Loop Quadrant** — *all nine* ADRs apply, and
-  ADR-0005, ADR-0006, ADR-0008 carry the most weight because they
-  are what makes the named gap-bearer's commitment operational.
+ADR-0009 sits before ADRs 0001–0008 in the order of application — it
+triages which of the eight become load-bearing for a given piece of
+work. See
+[`quadrants/governance-mapping.md`](../quadrants/governance-mapping.md#per-quadrant-detail)
+for the per-quadrant ADR application table. Summary: out of scope in
+the Script and Algorithmic Search Quadrants; ADRs 0001–0007 (+ 0008
+when there are external side effects) in the LLM Workflow Quadrant;
+*all nine* in the Autonomous Agentic Loop Quadrant, with ADR-0005,
+ADR-0006, ADR-0008 carrying the most weight.
 
 This is why ADR-0009 belongs in the same document set as ADRs
 0001–0008: not as a successor, but as a triage that determines which
@@ -255,17 +250,15 @@ of the eight become load-bearing for a given piece of work.
 
 ---
 
-**Lineage.** Article 4 ("[Where ReAct Agents Are Actually Needed in
-Business](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant.md)",
-2026-04-29) introduced the four-quadrant framing of business AI work.
-Article 5 ("[The LLM Workflow Quadrant Is Missing from Our
-Vocabulary](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-2.md)",
-2026-04-30) named the principled vs artificial redirect impossibility,
-the moral crumple zone (Elish 2019), and the absent accountability
-subject. The earlier essays' source naming ("ReAct Quadrant",
-"Classical AI Quadrant") is preserved as alias in [`../glossary.md`](../glossary.md);
-this ADR uses the renamed forms to keep the Decision body
-harness-neutral. Parallel to ADR-0008 ([One Agent, One
-Human](0008-one-agent-one-human.md)): 0008 binds the accountable
-human; 0009 binds the architectural choice that makes 0008's binding
-meaningful.
+**Lineage.** Articles 4 and 5 of the
+[six-essay narrative spine](../inspiration.md): Article 4 (2026-04-29)
+introduced the four-quadrant framing of business AI work; Article 5
+(2026-04-30) named the principled vs artificial redirect impossibility
+and the absent accountability subject (*moral crumple zone*, Elish
+2019). The source essays' provisional names ("ReAct Quadrant",
+"Classical AI Quadrant") are preserved as aliases in
+[`../glossary.md`](../glossary.md); this ADR uses the renamed forms
+to keep the Decision body harness-neutral. Parallel to ADR-0008
+([One Agent, One Human](0008-one-agent-one-human.md)): 0008 binds the
+accountable human; 0009 binds the architectural choice that makes
+0008's binding meaningful.
