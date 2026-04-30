@@ -60,7 +60,7 @@ independent dimensions; ADR-0010 is procedural, not architectural.
 
 ## The four Business AI Quadrants
 
-Paired with the nine ADRs as the diagnostic frame for adoption:
+Paired with the ten ADRs as the diagnostic frame for adoption:
 
 |  | Pre-defined workflow | Exploratory |
 |---|---|---|
@@ -88,27 +88,27 @@ phase-to-quadrant mapping.
 
 The argument behind the ADRs was developed across the following essays:
 
-1. **[A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails](https://dev.to/shimo4228/a-sign-on-a-climbable-wall-why-ai-agents-need-accountability-not-just-guardrails-17ak)** (2026-04-06)
+1. **[A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails](https://github.com/shimo4228/zenn-content/blob/main/articles-en/ai-agent-accountability-wall-en.md)** (2026-04-06)
    *The problem.* Signs on climbable walls fail. The civilizational
    pattern is accountability architecture, not rule-by-prompt.
 
-2. **[Can You Trace the Cause After an Incident?](https://dev.to/shimo4228/can-you-trace-the-cause-after-an-incident-neo)** (2026-04-13)
+2. **[Can You Trace the Cause After an Incident?](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-causal-traceability-org-adoption-en.md)** (2026-04-13)
    *The application.* Post-incident causal tracing requires build-time
    structure. Structures that emerge converge with centuries of
    organizational practice.
 
-3. **[AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://dev.to/shimo4228/ai-agent-black-boxes-have-two-layers-technical-limits-and-business-incentives-jhi)** (2026-04-14)
+3. **[AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-blackbox-capitalism-timescale-en.md)** (2026-04-14)
    *The obstacles.* Weights internalization (technical) and commercial
    secrecy (business) both block transparency. The resolution is a
    minimum visibility set, not all-or-nothing.
 
-4. **[Where ReAct Agents Are Actually Needed in Business](https://dev.to/shimo4228/where-react-agents-are-actually-needed-in-business-33do)** (2026-04-29)
+4. **[Where ReAct Agents Are Actually Needed in Business](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant.md)** (2026-04-29)
    *The architectural follow-up.* Business AI sorted into four quadrants
    reveals that ReAct agents are legitimately needed only in (4) exploratory
    tasks. The current ecosystem's category error of forcing (4) architecture
    onto (3) workflows is at the root of the accountability picture's collapse.
 
-5. **[The LLM Workflow Quadrant Is Missing from Our Vocabulary](https://dev.to/shimo4228/3-the-llm-workflow-quadrant-is-missing-from-our-vocabulary-n18)** (2026-04-30)
+5. **[The LLM Workflow Quadrant Is Missing from Our Vocabulary](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-2.md)** (2026-04-30)
    *The vocabulary diagnosis and the missing accountability subject.*
    The industry has no positive name for the LLM Workflow Quadrant, so
    non-deterministic work gets routed through a ReAct loop by elimination.
@@ -118,7 +118,7 @@ The argument behind the ADRs was developed across the following essays:
    accountability subject — autonomy demands responsibility but agents
    are not currently legal subjects who can bear it — stay in the shadows.
 
-6. **[Is ReAct Needed in Production? — Separating Design and Operation Phases](https://dev.to/shimo4228/is-react-needed-in-production-separating-design-and-operation-phases-4ll0)** (2026-05-01)
+6. **[Is ReAct Needed in Production? — Separating Design and Operation Phases](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-3.md)** (2026-05-01)
    *The temporal axis.* Business work splits into a design phase and an
    operation phase. Design demands flexibility, operation demands
    predictability — their optimization axes are inverted. ReAct belongs

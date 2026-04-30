@@ -109,7 +109,7 @@ For deterministic work, distinguish *enumerable* tasks from
 *exploratory* tasks.
 
 - **Yes →** [`Script Quadrant`](README.md#1-script-quadrant). Use
-  scripts, pipelines, workflow engines. The nine ADRs are largely out
+  scripts, pipelines, workflow engines. The ten ADRs are largely out
   of scope for this work.
 - **No →** [`Algorithmic Search Quadrant`](README.md#2-algorithmic-search-quadrant).
   Use classical search algorithms — A*, dynamic programming, MCTS,

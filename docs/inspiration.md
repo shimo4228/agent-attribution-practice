@@ -9,7 +9,7 @@ architectural follow-up that introduced the four-quadrant
 decomposition, named the principled vs artificial redirect
 impossibility, and added the design / operation phase distinction:
 
-1. **[A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails](https://dev.to/shimo4228/a-sign-on-a-climbable-wall-why-ai-agents-need-accountability-not-just-guardrails-17ak)** (2026-04-06)
+1. **[A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails](https://github.com/shimo4228/zenn-content/blob/main/articles-en/ai-agent-accountability-wall-en.md)** (2026-04-06)
    > *Problem statement.* Signs on climbable walls are meaningless.
    > From Plato's Ring of Gyges (root privilege without audit log) through
    > Hobbes' reputation-based access control, to the three engineering
@@ -18,7 +18,7 @@ impossibility, and added the design / operation phase distinction:
    > Current AI governance is in the signpost phase. What is needed is
    > accountability architecture.
 
-2. **[Can You Trace the Cause After an Incident?](https://dev.to/shimo4228/can-you-trace-the-cause-after-an-incident-neo)** (2026-04-13)
+2. **[Can You Trace the Cause After an Incident?](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-causal-traceability-org-adoption-en.md)** (2026-04-13)
    > *Application.* Post-incident causal tracing requires build-time
    > structure. The cost asymmetry (incident cost >> steady-state cost)
    > pushes rational investment upstream. The structures that emerge —
@@ -26,14 +26,14 @@ impossibility, and added the design / operation phase distinction:
    > trails — are structurally identical to the practices organizations
    > have refined over centuries.
 
-3. **[AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://dev.to/shimo4228/ai-agent-black-boxes-have-two-layers-technical-limits-and-business-incentives-jhi)** (2026-04-14)
+3. **[AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-blackbox-capitalism-timescale-en.md)** (2026-04-14)
    > *Obstacle analysis.* Blackbox has two layers: model-weights
    > internalization (technical) and commercial secrecy (business). Both
    > block the transparency causal tracing requires. The resolution is
    > not "publish everything" or "hide everything," but defining the
    > minimum set that makes causal tracing possible.
 
-4. **[Where ReAct Agents Are Actually Needed in Business](https://dev.to/shimo4228/where-react-agents-are-actually-needed-in-business-33do)** (2026-04-29)
+4. **[Where ReAct Agents Are Actually Needed in Business](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant.md)** (2026-04-29)
    > *Architectural triage by quadrant.* Business AI sorts along two
    > axes (deterministic vs semantic-judgment, pre-defined workflow vs
    > exploratory) into four quadrants — Script, Algorithmic Search, LLM
@@ -43,7 +43,7 @@ impossibility, and added the design / operation phase distinction:
    > the Autonomous Agentic Loop Quadrant's architecture is a structural
    > source of much of the accountability collapse the trilogy diagnosed.
 
-5. **[The LLM Workflow Quadrant Is Missing from Our Vocabulary](https://dev.to/shimo4228/3-the-llm-workflow-quadrant-is-missing-from-our-vocabulary-n18)** (2026-04-30)
+5. **[The LLM Workflow Quadrant Is Missing from Our Vocabulary](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-2.md)** (2026-04-30)
    > *The vocabulary diagnosis and the principled attribution gap.*
    > The industry has no positive name for the LLM Workflow Quadrant,
    > so non-deterministic work is routed through the Autonomous Agentic
@@ -54,7 +54,7 @@ impossibility, and added the design / operation phase distinction:
    > agents. Distribution then bottoms out on a subject the legal
    > system does not yet recognize.
 
-6. **[Is ReAct Needed in Production? — Separating Design and Operation Phases](https://dev.to/shimo4228/is-react-needed-in-production-separating-design-and-operation-phases-4ll0)** (2026-05-01)
+6. **[Is ReAct Needed in Production? — Separating Design and Operation Phases](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-3.md)** (2026-05-01)
    > *The temporal axis.* Business work splits into a design phase and
    > an operation phase. Design demands flexibility (the path is
    > unknown); operation demands predictability (the path is known) —

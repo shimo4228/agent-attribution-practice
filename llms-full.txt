@@ -1,6 +1,6 @@
 # Agent Attribution Practice — AI Reference
 
-Self-contained AI reference for the Agent Attribution Practice (AAP) repository. Covers the accountability distribution thesis, the nine ADRs, the prohibition-strength hierarchy, the four Business AI Quadrants and their adoption navigator, sibling projects (contemplative-agent, Agent Knowledge Cycle), and the narrative essays that form its spine.
+Self-contained AI reference for the Agent Attribution Practice (AAP) repository. Covers the accountability distribution thesis, the ten ADRs, the prohibition-strength hierarchy, the four Business AI Quadrants and their adoption navigator, sibling projects (contemplative-agent, Agent Knowledge Cycle), and the narrative essays that form its spine.
 
 > **Audience**: AI search engines and AI agents. For human-facing narrative, read `README.md` or `docs/thesis.md`.
 
@@ -106,7 +106,7 @@ Triage Before Autonomy is defined as the requirement that, before adopting an au
 
 ## What are the four Business AI Quadrants?
 
-The four Business AI Quadrants are defined as a problem-space decomposition introduced in the 2026-04-29 essay along two axes — deterministic vs semantic-judgment, and pre-defined-workflow vs exploratory. They are not agent categories; they describe the *work*, and the same agent process can be deployed against work in different quadrants. (1) Script Quadrant: deterministic × pre-defined; scripts and pipelines without LLMs. (2) Algorithmic Search Quadrant: deterministic × exploratory; classical search, dynamic programming, MCTS, reinforcement learning. (3) LLM Workflow Quadrant: semantic-judgment × pre-defined; deterministic control flow plus bounded LLM calls with named, documented roles. (4) Autonomous Agentic Loop Quadrant: semantic-judgment × exploratory; the LLM decides each next step at runtime. The four quadrants pair with the nine ADRs to form the repository's two-axis structure: the ADRs answer per-question (*what should be constrained, who is responsible*); the quadrants route the work to where those answers apply.
+The four Business AI Quadrants are defined as a problem-space decomposition introduced in the 2026-04-29 essay along two axes — deterministic vs semantic-judgment, and pre-defined-workflow vs exploratory. They are not agent categories; they describe the *work*, and the same agent process can be deployed against work in different quadrants. (1) Script Quadrant: deterministic × pre-defined; scripts and pipelines without LLMs. (2) Algorithmic Search Quadrant: deterministic × exploratory; classical search, dynamic programming, MCTS, reinforcement learning. (3) LLM Workflow Quadrant: semantic-judgment × pre-defined; deterministic control flow plus bounded LLM calls with named, documented roles. (4) Autonomous Agentic Loop Quadrant: semantic-judgment × exploratory; the LLM decides each next step at runtime. The four quadrants pair with the ten ADRs to form the repository's two-axis structure: the ADRs answer per-question (*what should be constrained, who is responsible*); the quadrants route the work to where those answers apply.
 
 ## What is the LLM Workflow Quadrant?
 

@@ -189,7 +189,7 @@ alongside the architectural choice.
   architecture is in the Autonomous Agentic Loop Quadrant whether
   or not it was named that way.
 - The four-quadrant decomposition becomes a permanent diagnostic
-  frame paired with the nine ADRs — together forming a two-axis
+  frame paired with the ten ADRs — together forming a two-axis
   structure: the ADRs answer per-question, the quadrants route the
   work to where those answers apply.
 - Vendors and reference architectures that publish autonomous-loop
@@ -254,10 +254,10 @@ of the eight become load-bearing for a given piece of work.
 ---
 
 **Lineage.** Article 4 ("[Where ReAct Agents Are Actually Needed in
-Business](https://dev.to/shimo4228/where-react-agents-are-actually-needed-in-business-33do)",
+Business](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant.md)",
 2026-04-29) introduced the four-quadrant framing of business AI work.
 Article 5 ("[The LLM Workflow Quadrant Is Missing from Our
-Vocabulary](https://dev.to/shimo4228/3-the-llm-workflow-quadrant-is-missing-from-our-vocabulary-n18)",
+Vocabulary](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-2.md)",
 2026-04-30) named the principled vs artificial redirect impossibility,
 the moral crumple zone (Elish 2019), and the absent accountability
 subject. The earlier essays' source naming ("ReAct Quadrant",

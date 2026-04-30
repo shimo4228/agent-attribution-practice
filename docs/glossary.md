@@ -144,14 +144,14 @@ Two-axis decomposition of business AI work introduced in the
 and pre-defined-workflow vs exploratory along the other. Not agent
 categories — *problem-space* categories that determine which
 architecture preserves accountability distribution. The four
-quadrants form the diagnostic frame paired with the nine ADRs in
+quadrants form the diagnostic frame paired with the ten ADRs in
 this repository's two-axis structure. See [`../quadrants/`](../quadrants/).
 
 ## Script Quadrant
 
 Deterministic × pre-defined. Implemented as scripts and pipelines
 without LLMs. Form filling, data normalization, lookup, validation.
-The nine ADRs are largely out of scope; classical software
+The ten ADRs are largely out of scope; classical software
 engineering accountability applies.
 
 ## Algorithmic Search Quadrant

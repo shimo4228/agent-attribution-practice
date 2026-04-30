@@ -42,7 +42,7 @@ dynamically directs its own process*.
 ### (1) Script Quadrant
 
 Deterministic × pre-defined. Scripts and pipelines without LLMs.
-Form filling, data normalization, lookup, validation. AAP's nine ADRs
+Form filling, data normalization, lookup, validation. AAP's ten ADRs
 are largely out of scope here — classical software engineering
 applies.
 
@@ -90,7 +90,7 @@ succeed at the level of separable contributions. See ADR-0009
 
 Read in order:
 
-1. [`decision-tree.md`](decision-tree.md) — a four-question triage
+1. [`decision-tree.md`](decision-tree.md) — a five-question triage
    for routing a piece of work to one of the four quadrants and the
    ADR set that applies.
 2. [`governance-mapping.md`](governance-mapping.md) — a dense table

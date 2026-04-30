@@ -27,7 +27,7 @@
 
 ## Business AI Quadrants
 
-Two-axis decomposition of business AI work — deterministic vs semantic-judgment, pre-defined-workflow vs exploratory — paired with the nine ADRs as the diagnostic frame for routing work to the architecture preserving accountability distribution. Not agent categories; problem-space categories.
+Two-axis decomposition of business AI work — deterministic vs semantic-judgment, pre-defined-workflow vs exploratory — paired with the ten ADRs as the diagnostic frame for routing work to the architecture preserving accountability distribution. Not agent categories; problem-space categories.
 
 - (1) Script Quadrant: deterministic × pre-defined. Scripts and pipelines without LLMs.
 - (2) Algorithmic Search Quadrant: deterministic × exploratory. Classical search, dynamic programming, MCTS, reinforcement learning.
@@ -36,10 +36,10 @@ Two-axis decomposition of business AI work — deterministic vs semantic-judgmen
 
 ## Adoption navigator
 
-Adoption-side documents that operationalize the nine ADRs across the four Business AI Quadrants:
+Adoption-side documents that operationalize the ten ADRs across the four Business AI Quadrants:
 
 - [Quadrants overview](docs/quadrants/README.md): the two axes, the four quadrants, how they pair with the ADRs
-- [Decision tree](docs/quadrants/decision-tree.md): four-question triage routing a piece of work to a quadrant and the applicable ADR set
+- [Decision tree](docs/quadrants/decision-tree.md): five-question triage routing a piece of work to a quadrant and the applicable ADR set
 - [Governance mapping](docs/quadrants/governance-mapping.md): per-quadrant ADR applicability table, required controls, redirect path on failure
 - [Case studies](docs/quadrants/case-studies.md): FAQ classification, customer support chat, invoice matching, research assistant, scheduling, contract review, knowledge-base copilot — routed to quadrants and architectures
 - [Anti-patterns](docs/quadrants/anti-patterns.md): bounded-work-on-autonomous-loop, OR-on-autonomous-loop, deterministic-task-on-autonomous-loop, ungoverned-autonomous-loop, approval-gate-as-checkbox, audit-log-as-sample, treating-quadrant-as-agent-type, skipping-the-triage
@@ -58,9 +58,9 @@ Adoption-side documents that operationalize the nine ADRs across the four Busine
 
 Five-essay narrative spine — three trilogy essays followed by two architectural follow-ups that introduced the four-quadrant decomposition and named the principled vs artificial redirect impossibility:
 
-- [A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails (2026-04-06)](https://dev.to/shimo4228/a-sign-on-a-climbable-wall-why-ai-agents-need-accountability-not-just-guardrails-17ak): signs on climbable walls fail; accountability architecture is the historical pattern
-- [Can You Trace the Cause After an Incident? (2026-04-13)](https://dev.to/shimo4228/can-you-trace-the-cause-after-an-incident-neo): post-incident causal tracing requires build-time structure
-- [AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives (2026-04-14)](https://dev.to/shimo4228/ai-agent-black-boxes-have-two-layers-technical-limits-and-business-incentives-jhi): blackbox has two layers — weights internalization and commercial secrecy
-- [Where ReAct Agents Are Actually Needed in Business (2026-04-29)](https://dev.to/shimo4228/where-react-agents-are-actually-needed-in-business-33do): four-quadrant decomposition; the autonomous loop is legitimately required only in the Autonomous Agentic Loop Quadrant
-- [The LLM Workflow Quadrant Is Missing from Our Vocabulary (2026-04-30)](https://dev.to/shimo4228/3-the-llm-workflow-quadrant-is-missing-from-our-vocabulary-n18): the vocabulary diagnosis; the principled vs artificial redirect impossibility; moral crumple zone; the absent accountability subject
-- [Is ReAct Needed in Production? — Separating Design and Operation Phases (2026-05-01)](https://dev.to/shimo4228/is-react-needed-in-production-separating-design-and-operation-phases-4ll0): the temporal axis (design vs operation phase); the three-layer diagnosis (misapplication → vocabulary gap → phase conflation); the Phase-crossing decision proposal
+- [A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails (2026-04-06)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/ai-agent-accountability-wall-en.md): signs on climbable walls fail; accountability architecture is the historical pattern
+- [Can You Trace the Cause After an Incident? (2026-04-13)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-causal-traceability-org-adoption-en.md): post-incident causal tracing requires build-time structure
+- [AI Agent Black Boxes Have Two Layers: Technical Limits and Business Incentives (2026-04-14)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-blackbox-capitalism-timescale-en.md): blackbox has two layers — weights internalization and commercial secrecy
+- [Where ReAct Agents Are Actually Needed in Business (2026-04-29)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant.md): four-quadrant decomposition; the autonomous loop is legitimately required only in the Autonomous Agentic Loop Quadrant
+- [The LLM Workflow Quadrant Is Missing from Our Vocabulary (2026-04-30)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-2.md): the vocabulary diagnosis; the principled vs artificial redirect impossibility; moral crumple zone; the absent accountability subject
+- [Is ReAct Needed in Production? — Separating Design and Operation Phases (2026-05-01)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-3.md): the temporal axis (design vs operation phase); the three-layer diagnosis (misapplication → vocabulary gap → phase conflation); the Phase-crossing decision proposal
