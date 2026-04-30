@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
 type: software
 title: "Agent Attribution Practice: Ten Architectural Decision Records and Four Business AI Quadrants on Accountability Distribution in Autonomous AI Agents"
-version: 0.1.0
-date-released: 2026-04-19
+version: 0.2.0
+date-released: 2026-05-01
 license: MIT
 doi: 10.5281/zenodo.19652014
 repository-code: "https://github.com/shimo4228/agent-attribution-practice"

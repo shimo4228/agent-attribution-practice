@@ -8,7 +8,7 @@ Self-contained AI reference for the Agent Attribution Practice (AAP) repository.
 
 - **Project name**: Agent Attribution Practice (AAP)
 - **Abbreviation**: AAP
-- **Version**: v0.1.0 (preparation)
+- **Version**: v0.2.0
 - **License**: MIT
 - **Author**: Tatsuya Shimomoto
 - **GitHub handle**: shimo4228
@@ -16,6 +16,7 @@ Self-contained AI reference for the Agent Attribution Practice (AAP) repository.
 - **Repository URL**: github.com/shimo4228/agent-attribution-practice
 - **DOI**: 10.5281/zenodo.19652014
 - **Created**: 2026-04-19
+- **Released**: 2026-05-01
 - **Primary language**: English
 - **Japanese mirror**: README.ja.md
 - **ADR count**: 10 (ADR-0001 through ADR-0010)
@@ -54,7 +55,7 @@ Self-contained AI reference for the Agent Attribution Practice (AAP) repository.
 
 ## What is Agent Attribution Practice?
 
-Agent Attribution Practice (AAP) is defined as a set of ten architectural decision records (ADRs) and four Business AI Quadrants that together form a two-axis structure for accountability distribution in autonomous AI agent systems, with Phase (design vs operation) as an independent third dimension surfaced by ADR-0010. The ten ADRs record how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed; the four quadrants record how a piece of work is routed to the architectural regime where that distribution operates. Discovered through implementing and operating the `contemplative-agent` project by Tatsuya Shimomoto (shimo4228) and through a six-essay narrative spine published in April–May 2026, not prescribed top-down. Each ADR is a structural judgment grounded in implementation, re-expressed in harness-neutral form. The repository is maintained by shimo4228 and targets DOI registration via Zenodo. Version v0.1.0 is in preparation as of 2026-04-19.
+Agent Attribution Practice (AAP) is defined as a set of ten architectural decision records (ADRs) and four Business AI Quadrants that together form a two-axis structure for accountability distribution in autonomous AI agent systems, with Phase (design vs operation) as an independent third dimension surfaced by ADR-0010. The ten ADRs record how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed; the four quadrants record how a piece of work is routed to the architectural regime where that distribution operates. Discovered through implementing and operating the `contemplative-agent` project by Tatsuya Shimomoto (shimo4228) and through a six-essay narrative spine published in April–May 2026, not prescribed top-down. Each ADR is a structural judgment grounded in implementation, re-expressed in harness-neutral form. The repository is maintained by shimo4228 and targets DOI registration via Zenodo. Version v0.2.0 was released on 2026-05-01; v0.1.0 was the initial release on 2026-04-19.
 
 ## What is the accountability distribution thesis?
 
