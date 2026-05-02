@@ -86,12 +86,13 @@ phase-to-quadrant mapping.
 
 ## The narrative (essays)
 
-The argument behind the ADRs was developed across a six-essay
+The argument behind the ADRs was developed across a seven-essay
 sequence published in April–May 2026. The first three form the
 original trilogy (problem statement → post-incident causal tracing →
-two-layer blackbox analysis); the next three are the architectural
+two-layer blackbox analysis); the next four are the architectural
 follow-up (four-quadrant triage → vocabulary diagnosis with the
-principled attribution gap → design / operation phase distinction).
+principled attribution gap → design / operation phase distinction →
+skill-design gradient resolution).
 
 See [`docs/inspiration.md`](docs/inspiration.md) for the full lineage
 with per-essay summaries and URLs.
