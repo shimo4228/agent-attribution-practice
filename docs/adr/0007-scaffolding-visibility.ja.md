@@ -162,3 +162,24 @@ accountability chain がそもそも存在しない。
 区別と operator 側 file 実体化の早期言語化は contemplative-agent の
 design evolution に登場した。Spine の context は
 [`../inspiration.md`](../inspiration.md) を参照。
+
+**Industry instantiation (informational, 2026 Q2)。** Microsoft が
+[Microsoft Agent 365](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/)
+(GA 2026-05-01) と共に named した *Shadow AI* framing は、本 ADR が
+記録する不在問題 ── scaffolding が visible でないと governance が
+適用できない ── を業界レベルで認識した証拠。Microsoft Defender と
+Intune は Windows デバイス上の local agent (OpenClaw、GitHub Copilot
+CLI、Claude Code) を既に検出しており、2026-06 のリリースで資産
+コンテキストマッピング (各 agent がどのデバイスで動作し、どの MCP
+server に接続し、どのクラウドリソースに触るか) の追加が予定されて
+いる。Mechanism instance としては検出側の visibility — 以前は invisible
+だった scaffolding を operator から発見可能にする。提供していないのは、
+scaffolding visibility が weights internalization の構造的代替で
+あるという argument、*healthy dissolution* (scaffolding が clear な
+会話 pattern / 読みやすいファイルに溶け込む) と *unhealthy
+internalization* (scaffolding が weights に吸収される) の境界、本 ADR
+が引く operator-vs-public visibility の区別。両層は補完関係: Microsoft
+が Shadow AI gap を運用的に表面化させ、本 ADR が **なぜその gap が
+重要か、どこに visibility line を引くべきか** を記録する。
+[`../inspiration.md`](../inspiration.md#industry-artifacts-that-instantiate-aap-principles)
+参照。

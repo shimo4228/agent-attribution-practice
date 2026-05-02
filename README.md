@@ -132,6 +132,39 @@ Running the implementation surfaces friction; friction yields
 mechanism patterns (AKC) and attribution judgments (AAP); refined
 theory loops back to reshape the implementation.
 
+## Relationship to industry mechanism layer
+
+Through 2026 Q2, several industry releases populated the *mechanism
+layer* that AAP's principles describe. Microsoft Agent 365 (GA
+2026-05-01) with Entra Agent ID, the open-source Agent Governance
+Toolkit (2026-04-02), Microsoft Agent Framework 1.0 (2026-04-03),
+Purview AI Data Security Investigations, AWS Bedrock with OpenAI
+integration, Google Vertex AI Agent Builder, and identity-security
+startups such as entro.security and oasis.security have all shipped
+mechanisms — sub-millisecond policy gates, agent-identity primitives,
+sponsor systems, cross-vendor audit, cross-cloud registry sync — that
+instantiate the principles AAP records.
+
+What the mechanism layer does not ship is the judgment layer. A
+sponsor can be assigned, but who *should* be the sponsor and what
+commitment that acknowledges is not in the product. A cross-cloud
+registry can be synced, but the Single External Adapter design
+judgment (bounding blast radius at design time, not observing it
+post-hoc) is not in the product. A policy engine can intercept agent
+actions, but the prohibition-strength hierarchy (absence >
+scaffolding > untrusted boundary) that decides where each
+prohibition belongs is not in the product. AAP fills this judgment
+layer; the two layers are complementary, and the mechanism layer's
+adoption increases — not diminishes — the need for the judgment
+layer.
+
+The harness-neutral, vendor-neutral, DOI-registered artifact
+treatment of this repository is what allows it to function across
+the multiple mechanism instances that have appeared. See
+[`docs/inspiration.md`](docs/inspiration.md#industry-artifacts-that-instantiate-aap-principles)
+for the per-artifact mapping to ADRs and the explicit statement of
+what each artifact ships and what it does not.
+
 ## Reading order
 
 1. [`docs/thesis.md`](docs/thesis.md) — *accountability distribution*, the

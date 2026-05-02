@@ -162,3 +162,19 @@ Quarantine-boundary パターンは同じプロジェクトの `summarize_record
 監査 (contemplative-agent `docs/evidence/adr-0021/implementation-audit-20260418.md`、
 ADR-0028、ADR-0029) で確立された。本 ADR はそれらの発見から一般原理を
 抽出し、2026-04-19 に本 repository で初めて formalize された。
+
+**Industry instantiation (informational, 2026 Q2)。**
+[Microsoft Agent Governance Toolkit](https://github.com/microsoft/agent-governance-toolkit)
+(2026-04-02、MIT-licensed open source) は *Agent OS* を ship する —
+全 agent action を intercept するサブミリ秒・stateless ポリシーエンジン
+で、OWASP Agentic Top 10 への対応を謳う。本 ADR の原理の mechanism
+instance として、model-weight 遵守ではなく scaffolding 層で発火する
+決定論的 gate を提供する。提供していないのは、どの prohibition が
+absence 層 (ADR-0001) / scaffolding 層 (本 ADR) / untrusted-content
+層 (ADR-0003) に属するかを決める
+[prohibition-strength hierarchy](../glossary.ja.md#prohibition-strength-hierarchy禁止強度の階層)
+の判断; 製品資料は全 prohibition を scaffolding 層の concern として
+扱う。両層は補完関係: toolkit が原理を技術的に enforce 可能にし、
+本 ADR が原理を *いつ・なぜ・どのコストで* enforce すべきかを記録する。
+[`../inspiration.md`](../inspiration.md#industry-artifacts-that-instantiate-aap-principles)
+参照。

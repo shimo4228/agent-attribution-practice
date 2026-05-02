@@ -139,6 +139,56 @@ Not a team, not a role, not a committee — a named individual. Rotation
 is compatible if the rotation is formal and each rotation slot has
 exactly one named person. See ADR-0008 (experimental).
 
+## Sponsor (vendor terminology)
+
+The *sponsor* concept introduced by Microsoft Entra Agent ID
+(2026-05-01): each agent is assigned a responsible party so that
+orphaned credentials do not accumulate. The sponsor system is an
+operational ownership mechanism. Distinct from AAP's *gap-bearer*
+(see [pre-named gap-bearer](#pre-named-gap-bearer) and ADR-0009 /
+ADR-0008): a gap-bearer is a structural accountability commitment to
+absorb attribution-gap failures, named at deployment time. The same
+person can hold both roles, but a sponsor named in the product
+without acknowledging the gap-bearer commitment (legal subject,
+authority, contractual standing) is not yet a gap-bearer in the
+AAP sense. The sponsor is a necessary but not sufficient condition
+for the gap-bearer. See
+[Industry artifacts](inspiration.md#industry-artifacts-that-instantiate-aap-principles).
+
+## Agent governance (vendor terminology)
+
+The cluster of mechanisms shipped under the *agent governance* label
+by industry vendors (Microsoft Agent 365, AWS Bedrock, Google Vertex
+AI, identity-security startups): identity management, policy
+enforcement, observability, cross-cloud registry sync, audit log
+correlation. Distinct from AAP's *accountability distribution*:
+governance is the mechanism that observes what happens and enforces
+policy; accountability distribution is the structure that decides,
+when failure happens, to whom and how responsibility is redirected.
+Governance is a necessary but not sufficient condition for
+accountability distribution — logging and policy enforcement do not
+close the attribution gap intrinsic to the Autonomous Agentic Loop
+Quadrant (ADR-0009). See
+[Industry artifacts](inspiration.md#industry-artifacts-that-instantiate-aap-principles).
+
+## Observability vs structural enforcement
+
+A layered distinction surfaced by the 2026 Q2 industry releases.
+*Observability* (cross-cloud agent registry sync, audit log
+correlation, runtime monitoring) acts on agents that have already
+acquired multiple external surfaces and reconstructs what happened
+after the fact. *Structural enforcement* (ADR-0001 Security by
+Absence, ADR-0002 deterministic prohibition, ADR-0004 Single
+External Adapter) is the upstream design judgment that bounds the
+surface count at design time so that blast radius is structurally
+limited, not just observable. Observability cannot narrow blast
+radius retroactively; structural enforcement cannot tell you what
+already escaped. The two layers belong to different mechanism
+strata and entro.security's *cross-environment governance gap*
+observation is best read as evidence that observability over
+already-broken designs is the second-best path. See
+[Industry artifacts](inspiration.md#industry-artifacts-that-instantiate-aap-principles).
+
 ## Business AI Quadrants
 
 Two-axis decomposition of business AI work introduced in the

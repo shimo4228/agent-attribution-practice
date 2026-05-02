@@ -10,7 +10,7 @@
 - [Thesis — Accountability Distribution](docs/thesis.md): one-page core argument
 - [Manifesto — The Open Questions](docs/manifesto.md): civilization-scale questions the ADRs do not try to answer
 - [Glossary](docs/glossary.md): key terms and English/Japanese mapping
-- [Inspiration and Lineage](docs/inspiration.md): essays, sibling projects, extraction path
+- [Inspiration and Lineage](docs/inspiration.md): essays, sibling projects, extraction path, industry artifacts that instantiate AAP principles
 
 ## Architecture Decision Records
 
@@ -53,6 +53,17 @@ Adoption-side documents that operationalize the ten ADRs across the four Busines
 - [contemplative-agent](https://github.com/shimo4228/contemplative-agent): the running implementation (implementation layer) — surfaces friction that feeds AKC and AAP, and is reshaped by their refined judgments
 - [Agent Knowledge Cycle (AKC)](https://github.com/shimo4228/agent-knowledge-cycle): sibling project on the mechanism side (theory layer — how knowledge flows). Co-evolves with AAP and contemplative-agent via bidirectional feedback. DOI 10.5281/zenodo.19200727
 - [contemplative-agent-rules](https://github.com/shimo4228/contemplative-agent-rules): four contemplative axioms as rules
+
+## Industry mechanism layer artifacts
+
+Through 2026 Q2, several industry releases populated the *mechanism layer* that AAP's principles describe. AAP positions itself as the *judgment layer* — vendor-neutral, harness-neutral, DOI-registered — that complements but does not duplicate these mechanisms. Each entry below is a mechanism instance, not an endorsed implementation; the judgment layer (who should be the sponsor, what commitment that implies, the prohibition-strength hierarchy, the Phase-crossing decision) is not what these artifacts ship. Per-artifact mapping to ADRs is in [`docs/inspiration.md`](docs/inspiration.md#industry-artifacts-that-instantiate-aap-principles).
+
+- [Microsoft Agent Governance Toolkit](https://github.com/microsoft/agent-governance-toolkit) (2026-04-02, MIT-licensed open source): sub-millisecond stateless policy engine intercepting all agent actions, OWASP Agentic Top 10 coverage — mechanism instance for ADR-0002 deterministic prohibition at the scaffolding layer
+- [Microsoft Agent Framework 1.0](https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/) (2026-04-03): .NET / Python SDK with MCP and A2A protocol support, graph-based workflow engine — populates LLM Workflow Quadrant tooling
+- [Microsoft Agent 365](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/) (GA 2026-05-01, $15/user/month): Entra Agent ID sponsor system → mechanism instance for ADR-0008 binding; Purview AI Data Security Investigations → mechanism instance for ADR-0006 causal traceability; cross-cloud registry sync (AWS Bedrock, Google Cloud, public preview) → observability surface distinct from ADR-0004's structural blast-radius bounding; "Shadow AI" framing → industry-level recognition of ADR-0007 Scaffolding Visibility
+- AWS Bedrock with OpenAI integration (2026-05): independent agent-management surface separate from the Microsoft stack; same judgment-layer questions apply
+- Google Vertex AI Agent Builder: independent agent-platform line; included in Microsoft cross-cloud registry preview as a sync target
+- [entro.security](https://entro.security/blog/microsoft-agent-365-pushes-ai-identity-forward-but-enterprise-agents-still-need-cross-environment-governance/) and oasis.security: identity-security startups targeting cross-environment governance gap (GitHub Actions, Slack, Jira, Jenkins, non-Microsoft SaaS); their core observation about per-cloud identity fragmentation sits in productive tension with ADR-0004's design-time blast-radius bounding (see glossary entry [Observability vs structural enforcement](docs/glossary.md#observability-vs-structural-enforcement))
 
 ## Narrative essays
 

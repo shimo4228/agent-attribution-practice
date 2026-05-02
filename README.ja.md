@@ -128,6 +128,39 @@ follow-up (4 象限 triage → 語彙の診断と principled attribution gap →
 attribution judgment (AAP) を生み、磨かれた理論がまた実装に戻って
 形を変える。
 
+## 業界の mechanism layer との関係
+
+2026 Q2 に複数の industry release が AAP principle の *mechanism
+layer* を populate した。Microsoft Agent 365 (GA 2026-05-01) と
+Entra Agent ID、オープンソースの Agent Governance Toolkit
+(2026-04-02)、Microsoft Agent Framework 1.0 (2026-04-03)、
+Purview AI Data Security Investigations、AWS Bedrock + OpenAI 統合、
+Google Vertex AI Agent Builder、entro.security や oasis.security
+のような identity-security スタートアップ ── これらすべてが
+mechanism (sub-ms ポリシーゲート、agent identity primitive、sponsor
+制度、cross-vendor 監査、cross-cloud registry sync) を ship して
+おり、AAP が記録する principle の instance を提供している。
+
+Mechanism layer が ship していないのは judgment layer である。
+Sponsor は assign できるが、**誰が** sponsor になるべきか・それが
+何の commitment を意味するかは product に含まれない。Cross-cloud
+registry は sync できるが、Single External Adapter の設計判断
+(設計時に blast radius を bound する、事後 observation ではない)
+は product に含まれない。Policy engine は agent action を
+intercept できるが、prohibition-strength hierarchy (absence >
+scaffolding > untrusted boundary) でどの prohibition がどの層に
+属するか決める判断は product に含まれない。AAP がこの judgment
+layer を埋める。両 layer は補完関係で、mechanism layer の普及は
+judgment layer の必要性を **減らすのではなく増す**。
+
+本 repository の harness-neutral / vendor-neutral / DOI-registered
+という artifact treatment は、現れた複数の mechanism instance を
+横断して機能するために必要な前提。各 artifact がどの ADR の
+mechanism instance に対応するか、何を ship して何を ship していない
+かの明示は
+[`docs/inspiration.md`](docs/inspiration.md#industry-artifacts-that-instantiate-aap-principles)
+を参照。
+
 ## 読む順序
 
 1. [`docs/thesis.ja.md`](docs/thesis.ja.md) — *accountability distribution*、

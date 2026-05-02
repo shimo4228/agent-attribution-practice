@@ -155,3 +155,24 @@ rejected / superseded に動く。
 
 この ADR はそのフレーズを ADR-0004 と並ぶ構造的 rule として formalize
 する最初の試み。複数人組織設定ではまだ validate されていない。
+
+**Industry instantiation (informational, 2026 Q2)。**
+[Microsoft Agent 365](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/)
+(GA 2026-05-01) の identity-management 軸として ship された
+[Microsoft Entra Agent ID](https://learn.cloudpartner.fi/posts/microsoft-entra-agent-id-agentic-identity-ai-agents)
+は *sponsor 制度* を導入する: 各 agent に責任者を割り当て、孤立した
+認証情報の蓄積を防ぐ。これは *agent ごとに named human* という要件の
+mechanism instance。提供していないのは、sponsor を
+[pre-named gap-bearer](../glossary.ja.md#pre-named-gap-bearer事前命名された責任引受者)
+に変える structural commitment (attribution-gap 吸収の acknowledge、
+legal subject standing、contractual authority)、accountable operator が
+team / role / committee ではなく個人でなければならないという
+normative argument、ADR-0009 の design-time triage との接続
+(gap-bearer は deployment commitment であり runtime assignment では
+ない)。両層は補完関係: Entra Agent ID が agent ごとの ownership を
+administrative に可能にし、本 ADR は administrative assignment の
+**先に何が要求されるか** を記録する。
+[Sponsor (vendor terminology)](../glossary.ja.md#sponsor-vendor-terminologysponsor--業界語彙)
+glossary エントリが区別を記録する。
+[`../inspiration.md`](../inspiration.md#industry-artifacts-that-instantiate-aap-principles)
+参照。

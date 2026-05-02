@@ -196,6 +196,54 @@ operator (ADR-0008 の named individual) と一致することもあれば、
 (insurance pool、regulatory body) であることもある。誰も指名できない
 場合 deploy しないのが ADR-0009 の rule。
 
+## Sponsor (vendor terminology)（sponsor — 業界語彙）
+
+Microsoft Entra Agent ID (2026-05-01) が導入した *sponsor* 概念:
+各 agent に責任者を割り当て、孤立した認証情報の蓄積を防ぐ。Sponsor
+制度は administrative ownership の mechanism。AAP の
+[*pre-named gap-bearer*](#pre-named-gap-bearer事前命名された責任引受者)
+(ADR-0009 / ADR-0008 参照) とは区別する: gap-bearer は **deployment
+時に named された structural な accountability commitment** で、
+attribution gap 失敗を引き受ける subject。同一人物が両方を兼ねうるが、
+product 上で sponsor が named されていても gap-bearer commitment
+(legal subject、authority、contractual standing) を acknowledge
+していないケースは、AAP の意味では gap-bearer になっていない。
+Sponsor は gap-bearer の必要条件だが十分条件ではない。
+[Industry artifacts](inspiration.md#industry-artifacts-that-instantiate-aap-principles)
+参照。
+
+## Agent governance (vendor terminology)（agent governance — 業界語彙）
+
+業界 vendor (Microsoft Agent 365、AWS Bedrock、Google Vertex AI、
+identity-security スタートアップ) が *agent governance* というラベルで
+ship する mechanism 群: identity 管理、policy enforcement、
+observability、cross-cloud registry sync、audit log 相関。AAP の
+*accountability distribution* とは区別する: governance は「何が起きて
+いるかを観測し、policy を enforce する mechanism」、accountability
+distribution は「失敗時に誰にどう redirect するかの構造」。Governance
+は accountability distribution の必要条件だが十分条件ではない —
+logging と policy enforcement は Autonomous Agentic Loop Quadrant
+(ADR-0009) に内在する attribution gap を閉じない。
+[Industry artifacts](inspiration.md#industry-artifacts-that-instantiate-aap-principles)
+参照。
+
+## Observability vs structural enforcement（observability と構造的 enforcement の区別）
+
+2026 Q2 の industry release が表に出した階層的区別。
+*Observability* (cross-cloud agent registry sync、audit log 相関、
+runtime monitoring) は **既に複数の external surface を獲得した agent**
+に対して動作し、事後に何が起きたかを再構成する。
+*Structural enforcement* (ADR-0001 Security by Absence、ADR-0002
+deterministic prohibition、ADR-0004 Single External Adapter) は
+**設計時に surface 数を bound** し、blast radius を観測可能にする
+だけでなく構造的に制限する上流側の判断。Observability は事後に blast
+radius を狭めることはできず、structural enforcement はすでに漏れた
+ものを教えてくれない。両者は階層が違う mechanism stratum に属する。
+entro.security の *cross-environment governance gap* 観察は、
+「既に壊れた設計の上での observability は次善」という証拠として読める。
+[Industry artifacts](inspiration.md#industry-artifacts-that-instantiate-aap-principles)
+参照。
+
 ## Business AI Quadrants（業務 AI 四象限）
 
 2026-04-29 essay で導入された 2 軸の分解: 決定論 vs 意味判断 軸、
