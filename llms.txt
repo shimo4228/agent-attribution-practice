@@ -12,6 +12,7 @@
 - [Glossary](docs/glossary.md): key terms and English/Japanese mapping
 - [Inspiration and Lineage](docs/inspiration.md): essays, sibling projects, extraction path
 - [Industry mechanism layer mapping](docs/industry-mapping.md): time-bound 2026 Q2 snapshot mapping vendor mechanisms (Microsoft Agent 365, AWS Bedrock, Google Vertex AI, identity-security startups) to ADRs
+- [Codemap — Document Architecture](docs/CODEMAPS/architecture.md): document-role index, two-axis + Phase structure, citation-dependency graph, invariants — read first when routing a citation to the canonical AAP document
 
 ## Architecture Decision Records
 

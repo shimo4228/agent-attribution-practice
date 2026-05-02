@@ -120,8 +120,11 @@ ADR 本文が扱うのは *judgment* (persistent)。*implementation* (Hooks、CL
 │   │   ├── governance-mapping.md / governance-mapping.ja.md
 │   │   ├── case-studies.md / case-studies.ja.md
 │   │   └── anti-patterns.md / anti-patterns.ja.md
-│   └── skills/
-│       └── llm-agent-security-principles.md
+│   ├── skills/
+│   │   └── llm-agent-security-principles.md
+│   └── CODEMAPS/         # LLM-facing architectural map (INDEX.md + architecture.md)
+│       ├── INDEX.md
+│       └── architecture.md
 └── examples/
     └── audit-tests/       # grep-based Security by Absence 検査の CI 化例
 ```
