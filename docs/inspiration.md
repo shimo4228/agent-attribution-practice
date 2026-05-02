@@ -146,97 +146,12 @@ Both are extractions from contemplative-agent, along different axes.
 ## Industry artifacts that instantiate AAP principles
 
 Through 2026 Q2, several industry releases shipped the *mechanism
-layer* that AAP's principles describe. They are listed here not as
-reference architectures and not as endorsed implementations, but as
-concrete instances readers can use to ground the abstract ADR
-language. The repository's core thesis — *implementation dissolves;
-judgment persists* — remains the framing: each artifact below is a
-mechanism instance for a principle this repository records as a
-judgment. The judgment layer (who should be the sponsor, what
-commitment that implies, the difference between artificial and
-principled redirect impossibility, the Phase-crossing decision in
-ADR-0010) is not what the artifacts ship.
-
-### Microsoft (2026 Q2)
-
-A coordinated three-stage release populated the mechanism layer
-across the Microsoft ecosystem:
-
-- **[Agent Governance Toolkit](https://github.com/microsoft/agent-governance-toolkit)**
-  (2026-04-02, MIT-licensed open source). Sub-millisecond
-  policy-engine gate (Agent OS) intercepting all agent actions, with
-  OWASP Agentic Top 10 coverage. A direct mechanism instance for
-  ADR-0002's deterministic prohibition at the scaffolding layer.
-- **Microsoft Agent Framework 1.0** (2026-04-03). .NET / Python SDK
-  unifying Semantic Kernel and AutoGen, with full MCP protocol
-  support and A2A support announced at 1.0 (full A2A 1.0 support
-  noted as forthcoming in the launch post), a graph-based workflow
-  engine, and middleware hooks. Populates the LLM Workflow Quadrant
-  tooling alongside Anthropic's "Building Effective Agents" patterns.
-- **[Microsoft Agent 365](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/)**
-  (GA 2026-05-01, $15/user/month standalone or part of Microsoft 365
-  E7 — also referred to as the Frontier Suite). Four mechanism axes:
-  Entra Agent ID (a dedicated identity category for agents alongside
-  users and devices, with sponsor system) → mechanism instance for
-  ADR-0008 binding; Purview Data Security Investigations (log
-  correlation across Microsoft 365, Azure, and integrated third-party
-  AI services) → mechanism instance for ADR-0006 causal traceability;
-  cross-cloud registry sync (AWS Bedrock, Google Cloud, public
-  preview) → an *observability* approach distinct from ADR-0004's
-  structural blast-radius bounding; pricing that treats governance as
-  standard cost rather than optional add-on. The "Shadow AI" framing
-  Microsoft uses is the industry-level recognition of what ADR-0007
-  Scaffolding Visibility names as the absence problem.
-
-### AWS Bedrock + OpenAI integration (2026-04)
-
-AWS announced OpenAI model availability through Bedrock on
-2026-04-28 as a limited preview, with general availability
-described as imminent at launch, strengthening Bedrock as an
-independent agent-management surface. This is a mechanism-layer
-instance separate from the Microsoft stack; the same judgment-layer
-questions apply (who is the gap-bearer, what is the Phase-crossing
-decision when an autonomous loop is placed in operation phase).
-
-### Google Vertex AI Agent Builder (rebranded Gemini Enterprise Agent Platform at Google Cloud Next 2026)
-
-Google's independent agent-platform line. Included as a sync target
-in Microsoft's cross-cloud registry preview, demonstrating the
-fragmentation problem entro.security flags: each cloud provider
-maintains its own identity model, producing multiple governance
-blind spots that a registry sync surfaces but does not eliminate.
-
-### Identity-security startups (entro.security, oasis.security)
-
-Targeting the cross-environment governance gap that Microsoft
-Agent 365 cannot reach (GitHub Actions, Slack, Jira, Jenkins, other
-non-Microsoft SaaS). Their core observation — *each cloud
-provider builds its own agent identity model, producing fragmented
-control and multiple governance blind spots* — sits in productive
-tension with ADR-0004's Single External Adapter principle: their
-mechanism is post-hoc observability over agents that have already
-acquired multiple external surfaces; ADR-0004 is the upstream
-design judgment that bounds the surface count at design time.
-Both layers have value; the glossary entry
-[Observability vs structural enforcement](glossary.md#observability-vs-structural-enforcement)
-records the distinction.
-
-### What the industry layer ships, and what it does not
-
-The artifacts above ship *mechanism*: identity primitives for
-agents, sub-millisecond policy gates, cross-vendor audit
-infrastructure, sponsor systems, registry sync. They do not ship
-*judgment*: who should be the sponsor and what commitment that
-acknowledges, why the prohibition-strength hierarchy ranks absence
-above scaffolding above untrusted boundary, when an autonomous loop
-should be triaged out of operation phase, what Phase-crossing
-decision a deployment is running under. The two layers are
-complementary; the mechanism layer makes the principles technically
-enforceable, the judgment layer records when, why, and at what cost
-the principles should be enforced. AAP's harness-neutral,
-vendor-neutral, DOI-registered artifact treatment is what allows
-this complementarity to hold across the multiple mechanism
-instances that have started to appear.
+layer* that AAP's principles describe (Microsoft Agent 365 and the
+surrounding Microsoft / AWS / Google releases, plus identity-security
+startups). The per-artifact mapping to ADRs is maintained in
+[`industry-mapping.md`](industry-mapping.md) — a deliberately
+time-bound document that decays as vendor products evolve, kept
+separate from the ADRs so the judgments themselves stay clean.
 
 ## Why the extraction path looked like this
 

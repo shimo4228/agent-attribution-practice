@@ -153,7 +153,7 @@ without acknowledging the gap-bearer commitment (legal subject,
 authority, contractual standing) is not yet a gap-bearer in the
 AAP sense. The sponsor is a necessary but not sufficient condition
 for the gap-bearer. See
-[Industry artifacts](inspiration.md#industry-artifacts-that-instantiate-aap-principles).
+[Industry mapping](industry-mapping.md).
 
 ## Agent governance (vendor terminology)
 
@@ -169,7 +169,7 @@ Governance is a necessary but not sufficient condition for
 accountability distribution — logging and policy enforcement do not
 close the attribution gap intrinsic to the Autonomous Agentic Loop
 Quadrant (ADR-0009). See
-[Industry artifacts](inspiration.md#industry-artifacts-that-instantiate-aap-principles).
+[Industry mapping](industry-mapping.md).
 
 ## Observability vs structural enforcement
 
@@ -187,7 +187,7 @@ already escaped. The two layers belong to different mechanism
 strata and entro.security's *cross-environment governance gap*
 observation is best read as evidence that observability over
 already-broken designs is the second-best path. See
-[Industry artifacts](inspiration.md#industry-artifacts-that-instantiate-aap-principles).
+[Industry mapping](industry-mapping.md).
 
 ## Business AI Quadrants
 

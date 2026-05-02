@@ -110,6 +110,7 @@ ADR 本文が扱うのは *judgment* (persistent)。*implementation* (Hooks、CL
 │   ├── manifesto.md       # civilization-scale open questions (draft)
 │   ├── glossary.md / glossary.ja.md      # key terms (4 quadrants + attribution mechanics を含む、ja 同期)
 │   ├── inspiration.md     # 7 記事 + moltbook + AKC 系譜
+│   ├── industry-mapping.md / industry-mapping.ja.md  # 2026 Q2 vendor mechanism → ADR 対応 (time-bound、ADR と分離)
 │   ├── adr/
 │   │   ├── README.md / README.ja.md
 │   │   └── 0001-0010.md / 0001-0010.ja.md   # 10 本の ADR (0001/0002/0003 は prohibition-strength hierarchy、0009/0010 は triage pair) — 英日ペア
