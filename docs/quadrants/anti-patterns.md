@@ -68,6 +68,56 @@ Language: English | [日本語](anti-patterns.ja.md)
   workflow (LLM Workflow Quadrant) or accepted as a domain that
   legitimately requires in-place handling (recorded as such).
 
+## Skill-internal phase descent ignored — uniform ReAct or uniform freeze
+
+> "Every step in this skill calls the LLM" / "Every step in this
+> skill is a hardcoded path."
+
+- **Failure mode.** A single skill is implemented as either *all
+  runtime LLM judgment* (every subcomponent is a free-form LLM
+  call, even when the targets sit at fixed paths and the scale is
+  modest) or *all frozen pipeline* (every subcomponent is a
+  hardcoded path, even when the targets vary across invocations
+  and runtime judgment would actually be required). The
+  [skill-design gradient](../glossary.md#skill-design-gradient)
+  introduced in essay 7 (2026-05-02) is collapsed into a binary
+  choice rather than evaluated subcomponent by subcomponent.
+- **Why it happens.** Teams design skills with the implicit binary
+  "is this a 'LLM-judgment skill' or a 'non-LLM script'?" instead
+  of recognizing that the
+  [Phase descent](../glossary.md#phase-descent) reaches inside
+  the skill itself. Vendor framings ("agentic skills" vs
+  "deterministic skills") reinforce the binary.
+- **What breaks.**
+  - *Uniform ReAct shape.* Subcomponents that would naturally be
+    Quadrant 3 (or even Quadrant 1) get smuggled into operation as
+    Quadrant 4 fragments. The
+    [`attribution gap`](../glossary.md#attribution-gap) appears
+    inside an otherwise transparent skill, and ADR-0010's
+    Phase-crossing decision is bypassed at the skill-internal
+    level even when the skill is nominally an operation-phase
+    component.
+  - *Uniform frozen-pipeline shape.* Subcomponents whose targets
+    actually vary across invocations (low
+    [target identifiability](../glossary.md#target-identifiability))
+    or whose scale exceeds LLM miss-rate tolerance
+    ([scale-resilience](../glossary.md#scale-resilience))
+    silently fail when the assumed fixed paths or naming
+    conventions stop holding. The skill returns wrong answers
+    instead of acknowledging the runtime variance.
+- **Recovery.** Walk each subcomponent through the
+  [`decision tree`](decision-tree.md) using a lightweight
+  skill-internal Q0 ("what phase is this subcomponent in — design
+  or operation?"), then check the two secondary forces (target
+  identifiability and scale-resilience) for that subcomponent. The
+  full decision tree does not need to re-run inside every skill,
+  but the subcomponent gradient position should be deliberate
+  rather than inherited from the skill's surface label. When a
+  subcomponent must run as runtime judgment inside an
+  operation-phase skill, treat the choice as informational under
+  ADR-0010's Skill-design descent: name what the subcomponent is
+  doing and why a frozen-pipeline form will not work.
+
 ## Bounded work on autonomous loop
 
 > "Implement customer support / FAQ classification / invoice matching

@@ -62,6 +62,49 @@
   in-place handling を legitimately 要する domain として accept (record)
   する。
 
+## Skill 内 phase descent を無視する — 一律 ReAct 化または一律 freeze 化
+
+> 「この skill は全 step が LLM を呼ぶ」 / 「この skill は全 step が
+> ハードコード path」
+
+- **失敗モード。** 単一 skill が *全 subcomponent が runtime LLM 判断*
+  (対象が固定 path に乗っていて規模も大きくないのに各 subcomponent が
+  自由形式の LLM 呼び出し) または *全 subcomponent が frozen pipeline*
+  (対象が呼び出しごとに可変で本来 runtime 判断が要るのに各 subcomponent
+  がハードコード path) として実装される。Essay 7 (2026-05-02) で導入
+  された [skill-design gradient](../glossary.ja.md#skill-design-gradientskill-設計勾配)
+  が subcomponent ごとに評価されるのではなく、二値選択に collapse される。
+- **なぜ起きる。** チームが skill を「これは LLM 判断 skill か
+  non-LLM script か?」の暗黙の二値で設計する習慣を持ち、
+  [Phase descent](../glossary.ja.md#phase-descentphase-軸の下降)
+  が skill 内部にまで届くことを認識していない。Vendor の framing
+  (「agentic skill」と「deterministic skill」) もこの二値を補強する。
+- **何が壊れる。**
+  - *一律 ReAct 形態。* 本来 Quadrant 3 (あるいは Quadrant 1) であるべき
+    subcomponent が operation に Quadrant 4 fragment として密輸入される。
+    [`attribution gap`](../glossary.ja.md#attribution-gap寄与の事後分離不能ギャップ)
+    が他は透明な skill 内部に出現し、skill が名目上 operation-phase
+    component であっても ADR-0010 の Phase-crossing decision が
+    skill-internal レベルでバイパスされる。
+  - *一律 frozen-pipeline 形態。* 対象が呼び出しごとに変わる (低い
+    [target identifiability](../glossary.ja.md#target-identifiability識別可能性))
+    または規模が LLM miss-rate 許容度を超える
+    ([scale-resilience](../glossary.ja.md#scale-resilience-スケール耐性))
+    subcomponent が、仮定していた固定 path や命名規約が成り立たなく
+    なった瞬間に silent fail する。Skill は runtime variance を
+    acknowledge する代わりに wrong answer を返す。
+- **回復。** 各 subcomponent に対して
+  [`decision tree`](decision-tree.ja.md) を skill-internal な軽量 Q0
+  (「この subcomponent の phase は何か — design か operation か?」)
+  を使って歩き、その subcomponent の二次的な力 (target identifiability
+  と scale-resilience) を確認する。Decision tree 全体を全 skill 内で
+  再実行する必要はないが、subcomponent の gradient 上の位置は skill
+  表面 label から継承するのではなく明示的に決められるべき。
+  Operation-phase skill の中で subcomponent が runtime judgment として
+  動く必要がある時は、その選択を ADR-0010 の Skill-design descent の
+  もとで informational として扱う: subcomponent が何をしているのか、
+  なぜ frozen-pipeline 形態では機能しないのかを named する。
+
 ## Bounded 業務に autonomous loop
 
 > 「カスタマーサポート / FAQ 分類 / 請求書マッチングを ReAct エージェント

@@ -84,17 +84,20 @@ as a design-time mismatch.
 This is what the deploying team should think about, not blanket
 phase-to-quadrant mapping.
 
-### The three-layer diagnosis (essays 4–6)
+### The three-layer diagnosis (essays 4–7)
 
 | Layer | Diagnosis | Essay |
 |---|---|---|
 | Surface | Quadrant misapplication — (3) work routed through (4) architecture | Essay 4 (2026-04-29) |
 | Middle | Vocabulary gap — no positive name for the LLM Workflow Quadrant | Essay 5 (2026-04-30) |
-| Deep | Phase conflation — "always-on autonomous agent runs business" compresses design + operation into one system | Essay 6 (2026-05-01) |
+| Deep | Phase conflation — "always-on autonomous agent runs business" compresses design + operation into one system; the same Phase axis descends to skill-design granularity (skill subcomponent level) | Essays 6 (2026-05-01) and 7 (2026-05-02) |
 
 Misapplication grows from vocabulary gap; vocabulary gap from phase
-conflation. ADR-0010 records the deepest layer as a *diagnostic
-frame*, not a partitioning rule.
+conflation. Essay 7 extends the deep layer by showing that the same
+Phase axis applies inside skill design: a single skill can host
+both frozen-pipeline and runtime-judgment subcomponents, and the
+diagnostic frame applies recursively to each. ADR-0010 records the
+deepest layer as a *diagnostic frame*, not a partitioning rule.
 
 ## Decision (experimental)
 
@@ -138,6 +141,48 @@ the operation deployment runs on Quadrant 1 + 3 (+ 2) components,
 and Autonomous Agentic Loop placements that drift into operation
 without an explicit Phase-crossing decision are out of compliance
 with ADR-0010.
+
+### Skill-design descent (informational, from essay 7)
+
+The Phase axis above is stated at business-system granularity
+(deployment placements of Quadrants), but the same axis descends to
+**skill-design granularity** and even to **skill-internal subcomponents**.
+Essay 7 (2026-05-02) records the descent. It is informational here,
+not a load-bearing rule: the Phase-crossing decision in (1) is still
+required only at the business-system placement of Quadrant 4, not at
+each skill subcomponent.
+
+The descent has three load-bearing observations:
+
+- **The same job lands at different positions on the Quadrant 3 ↔
+  Quadrant 4 gradient depending on phase.** A job whose target
+  artifacts and execution environment are not yet known at design
+  time naturally lives as a runtime-judgment skill (closer to
+  Quadrant 4); the same job, once its targets settle into fixed
+  paths and naming conventions in operation, can be re-implemented
+  as a frozen pipeline of bounded calls (closer to Quadrant 3 or
+  even Quadrant 1).
+- **Two secondary forces decide where on the gradient a skill
+  (or subcomponent) lands.** [*Target identifiability*](../glossary.md#target-identifiability)
+  asks whether the artifacts the skill operates on sit at fixed
+  paths or under fixed naming conventions. [*Scale-resilience*](../glossary.md#scale-resilience)
+  asks how many units the skill processes per cycle and how much
+  miss rate is tolerable at that scale. Both must hold for the
+  operation-phase frozen-pipeline form to work.
+- **Capability is downstream of phase, not the primary lever.**
+  Higher-capability LLMs do not erase the differences in target
+  identifiability or scale-resilience. AKC's Design Principle
+  ("capability ↑ → holistic judgment OK") covers neither, so model
+  choice is informed by the phase decision rather than driving it.
+
+For the purpose of the Phase-crossing decision in (1), a skill is
+treated as a single business-system component. Internal phase
+gradients within a skill are governed by the
+[skill-design gradient](../glossary.md#skill-design-gradient)
+guidance, not by ADR-0010 (1). The
+[`anti-patterns.md`](../quadrants/anti-patterns.md) and
+[`case-studies.md`](../quadrants/case-studies.md) navigators
+operationalize the descent.
 
 ### What this is *not* saying
 
@@ -226,11 +271,17 @@ with ADR-0010.
   agent do?" but also "what Phase-crossing decision was the
   deployment running under when this happened?" The answer is in
   the deployment record, not inferred.
-- The three-layer diagnosis (essays 4–6) becomes a permanent
+- The three-layer diagnosis (essays 4–7) becomes a permanent
   diagnostic frame for design reviews: when an autonomous loop is
   proposed for operation, walk the layers. Most resolutions
   surface a misapplication (layer 1) or a vocabulary gap
   (layer 2) before the phase question even arises.
+- The same diagnostic frame is now usable at skill-design
+  granularity: a single skill, or a single subcomponent within
+  a skill, can be walked through misapplication / vocabulary
+  gap / phase conflation in the same order. This descent is
+  informational; ADR-0010 (1) still applies only at the
+  business-system level.
 
 ## Open questions (why this is experimental)
 
@@ -264,6 +315,16 @@ with ADR-0010.
    vendor materials assume "operation = autonomous-loop runtime"
    by default. Whether this requires a counter-vocabulary AAP
    should provide is open.
+6. **Skill subcomponent descent and the Phase-crossing decision.**
+   Essay 7 surfaces that the Phase axis descends inside individual
+   skills. AAP currently treats a skill as a single business-system
+   component for the purpose of (1), but the boundary between
+   "skill subcomponent that legitimately runs as runtime judgment"
+   and "skill subcomponent that smuggles a Quadrant 4 placement
+   into operation phase without a Phase-crossing decision" is
+   under-specified. Whether a future revision should require a
+   per-skill Phase-crossing decision when any subcomponent is
+   runtime-judgment is open.
 
 This ADR will be revised as operational experience accumulates with
 the Phase-crossing decision in actual deployments. The status will
@@ -273,12 +334,21 @@ operation distinction turns out not to be the right cut.
 
 ---
 
-**Lineage.** Article 6 of the
-[six-essay narrative spine](../inspiration.md) (2026-05-01)
-articulated the design / operation distinction and the three-layer
-diagnosis (misapplication → vocabulary gap → phase conflation). The
-argument is offered as observation and proposal, not as a categorical
-phase-to-quadrant mapping; ADR-0010 preserves that posture. Parallel
+**Lineage.** Articles 6–7 of the
+[seven-essay narrative spine](../inspiration.md) (2026-05-01 /
+2026-05-02) jointly form the lineage. Article 6 articulated the
+design / operation distinction and the three-layer diagnosis
+(misapplication → vocabulary gap → phase conflation) at
+business-system granularity. Article 7 descended the same Phase axis
+to skill-design and skill-subcomponent granularity, observing that
+the Quadrant 3 ↔ Quadrant 4 boundary is a continuous gradient on
+which the same job takes different shapes depending on phase, with
+target identifiability and scale-resilience as secondary forces. The
+argument across both essays is offered as observation and proposal,
+not as a categorical phase-to-quadrant mapping; ADR-0010 preserves
+that posture and absorbs essay 7 as informational descent rather
+than as a new load-bearing rule (the (1) Phase-crossing decision
+still applies only at business-system placements). Parallel
 to [ADR-0009](0009-triage-before-autonomy.md): 0009 triages whether
 the work adopts the autonomous loop; 0010 surfaces the Phase-crossing
 decision when 0009's answer is yes and the placement is

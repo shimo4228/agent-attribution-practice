@@ -227,7 +227,7 @@ ADR-0005、ADR-0006、ADR-0008 が最も weight を持つ。
 ---
 
 **Lineage。**
-[6 部作 narrative spine](../inspiration.md) の記事 4 と 5: 記事 4
+[7 部作 narrative spine](../inspiration.md) の記事 4 と 5: 記事 4
 (2026-04-29) が業務 AI の 4 象限 framing を導入し、記事 5 (2026-04-30)
 が principled vs artificial redirect impossibility と不在の
 accountability subject (*moral crumple zone*、Elish 2019) を named

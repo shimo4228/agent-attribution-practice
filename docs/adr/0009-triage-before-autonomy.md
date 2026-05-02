@@ -251,7 +251,7 @@ of the eight become load-bearing for a given piece of work.
 ---
 
 **Lineage.** Articles 4 and 5 of the
-[six-essay narrative spine](../inspiration.md): Article 4 (2026-04-29)
+[seven-essay narrative spine](../inspiration.md): Article 4 (2026-04-29)
 introduced the four-quadrant framing of business AI work; Article 5
 (2026-04-30) named the principled vs artificial redirect impossibility
 and the absent accountability subject (*moral crumple zone*, Elish

@@ -81,16 +81,20 @@ system 内で。
 これが deploying team が考えるべきことであって、blanket な
 phase-to-quadrant mapping ではない。
 
-### The three-layer diagnosis（3 層診断 — エッセイ 4-6）
+### The three-layer diagnosis（3 層診断 — エッセイ 4-7）
 
 | Layer | 診断 | Essay |
 |---|---|---|
 | 表層 | Quadrant 誤適用 — (3) 業務が (4) アーキテクチャ経由で routing される | Essay 4 (2026-04-29) |
 | 中層 | 語彙 gap — LLM Workflow Quadrant の肯定形の名前がない | Essay 5 (2026-04-30) |
-| 深層 | Phase 混同 — 「always-on autonomous agent が業務を回す」が design + operation を 1 system に圧縮する | Essay 6 (2026-05-01) |
+| 深層 | Phase 混同 — 「always-on autonomous agent が業務を回す」が design + operation を 1 system に圧縮する; 同じ Phase 軸が skill 設計粒度 (skill subcomponent レベル) にまで降りる | Essays 6 (2026-05-01) と 7 (2026-05-02) |
 
-誤適用は語彙 gap から育ち、語彙 gap は phase 混同から育つ。ADR-0010 は
-最深層を *診断フレーム* として記録する、partition rule としてではなく。
+誤適用は語彙 gap から育ち、語彙 gap は phase 混同から育つ。Essay 7 は
+深層を拡張する: 同じ Phase 軸が skill 設計内部にも適用されることを示し、
+単一の skill が frozen-pipeline subcomponent と runtime-judgment
+subcomponent の両方を host しうる、診断フレームは各 subcomponent に
+再帰的に適用できる、と述べる。ADR-0010 は最深層を *診断フレーム* として
+記録する、partition rule としてではなく。
 
 ## Decision (experimental)
 
@@ -127,6 +131,45 @@ AAP は以下の narrow な判断を記録する:
 deployment は Quadrant 1 + 3 (+ 2) の component で動き、明示的な
 Phase-crossing decision なしに operation に流れ込んだ Autonomous
 Agentic Loop placement は ADR-0010 への non-compliance になる。
+
+### Skill-design descent（informational、エッセイ 7 から）
+
+上記の Phase 軸は business-system 粒度 (Quadrant の deployment placement)
+で述べているが、同じ軸は **skill 設計粒度** にも、さらに **skill 内
+subcomponent 粒度** にも降りる。Essay 7 (2026-05-02) がこの descent を
+記録する。これはここでは informational であり load-bearing rule では
+ない: (1) の Phase-crossing decision は依然として Quadrant 4 の
+business-system placement に対してのみ要求される、各 skill subcomponent
+に対してではない。
+
+Descent には 3 つの load-bearing 観察がある:
+
+- **同じジョブが phase 次第で Quadrant 3 ↔ Quadrant 4 gradient 上の
+  異なる位置に着地する。** 設計時に対象 artifact と実行環境がまだ
+  knowable でないジョブは自然と runtime-judgment skill (Quadrant 4 寄り)
+  として住まう; 同じジョブが operation で対象が固定 path / 命名規約に
+  乗った瞬間に、bounded 呼び出しの frozen pipeline (Quadrant 3 寄り、
+  または Quadrant 1) として再実装できる。
+- **gradient 上の位置を決める二次的な力が 2 つある。**
+  [*Target identifiability*](../glossary.ja.md#target-identifiability識別可能性)
+  は skill が対象とする artifact が固定 path / 命名規約を持つかを問う。
+  [*Scale-resilience*](../glossary.ja.md#scale-resilience-スケール耐性)
+  は skill が 1 サイクルあたり処理する単位数とその規模での miss rate
+  許容度を問う。両方が満たされて初めて operation-phase の
+  frozen-pipeline 形態が機能する。
+- **Capability は phase の下流にあって主因ではない。**
+  より高 capability の LLM でも target identifiability や scale-resilience
+  の差は埋められない。AKC の Design Principle (「capability ↑ → holistic
+  judgment OK」) はどちらもカバーしないため、model 選択は phase 決定の
+  下流にあって、それを driving しない。
+
+(1) の Phase-crossing decision の目的では、skill は単一の business-system
+component として扱う。Skill 内の phase gradient は
+[skill-design gradient](../glossary.ja.md#skill-design-gradient)
+の guidance によって支配され、ADR-0010 (1) ではない。
+[`anti-patterns.ja.md`](../quadrants/anti-patterns.ja.md) と
+[`case-studies.ja.md`](../quadrants/case-studies.ja.md) の navigator が
+descent を運用化する。
 
 ### What this is *not* saying（これが *言っていない* こと）
 
@@ -207,10 +250,14 @@ Agentic Loop placement は ADR-0010 への non-compliance になる。
   「これが起きた時、deployment はどの Phase-crossing decision のもとで
   動いていたか?」にも答えられる。答えは deployment record にあり、
   推測ではない。
-- 3 層診断 (エッセイ 4-6) が design review のための恒久的診断フレーム
+- 3 層診断 (エッセイ 4-7) が design review のための恒久的診断フレーム
   になる: autonomous loop が operation に提案されたら層を歩く。多くの
   resolution は phase 質問が出る前に誤適用 (層 1) や語彙 gap (層 2) を
   表に出す。
+- 同じ診断フレームが skill 設計粒度でも使えるようになる: 単一の skill、
+  あるいは skill 内の単一 subcomponent も、誤適用 / 語彙 gap / phase
+  混同を同じ順序で歩ける。この descent は informational であり、
+  ADR-0010 (1) は依然として business-system レベルにのみ適用される。
 
 ## Open questions (why this is experimental)
 
@@ -241,6 +288,14 @@ Agentic Loop placement は ADR-0010 への non-compliance になる。
    runtime」と仮定していても Phase-crossing decision を明示しなければ
    ならない。これが AAP が提供すべき counter-vocabulary を要求するか
    は open。
+6. **Skill subcomponent descent と Phase-crossing decision。**
+   Essay 7 が個別 skill 内部に Phase 軸が降りることを表に出す。AAP は
+   現状 (1) の目的では skill を単一の business-system component として
+   扱うが、「正当に runtime judgment として走る skill subcomponent」と
+   「Phase-crossing decision 抜きで Quadrant 4 placement を operation
+   phase に密輸入する skill subcomponent」の境界は under-specified。
+   将来の改訂が、subcomponent のいずれかが runtime-judgment である時に
+   skill 単位の Phase-crossing decision を要求すべきかは open。
 
 この ADR は実 deployment での Phase-crossing decision の運用経験が
 蓄積するに従って改訂される。Status は edge case が documented answer
@@ -251,11 +306,18 @@ superseded に動く。
 ---
 
 **Lineage。**
-[6 部作 narrative spine](../inspiration.md) の記事 6 (2026-05-01)
-が design / operation 区別と 3 層診断 (誤適用 → 語彙 gap → phase
-混同) を articulate した。Argument は categorical な phase-to-quadrant
-mapping としてではなく、観察と提案として提示されている; ADR-0010 は
-その姿勢を保つ。ADR-0010 は
+[7 部作 narrative spine](../inspiration.md) の記事 6-7 (2026-05-01 /
+2026-05-02) が共に lineage を成す。記事 6 が business-system 粒度で
+design / operation 区別と 3 層診断 (誤適用 → 語彙 gap → phase 混同) を
+articulate した。記事 7 が同じ Phase 軸を skill 設計粒度・skill
+subcomponent 粒度に descend させ、Quadrant 3 ↔ Quadrant 4 境界が連続
+gradient であって、同じジョブが phase 次第で別形態を取り、target
+identifiability と scale-resilience が二次的な力として位置を決めると
+観察した。両 essay の argument は categorical な phase-to-quadrant
+mapping としてではなく観察と提案として提示されている; ADR-0010 は
+その姿勢を保ち、essay 7 を新しい load-bearing rule ではなく
+informational descent として吸収する ((1) の Phase-crossing decision は
+依然として business-system placement にのみ適用される)。ADR-0010 は
 [ADR-0009](0009-triage-before-autonomy.ja.md) と parallel: 0009 は
 業務が autonomous loop を採用するかを triage し、0010 は 0009 の答え
 が yes で placement が operation-phase の時に Phase-crossing decision

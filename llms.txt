@@ -1,6 +1,6 @@
 # Agent Attribution Practice (AAP)
 
-> Ten architectural decision records (ADRs) and four Business AI Quadrants recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system, and how a piece of work is routed (by Quadrant) and timed (by lifecycle phase) into the architectural regime where that distribution operates. Extracted from the `contemplative-agent` implementation and a six-essay narrative spine published in April–May 2026; harness-neutral. The ten ADRs and the four quadrants form a two-axis structure: the ADRs answer per-question (*what should be constrained, who is responsible*); the quadrants route the work to where those answers apply. Phase (design vs operation) is independent of Quadrant — every Quadrant can appear in either phase. Author: Tatsuya Shimomoto (shimo4228). License: MIT. DOI: 10.5281/zenodo.19920228.
+> Ten architectural decision records (ADRs) and four Business AI Quadrants recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system, and how a piece of work is routed (by Quadrant) and timed (by lifecycle phase) into the architectural regime where that distribution operates. Extracted from the `contemplative-agent` implementation and a seven-essay narrative spine published in April–May 2026; harness-neutral. The ten ADRs and the four quadrants form a two-axis structure: the ADRs answer per-question (*what should be constrained, who is responsible*); the quadrants route the work to where those answers apply. Phase (design vs operation) is independent of Quadrant — every Quadrant can appear in either phase, and the same Phase axis descends to skill-design granularity. Author: Tatsuya Shimomoto (shimo4228). License: MIT. DOI: 10.5281/zenodo.19920228.
 
 ## Core documentation
 
@@ -23,7 +23,7 @@
 - [ADR-0007 Scaffolding Visibility](docs/adr/0007-scaffolding-visibility.md): behavior lives in files, not opaque weights
 - [ADR-0008 One Agent, One Human (experimental)](docs/adr/0008-one-agent-one-human.md): the accountability chain terminates at a named individual
 - [ADR-0009 Triage Before Autonomy (experimental)](docs/adr/0009-triage-before-autonomy.md): adopting an autonomous-loop architecture commits the system to a non-removable attribution gap; triage at design time, name a gap-bearer at deployment time
-- [ADR-0010 Phase Separation Between Design and Operation (experimental)](docs/adr/0010-phase-separation.md): operation-phase placement of the Autonomous Agentic Loop Quadrant requires a recorded Phase-crossing decision in addition to ADR-0009's gap-bearer naming; Phase and Quadrant are independent dimensions
+- [ADR-0010 Phase Separation Between Design and Operation (experimental)](docs/adr/0010-phase-separation.md): operation-phase placement of the Autonomous Agentic Loop Quadrant requires a recorded Phase-crossing decision in addition to ADR-0009's gap-bearer naming; Phase and Quadrant are independent dimensions; the same Phase axis descends to skill-design granularity (essay 7)
 
 ## Business AI Quadrants
 
@@ -56,7 +56,7 @@ Adoption-side documents that operationalize the ten ADRs across the four Busines
 
 ## Narrative essays
 
-Six-essay narrative spine — three trilogy essays followed by three architectural follow-ups that introduced the four-quadrant decomposition, named the principled vs artificial redirect impossibility, and surfaced the design / operation Phase distinction:
+Seven-essay narrative spine — three trilogy essays followed by four architectural follow-ups that introduced the four-quadrant decomposition, named the principled vs artificial redirect impossibility, surfaced the design / operation Phase distinction, and descended that distinction to skill-design granularity:
 
 - [A Sign on a Climbable Wall: Why AI Agents Need Accountability, Not Just Guardrails (2026-04-06)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/ai-agent-accountability-wall-en.md): signs on climbable walls fail; accountability architecture is the historical pattern
 - [Can You Trace the Cause After an Incident? (2026-04-13)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/agent-causal-traceability-org-adoption-en.md): post-incident causal tracing requires build-time structure
@@ -64,3 +64,4 @@ Six-essay narrative spine — three trilogy essays followed by three architectur
 - [Where ReAct Agents Are Actually Needed in Business (2026-04-29)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant.md): four-quadrant decomposition; the autonomous loop is legitimately required only in the Autonomous Agentic Loop Quadrant
 - [The LLM Workflow Quadrant Is Missing from Our Vocabulary (2026-04-30)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-2.md): the vocabulary diagnosis; the principled vs artificial redirect impossibility; moral crumple zone; the absent accountability subject
 - [Is ReAct Needed in Production? — Separating Design and Operation Phases (2026-05-01)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-3.md): the temporal axis (design vs operation phase); the three-layer diagnosis (misapplication → vocabulary gap → phase conflation); the Phase-crossing decision proposal
+- [Between the Workflow and ReAct Quadrants: How Phase Decides Skill Design (2026-05-02)](https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-4.md): the Phase axis descends from business systems to skill design; the Quadrant 3 ↔ Quadrant 4 boundary is a continuous gradient on which the same job takes different shapes depending on phase, with target identifiability and scale-resilience as secondary forces; capability is downstream of phase, not the primary lever

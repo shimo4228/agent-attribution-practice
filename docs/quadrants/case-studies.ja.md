@@ -229,6 +229,63 @@
   artifact として扱うか、deployment envelope を approval-gated にして
   答えを stream するか — 設計判断)。
 
+## (Skill-design gradient case) 同じジョブ、別 phase、別形態
+
+*Published 2026-05-02。Source: 2026-05-02 essay (essay 7)。*
+
+- **業務。** 自然言語・構造化テキストの artifact 集合から繰り返し現れる
+  パターンを抽出し、再利用可能な固定単位 (rule、template、embedding、
+  分類 schema) として固める。同じジョブが lifecycle の異なる時点で
+  recurring に発生する — 探索的 authoring の最中に 1 度、artifact 集合
+  が settle した後に 1 度。
+- **同じジョブ、2 つの phase、2 つの形態。** ジョブの
+  [skill-design gradient](../glossary.ja.md#skill-design-gradientskill-設計勾配)
+  上の位置は phase で変わるのであって model capability で変わるのでは
+  ない。同じジョブの 2 実装が legitimately に併存する:
+  - **Design phase 形態。** LLM が runtime で invoke する自然言語 skill。
+    対象 codebase、IDE、関連 file type、実行環境が呼び出しごとに変わり、
+    固定 path と命名規約は事前に仮定できない。形態としては Autonomous
+    Agentic Loop Quadrant 寄り (呼び出しごとに runtime 判断) だが、
+    自由形式 ReAct loop ではなく単一 skill のまま。
+    [Target identifiability](../glossary.ja.md#target-identifiability識別可能性)
+    が低い;
+    [scale-resilience](../glossary.ja.md#scale-resilience-スケール耐性)
+    は規模が小さいため制約にならない。
+  - **Operation phase 形態。** 対象が固定 directory layout と安定した
+    命名規約に乗った瞬間、判断は決定論的 pipeline として encode される:
+    embedding + clustering + 閾値ロジック、避けられない場所だけ単一の
+    bounded LLM 呼び出し。形態は LLM Workflow Quadrant (Quadrant 3)、
+    LLM 呼び出しが完全に消える場合は Script Quadrant (Quadrant 1)。
+    Target identifiability が高い; scale-resilience は重要、operation
+    形態は呼び出しごとの slice ではなく settled corpus 全体に対して
+    走るため。
+- **Phase placement。** 2 形態は同一プロジェクトの異なる lifecycle
+  phase に住む。両方が併存しうる; どちらも他方の一般化ではない。
+- **各形態の Quadrant routing。**
+  - Design phase 形態 — Quadrant 4 寄りの skill だが、design session
+    内で invoke されるため、ADR-0010 (1) Phase-crossing decision は
+    自動的に満たされる (これが design phase そのもの)。
+    [`anti-patterns.ja.md`](anti-patterns.ja.md#skill-内-phase-descent-を無視する--一律-react-化または一律-freeze-化)
+    の「Skill 内 phase descent を無視する」entry が、対象が settle
+    する前にこの形態を frozen pipeline に押し込むことを防ぐ。
+  - Operation phase 形態 — default operation composition に入る
+    Quadrant 3 (または Quadrant 1) component。形態がもはや Quadrant 4
+    ではないため Phase-crossing decision は不要。
+- **なぜ capability が lever でないか。** より高 capability の LLM は
+  design-phase 形態に固定対象を与えないし、operation-phase 形態に
+  novel な未見 variation への runtime 許容度を与えない。AKC の
+  「capability ↑ → holistic judgment OK」原則はどちらの二次的な力も
+  カバーしない。どの形態が構造的に正直かを決めるのは Phase。
+- **単一 skill 内の再帰。** 同じ gradient が単一 skill *内部* にも
+  適用される: design-phase skill が固定 lookup の subcomponent (target
+  identifiability が局所的に高い — 例えば既知 path の config file) と
+  runtime LLM 判断の subcomponent を併せ持ちうる。診断フレームは
+  再帰的に歩く。
+- **Lineage note。** この case の背後の具体例は 2026-05-02 essay にある;
+  navigator は harness-neutral なため、本 navigator では named しない。
+  Essay は同じジョブの design-phase / operation-phase split を呈する
+  AAP-author の 2 skill を歩く。
+
 ## これらの case の位置づけ
 
 上記の case は *illustrative routing* であり、推奨 reference

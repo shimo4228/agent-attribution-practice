@@ -261,7 +261,11 @@ ADR-0010's load-bearing rule: operation-phase placements of the
 Autonomous Agentic Loop Quadrant require a recorded Phase-crossing
 decision in addition to ADR-0009's gap-bearer naming. Phase and
 Quadrant remain independent dimensions; the rule is procedural,
-not architectural.
+not architectural. Essay 7 (2026-05-02) added a *capability-as-
+secondary* observation: higher LLM capability does not erase the
+target identifiability or scale-resilience differences that decide
+where on the Quadrant 3 ↔ Quadrant 4 gradient a piece of work
+lands. Phase is the primary lever; capability is downstream.
 
 ## Phase-crossing decision
 
@@ -275,7 +279,57 @@ pattern fits). Both answers are admissible. "We'll figure it out
 when it happens" is not. Required by ADR-0010 for operation-phase
 Quadrant 4 placements.
 
-## Three-layer diagnosis (essays 4–6)
+## Skill-design gradient
+
+The observation, introduced in essay 7 (2026-05-02), that the
+boundary between the LLM Workflow Quadrant (3) and the Autonomous
+Agentic Loop Quadrant (4) is a *continuous gradient* rather than a
+clean dichotomy at skill-design granularity. A skill, or a
+subcomponent inside a skill, takes a position on the gradient
+depending on its phase (design vs operation) and on two secondary
+forces (target identifiability and scale-resilience). The same
+job lands at different positions on the gradient depending on
+which side of phase it is being implemented for. Used as the
+informational frame inside ADR-0010's Skill-design descent
+subsection.
+
+## Phase descent
+
+The descent of the Phase Separation axis from
+business-system granularity (deployment placements of Quadrants,
+which is what ADR-0010's load-bearing rule (1) governs) down to
+skill-design granularity and further to **subcomponent
+granularity inside a single skill**. A single skill can mix
+frozen-pipeline subcomponents (operation-shaped) and
+runtime-judgment subcomponents (design-shaped) without
+contradiction; the diagnostic frame applies recursively. Surfaced
+in essay 7 (2026-05-02). Informational under ADR-0010, not a new
+load-bearing rule.
+
+## Target identifiability
+
+A secondary force on the [skill-design gradient](#skill-design-gradient):
+whether the artifacts a skill (or subcomponent) operates on sit at
+fixed paths or under fixed naming conventions. High target
+identifiability is a precondition for operation-phase
+frozen-pipeline implementations: when targets are fixed, judgment
+that previously had to be made at runtime can be encoded as
+embeddings, clustering, threshold logic, or other deterministic
+machinery. When targets vary across invocations, runtime LLM
+judgment is the structurally honest choice. From essay 7
+(2026-05-02).
+
+## Scale-resilience
+
+A secondary force on the [skill-design gradient](#skill-design-gradient):
+how many units a skill processes per invocation cycle (one item /
+N items / a full corpus) and how much miss rate is tolerable at
+that scale. LLM judgment accumulates miss rate as the unit count
+grows, so larger scales push the implementation toward
+deterministic shapes regardless of which phase the work is in.
+From essay 7 (2026-05-02).
+
+## Three-layer diagnosis (essays 4–7)
 
 The diagnostic frame the architectural-follow-up essays produce
 together: misapplication (essay 4) grows from the vocabulary gap
@@ -290,7 +344,12 @@ elimination. The surface layer is the resulting category error
 architecture). The frame is used in design reviews: when an
 autonomous loop is proposed for operation, walk the layers; most
 resolutions surface a misapplication or a vocabulary gap before the
-phase question even arises.
+phase question even arises. Essay 7 (2026-05-02) extended the deep
+layer by descending the same Phase axis to skill-design granularity:
+the diagnostic frame applies recursively to a single skill or to a
+subcomponent within a skill, with the gradient shape governed by
+[target identifiability](#target-identifiability) and
+[scale-resilience](#scale-resilience).
 
 ---
 

@@ -256,6 +256,73 @@ the 2026-04-29 essay.*
   itself an approval-gated artifact; others treat the deployment
   envelope as approval-gated and let answers stream).
 
+## (Skill-design gradient case) Same job, different phase, different shape
+
+*Published 2026-05-02. Source: 2026-05-02 essay (essay 7).*
+
+- **Work.** Distill recurring patterns from a body of natural-language
+  or structured-text artifacts into reusable, fixed units (rules,
+  templates, embeddings, classification schemes). The same job
+  recurs at different points in the lifecycle — once during
+  exploratory authoring, once after the artifact set has settled.
+- **The same job, two phases, two shapes.** The job's
+  position on the
+  [skill-design gradient](../glossary.md#skill-design-gradient)
+  changes with phase, not with model capability. Two implementations
+  of the same job coexist legitimately:
+  - **Design phase form.** A natural-language skill that an LLM
+    invokes at runtime. The target codebase, the IDE, the relevant
+    file types, and the execution environment vary across
+    invocations; fixed paths and naming conventions cannot be
+    assumed in advance. Sits closer to the Autonomous Agentic
+    Loop Quadrant in shape (per-invocation runtime judgment), but
+    is still a single skill, not a free-form ReAct loop.
+    [Target identifiability](../glossary.md#target-identifiability)
+    is low; [scale-resilience](../glossary.md#scale-resilience) is
+    not the constraint because scale is small.
+  - **Operation phase form.** Once the targets settle into a
+    fixed directory layout with stable naming conventions, the
+    judgment is encoded as a deterministic pipeline: embeddings +
+    clustering + threshold logic, with at most a single bounded
+    LLM call where unavoidable. Sits in the LLM Workflow Quadrant
+    (Quadrant 3) or even the Script Quadrant (Quadrant 1) when
+    the LLM call disappears entirely. Target identifiability is
+    high; scale-resilience matters because the operation form
+    runs over the full settled corpus rather than a per-invocation
+    slice.
+- **Phase placement.** The two forms sit in different lifecycle
+  phases of the same project. Both can coexist; neither is a
+  generalization of the other.
+- **Quadrant routing for each form.**
+  - Design phase form — Quadrant 4-leaning skill, but invoked
+    inside a design session, so ADR-0010 (1) Phase-crossing
+    decision is satisfied automatically (this *is* the design
+    phase). The
+    [`anti-patterns.md`](anti-patterns.md#skill-internal-phase-descent-ignored--uniform-react-or-uniform-freeze)
+    "Skill-internal phase descent ignored" entry guards against
+    forcing this form into a frozen pipeline before the targets
+    have settled.
+  - Operation phase form — Quadrant 3 (or Quadrant 1) component
+    in the default operation composition. No Phase-crossing
+    decision is needed because the form is no longer Quadrant 4.
+- **Why capability is not the lever.** A higher-capability LLM
+  does not give the design-phase form fixed targets, and does
+  not give the operation-phase form runtime tolerance for novel
+  unseen variations. AKC's "capability ↑ → holistic judgment OK"
+  principle does not cover either of the two secondary forces.
+  Phase is what decides which form is structurally honest.
+- **Recursion inside a single skill.** The same gradient applies
+  *inside* a single skill: a design-phase skill can have one
+  subcomponent that is a frozen lookup (target identifiability is
+  locally high — for example, a config file at a known path) and
+  another subcomponent that is runtime LLM judgment. The
+  diagnostic frame walks recursively.
+- **Lineage note.** The concrete examples behind this case are in
+  the 2026-05-02 essay; they are not named in this navigator
+  because the navigator is harness-neutral. The essay walks two
+  AAP-author skills that exhibit the design-phase / operation-phase
+  split for the same job.
+
 ## A note on what these cases are not
 
 The case studies above are *illustrative routings*, not endorsed

@@ -25,7 +25,7 @@
 | ADR-0007 Scaffolding Visibility | (暗黙、essay で言語化) |
 | ADR-0008 One Agent, One Human | (新規、本 repo で初形式化、experimental) |
 | ADR-0009 Triage Before Autonomy | (新規、本 repo で初形式化、experimental — 5 部作 essay の 4-5 から派生) |
-| ADR-0010 Phase Separation | (新規、本 repo で初形式化、experimental — 6 部作 essay の 6 から派生) |
+| ADR-0010 Phase Separation | (新規、本 repo で初形式化、experimental — 7 部作 essay の 6-7 から派生; 7 が Phase 軸を skill 設計粒度に descend) |
 
 ADR-0001 / 0002 / 0003 は「**禁止強度の階層**」を成す: absence > scaffolding enforcement > untrusted boundary。改訂時にこの順序関係を壊さない。
 
@@ -46,14 +46,14 @@ ADR-0009 / ADR-0010 は triage pair: 0009 は ADR 群の **手前** に位置す
 - 四公理ルール、アダプタ、ベンチマーク
 - content 面で重複領域が生じたら、双方の positioning を確認 (四公理 values は rules 側、attribution practice は本 repo)
 
-## 6 記事の narrative spine
+## 7 記事の narrative spine
 
-この repo の argument は zenn 記事 6 部作として展開された。最初の 3 つが trilogy (問題提起 / 応用 / 障害分析)、後の 3 つが architectural follow-up (4 象限 triage、principled attribution gap、設計 / 運用 phase の区別)。ADR 改訂・新規追加の際、この spine との整合を必ず確認する。
+この repo の argument は zenn 記事 7 部作として展開された。最初の 3 つが trilogy (問題提起 / 応用 / 障害分析)、後の 4 つが architectural follow-up (4 象限 triage、principled attribution gap、設計 / 運用 phase の区別、skill-design gradient への phase descent)。ADR 改訂・新規追加の際、この spine との整合を必ず確認する。
 
 ADR との lineage 対応:
 - 記事 1-3 (trilogy, 2026-04-06 / 04-13 / 04-14) → ADRs 0001-0008 の問題意識・正当化の背景
 - 記事 4-5 (2026-04-29 / 04-30) → ADR-0009 と `docs/quadrants/` navigator の lineage
-- 記事 6 (2026-05-01) → ADR-0010 の lineage
+- 記事 6-7 (2026-05-01 / 05-02) → ADR-0010 の lineage (記事 7 は Phase Separation を skill 設計粒度に下降)
 
 各記事の URL・タイトル・1 文サマリは [`docs/inspiration.md`](docs/inspiration.md) を正本として参照。記事本文ローカルコピーは `/Users/shimomoto_tatsuya/MyAI_Lab/zenn-content/articles/`。
 
@@ -109,7 +109,7 @@ ADR 本文が扱うのは *judgment* (persistent)。*implementation* (Hooks、CL
 │   ├── thesis.md / thesis.ja.md          # accountability distribution thesis (二軸構造の宣言を含む、ja 同期)
 │   ├── manifesto.md       # civilization-scale open questions (draft)
 │   ├── glossary.md / glossary.ja.md      # key terms (4 quadrants + attribution mechanics を含む、ja 同期)
-│   ├── inspiration.md     # 6 記事 + moltbook + AKC 系譜
+│   ├── inspiration.md     # 7 記事 + moltbook + AKC 系譜
 │   ├── adr/
 │   │   ├── README.md / README.ja.md
 │   │   └── 0001-0010.md / 0001-0010.ja.md   # 10 本の ADR (0001/0002/0003 は prohibition-strength hierarchy、0009/0010 は triage pair) — 英日ペア
