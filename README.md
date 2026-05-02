@@ -138,11 +138,13 @@ Through 2026 Q2, several industry releases populated the *mechanism
 layer* that AAP's principles describe. Microsoft Agent 365 (GA
 2026-05-01) with Entra Agent ID, the open-source Agent Governance
 Toolkit (2026-04-02), Microsoft Agent Framework 1.0 (2026-04-03),
-Purview AI Data Security Investigations, AWS Bedrock with OpenAI
-integration, Google Vertex AI Agent Builder, and identity-security
-startups such as entro.security and oasis.security have all shipped
-mechanisms — sub-millisecond policy gates, agent-identity primitives,
-sponsor systems, cross-vendor audit, cross-cloud registry sync — that
+Purview Data Security Investigations, AWS Bedrock with OpenAI
+integration (announced 2026-04-28 as limited preview), Google Vertex
+AI Agent Builder (rebranded Gemini Enterprise Agent Platform at
+Google Cloud Next 2026), and identity-security startups such as
+entro.security and oasis.security have all shipped mechanisms —
+sub-millisecond policy gates, agent-identity primitives, sponsor
+systems, cross-vendor audit, cross-cloud registry sync — that
 instantiate the principles AAP records.
 
 What the mechanism layer does not ship is the judgment layer. A

@@ -141,18 +141,18 @@ architectural-follow-up spine の context は
 **Industry instantiation (informational, 2026 Q2)。**
 [Microsoft Agent 365](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/)
 (GA 2026-05-01) の一部として ship された
-[Microsoft Purview AI Data Security Investigations](https://learn.microsoft.com/en-us/microsoft-agent-365/overview)
-は、Microsoft 365 / Azure / サードパーティ AI service のログを相関
-させ AI interaction の data lifecycle を再構成する; AI-sensitive な
-情報タイプの自動分類、保持ラベル、DLP ポリシー適用を備える。本 ADR
-の causal traceability 要件の cross-vendor mechanism instance として、
-「あらゆる event が事後に再構成可能」 性質に最も近い商業製品。
-提供していないのは、なぜ causal traceability が runtime observability
-practice ではなく build-time structural requirement でなければ
-ならないかの argument (本 ADR の core point)、および、どの approval
-がどの scaffolding バージョンを gate したか (再構成が named human で
-終端するために必要な ADR-0005 と紐づく audit trail) の記録。両層は
-補完関係: Purview が cross-vendor 再構成を技術的に可能にし、本 ADR が
-**どこで終端しなければならないか** を記録する。
+[Microsoft Purview Data Security Investigations](https://learn.microsoft.com/en-us/microsoft-agent-365/overview)
+は、Microsoft 365 / Azure / 統合済みサードパーティ AI service のログ
+を相関させ AI interaction の data lifecycle を再構成する; AI-sensitive
+な情報タイプの自動分類、保持ラベル、DLP ポリシー適用を備える。本 ADR
+の causal traceability 要件の mechanism instance として、「あらゆる
+event が事後に再構成可能」性質に最も近い商業製品。提供していないのは、
+なぜ causal traceability が runtime observability practice ではなく
+build-time structural requirement でなければならないかの argument
+(本 ADR の core point)、および、どの approval がどの scaffolding
+バージョンを gate したか (再構成が named human で終端するために必要な
+ADR-0005 と紐づく audit trail) の記録。両層は補完関係: Purview が
+再構成を技術的に可能にし、本 ADR が **どこで終端しなければならないか**
+を記録する。
 [`../inspiration.md`](../inspiration.md#industry-artifacts-that-instantiate-aap-principles)
 参照。

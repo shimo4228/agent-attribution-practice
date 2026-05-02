@@ -168,34 +168,37 @@ across the Microsoft ecosystem:
   OWASP Agentic Top 10 coverage. A direct mechanism instance for
   ADR-0002's deterministic prohibition at the scaffolding layer.
 - **Microsoft Agent Framework 1.0** (2026-04-03). .NET / Python SDK
-  unifying Semantic Kernel and AutoGen, with full MCP and A2A
-  protocol support, graph-based workflow engine, and middleware
-  hooks. Populates the LLM Workflow Quadrant tooling alongside
-  Anthropic's "Building Effective Agents" patterns.
+  unifying Semantic Kernel and AutoGen, with full MCP protocol
+  support and A2A support announced at 1.0 (full A2A 1.0 support
+  noted as forthcoming in the launch post), a graph-based workflow
+  engine, and middleware hooks. Populates the LLM Workflow Quadrant
+  tooling alongside Anthropic's "Building Effective Agents" patterns.
 - **[Microsoft Agent 365](https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/)**
-  (GA 2026-05-01, $15/user/month standalone or part of M365 E7
-  Frontier Suite). Four mechanism axes: Entra Agent ID (third
-  identity category for agents, with sponsor system) → mechanism
-  instance for ADR-0008 binding; Purview AI Data Security
-  Investigations (cross-vendor log correlation) → mechanism instance
-  for ADR-0006 causal traceability; cross-cloud registry sync (AWS
-  Bedrock, Google Cloud, public preview) → an *observability*
-  approach distinct from ADR-0004's structural blast-radius bounding;
-  pricing that treats governance as standard cost rather than
-  optional add-on. The "Shadow AI" framing Microsoft uses is the
-  industry-level recognition of what ADR-0007 Scaffolding Visibility
-  names as the absence problem.
+  (GA 2026-05-01, $15/user/month standalone or part of Microsoft 365
+  E7 — also referred to as the Frontier Suite). Four mechanism axes:
+  Entra Agent ID (a dedicated identity category for agents alongside
+  users and devices, with sponsor system) → mechanism instance for
+  ADR-0008 binding; Purview Data Security Investigations (log
+  correlation across Microsoft 365, Azure, and integrated third-party
+  AI services) → mechanism instance for ADR-0006 causal traceability;
+  cross-cloud registry sync (AWS Bedrock, Google Cloud, public
+  preview) → an *observability* approach distinct from ADR-0004's
+  structural blast-radius bounding; pricing that treats governance as
+  standard cost rather than optional add-on. The "Shadow AI" framing
+  Microsoft uses is the industry-level recognition of what ADR-0007
+  Scaffolding Visibility names as the absence problem.
 
-### AWS Bedrock + OpenAI integration (2026-05)
+### AWS Bedrock + OpenAI integration (2026-04)
 
-AWS opened OpenAI model availability through Bedrock in May 2026,
-strengthening Bedrock as an independent agent-management surface.
-This is a mechanism-layer instance separate from the Microsoft
-stack; the same judgment-layer questions apply (who is the
-gap-bearer, what is the Phase-crossing decision when an autonomous
-loop is placed in operation phase).
+AWS announced OpenAI model availability through Bedrock on
+2026-04-28 as a limited preview, with general availability
+described as imminent at launch, strengthening Bedrock as an
+independent agent-management surface. This is a mechanism-layer
+instance separate from the Microsoft stack; the same judgment-layer
+questions apply (who is the gap-bearer, what is the Phase-crossing
+decision when an autonomous loop is placed in operation phase).
 
-### Google Vertex AI Agent Builder
+### Google Vertex AI Agent Builder (rebranded Gemini Enterprise Agent Platform at Google Cloud Next 2026)
 
 Google's independent agent-platform line. Included as a sync target
 in Microsoft's cross-cloud registry preview, demonstrating the
