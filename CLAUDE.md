@@ -79,7 +79,7 @@ ADR との lineage 対応:
 - 記事 4-5 (2026-04-29 / 04-30) → ADR-0009 と `docs/quadrants/` navigator の lineage
 - 記事 6-7 (2026-05-01 / 05-02) → ADR-0010 の lineage (記事 7 は Phase Separation を skill 設計粒度に下降)
 
-各記事の URL・タイトル・1 文サマリは [`docs/inspiration.md`](docs/inspiration.md) を正本として参照。記事本文ローカルコピーは `/Users/shimomoto_tatsuya/MyAI_Lab/zenn-content/articles/`。
+各記事の URL・タイトル・1 文サマリは [`docs/inspiration.md`](docs/inspiration.md) を正本として参照。
 
 ## Core thesis
 
@@ -116,16 +116,6 @@ ADR との lineage 対応:
 
 ADR 本文が扱うのは *judgment* (persistent)。*implementation* (Hooks、CLI、JSONL スキーマ等) は Lineage セクションや外部 link で触れる。「実装は溶ける、判断は残る」という thesis を本文構造で体現する。
 
-## Commit / release 方針
-
-- Commit は user の明示的な指示時のみ (global 規約を踏襲)
-- v0.1.0 release 時に CITATION.cff + Zenodo DOI を発行
-- CHANGELOG.md は v0.1.0 時点で起稿
-
 ## ディレクトリ
 
 repo の構造と各 doc の役割は [`docs/CODEMAPS/architecture.md`](docs/CODEMAPS/architecture.md) を参照 (canonical)。
-
-## 残議題
-
-cold-start 用の context は [`.notes/remaining-discussion-2026-04-19.md`](.notes/remaining-discussion-2026-04-19.md) を読む (gitignored、clone 先に存在しないため、同一環境での作業継続用)。
