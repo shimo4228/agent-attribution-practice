@@ -2,7 +2,7 @@
 
 # agent-attribution-practice
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19920228.svg)](https://doi.org/10.5281/zenodo.19920228)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19652013.svg)](https://doi.org/10.5281/zenodo.19652013)
 
 > **Agent Attribution Practice (AAP)** — 10 の判断と 4 つの Business AI
 > Quadrants（業務 AI 四象限）、固定された framework ではない。
