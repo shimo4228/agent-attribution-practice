@@ -98,50 +98,32 @@ judgment.
 
 ## Related repositories
 
-### contemplative-agent (implementation)
+This file focuses on the **lineage of ideas** (the seven articles).
+For the full sibling map and ADR-by-ADR correspondence, see
+[`CLAUDE.md`](../CLAUDE.md) (working context with usage conventions)
+and [`docs/CODEMAPS/architecture.md`](CODEMAPS/architecture.md)
+(relation graph). The minimal pointers below exist only to keep the
+articles' references resolvable in isolation.
 
-[contemplative-agent](https://github.com/shimo4228/contemplative-agent)
-is the running implementation that the eight ADRs were extracted from.
-Each principle in this repository corresponds to one or more ADRs in
-`contemplative-agent/docs/adr/`, typically with project-specific
-details that were removed during extraction here:
+- **[contemplative-agent](https://github.com/shimo4228/contemplative-agent)**
+  is the running implementation the ADRs in this repository were
+  extracted from. Project-specific details were removed during the
+  re-expression here.
 
-| Principle in this repo | Corresponding contemplative-agent ADR |
-|------------------------|---------------------------------------|
-| ADR-0001 Security by Absence | [ADR-0007 Security Boundary Model](https://github.com/shimo4228/contemplative-agent/blob/main/docs/adr/0007-security-boundary-model.md) (partially) |
-| ADR-0002 Deterministic Prohibition at the Scaffolding Layer | PreToolUse hooks (`block-episode-logs-{read,bash,grep}.sh`) + `summarize_record` quarantine in [contemplative-agent](https://github.com/shimo4228/contemplative-agent); rationale documented in `docs/security/2026-04-01-episode-log-access-control.md` and the ADR-0021 implementation audit (ADR-0028 / ADR-0029) |
-| ADR-0003 Untrusted Content Boundary | [ADR-0007 Security Boundary Model](https://github.com/shimo4228/contemplative-agent/blob/main/docs/adr/0007-security-boundary-model.md) (partially) |
-| ADR-0004 Single External Adapter | [ADR-0015 One External Adapter Per Agent](https://github.com/shimo4228/contemplative-agent/blob/main/docs/adr/0015-one-external-adapter-per-agent.md) |
-| ADR-0005 Human Approval Gate | [ADR-0012 Human Approval Gate](https://github.com/shimo4228/contemplative-agent/blob/main/docs/adr/0012-human-approval-gate.md) |
-| ADR-0006 Causal Traceability | Implicit across the codebase; first named in the 2026-04-13 essay |
-| ADR-0007 Scaffolding Visibility | Implicit in the fully-materialized scaffolding design; first named in the 2026-04-14 essay |
-| ADR-0008 One Agent, One Human | First formalized in this repository (experimental) |
-| ADR-0009 Triage Before Autonomy | First formalized in this repository (experimental); essays 4 and 5 are its lineage |
-| ADR-0010 Phase Separation Between Design and Operation | First formalized in this repository (experimental); essays 6–7 are its lineage |
-
-### agent-knowledge-cycle (AKC)
-
-[AKC](https://github.com/shimo4228/agent-knowledge-cycle) (DOI
-`10.5281/zenodo.19200727`) is a sibling project that captures the
-*mechanism* side of what contemplative-agent produces: the six-phase
-knowledge cycle (Research → Extract → Curate → Promote → Measure →
-Maintain) that keeps an agent's skills, rules, and docs aligned with
-reality over time.
-
-In v1.x, AKC included three ADRs that turned out to be genre-specific
-(Security by Absence / Single External Adapter / Untrusted Content
-Boundary) rather than mechanism-neutral. AKC v2.0.0 (2026-04-19) extracted
-them into `_archive/akc-security-triplet-2026-04/`, with the archive
-README noting they would "be re-expressed... in a sibling genre library
-at a later date." *This repository is that sibling.*
-
-The relationship:
-
-- **AKC**: the cycle (mechanism). Genre-neutral. How knowledge flows.
-- **This repository**: the constraints (content, for autonomous AI
-  agents). How accountability is distributed.
-
-Both are extractions from contemplative-agent, along different axes.
+- **[agent-knowledge-cycle (AKC)](https://github.com/shimo4228/agent-knowledge-cycle)**
+  (DOI `10.5281/zenodo.19200727`) is a sibling project that captures
+  the *mechanism* side of what contemplative-agent produces — the
+  six-phase knowledge cycle (Research → Extract → Curate → Promote →
+  Measure → Maintain). In v1.x AKC included three ADRs that turned
+  out to be genre-specific (Security by Absence / Single External
+  Adapter / Untrusted Content Boundary) rather than mechanism-neutral.
+  AKC v2.0.0 (2026-04-19) extracted them into
+  `_archive/akc-security-triplet-2026-04/`, with the archive README
+  noting they would "be re-expressed... in a sibling genre library
+  at a later date." *This repository is that sibling.* AKC = the
+  cycle (how knowledge flows); this repository = the constraints
+  (how accountability is distributed). Both are extractions from
+  contemplative-agent, along different axes.
 
 ## Industry artifacts that instantiate AAP principles
 

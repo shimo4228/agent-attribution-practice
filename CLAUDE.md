@@ -46,6 +46,30 @@ ADR-0009 / ADR-0010 は triage pair: 0009 は ADR 群の **手前** に位置す
 - 四公理ルール、アダプタ、ベンチマーク
 - content 面で重複領域が生じたら、双方の positioning を確認 (四公理 values は rules 側、attribution practice は本 repo)
 
+## Using this repo as an agent navigator
+
+この repo を Claude Code / Codex 等の agent に clone させ、`AGENTS.md` (= `CLAUDE.md` への symlink) を起点に「agent 活用判断の壁打ち相手」として使う使い方を想定する。文献として読まれるのではなく、navigator として walk されることを意図する。
+
+### 想定 use case
+
+- 「この用途で agent を入れていいか judgment したい」
+- 「既に入れた agent の risk を ADR で照合したい」
+- 「特定の autonomy パターンが anti-pattern に該当するか確認したい」
+
+### Walk order (triage 依頼を受けたら)
+
+1. [`docs/quadrants/decision-tree.md`](docs/quadrants/decision-tree.md) で 5 問 triage → 4 quadrant のどれに属するか決定
+2. [`docs/quadrants/governance-mapping.md`](docs/quadrants/governance-mapping.md) で該当 quadrant の governance 要件を確認
+3. 関連 ADR を読む — 特に triage pair (ADR-0009 / ADR-0010)。一覧と概要は [`docs/adr/README.md`](docs/adr/README.md) 参照
+4. autonomy 関連なら **Phase 軸** (ADR-0010 Phase Separation) を別途確認 (design phase か operation phase か)
+5. [`docs/quadrants/anti-patterns.md`](docs/quadrants/anti-patterns.md) で照合し、anti-pattern に該当しないか最終チェック
+
+### Caveats
+
+- **ADR は判断の出発点であって正解ではない**。user の context に応じて re-interpret する (Emptiness 条項相当の注意)
+- **「実装は溶ける、判断は残る」** — agent が言語化する具体実装は時代依存、ADR の judgment 構造のみが時間軸で残る
+- **Out of scope**: この repo は実装ガイドではない。実装 sibling は [`contemplative-agent`](https://github.com/shimo4228/contemplative-agent)
+
 ## 7 記事の narrative spine
 
 この repo の argument は zenn 記事 7 部作として展開された。最初の 3 つが trilogy (問題提起 / 応用 / 障害分析)、後の 4 つが architectural follow-up (4 象限 triage、principled attribution gap、設計 / 運用 phase の区別、skill-design gradient への phase descent)。ADR 改訂・新規追加の際、この spine との整合を必ず確認する。
@@ -100,34 +124,7 @@ ADR 本文が扱うのは *judgment* (persistent)。*implementation* (Hooks、CL
 
 ## ディレクトリ
 
-```
-├── LICENSE (MIT)
-├── README.md / README.ja.md
-├── CLAUDE.md              # 本ファイル (Claude Code 用 context)
-├── .notes/                # WIP (gitignored)
-├── docs/
-│   ├── thesis.md / thesis.ja.md          # accountability distribution thesis (二軸構造の宣言を含む、ja 同期)
-│   ├── manifesto.md       # civilization-scale open questions (draft)
-│   ├── glossary.md / glossary.ja.md      # key terms (4 quadrants + attribution mechanics を含む、ja 同期)
-│   ├── inspiration.md     # 7 記事 + moltbook + AKC 系譜
-│   ├── industry-mapping.md / industry-mapping.ja.md  # 2026 Q2 vendor mechanism → ADR 対応 (time-bound、ADR と分離)
-│   ├── adr/
-│   │   ├── README.md / README.ja.md
-│   │   └── 0001-0010.md / 0001-0010.ja.md   # 10 本の ADR (0001/0002/0003 は prohibition-strength hierarchy、0009/0010 は triage pair) — 英日ペア
-│   ├── quadrants/         # adoption navigator (Business AI Quadrants) — 各 file に ja.md ペア
-│   │   ├── README.md / README.ja.md
-│   │   ├── decision-tree.md / decision-tree.ja.md
-│   │   ├── governance-mapping.md / governance-mapping.ja.md
-│   │   ├── case-studies.md / case-studies.ja.md
-│   │   └── anti-patterns.md / anti-patterns.ja.md
-│   ├── skills/
-│   │   └── llm-agent-security-principles.md
-│   └── CODEMAPS/         # LLM-facing architectural map (INDEX.md + architecture.md)
-│       ├── INDEX.md
-│       └── architecture.md
-└── examples/
-    └── audit-tests/       # grep-based Security by Absence 検査の CI 化例
-```
+repo の構造と各 doc の役割は [`docs/CODEMAPS/architecture.md`](docs/CODEMAPS/architecture.md) を参照 (canonical)。
 
 ## 残議題
 
