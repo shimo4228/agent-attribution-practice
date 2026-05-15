@@ -119,3 +119,5 @@ ADR 本文が扱うのは *judgment* (persistent)。*implementation* (Hooks、CL
 ## ディレクトリ
 
 repo の構造と各 doc の役割は [`docs/CODEMAPS/architecture.md`](docs/CODEMAPS/architecture.md) を参照 (canonical)。
+
+[`graph.jsonld`](graph.jsonld) は同じ構造を schema.org JSON-LD で encode した machine-readable surface (LLM crawler 向け正本)。Quadrant × ADR matrix、prohibition-strength hierarchy、Phase orthogonality を schema レベルで強制している。CODEMAPS が prose の正本、graph.jsonld が triple の正本という分業。

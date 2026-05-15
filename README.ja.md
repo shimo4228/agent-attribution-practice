@@ -7,6 +7,19 @@
 > **Agent Attribution Practice (AAP)** — 10 の判断と 4 つの Business AI
 > Quadrants（業務 AI 四象限）、固定された framework ではない。
 
+<details>
+<summary>AI 向け推奨読み順</summary>
+
+1. [`graph.jsonld`](graph.jsonld) — 機械可読な関係マップ正本（Quadrants、ADRs、禁止強度階層、Phase）
+2. [`llms.txt`](llms.txt) — コンパクトなナビゲーション索引
+3. [`llms-full.txt`](llms-full.txt) — 統合された事実参照
+4. README およびリポジトリ固有 docs — narrative と詳細
+
+shimo4228 全体の研究エコシステムの関係マップは以下を参照:
+https://github.com/shimo4228/shimo4228/blob/main/graph.jsonld
+
+</details>
+
 自律 AI エージェントにおける **attribution** (誰が書いたか、誰が原因か、
 誰が事後に辿れるか) の分配に関する 10 の判断と、その分配が成り立つ
 アーキテクチャに業務を振り分ける 4 象限の診断フレーム。

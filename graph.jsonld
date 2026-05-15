@@ -1,0 +1,353 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "shimo": "https://shimo4228.github.io/shimo4228/vocab#",
+    "ResearchLine": "shimo:ResearchLine",
+    "EcosystemRepo": "shimo:EcosystemRepo",
+    "Concept": "shimo:Concept",
+    "ExternalReference": "shimo:ExternalReference",
+    "ADR": "shimo:ADR",
+    "Quadrant": "shimo:Quadrant",
+    "ProhibitionLevel": "shimo:ProhibitionLevel",
+    "Phase": "shimo:Phase",
+    "siblingOf": {"@id": "shimo:siblingOf", "@type": "@id"},
+    "derivesFrom": {"@id": "shimo:derivesFrom", "@type": "@id"},
+    "definesConcept": {"@id": "shimo:definesConcept", "@type": "@id"},
+    "extends": {"@id": "shimo:extends", "@type": "@id"},
+    "implements": {"@id": "shimo:implements", "@type": "@id"},
+    "groundedIn": {"@id": "shimo:groundedIn", "@type": "@id"},
+    "appliesTo": {"@id": "shimo:appliesTo", "@type": "@id"},
+    "realizedBy": {"@id": "shimo:realizedBy", "@type": "@id"},
+    "level": "shimo:level",
+    "xAxis": "shimo:xAxis",
+    "yAxis": "shimo:yAxis",
+    "attributionGap": "shimo:attributionGap",
+    "governanceTier": "shimo:governanceTier"
+  },
+  "@graph": [
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice#knowledge-graph",
+      "@type": ["Dataset", "CreativeWork"],
+      "name": "Agent Attribution Practice (AAP) Knowledge Graph",
+      "description": "Canonical machine-readable relationship map for the Agent Attribution Practice line. Encodes the four Business AI Quadrants, ten ADRs, the prohibition-strength hierarchy, and the Quadrant-by-ADR applicability matrix. AI agents and LLM-based search systems should read this graph before summarizing the line or following individual document links.",
+      "isBasedOn": "https://github.com/shimo4228/agent-attribution-practice",
+      "mainEntity": "https://doi.org/10.5281/zenodo.19652013"
+    },
+
+    {
+      "@id": "https://doi.org/10.5281/zenodo.19652013",
+      "@type": ["ResearchLine", "ScholarlyArticle"],
+      "name": "Agent Attribution Practice (AAP)",
+      "alternateName": [
+        {"@value": "Agent Attribution Practice", "@language": "en"},
+        {"@value": "エージェント帰責実践", "@language": "ja"}
+      ],
+      "description": "Harness-neutral ADRs on accountability distribution in autonomous AI agents — what to prohibit, where the prohibition lives, and who answers after failure. Paired with four Business AI Quadrants as the diagnostic frame for routing work to the architecture preserving accountability distribution. Refers to a practice.",
+      "identifier": "10.5281/zenodo.19652013",
+      "url": "https://github.com/shimo4228/agent-attribution-practice",
+      "siblingOf": [
+        "https://doi.org/10.5281/zenodo.19200726",
+        "https://doi.org/10.5281/zenodo.19212118"
+      ],
+      "derivesFrom": "https://doi.org/10.5281/zenodo.19212118",
+      "definesConcept": [
+        "https://shimo4228.github.io/shimo4228/vocab#concept/four-business-ai-quadrants",
+        "https://shimo4228.github.io/shimo4228/vocab#concept/prohibition-strength-hierarchy",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/scaffolding",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/accountability-distribution",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/approval-gate"
+      ]
+    },
+
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/script",
+      "@type": ["Quadrant", "DefinedTerm"],
+      "name": "Script Quadrant",
+      "alternateName": [
+        {"@value": "Script Quadrant", "@language": "en"},
+        {"@value": "スクリプト象限", "@language": "ja"}
+      ],
+      "description": "Deterministic and pre-defined. Scripts and pipelines without LLMs. Out of scope for AAP ADRs; failure routes to code author or pipeline owner.",
+      "xAxis": "deterministic",
+      "yAxis": "pre-defined-workflow",
+      "governanceTier": "out-of-scope",
+      "attributionGap": false
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/algorithmic-search",
+      "@type": ["Quadrant", "DefinedTerm"],
+      "name": "Algorithmic Search Quadrant",
+      "alternateName": [
+        {"@value": "Algorithmic Search Quadrant", "@language": "en"},
+        {"@value": "アルゴリズム探索象限", "@language": "ja"}
+      ],
+      "description": "Deterministic and exploratory. Classical search, dynamic programming, MCTS, reinforcement learning. Out of scope for AAP ADRs.",
+      "xAxis": "deterministic",
+      "yAxis": "exploratory",
+      "governanceTier": "out-of-scope",
+      "attributionGap": false
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
+      "@type": ["Quadrant", "DefinedTerm"],
+      "name": "LLM Workflow Quadrant",
+      "alternateName": [
+        {"@value": "LLM Workflow Quadrant", "@language": "en"},
+        {"@value": "LLMワークフロー象限", "@language": "ja"}
+      ],
+      "description": "Semantic-judgment and pre-defined. Deterministic control flow plus bounded LLM calls with named, documented roles. Default for most current LLM applications. Medium governance under AAP.",
+      "xAxis": "semantic-judgment",
+      "yAxis": "pre-defined-workflow",
+      "governanceTier": "medium",
+      "attributionGap": false
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop",
+      "@type": ["Quadrant", "DefinedTerm"],
+      "name": "Autonomous Agentic Loop Quadrant",
+      "alternateName": [
+        {"@value": "Autonomous Agentic Loop Quadrant", "@language": "en"},
+        {"@value": "自律エージェントループ象限", "@language": "ja"}
+      ],
+      "description": "Semantic-judgment and exploratory. The LLM decides each next step at runtime; intrinsic, non-removable attribution gap. High governance under AAP — all ten ADRs apply.",
+      "xAxis": "semantic-judgment",
+      "yAxis": "exploratory",
+      "governanceTier": "high",
+      "attributionGap": true
+    },
+
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/prohibition/absence",
+      "@type": ["ProhibitionLevel", "DefinedTerm"],
+      "name": "Security by Absence",
+      "alternateName": [
+        {"@value": "Security by Absence", "@language": "en"},
+        {"@value": "不在による安全", "@language": "ja"}
+      ],
+      "description": "Strongest prohibition tier. Dangerous capabilities are never implemented. Test: if grep cannot answer 'does capability X exist?', the system lacks this level.",
+      "level": 1,
+      "realizedBy": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0001-security-by-absence.md"
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/prohibition/scaffolding",
+      "@type": ["ProhibitionLevel", "DefinedTerm"],
+      "name": "Deterministic Prohibition at the Scaffolding Layer",
+      "alternateName": [
+        {"@value": "Deterministic Prohibition at the Scaffolding Layer", "@language": "en"},
+        {"@value": "スキャフォールディング層での決定論的禁止", "@language": "ja"}
+      ],
+      "description": "Middle prohibition tier. When absence is unachievable, prohibit at the harness (PreToolUse hooks, structural quarantine, adapter gates) — outside the LLM, firing on 100% of matching inputs. Contrasted with probabilistic prohibition in model weights.",
+      "level": 2,
+      "realizedBy": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0002-deterministic-prohibition-at-scaffolding.md"
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/prohibition/untrusted-boundary",
+      "@type": ["ProhibitionLevel", "DefinedTerm"],
+      "name": "Untrusted Content Boundary",
+      "alternateName": [
+        {"@value": "Untrusted Content Boundary", "@language": "en"},
+        {"@value": "信頼できない内容の境界", "@language": "ja"}
+      ],
+      "description": "Weakest prohibition tier. Accumulated memory (the agent's own outputs included) is treated as untrusted when read back into prompts. Used when the prior two layers cannot hold the capability.",
+      "level": 3,
+      "realizedBy": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0003-untrusted-content-boundary.md"
+    },
+
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/phase/design",
+      "@type": ["Phase", "DefinedTerm"],
+      "name": "design phase",
+      "alternateName": [
+        {"@value": "design phase", "@language": "en"},
+        {"@value": "設計フェーズ", "@language": "ja"}
+      ],
+      "description": "AAP Phase axis value. Phase is independent of Quadrant — every Quadrant can appear in either phase. Design-phase placement of the Autonomous Agentic Loop Quadrant satisfies ADR-0010's Phase-crossing decision automatically."
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/phase/operation",
+      "@type": ["Phase", "DefinedTerm"],
+      "name": "operation phase",
+      "alternateName": [
+        {"@value": "operation phase", "@language": "en"},
+        {"@value": "運用フェーズ", "@language": "ja"}
+      ],
+      "description": "AAP Phase axis value. Operation-phase placement of the Autonomous Agentic Loop Quadrant requires a recorded Phase-crossing decision (ADR-0010) in addition to ADR-0009's gap-bearer naming."
+    },
+
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0001-security-by-absence.md",
+      "@type": ["ADR", "TechArticle"],
+      "name": "ADR-0001: Security by Absence",
+      "description": "Dangerous capabilities are never implemented, not restricted. The strongest tier of the prohibition hierarchy.",
+      "appliesTo": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ]
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0002-deterministic-prohibition-at-scaffolding.md",
+      "@type": ["ADR", "TechArticle"],
+      "name": "ADR-0002: Deterministic Prohibition at the Scaffolding Layer",
+      "description": "When absence is unachievable, prohibit at the harness, not at model weights. The middle tier of the prohibition hierarchy.",
+      "appliesTo": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ]
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0003-untrusted-content-boundary.md",
+      "@type": ["ADR", "TechArticle"],
+      "name": "ADR-0003: Untrusted Content Boundary",
+      "description": "Accumulated memory cannot grant authority. The third tier of the prohibition hierarchy.",
+      "appliesTo": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ]
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0004-single-external-adapter.md",
+      "@type": ["ADR", "TechArticle"],
+      "name": "ADR-0004: Single External Adapter per Agent Process",
+      "description": "Blast radius bounded by design. Each agent process has at most one external-side-effect adapter.",
+      "appliesTo": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ]
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0005-human-approval-gate.md",
+      "@type": ["ADR", "TechArticle"],
+      "name": "ADR-0005: Human Approval Gate",
+      "description": "Behavior-modifying writes require named human sign-off.",
+      "appliesTo": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ]
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0006-causal-traceability.md",
+      "@type": ["ADR", "TechArticle"],
+      "name": "ADR-0006: Causal Traceability",
+      "description": "Every event reconstructible after the fact.",
+      "appliesTo": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ]
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0007-scaffolding-visibility.md",
+      "@type": ["ADR", "TechArticle"],
+      "name": "ADR-0007: Scaffolding Visibility",
+      "description": "Behavior lives in files, not opaque weights.",
+      "appliesTo": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ]
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0008-one-agent-one-human.md",
+      "@type": ["ADR", "TechArticle"],
+      "name": "ADR-0008: One Agent, One Human (experimental)",
+      "description": "The accountability chain terminates at a named individual. Pairs with ADR-0009 to define the gap-bearer.",
+      "appliesTo": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ]
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0009-triage-before-autonomy.md",
+      "@type": ["ADR", "TechArticle"],
+      "name": "ADR-0009: Triage Before Autonomy (experimental)",
+      "description": "Adopting an autonomous-loop architecture commits the system to a non-removable attribution gap. Triage at design time, name a gap-bearer at deployment time.",
+      "appliesTo": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ]
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0010-phase-separation.md",
+      "@type": ["ADR", "TechArticle"],
+      "name": "ADR-0010: Phase Separation Between Design and Operation (experimental)",
+      "description": "Operation-phase placement of the Autonomous Agentic Loop Quadrant requires a recorded Phase-crossing decision in addition to ADR-0009's gap-bearer naming. Phase and Quadrant are independent dimensions; the same Phase axis descends to skill-design granularity.",
+      "appliesTo": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/phase/operation"
+      ]
+    },
+
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#concept/four-business-ai-quadrants",
+      "@type": ["Concept", "DefinedTerm"],
+      "name": "Four Business AI Quadrants",
+      "description": "AAP's diagnostic frame for routing work to the architecture that preserves attribution: Script, Algorithmic Search, LLM Workflow, Autonomous Agentic Loop. Two-axis decomposition (deterministic vs semantic-judgment, pre-defined vs exploratory). Not agent categories; problem-space categories."
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#concept/prohibition-strength-hierarchy",
+      "@type": ["Concept", "DefinedTerm"],
+      "name": "prohibition-strength hierarchy",
+      "description": "AAP's ordering of prohibition mechanisms by structural strength: absence > scaffolding enforcement > untrusted boundary. A prohibition is designed by walking the hierarchy top-down — drop to the next layer only when the current one cannot hold the capability."
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/scaffolding",
+      "@type": ["Concept", "DefinedTerm"],
+      "name": "scaffolding",
+      "alternateName": [
+        {"@value": "scaffolding", "@language": "en"},
+        {"@value": "スキャフォールディング", "@language": "ja"}
+      ],
+      "description": "All non-weights components shaping agent behavior — system prompts, rules, tool definitions, RAG indexes, control loops. The locus where deterministic prohibition lives (ADR-0002)."
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/accountability-distribution",
+      "@type": ["Concept", "DefinedTerm"],
+      "name": "accountability distribution",
+      "alternateName": [
+        {"@value": "accountability distribution", "@language": "en"},
+        {"@value": "帰責の分配", "@language": "ja"}
+      ],
+      "description": "How responsibility is distributed across the agent system after a behavior occurs — who authored it, who bears its consequences, who can reconstruct its cause. Distinct from capability distribution."
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap",
+      "@type": ["Concept", "DefinedTerm"],
+      "name": "attribution gap",
+      "alternateName": [
+        {"@value": "attribution gap", "@language": "en"},
+        {"@value": "帰責ギャップ", "@language": "ja"}
+      ],
+      "description": "Non-removable gap when judgment elements blend at runtime. Intrinsic to the Autonomous Agentic Loop Quadrant; ADR-0009 is the structural response."
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer",
+      "@type": ["Concept", "DefinedTerm"],
+      "name": "pre-named gap-bearer",
+      "alternateName": [
+        {"@value": "pre-named gap-bearer", "@language": "en"},
+        {"@value": "事前指名されたギャップ担い手", "@language": "ja"}
+      ],
+      "description": "Structural accountability commitment in the Autonomous Agentic Loop Quadrant. The named individual who answers for the attribution gap, identified at design time per ADR-0009."
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/approval-gate",
+      "@type": ["Concept", "DefinedTerm"],
+      "name": "approval gate",
+      "alternateName": [
+        {"@value": "approval gate", "@language": "en"},
+        {"@value": "承認ゲート", "@language": "ja"}
+      ],
+      "description": "Structural checkpoint for behavior-modifying writes. Required by ADR-0005 for autonomous components in the LLM Workflow and Autonomous Agentic Loop Quadrants."
+    },
+
+    {
+      "@id": "https://github.com/shimo4228/zenn-content/tree/main/articles-en#agent-attribution-practice",
+      "@type": ["ExternalReference", "CreativeWork"],
+      "name": "Seven-essay narrative spine (April-May 2026)",
+      "description": "Three trilogy essays followed by four architectural follow-ups that introduced the four-quadrant decomposition, named the principled vs artificial redirect impossibility, surfaced the design / operation Phase distinction, and descended that distinction to skill-design granularity. Source narrative for AAP's harness-neutral judgments."
+    },
+    {
+      "@id": "https://github.com/shimo4228/contemplative-agent",
+      "@type": ["ExternalReference", "SoftwareSourceCode"],
+      "name": "contemplative-agent (running implementation)",
+      "description": "The implementation layer from which AAP's harness-neutral judgments were extracted before being re-expressed stripped of project identifiers. Source-of-truth for the operational practice that AAP records as ADRs."
+    }
+  ]
+}

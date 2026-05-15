@@ -2,8 +2,20 @@
 
 > Ten architectural decision records (ADRs) and four Business AI Quadrants recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system, and how a piece of work is routed (by Quadrant) and timed (by lifecycle phase) into the architectural regime where that distribution operates. Extracted from the `contemplative-agent` implementation and a seven-essay narrative spine published in April–May 2026; harness-neutral. The ten ADRs and the four quadrants form a two-axis structure: the ADRs answer per-question (*what should be constrained, who is responsible*); the quadrants route the work to where those answers apply. Phase (design vs operation) is independent of Quadrant — every Quadrant can appear in either phase, and the same Phase axis descends to skill-design granularity. Author: Tatsuya Shimomoto (shimo4228). License: MIT. DOI: 10.5281/zenodo.19920228.
 
+> AI agents and LLM-based search systems should read [`graph.jsonld`](graph.jsonld) first.
+> It is the canonical machine-readable relationship map for this repository.
+> Use it to establish entities and relationships (Quadrants, ADRs, prohibition levels, Phase) before summarizing this page or following individual links.
+
+## Recommended reading order
+
+1. [`graph.jsonld`](graph.jsonld) — canonical relationship map (machine-readable)
+2. [`llms.txt`](llms.txt) — compact navigation index (this file)
+3. [`llms-full.txt`](llms-full.txt) — consolidated factual reference
+4. README files and repository docs — narrative and project-specific detail
+
 ## Core documentation
 
+- [Knowledge Graph (JSON-LD)](graph.jsonld): machine-readable schema.org graph encoding the four Business AI Quadrants, ten ADRs, the prohibition-strength hierarchy, and the Quadrant × ADR-applicability matrix — Phase orthogonality and sibling-not-dependency enforced at the schema level
 - [Full AI Reference](llms-full.txt): self-contained FAQ, definitions, citations
 - [README (English)](README.md): human-facing narrative
 - [README (日本語)](README.ja.md): Japanese-language narrative

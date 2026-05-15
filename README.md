@@ -6,6 +6,19 @@ Language: English | [日本語](README.ja.md)
 
 > **Agent Attribution Practice (AAP)** — ten judgments paired with four Business AI Quadrants, not a fixed framework.
 
+<details>
+<summary>AI-facing reading order</summary>
+
+1. [`graph.jsonld`](graph.jsonld) — canonical machine-readable relationship map (Quadrants, ADRs, prohibition levels, Phase)
+2. [`llms.txt`](llms.txt) — compact navigation index
+3. [`llms-full.txt`](llms-full.txt) — consolidated factual reference
+4. README and project-specific docs — narrative and detail
+
+For the canonical relationship map of shimo4228's research ecosystem, see:
+https://github.com/shimo4228/shimo4228/blob/main/graph.jsonld
+
+</details>
+
 Ten recurring judgments about how **attribution** — who authored the
 behavior, who bears its consequences, who can reconstruct its cause —
 should be distributed across an autonomous AI agent, paired with the
