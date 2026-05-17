@@ -24,6 +24,7 @@
 - [Glossary](docs/glossary.md): key terms and English/Japanese mapping
 - [Inspiration and Lineage](docs/inspiration.md): essays, sibling projects, extraction path
 - [Industry mechanism layer mapping](docs/industry-mapping.md): time-bound 2026 Q2 snapshot mapping vendor mechanisms (Microsoft Agent 365, AWS Bedrock, Google Vertex AI, identity-security startups) to ADRs
+- [AI governance framework mapping](docs/policy-mapping/README.md): time-bound 2026 Q2 reading mapping AAP's ADRs and Quadrants to AI governance framework clauses (NIST AI RMF 1.0 + Generative AI Profile, ISO/IEC 42001:2023; EU AI Act and OECD AI Principles deferred to a later release)
 - [Codemap — Document Architecture](docs/CODEMAPS/architecture.md): document-role index, two-axis + Phase structure, citation-dependency graph, invariants — read first when routing a citation to the canonical AAP document
 
 ## Architecture Decision Records
@@ -71,6 +72,14 @@ Adoption-side documents that operationalize the ten ADRs across the four Busines
 ## Industry mechanism layer artifacts
 
 Through 2026 Q2, several industry releases populated the *mechanism layer* that AAP's principles describe (sub-millisecond policy gates, agent-identity primitives, sponsor systems, cross-vendor audit, cross-cloud registry sync). AAP positions itself as the *judgment layer* — vendor-neutral, harness-neutral, DOI-registered — that complements but does not duplicate these mechanisms. The per-artifact mapping (which vendor mechanism instantiates which ADR, what each artifact ships and what it does not) is maintained in [`docs/industry-mapping.md`](docs/industry-mapping.md), a deliberately time-bound document that decays as vendor products evolve, kept separate from the ADRs so the judgments themselves stay clean.
+
+## Policy framework mapping
+
+AAP also reads its ADRs and Quadrants against national / international AI governance frameworks. Phase 1 covers NIST AI Risk Management Framework 1.0 (NIST.AI.100-1, 2023-01) with the Generative AI Profile (NIST.AI.600-1, 2024-07) and ISO/IEC 42001:2023 AI Management System (first edition, 2023-12). EU AI Act and OECD AI Principles are deferred to Phase 2. NIST RMF ships the *structure* (GOVERN / MAP / MEASURE / MANAGE functions) and ISO 42001 ships the *management-system shape* (PDCA cycle, Annex SL Harmonized Structure, Annex A controls A.2–A.10); AAP records the *judgment layer* that populates them for the autonomous-agent subset. The mapping decays on framework revision cycles (yearly to multi-year) rather than on vendor product release cycles. Each framework file ships a per-ADR mapping plus a reverse index (framework clause → applicable ADR) for readers entering from the framework side.
+
+- [Policy mapping directory README](docs/policy-mapping/README.md): conventions, decay disclaimer, framework version pinning, revision procedure, sibling relationship to industry-mapping
+- [NIST AI RMF mapping](docs/policy-mapping/nist-ai-rmf.md): per-ADR mapping to NIST AI RMF functions and Generative AI Profile risk categories
+- [ISO/IEC 42001 mapping](docs/policy-mapping/iso-iec-42001.md): per-ADR mapping to ISO 42001 body clauses and Annex A control areas, with PDCA × Phase Separation discussion
 
 ## Narrative essays
 

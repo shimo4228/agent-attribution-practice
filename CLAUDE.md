@@ -90,14 +90,17 @@ ADR との lineage 対応:
 
 ## 書き方の規約
 
-### ADR の harness-neutral 化
+### ADR の harness / vendor / framework 中立性
 
-本 repo の ADR は project / harness 固有の識別子を含めない:
+本 repo の ADR は project / harness 固有の識別子、特定 vendor 製品名、特定 framework / 標準名のいずれも含めない:
 
-- ❌ `Moltbook adapter`, `contemplative-agent の insight CLI`, `MOLTBOOK_HOME`
-- ✅ `a social platform adapter`, `a skill-generating command`, `the agent's data directory`
+- ❌ project / harness: `Moltbook adapter`, `contemplative-agent の insight CLI`, `MOLTBOOK_HOME`
+- ❌ vendor 製品: `Microsoft Agent Governance Toolkit`, `Purview`, `Entra Agent ID`
+- ❌ framework / standard: `NIST AI RMF`, `ISO/IEC 42001`, `GOVERN function`, `AI Management System`
+- ✅ project / harness: `a social platform adapter`, `a skill-generating command`, `the agent's data directory`
+- ✅ vendor / framework は ADR 本文では一般語で言及 (`a sub-millisecond policy gate`, `an AI management system`, `a national AI risk management framework`)
 
-実装具体例を挙げる場合は「Lineage」セクション末尾に `contemplative-agent` への link で対応。ADR 本文の決定・理由・代替案は harness-neutral に保つ。
+実装具体例 (vendor instance) は [`docs/industry-mapping.md`](docs/industry-mapping.md) に隔離する。framework 対応 (NIST / ISO / EU AI Act / OECD への mapping) は [`docs/policy-mapping/`](docs/policy-mapping/README.md) に隔離する。両 directory は time-bound で decay する; ADR 本文の決定・理由・代替案は harness / vendor / framework neutral に保ち、いかなる vendor 製品改廃や framework 改訂も ADR 本文に back-propagate させない。`contemplative-agent` への link は「Lineage」セクション末尾に。
 
 ### 英語 primary / 日本語 subordinate
 

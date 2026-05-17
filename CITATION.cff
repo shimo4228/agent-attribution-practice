@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
 type: software
 title: "Agent Attribution Practice: Ten Architectural Decision Records and Four Business AI Quadrants on Accountability Distribution in Autonomous AI Agents"
-version: 0.2.0
-date-released: 2026-05-01
+version: 0.3.0
+date-released: 2026-05-17
 license: MIT
 doi: 10.5281/zenodo.19920228
 repository-code: "https://github.com/shimo4228/agent-attribution-practice"
@@ -35,8 +35,12 @@ abstract: >-
   Quadrant are independent dimensions. Includes thesis, manifesto,
   glossary, lineage, a security-principles skill, an adoption
   navigator (decision tree, governance mapping, case studies,
-  anti-patterns), and AI-facing reference files (llms.txt,
-  llms-full.txt) per the Answer.AI standard.
+  anti-patterns), AI-facing reference files (llms.txt, llms-full.txt)
+  per the Answer.AI standard, an industry mechanism layer mapping
+  (vendor product instantiations of the ADRs), and an AI governance
+  framework mapping (per-ADR readings against NIST AI Risk Management
+  Framework 1.0 with its Generative AI Profile and ISO/IEC 42001:2023;
+  EU AI Act and OECD AI Principles deferred to a later release).
 keywords:
   - AI agents
   - AI safety
@@ -55,6 +59,15 @@ keywords:
   - phase separation
   - design vs operation phase
   - phase-crossing decision
+  - NIST AI RMF
+  - NIST.AI.600-1
+  - Generative AI Profile
+  - ISO/IEC 42001
+  - AI Management System
+  - AIMS
+  - PDCA cycle
+  - AI governance frameworks
+  - policy framework mapping
 references:
   - type: software
     title: "Agent Knowledge Cycle (AKC)"

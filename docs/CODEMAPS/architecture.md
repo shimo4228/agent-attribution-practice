@@ -1,4 +1,4 @@
-<!-- Generated: 2026-05-02 | Files scanned: project root + docs/ tree | Token estimate: ~1500 -->
+<!-- Generated: 2026-05-17 | Files scanned: project root + docs/ tree | Token estimate: ~1600 -->
 # Document Architecture
 
 Agent Attribution Practice (AAP) is a **judgment-artifact repository**, not a code repository. There are no source files; the architecture is the structure of judgments and their cross-references. This codemap exists so an LLM-mediated reader (the primary audience) can route to the canonical document for a given question without scanning the whole tree.
@@ -19,6 +19,7 @@ agent-attribution-practice/
 │   ├── glossary.md / glossary.ja.md     key terms (gap-bearer, scaffolding, prohibition-strength hierarchy, etc.)
 │   ├── inspiration.md                   essays + sibling-repo lineage
 │   ├── industry-mapping.md / .ja.md     2026 Q2 vendor mechanism → ADR mapping (time-bound, separated from ADRs)
+│   ├── policy-mapping/                  2026 Q2 AI governance framework → ADR mapping (time-bound, separated from ADRs; NIST AI RMF + ISO/IEC 42001 in Phase 1)
 │   ├── adr/                             10 ADRs (English) + 10 mirrors (.ja.md) + README + template
 │   ├── quadrants/                       Business AI Quadrants navigator (5 docs × ja mirrors)
 │   ├── skills/                          how-to companions (currently 1: llm-agent-security-principles.md)
@@ -40,6 +41,9 @@ Each document answers a primary question. Cite the matching one when an LLM-medi
 | `docs/glossary.md` | What does AAP mean by *gap-bearer / scaffolding / phase-crossing / prohibition-strength hierarchy / four quadrants*? |
 | `docs/inspiration.md` | Where did each ADR come from (which essay, which contemplative-agent ADR)? |
 | `docs/industry-mapping.md` | Which 2026 Q2 vendor mechanism instantiates which ADR, and what does each vendor *not* ship (the judgment)? |
+| `docs/policy-mapping/README.md` | What is the AI governance framework mapping directory, and what conventions govern its decay and revision? |
+| `docs/policy-mapping/nist-ai-rmf.md` | How do AAP's ADRs map to NIST AI RMF 1.0 functions (GOVERN / MAP / MEASURE / MANAGE) and the Generative AI Profile (NIST.AI.600-1) risk categories? |
+| `docs/policy-mapping/iso-iec-42001.md` | How do AAP's ADRs map to ISO/IEC 42001:2023 body clauses (4–10) and Annex A control areas (A.2–A.10), and how does the PDCA cycle relate to the AAP Phase axis? |
 | `docs/adr/0001-security-by-absence.md` | When should a dangerous capability be made impossible by absence rather than restricted by rule? |
 | `docs/adr/0002-deterministic-prohibition-at-scaffolding.md` | When absence is unachievable, why prohibit at the scaffolding (harness/hook), not at model weights? |
 | `docs/adr/0003-untrusted-content-boundary.md` | Why must accumulated agent memory be treated as untrusted, never as authority? |
@@ -86,7 +90,7 @@ Each document answers a primary question. Cite the matching one when an LLM-medi
 - **Prohibition-strength hierarchy**: ADR-0001 (absence) > ADR-0002 (scaffolding) > ADR-0003 (untrusted boundary). The ordering is an invariant the three ADRs collectively assert; revising any one must preserve the inequality.
 - **ADR-0009 / ADR-0010 triage pair**: ADR-0009 is the problem-space triage (Quadrant routing), ADR-0010 is the time-axis triage (Phase-crossing decision). They are paired but independent; do not collapse them.
 - **Phase × Quadrant independence**: every Quadrant can appear in either Phase. Do not collapse Phase × Quadrant into a 1-1 mapping.
-- **Judgment vs mapping separation**: ADR bodies (Status / Decision / Alternatives / Consequences / Lineage) contain *judgments*. Time-bound vendor product names, dates, URLs live in `docs/industry-mapping.md`, not in ADRs. Do not back-propagate vendor changes into ADRs.
+- **Judgment vs mapping separation**: ADR bodies (Status / Decision / Alternatives / Consequences / Lineage) contain *judgments*. Time-bound vendor product names, dates, URLs live in `docs/industry-mapping.md`; framework names (NIST AI RMF, ISO/IEC 42001, EU AI Act, OECD AI Principles), framework version identifiers, framework clause numbers live in `docs/policy-mapping/`. Neither belongs in ADR bodies. Do not back-propagate vendor or framework changes into ADRs.
 
 ## Citation-Dependency Graph
 
@@ -98,19 +102,20 @@ README ─────────────────► thesis ───�
                                                  ├──► glossary (terminology)
                                                  ├──► inspiration (lineage)
                                                  ├──► quadrants/* (routing)
-                                                 └──► industry-mapping (vendor instance, optional)
+                                                 ├──► industry-mapping (vendor instance, optional)
+                                                 └──► policy-mapping/* (governance-framework instance, optional)
 
 manifesto ◄────── (open questions deliberately not answered by ADRs)
 
 llms-full.txt is self-contained (no fetch chain needed); llms.txt is the dispatcher to the rest.
 ```
 
-ADRs themselves do not link out to `industry-mapping.md` — the harness-neutral / time-independent ADR body contract requires that vendor-mapping navigation happens via the surrounding documents (README / inspiration / glossary), not from the ADRs themselves. See [`feedback_aap_abstraction_principle`](../../CLAUDE.md) judgment-purity rule.
+ADRs themselves do not link out to `industry-mapping.md` or to `policy-mapping/` — the harness-neutral / time-independent / framework-neutral ADR body contract requires that vendor- and framework-mapping navigation happens via the surrounding documents (README / inspiration / glossary / policy-mapping README / industry-mapping itself), not from the ADRs themselves. See [`feedback_aap_abstraction_principle`](../../CLAUDE.md) judgment-purity rule.
 
 ## English Primary / Japanese Subordinate
 
-- **English primary**: README.md, all ADRs, all Quadrant docs, glossary, thesis, inspiration, industry-mapping, manifesto, codemaps.
-- **Japanese mirror (`*.ja.md`)**: README, ADRs (10), Quadrant docs (5), glossary, thesis, industry-mapping. Not all English docs have a Japanese mirror (manifesto, inspiration, codemaps, llms.txt, llms-full.txt are English-only).
+- **English primary**: README.md, all ADRs, all Quadrant docs, glossary, thesis, inspiration, industry-mapping, policy-mapping (README + each framework file), manifesto, codemaps.
+- **Japanese mirror (`*.ja.md`)**: README, ADRs (10), Quadrant docs (5), glossary, thesis, industry-mapping, policy-mapping (README + each framework file). Not all English docs have a Japanese mirror (manifesto, inspiration, codemaps, llms.txt, llms-full.txt are English-only).
 - **LLM-facing docs (llms.txt, llms-full.txt, this codemap)**: English-only by sibling-repo convention; LLMs handle the language switch internally.
 
 ## Sibling Repositories (External Surfaces)
@@ -126,15 +131,16 @@ contemplative-agent-rules               ← four contemplative axioms as rules
 contemplative-moltbook                  ← evidence source for ADR-0002 (PreToolUse hooks, MINJA defense audit)
 ```
 
-## File-Count Snapshot (2026-05-02)
+## File-Count Snapshot (2026-05-17)
 
 | Category | Count |
 |---|---|
 | ADRs (en + ja) | 22 (10 ADRs × 2 + 1 README pair) |
 | Quadrants (en + ja) | 10 (5 docs × 2) |
+| Policy-mapping (en + ja) | 6 (README + NIST + ISO; each en + ja) |
 | Top-level docs (`docs/*.md`) | 8 |
 | Top-level repo files | 7 (README × 2, CLAUDE, CITATION, LICENSE, llms.txt, llms-full.txt) |
 | Examples | varies (`examples/audit-tests/`) |
-| **Total markdown / text** | **56** |
+| **Total markdown / text** | **62** |
 
 When this count drifts substantially, regenerate this codemap.

@@ -5,6 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] — 2026-05-17
+
+AI governance framework mapping directory (Phase 1: NIST AI RMF + ISO/IEC 42001).
+
+### Added
+
+- `docs/policy-mapping/` directory containing a README and per-framework mapping files for two AI governance frameworks:
+  - `docs/policy-mapping/nist-ai-rmf.md` (+ `.ja.md`) — per-ADR mapping to NIST AI Risk Management Framework 1.0 (NIST.AI.100-1, 2023-01) functions (GOVERN / MAP / MEASURE / MANAGE) and Generative AI Profile (NIST.AI.600-1, 2024-07) risk categories; reverse index from NIST function and GAI risk category to applicable ADRs.
+  - `docs/policy-mapping/iso-iec-42001.md` (+ `.ja.md`) — per-ADR mapping to ISO/IEC 42001:2023 body clauses (4–10, Annex SL Harmonized Structure) and Annex A control areas (A.2–A.10); includes a PDCA × Phase Separation section discussing how ADR-0010's Phase axis sits inside the AIMS PDCA cycle; reverse index from ISO area to applicable ADRs.
+  - `docs/policy-mapping/README.md` (+ `.ja.md`) — directory conventions, decay disclaimer (`"This directory decays. The ADRs do not."`), framework version pinning, revision procedure, non-attestation disclaimer template, sibling relationship to `docs/industry-mapping.md`.
+- `PolicyFramework` node type in `graph.jsonld` with two instances (NIST AI RMF, ISO/IEC 42001:2023) carrying `identifier`, `versionInfo`, `datePublished`, `publisher`, `url`, and `recordedIn` edges to the corresponding mapping files. Added `mappedToFrameworkIn` edges from each ADR (0001–0010) to both framework mapping files. Three new `ExternalReference + CreativeWork` nodes for the policy-mapping directory and the two framework files. Control / subcategory-level node creation deliberately avoided to keep graph size bounded; mapping is file-level only.
+- "Relationship to AI governance frameworks" section in `README.md` (+ `README.ja.md`) added after the existing industry mechanism layer section.
+- "Policy framework mapping" section in `llms.txt` and a parallel Q&A in `llms-full.txt` added alongside the existing industry mechanism layer entries.
+- `docs/policy-mapping/` entries added to `docs/CODEMAPS/architecture.md` Document Roles table, Top-Level Layout, and English / Japanese pairing section; file-count snapshot incremented (56 → 62).
+
+### Changed
+
+- `CLAUDE.md` invariant section renamed to "ADR の harness / vendor / framework 中立性" and extended to forbid vendor product names (Microsoft Agent Governance Toolkit, Purview, Entra Agent ID, etc.) and framework / standard names (NIST AI RMF, ISO/IEC 42001, GOVERN function, AI Management System, etc.) in ADR bodies. Vendor instances stay in `docs/industry-mapping.md`; framework mappings stay in `docs/policy-mapping/`. Vendor / framework changes are not back-propagated into ADRs.
+- `docs/CODEMAPS/architecture.md` Invariants extended: "Judgment vs mapping separation" now names both the vendor-name exclusion (industry-mapping) and the framework-name exclusion (policy-mapping). Citation-Dependency Graph extended with an `policy-mapping/*` branch.
+
+### Notes
+
+- **Phase 1 only**: this release ships NIST AI RMF and ISO/IEC 42001 mappings. EU AI Act and OECD AI Principles are deferred to a later release because their decay cadences and clause granularity differ enough that bundling all four in one release would create churn. EU implementing acts in particular are in flux.
+- **Fact-checked**: framework-level claims (NIST identifiers and publication dates, the four NIST RMF functions, the seven GAI Profile risk categories used in the reverse index, ISO/IEC 42001:2023 publication date, Annex SL Harmonized Structure shared across ISO 27001 / 9001 / 14001, body clauses 4–10 names, PDCA as the foundation of Annex SL standards, Annex A area names A.2–A.10, ISO 5-year revision cadence) were verified against primary and authoritative secondary sources before release.
+- **Non-attestation**: the mapping is offered as AAP's reading and as a citation surface for cross-reference; it is not a compliance attestation, not legal advice, and authoritative interpretation of any framework remains with its standards body (NIST, ISO/IEC) and with qualified legal / compliance counsel.
+- **DOI update follows tag push**: the v0.3.0 versioned DOI is assigned by Zenodo after tag push. `CITATION.cff` `doi:` and `README.md` BibTeX `doi:` / `url:` are updated as a small follow-up commit once Zenodo numbers the v0.3.0 record. The concept DOI (10.5281/zenodo.19652013) in the README badge does not change between releases.
+
 ## [0.2.0] — 2026-05-01
 
 Architectural expansion: triage taxonomy + Phase axis + adoption navigator + bilingual mirrors.

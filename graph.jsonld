@@ -10,6 +10,7 @@
     "Quadrant": "shimo:Quadrant",
     "ProhibitionLevel": "shimo:ProhibitionLevel",
     "Phase": "shimo:Phase",
+    "PolicyFramework": "shimo:PolicyFramework",
     "siblingOf": {"@id": "shimo:siblingOf", "@type": "@id"},
     "derivesFrom": {"@id": "shimo:derivesFrom", "@type": "@id"},
     "derivedFrom": {"@id": "shimo:derivedFrom", "@type": "@id"},
@@ -29,6 +30,8 @@
     "independentOf": {"@id": "shimo:independentOf", "@type": "@id"},
     "triggersDecision": {"@id": "shimo:triggersDecision", "@type": "@id"},
     "instantiatedBy": {"@id": "shimo:instantiatedBy", "@type": "@id"},
+    "mappedToFrameworkIn": {"@id": "shimo:mappedToFrameworkIn", "@type": "@id"},
+    "recordedIn": {"@id": "shimo:recordedIn", "@type": "@id"},
     "citedBy": {"@id": "shimo:citedBy", "@type": "@id"},
     "subjectOf": {"@id": "https://schema.org/subjectOf", "@type": "@id"},
     "hasPart": {"@id": "https://schema.org/hasPart", "@type": "@id"},
@@ -280,6 +283,38 @@
     },
 
     {
+      "@id": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "@type": ["PolicyFramework", "CreativeWork"],
+      "name": "NIST AI Risk Management Framework",
+      "alternateName": [
+        {"@value": "NIST AI RMF", "@language": "en"}
+      ],
+      "description": "U.S. National Institute of Standards and Technology framework organizing AI risk management around four functions (GOVERN, MAP, MEASURE, MANAGE). Released January 2023 (NIST.AI.100-1, 1.0). The Generative AI Profile (NIST.AI.600-1, July 2024) adds risk categories specific to generative and dual-use AI systems. AAP records the judgment layer that complements the NIST function structure for the autonomous-agent subset.",
+      "identifier": "NIST.AI.100-1",
+      "versionInfo": "1.0",
+      "datePublished": "2023-01-26",
+      "publisher": {"@type": "Organization", "name": "National Institute of Standards and Technology"},
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "hasPart": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "recordedIn": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md"
+    },
+    {
+      "@id": "https://www.iso.org/standard/42001",
+      "@type": ["PolicyFramework", "CreativeWork"],
+      "name": "ISO/IEC 42001:2023",
+      "alternateName": [
+        {"@value": "ISO/IEC 42001 AI Management System", "@language": "en"}
+      ],
+      "description": "International standard specifying requirements for an AI Management System (AIMS), structured on the Annex SL Harmonized Structure shared with ISO/IEC 27001, ISO 9001, and ISO 14001. First edition published December 2023. AAP records the judgment layer that populates the standard's PDCA-cycle management-system shape for the autonomous-agent subset.",
+      "identifier": "ISO/IEC 42001:2023",
+      "versionInfo": "first edition",
+      "datePublished": "2023-12",
+      "publisher": {"@type": "Organization", "name": "International Organization for Standardization / International Electrotechnical Commission"},
+      "url": "https://www.iso.org/standard/42001",
+      "recordedIn": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+    },
+
+    {
       "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0001-security-by-absence.md",
       "@type": ["ADR", "TechArticle"],
       "name": "ADR-0001: Security by Absence",
@@ -287,6 +322,10 @@
       "appliesTo": [
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ],
+      "mappedToFrameworkIn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
       ]
     },
     {
@@ -297,7 +336,11 @@
       "appliesTo": [
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
       ],
-      "instantiatedBy": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/industry-mapping.md"
+      "instantiatedBy": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/industry-mapping.md",
+      "mappedToFrameworkIn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+      ]
     },
     {
       "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0003-untrusted-content-boundary.md",
@@ -307,6 +350,10 @@
       "appliesTo": [
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ],
+      "mappedToFrameworkIn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
       ]
     },
     {
@@ -317,6 +364,10 @@
       "appliesTo": [
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ],
+      "mappedToFrameworkIn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
       ]
     },
     {
@@ -327,6 +378,10 @@
       "appliesTo": [
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ],
+      "mappedToFrameworkIn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
       ]
     },
     {
@@ -338,7 +393,11 @@
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
       ],
-      "instantiatedBy": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/industry-mapping.md"
+      "instantiatedBy": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/industry-mapping.md",
+      "mappedToFrameworkIn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+      ]
     },
     {
       "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0007-scaffolding-visibility.md",
@@ -348,6 +407,10 @@
       "appliesTo": [
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ],
+      "mappedToFrameworkIn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
       ]
     },
     {
@@ -357,6 +420,10 @@
       "description": "The accountability chain terminates at a named individual. Pairs with ADR-0009 to define the gap-bearer.",
       "appliesTo": [
         "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop"
+      ],
+      "mappedToFrameworkIn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
       ]
     },
     {
@@ -371,6 +438,10 @@
       "derivedFrom": [
         "https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant.md",
         "https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-2.md"
+      ],
+      "mappedToFrameworkIn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
       ]
     },
     {
@@ -386,6 +457,10 @@
       "derivedFrom": [
         "https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-3.md",
         "https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-4.md"
+      ],
+      "mappedToFrameworkIn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
       ]
     },
 
@@ -635,6 +710,32 @@
       "name": "Industry Mechanism Layer Mapping (2026 Q2 snapshot)",
       "description": "Time-bound mapping between specific vendor mechanisms and the ADRs they instantiate. Deliberately separated from ADR bodies so the judgments themselves stay clean: this file decays as vendor products evolve, the ADRs do not. Honors the 'implementation dissolves; judgment persists' thesis at the documentation layer.",
       "temporalCoverage": "2026-04/2026-06"
+    },
+
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/tree/main/docs/policy-mapping",
+      "@type": ["ExternalReference", "Collection", "CreativeWork"],
+      "name": "AI Governance Framework Mapping (2026 Q2 reading)",
+      "description": "Time-bound directory mapping AAP's ADRs and Quadrants to clauses of national / international AI governance frameworks (NIST AI RMF, ISO/IEC 42001, with EU AI Act and OECD AI Principles deferred to a later release). Sibling of industry-mapping.md but targeting a different reader audience (policy / compliance officer vs engineer / architect) and decaying on framework revision cycles (yearly to multi-year) rather than vendor product release cycles. Deliberately separated from ADR bodies so judgments stay framework-neutral.",
+      "temporalCoverage": "2026-04/2027-04",
+      "hasPart": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+      ]
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
+      "@type": ["ExternalReference", "CreativeWork"],
+      "name": "NIST AI RMF mapping to AAP ADRs",
+      "description": "Per-ADR mapping of AAP's ten ADRs to NIST AI RMF 1.0 functions (GOVERN / MAP / MEASURE / MANAGE) and Generative AI Profile (NIST.AI.600-1) risk categories. Reverse index from NIST function and GAI risk category to applicable ADRs. AAP-side reading, not a compliance attestation. Decays on NIST revision and on GAI Profile profile revision.",
+      "temporalCoverage": "2026-Q2/2027-Q2"
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+      "@type": ["ExternalReference", "CreativeWork"],
+      "name": "ISO/IEC 42001 mapping to AAP ADRs",
+      "description": "Per-ADR mapping of AAP's ten ADRs to ISO/IEC 42001:2023 body clauses (4–10, the Annex SL Harmonized Structure) and Annex A control areas (A.2–A.10). PDCA × Phase Separation section discusses how ADR-0010's Phase axis sits inside the AIMS PDCA cycle. Reverse index from ISO area to applicable ADRs. AAP-side reading, not a compliance attestation. Decays on ISO revision and on amendment publication.",
+      "temporalCoverage": "2026-Q2/2028-Q4"
     }
   ]
 }
