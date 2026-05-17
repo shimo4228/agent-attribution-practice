@@ -126,7 +126,7 @@ agent-attribution-practice (this repo)  ← idea-rescue, judgment layer
        │ extracted from / co-evolves with
        │
 contemplative-agent                     ← running implementation; ADRs in this repo correspond to that repo's ADRs (see CLAUDE.md correspondence table)
-agent-knowledge-cycle (AKC)             ← mechanism-only sibling (DOI 10.5281/zenodo.19200727); v2.0.0 (2026-04-19) re-positioned to mechanism-only
+agent-knowledge-cycle (AKC)             ← mechanism-only sibling (DOI 10.5281/zenodo.19200726); v2.0.0 (2026-04-19) re-positioned to mechanism-only
 contemplative-agent-rules               ← four contemplative axioms as rules
 contemplative-moltbook                  ← evidence source for ADR-0002 (PreToolUse hooks, MINJA defense audit)
 ```

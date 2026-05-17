@@ -35,7 +35,7 @@ ADR-0009 / ADR-0010 は triage pair: 0009 は ADR 群の **手前** に位置す
 
 ### `agent-knowledge-cycle` (AKC) — mechanism sibling
 
-- https://github.com/shimo4228/agent-knowledge-cycle (DOI `10.5281/zenodo.19200727`)
+- https://github.com/shimo4228/agent-knowledge-cycle (DOI `10.5281/zenodo.19200726`)
 - v2.0.0 (2026-04-19) で mechanism-only に再ポジショニング
 - それまで AKC v1.x にあった governance triplet (Security by Absence / Single External Adapter / Untrusted Content Boundary) が `_archive/akc-security-triplet-2026-04/` に凍結され、本 repo が sibling genre library として立ち上がった
 - AKC は cycle (knowledge をどう流すか)、本 repo は practice (attribution をどう分配するか)。役割は相補的で独立

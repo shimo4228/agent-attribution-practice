@@ -94,7 +94,7 @@
       "license": "https://opensource.org/licenses/MIT",
       "inLanguage": ["en", "ja"],
       "siblingOf": [
-        "https://doi.org/10.5281/zenodo.19200727",
+        "https://doi.org/10.5281/zenodo.19200726",
         "https://doi.org/10.5281/zenodo.19212118",
         "https://github.com/shimo4228/contemplative-agent-rules"
       ],
@@ -115,7 +115,7 @@
     },
 
     {
-      "@id": "https://doi.org/10.5281/zenodo.19200727",
+      "@id": "https://doi.org/10.5281/zenodo.19200726",
       "@type": ["EcosystemRepo", "ResearchLine", "ScholarlyArticle"],
       "name": "Agent Knowledge Cycle (AKC)",
       "alternateName": [
@@ -123,7 +123,7 @@
         {"@value": "エージェント知識サイクル", "@language": "ja"}
       ],
       "description": "Mechanism-side sibling capturing the six-phase knowledge cycle (Research, Extract, Curate, Promote, Measure, Maintain) that keeps an agent's skills, rules, and documentation aligned with reality. AKC v2.0.0 (2026-04-19) repositioned itself as mechanism-only; the archived AKC v1.x security triplet was re-expressed in AAP plus five additional ADRs. AKC covers how knowledge flows; AAP covers how attribution distributes — complementary and independent.",
-      "identifier": "10.5281/zenodo.19200727",
+      "identifier": "10.5281/zenodo.19200726",
       "url": "https://github.com/shimo4228/agent-knowledge-cycle",
       "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"}
     },

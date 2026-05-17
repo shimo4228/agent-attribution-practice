@@ -111,7 +111,7 @@ articles' references resolvable in isolation.
   re-expression here.
 
 - **[agent-knowledge-cycle (AKC)](https://github.com/shimo4228/agent-knowledge-cycle)**
-  (DOI `10.5281/zenodo.19200727`) is a sibling project that captures
+  (DOI `10.5281/zenodo.19200726`) is a sibling project that captures
   the *mechanism* side of what contemplative-agent produces — the
   six-phase knowledge cycle (Research → Extract → Curate → Promote →
   Measure → Maintain). In v1.x AKC included three ADRs that turned

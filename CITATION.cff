@@ -72,7 +72,7 @@ references:
   - type: software
     title: "Agent Knowledge Cycle (AKC)"
     repository-code: "https://github.com/shimo4228/agent-knowledge-cycle"
-    doi: "10.5281/zenodo.19200727"
+    doi: "10.5281/zenodo.19200726"
     authors:
       - family-names: Shimomoto
         given-names: Tatsuya
