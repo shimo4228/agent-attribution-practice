@@ -46,7 +46,7 @@ Two-axis decomposition of business AI work — deterministic vs semantic-judgmen
 
 - (1) Script Quadrant: deterministic × pre-defined. Scripts and pipelines without LLMs.
 - (2) Algorithmic Search Quadrant: deterministic × exploratory. Classical search, dynamic programming, MCTS, reinforcement learning.
-- (3) LLM Workflow Quadrant: semantic-judgment × pre-defined. Deterministic control flow plus bounded LLM calls with named, documented roles. The default for most current LLM applications.
+- (3) LLM Workflow Quadrant: semantic-judgment × pre-defined. Path decided in advance; LLM called as a bounded step within it. Two sub-forms: conversational (specialized chat agents) and batch (single-purpose LLM functions inside deterministic pipelines). The default for most current LLM applications.
 - (4) Autonomous Agentic Loop Quadrant: semantic-judgment × exploratory. The LLM decides each next step at runtime; intrinsic attribution gap.
 
 ## Adoption navigator

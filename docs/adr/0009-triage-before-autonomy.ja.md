@@ -77,7 +77,12 @@ triage する:
 1. **Script Quadrant** (決定論 × 事前定義)。
 2. **Algorithmic Search Quadrant** (決定論 × 探索的)。
 3. **LLM Workflow Quadrant** (意味判断 × 事前定義)。現行 LLM 応用の
-   大半に対する documented default。
+   大半に対する documented default。Load-bearing な性質: 実行パスは
+   事前に決まっており、LLM はそのパス内の単一の bounded ステップと
+   して呼び出される。I/O モダリティで 2 つの sub-form: **(3a)
+   Conversational** (specialized chat agents、会話中の人間が判断主体)
+   と **(3b) Batch** (single-purpose LLM functions inside
+   deterministic pipelines、パイプラインが制御フローを所有)。
 4. **Autonomous Agentic Loop Quadrant** (意味判断 × 探索的)。*業務
    自体が open-ended な探索を要求する時のみ* 使う — LLM 呼び出しの
    役割を bounded にすると業務がそもそも遂行できなくなる場合。

@@ -270,14 +270,88 @@ LLM-based system を含むため retrieval 上の曖昧さを生じていた)。
 
 意味判断 × 定義可。2026-04-29 essay が導入した、業界が消去法で
 autonomous loop に routing してきた設計空間に対する **肯定形の名前**。
-決定論的制御フロー + 名前と documented role + 明示 input/output schema
-を持つ bounded LLM 呼び出し (各 LLM 呼び出しの役割が周囲の workflow
-で bounded される) として実装される。各呼び出しの寄与は事後分離可能;
-redirect が機能する。現行 LLM 応用の大半が default として収まる。
-Anthropic "Building Effective Agents" の workflow pattern (prompt
-chaining、routing、parallelization、orchestrator-workers、
-evaluator-optimizer) や OpenAI "A Practical Guide to Building Agents"
-と連続する。
+**Load-bearing な性質:** *実行パスは事前に決まっており (人間、コード、
+周囲のワークフローによって)、LLM はそのパス内の単一の bounded な
+ステップとして呼び出される*。LLM は次のアクションを決めない — 次の
+アクションは calling pipeline またはセッションを回している人間
+オペレータが既に決定している。現行 LLM 応用の大半が default として
+収まる。
+
+本象限は入出力モダリティで自然に 2 つの sub-form に分かれる:
+
+- **(3a) Conversational sub-form（対話 sub-form）** — 検索、システムプロンプト、
+  (必要に応じ) 会話履歴を bounded な LLM 呼び出しと組み合わせる
+  specialized chat agents。例: 法律相談支援、診断支援、内部 FAQ、
+  専門知識サポート。会話中の人間が *判断主体 (judging agent)* であり、
+  LLM は知識検索・整理を担う。Multi-turn な対話も、各ターンの LLM
+  呼び出しが文書化された役割を持ち、人間 (LLM ではなく) が次に何を
+  するかを決めている限り、この sub-form に収まる。
+- **(3b) Batch sub-form（バッチ sub-form）** — 制御フローが通常のコード
+  (本 repo の実装では Python が中心だが、アーキテクチャは言語非依存) で
+  書かれ、semantic-judgment の leaf 点が *LLM 関数* で扱われる、普通の
+  コードベース。(3b) のアーキテクチャ的プリミティブは **LLM 関数
+  (LLM function)**: コードベース内の通常の関数で、関数本体は LLM 呼び出しに
+  委譲し、入力型・出力スキーマ・単一の判断責務を持つ (例:
+  `match_line_items(invoice_lines, po_lines) -> {MATCH, PARTIAL, NO_MATCH}`)。
+  コードベースが制御フローを所有し、LLM 関数はコードベースが決定論的に
+  判断できない leaf 点のみを占める。例: invoice matching、ticket triage、
+  RPA 上の例外分類、address normalization、feed 関連度スコアリング +
+  コメント生成。重要なのは、(3b) は汎用エージェントを *必要としない*
+  ── 50 判断カテゴリなら 50 個の narrow な関数であって、1 つの汎用関数では
+  ない。
+
+Post-hoc separability ── オペレータがどの呼び出しがどの寄与を生んだ
+かを特定し責任を redirect できる ── は load-bearing な性質の
+*帰結* であり essence ではない。個々の呼び出しの確率的揺らぎは性質を
+破らない ── 各呼び出しで固定されているのは呼び出しあたりの出力で
+はなく、呼び出しが果たす *役割* (周囲コードによって固定される) だから
+である。Anthropic (2024) と OpenAI (2025) は composition pattern
+(prompt chaining、routing、parallelization、orchestrator-workers、
+evaluator-optimizer; manager pattern、decentralized pattern) を文書化
+しており、これらはより広い Q3 領域で動くが、セル自体を肯定形では命名
+していない ── 文書はパターンを *workflows* と銘打って *agents* と対比し、
+workflow カテゴリは残余として残されている。Vocabulary gap の診断は
+essay 5 を参照。
+
+> Lineage: essay 4 (2026-04-29) が象限と conversational / batch
+> sub-form の区別を導入。essay 5 (2026-04-30) が肯定形の名前の不在を
+> artificial redirect impossibility の構造的原因として診断した。
+
+## LLM 関数 (LLM function)
+
+LLM Workflow Quadrant の (3b) Batch sub-form のアーキテクチャ的
+プリミティブ。**コードベース内の通常の関数で、関数本体は LLM 呼び出しに
+委譲し、入力型・出力スキーマ・単一の判断責務を持つもの**。呼び出し側
+から見れば、LLM 関数は他の関数と同じように振る舞う ── 定義された入力を
+渡せば、定義された型の値が返る ── ただし出力は確率的に揺らぎうる
+(LLM が判断器官だから)。
+
+代表例:
+
+- `match_line_items(invoice_lines, po_lines) -> Verdict` (Essay 4
+  2026-04-29): 2 つの line item set が意味的に対応するかを判定し、
+  `MATCH` / `PARTIAL` / `NO_MATCH` を返す。
+- `score_relevance(post_text) -> float` (Contemplative Agent feed
+  manager): 投稿の関連度を `[0.0, 1.0]` で返す。
+- `generate_comment(post_text) -> Optional[str]` (Contemplative Agent
+  コメントパイプライン): agent の constitution に基づくコメント文字列を
+  生成する。
+
+各々は周囲のコードベース内の通常の関数である。関数自身は次に何をするかを
+決めない ── 呼び出し側 (周囲コードの決定論的制御フロー) が決める。
+汎用エージェントとの対比: LLM 関数は設計上 narrow である。50 判断カテゴリ
+なら 50 個の narrow な関数になり、1 つの汎用関数にはならない。
+
+Anthropic (2024) と OpenAI (2025) は同じ Q3 領域で動く composition
+pattern (prompt chaining、routing、parallelization、orchestrator-
+workers、evaluator-optimizer; manager pattern、decentralized pattern)
+を文書化している。これらは orchestration pattern であり、LLM 関数を
+プリミティブとして用いうる (routing classifier は LLM 関数そのもの)
+が、pattern 自体は LLM 関数ではない。
+
+> Lineage: essay 4 (2026-04-29) が `match_line_items` 例と「50 カテゴリなら
+> 50 関数」framing で LLM 関数概念を導入。Contemplative Agent が
+> feed 処理パイプラインで同パターンを operationalize。
 
 ## Autonomous Agentic Loop Quadrant（自律エージェント・ループ象限）
 

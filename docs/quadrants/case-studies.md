@@ -68,10 +68,13 @@ Language: English | [日本語](case-studies.ja.md)
   (the service is always available) is a delivery property, not a
   phase property.
 
-## (LLM Workflow Quadrant, *Typical placement: Operation phase*) FAQ classification
+## (LLM Workflow Quadrant **batch sub-form**, *Typical placement: Operation phase*) FAQ classification
 
 *Published 2026-04-30.*
 
+- **Sub-form.** Batch sub-form: the pipeline owns the control flow;
+  the LLM is invoked once per question with a fixed role
+  (`classify(question) -> category`).
 - **Work.** A user submits a question; the system classifies it into
   one of N FAQ categories and returns the matching answer.
 - **Phase.** Operation phase. Default composition (no Phase-crossing
@@ -92,10 +95,14 @@ Language: English | [日本語](case-studies.ja.md)
   which FAQ to retrieve." See
   [`anti-patterns.md#bounded-work-on-autonomous-loop`](anti-patterns.md#bounded-work-on-autonomous-loop).
 
-## (LLM Workflow Quadrant, *Typical placement: Operation phase*) Customer support specialist chat
+## (LLM Workflow Quadrant **conversational sub-form**, *Typical placement: Operation phase*) Customer support specialist chat
 
 *Published 2026-04-30.*
 
+- **Sub-form.** Conversational sub-form: the human in the
+  conversation is the *judging agent*; each turn is a bounded LLM
+  call (system prompt + retrieval + history) whose role is fixed by
+  the surrounding harness.
 - **Work.** A multi-turn chat with a user, grounded in a product
   knowledge base. Escalates to a human when the conversation reaches
   a topic outside the scope.
@@ -123,10 +130,14 @@ Language: English | [日本語](case-studies.ja.md)
   holds, this is (3). If not, it has drifted into (4) and the
   ADR-0009 triage applies.
 
-## (LLM Workflow Quadrant, *Typical placement: Operation phase*) Invoice matching
+## (LLM Workflow Quadrant **batch sub-form**, *Typical placement: Operation phase*) Invoice matching
 
 *Published 2026-04-30. Source: 2026-04-29 essay.*
 
+- **Sub-form.** Batch sub-form: the pipeline (`process_invoice()`)
+  owns the control flow; a single-purpose LLM function
+  (`match_line_items(...) -> Verdict`) is invoked at the one
+  semantic-judgment point.
 - **Work.** Match incoming invoices against purchase orders;
   approve, escalate, or reject.
 - **Phase.** Operation phase. Default composition.

@@ -84,7 +84,13 @@ along the two axes of the four quadrants:
 1. **Script Quadrant** (deterministic × pre-defined).
 2. **Algorithmic Search Quadrant** (deterministic × exploratory).
 3. **LLM Workflow Quadrant** (semantic-judgment × pre-defined). The
-   documented default for most current LLM applications.
+   documented default for most current LLM applications. Load-bearing
+   property: the path is decided in advance, the LLM is called as a
+   single bounded step within that path. Two sub-forms by I/O
+   modality: **(3a) Conversational** (specialized chat agents, where
+   the human in the conversation is the judging agent) and
+   **(3b) Batch** (single-purpose LLM functions inside deterministic
+   pipelines, where the pipeline owns the control flow).
 4. **Autonomous Agentic Loop Quadrant** (semantic-judgment ×
    exploratory). Use *only when the work itself requires open-ended
    exploration* — bounding the LLM call's role would prevent the

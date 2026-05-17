@@ -220,15 +220,101 @@ subsumes LLM-based systems and produced retrieval ambiguity.
 
 Semantic-judgment × pre-defined. The positive name introduced in the
 2026-04-29 essay for the design space the industry has been routing
-through autonomous loops by elimination. Implemented as deterministic
-control flow plus bounded LLM calls with named, documented roles and
-explicit input/output schemas (each LLM call's role is bounded by the
-surrounding workflow). Each call's contribution is post-hoc separable;
-redirect succeeds. The default for most current LLM applications.
-Continuous with the workflow patterns documented in Anthropic's
-"Building Effective Agents" (prompt chaining, routing, parallelization,
-orchestrator-workers, evaluator-optimizer) and OpenAI's "A Practical
-Guide to Building Agents."
+through autonomous loops by elimination. **Load-bearing property:**
+*the execution path is decided in advance — by humans, by code, by
+the surrounding workflow — and the LLM is called as a single,
+bounded step within that path.* The LLM does not decide the next
+action; the next action is already decided by the calling pipeline
+or by the human operator running the session. The default for most
+current LLM applications.
+
+This quadrant divides naturally by input/output modality into two
+sub-forms:
+
+- **(3a) Conversational sub-form** — specialized chat agents that pair
+  retrieval, a system prompt, and (where needed) conversation history
+  with bounded LLM calls. Examples: legal-consultation assistants,
+  diagnostic-support assistants, internal-FAQ systems,
+  expert-knowledge support tools. The human in the conversation is
+  the *judging agent*; the LLM contributes knowledge retrieval and
+  organization. Multi-turn dialogue still sits in this sub-form when
+  each turn's LLM call has a documented role and the human, rather
+  than the LLM, decides what to do next.
+- **(3b) Batch sub-form** — an ordinary codebase (typically Python
+  in this repo's implementations, but language-agnostic) whose flow
+  control is written in conventional code and whose semantic-judgment
+  leaves are handled by *LLM functions*. The architectural primitive
+  of (3b) is the **LLM function**: an ordinary function in the
+  codebase whose body delegates the judgment to an LLM call, with a
+  defined input type, a defined output schema, and one judgment
+  responsibility (e.g., `match_line_items(invoice_lines, po_lines)
+  -> {MATCH, PARTIAL, NO_MATCH}`). The codebase owns control flow;
+  LLM functions occupy only the leaves the codebase cannot decide
+  deterministically. Examples: invoice matching, ticket triage,
+  exception-classification on top of RPA, address normalization,
+  feed-relevance scoring + comment generation. Crucially, (3b) does
+  *not* require a general-purpose agent: 50 judgment categories means
+  50 narrow functions, not one generalist.
+
+Post-hoc separability — the operator can identify which call
+produced which contribution and redirect responsibility accordingly
+— is the *consequence* of the load-bearing property, not its
+essence. The probabilistic fluctuation of any single call does not
+break the property, because the *role* the call plays at each
+invocation is what is fixed by the surrounding code, not the per-call
+output. Anthropic (2024) and OpenAI (2025) document composition
+patterns (prompt chaining, routing, parallelization,
+orchestrator-workers, evaluator-optimizer; manager pattern,
+decentralized pattern) that operate in this broader Q3 territory but
+do not name the cell positively; the documents title these patterns
+*workflows* in opposition to *agents*, leaving the workflow category
+as a residual. See essay 5 for the diagnosis of the vocabulary gap.
+
+> Lineage: essay 4 (2026-04-29) introduced the quadrant and the
+> conversational / batch sub-form distinction; essay 5 (2026-04-30)
+> diagnosed the absent positive name as the structural cause of the
+> artificial redirect impossibility.
+
+## LLM function
+
+The architectural primitive of the LLM Workflow Quadrant (3b) Batch
+sub-form. An **ordinary function in a codebase whose body delegates
+the judgment to an LLM call, with a defined input type, a defined
+output schema, and one judgment responsibility.** From the caller's
+perspective the LLM function behaves like any other function —
+defined input goes in, a value of a defined type comes out — except
+the output may fluctuate probabilistically since an LLM is the
+judging organ.
+
+Canonical examples:
+
+- `match_line_items(invoice_lines, po_lines) -> Verdict` (Essay 4
+  2026-04-29): decides whether two line-item sets correspond
+  semantically; returns `MATCH` / `PARTIAL` / `NO_MATCH`.
+- `score_relevance(post_text) -> float` (Contemplative Agent feed
+  manager): scores a post's domain relevance in `[0.0, 1.0]`.
+- `generate_comment(post_text) -> Optional[str]` (Contemplative Agent
+  comment pipeline): produces a contextual comment grounded in the
+  agent's constitution.
+
+Each is a regular function in the surrounding codebase. The function
+itself does not decide what to do next; the caller (deterministic
+control flow in the surrounding code) does. Contrast with a
+general-purpose agent: an LLM function is narrow by design. Fifty
+judgment categories produces fifty narrow functions, not one
+generalist.
+
+Anthropic (2024) and OpenAI (2025) document composition patterns
+(prompt chaining, routing, parallelization, orchestrator-workers,
+evaluator-optimizer; manager pattern, decentralized pattern) that
+operate in the same Q3 territory. These are orchestration patterns;
+they may use LLM functions as primitives (a routing classifier IS an
+LLM function) but the patterns themselves are not LLM functions.
+
+> Lineage: essay 4 (2026-04-29) introduced the LLM function concept
+> with the `match_line_items` example and the "50 categories = 50
+> functions" framing. Contemplative Agent operationalizes the same
+> pattern in its feed-processing pipeline.
 
 ## Autonomous Agentic Loop Quadrant
 

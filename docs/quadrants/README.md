@@ -58,14 +58,33 @@ correctness, and standard SE accountability.
 
 ### (3) LLM Workflow Quadrant
 
-Semantic-judgment × pre-defined. Deterministic control flow plus
-bounded LLM calls with named, documented roles and explicit
-input/output schemas. Each LLM call's contribution is **post-hoc
-separable**; redirect succeeds. Continuous with the workflow patterns
-documented in Anthropic's "Building Effective Agents" — prompt
-chaining, routing, parallelization, orchestrator-workers,
-evaluator-optimizer — and OpenAI's "A Practical Guide to Building
-Agents."
+Semantic-judgment × pre-defined. **Load-bearing property:** *the
+execution path is decided in advance — by humans, by code, by the
+surrounding workflow — and the LLM is called as a single, bounded
+step within that path.* The LLM does not decide the next action.
+Each LLM call's contribution is **post-hoc separable** as a
+*consequence* of the load-bearing property; redirect succeeds.
+
+This quadrant divides naturally by input/output modality into two
+sub-forms, but the load-bearing property is the same in both:
+
+- **(3a) Conversational sub-form** — specialized chat agents
+  (legal-consultation assistants, diagnostic-support assistants,
+  internal-FAQ systems, expert-knowledge support tools). The human
+  in the conversation is the *judging agent*; the LLM contributes
+  knowledge retrieval and organization.
+- **(3b) Batch sub-form** — single-purpose LLM functions inside an
+  otherwise deterministic pipeline (invoice matching, ticket triage,
+  exception classification on top of RPA, address normalization).
+  The pipeline owns the control flow; the LLM is called as a fixed
+  role at each semantic-judgment point.
+
+Continuous with the workflow patterns documented in Anthropic's
+"Building Effective Agents" — prompt chaining, routing,
+parallelization, orchestrator-workers, evaluator-optimizer — and
+OpenAI's "A Practical Guide to Building Agents" (manager pattern,
+decentralized pattern). These map predominantly to the batch
+sub-form; *routing* also serves at the top of conversational sub-forms.
 
 The default for most current LLM applications. The 2026-04-30 essay
 argues that this quadrant has been chronically routed to (4) by

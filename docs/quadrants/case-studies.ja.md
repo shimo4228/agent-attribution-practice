@@ -62,10 +62,13 @@
   (サービスが常時利用可能) のは delivery property で、phase property
   ではない。
 
-## (LLM Workflow Quadrant、*Typical placement: Operation phase*) FAQ 分類
+## (LLM Workflow Quadrant **batch sub-form**、*Typical placement: Operation phase*) FAQ 分類
 
 *Published 2026-04-30。*
 
+- **Sub-form。** Batch sub-form: パイプラインが制御フローを所有し、
+  LLM は固定された役割 (`classify(question) -> category`) で各質問
+  あたり 1 回呼び出される。
 - **業務。** ユーザが質問を submit; システムは N 個の FAQ カテゴリの
   いずれかに分類し、対応する答えを返す。
 - **Phase。** Operation phase。Default composition (Phase-crossing
@@ -85,10 +88,13 @@
   [`anti-patterns.ja.md#bounded-work-on-autonomous-loop`](anti-patterns.ja.md)
   参照。
 
-## (LLM Workflow Quadrant、*Typical placement: Operation phase*) カスタマーサポート専門 chat
+## (LLM Workflow Quadrant **conversational sub-form**、*Typical placement: Operation phase*) カスタマーサポート専門 chat
 
 *Published 2026-04-30。*
 
+- **Sub-form。** Conversational sub-form: 会話中の人間が *判断主体
+  (judging agent)*。各 turn は周囲ハーネスで役割が固定された bounded
+  LLM 呼び出し (system prompt + retrieval + history) である。
 - **業務。** Product knowledge base に grounded された multi-turn chat。
   Scope 外の topic に到達したら人間に escalate する。
 - **Phase。** Operation phase。Default composition。
@@ -111,10 +117,14 @@
   Role の bound が hold すれば (3)、hold しなければ (4) に流れて
   いて ADR-0009 triage が要る。
 
-## (LLM Workflow Quadrant、*Typical placement: Operation phase*) 請求書マッチング
+## (LLM Workflow Quadrant **batch sub-form**、*Typical placement: Operation phase*) 請求書マッチング
 
 *Published 2026-04-30。Source: 2026-04-29 essay。*
 
+- **Sub-form。** Batch sub-form: パイプライン (`process_invoice()`)
+  が制御フローを所有し、1 つの semantic-judgment ポイントで
+  single-purpose LLM function (`match_line_items(...) -> Verdict`)
+  が呼ばれる。
 - **業務。** 入庫した請求書を発注書とマッチして承認 / escalate /
   reject する。
 - **Phase。** Operation phase。Default composition。
