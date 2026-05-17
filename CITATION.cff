@@ -73,13 +73,16 @@ references:
     title: "Agent Knowledge Cycle (AKC)"
     repository-code: "https://github.com/shimo4228/agent-knowledge-cycle"
     doi: "10.5281/zenodo.19200726"
+    notes: "Mechanism-side sibling: the six-phase cycle this work references. AKC v2.0.0 (2026-04-19) declared the cycle genre-neutral and extracted the security triplet (Security by Absence, Single External Adapter, Untrusted Content Boundary), which was re-expressed here alongside additional ADRs. Sibling research line in the shimo4228 research program."
     authors:
       - family-names: Shimomoto
         given-names: Tatsuya
         orcid: "https://orcid.org/0009-0002-6168-4162"
   - type: software
-    title: "contemplative-agent"
+    title: "Contemplative Agent"
     repository-code: "https://github.com/shimo4228/contemplative-agent"
+    doi: "10.5281/zenodo.19212118"
+    notes: "Reference implementation from which AAP's harness-neutral judgments were extracted. Sibling research line in the shimo4228 research program."
     authors:
       - family-names: Shimomoto
         given-names: Tatsuya
