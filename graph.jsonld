@@ -48,7 +48,7 @@
       "@id": "https://github.com/shimo4228/agent-attribution-practice#knowledge-graph",
       "@type": ["Dataset", "CreativeWork"],
       "name": "Agent Attribution Practice (AAP) Knowledge Graph",
-      "description": "Canonical machine-readable relationship map for the Agent Attribution Practice line. Encodes the four Business AI Quadrants, ten ADRs, the prohibition-strength hierarchy, the Phase axis as an independent third dimension, the seven-essay narrative lineage, eleven cross-cutting concepts, three sibling research lines, and the Quadrant-by-ADR applicability matrix. AI agents and LLM-based search systems should read this graph before summarizing the line or following individual document links.",
+      "description": "Canonical machine-readable relationship map for the Agent Attribution Practice line. Encodes the four Business AI Quadrants (with the LLM Workflow Quadrant decomposed into Conversational and Batch sub-forms), ten ADRs, the prohibition-strength hierarchy, the Phase axis as an independent third dimension, the seven-essay narrative lineage, twelve cross-cutting concepts, three sibling research lines, and the Quadrant-by-ADR applicability matrix. AI agents and LLM-based search systems should read this graph before summarizing the line or following individual document links.",
       "isBasedOn": "https://github.com/shimo4228/agent-attribution-practice",
       "mainEntity": "https://doi.org/10.5281/zenodo.19652013",
       "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"},
@@ -109,7 +109,8 @@
         "https://shimo4228.github.io/shimo4228/vocab#aap/concept/approval-gate",
         "https://shimo4228.github.io/shimo4228/vocab#aap/concept/non-invasion-posture",
         "https://shimo4228.github.io/shimo4228/vocab#aap/concept/implementation-dissolves-judgment-persists",
-        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/phase-crossing-decision"
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/phase-crossing-decision",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/llm-function"
       ]
     },
 
@@ -186,11 +187,50 @@
         {"@value": "LLM Workflow Quadrant", "@language": "en"},
         {"@value": "LLMワークフロー象限", "@language": "ja"}
       ],
-      "description": "Semantic-judgment and pre-defined. Deterministic control flow plus bounded LLM calls with named, documented roles. Default for most current LLM applications. Medium governance under AAP.",
+      "description": "Semantic-judgment and pre-defined. Load-bearing property: the execution path is decided in advance — by humans, by code, by the surrounding workflow — and the LLM is called as a single bounded step within that path; the LLM does not decide the next action. Divides by I/O modality into two sub-forms: (3a) Conversational and (3b) Batch. Post-hoc separability is a consequence of the load-bearing property, not its essence. Default for most current LLM applications. Medium governance under AAP.",
       "xAxis": "semantic-judgment",
       "yAxis": "pre-defined-workflow",
       "governanceTier": "medium",
-      "attributionGap": false
+      "attributionGap": false,
+      "composedOf": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow/conversational",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow/batch"
+      ]
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow/conversational",
+      "@type": ["Quadrant", "DefinedTerm"],
+      "name": "LLM Workflow Quadrant — Conversational sub-form (3a)",
+      "alternateName": [
+        {"@value": "LLM Workflow Quadrant — Conversational sub-form", "@language": "en"},
+        {"@value": "LLMワークフロー象限 — 対話 sub-form", "@language": "ja"}
+      ],
+      "description": "Sub-form (3a) of the LLM Workflow Quadrant. Specialized chat agents that pair retrieval, a system prompt, and (where needed) conversation history with bounded LLM calls — legal-consultation assistants, diagnostic-support assistants, internal-FAQ systems, expert-knowledge support tools. The human in the conversation is the judging agent; the LLM contributes knowledge retrieval and organization. Multi-turn dialogue still sits in this sub-form when each turn's LLM call has a documented role and the human, not the LLM, decides what to do next.",
+      "xAxis": "semantic-judgment",
+      "yAxis": "pre-defined-workflow",
+      "governanceTier": "medium",
+      "attributionGap": false,
+      "extends": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
+      "definedBy": "https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant.md"
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow/batch",
+      "@type": ["Quadrant", "DefinedTerm"],
+      "name": "LLM Workflow Quadrant — Batch sub-form (3b)",
+      "alternateName": [
+        {"@value": "LLM Workflow Quadrant — Batch sub-form", "@language": "en"},
+        {"@value": "LLMワークフロー象限 — バッチ sub-form", "@language": "ja"}
+      ],
+      "description": "Sub-form (3b) of the LLM Workflow Quadrant. An ordinary codebase whose flow control is written in conventional code and whose semantic-judgment leaves are handled by LLM functions — invoice matching, ticket triage, exception classification on top of RPA, address normalization, feed-relevance scoring. The codebase owns control flow; LLM functions occupy only the leaves the codebase cannot decide deterministically. Does not require a general-purpose agent: 50 judgment categories means 50 narrow LLM functions, not one generalist.",
+      "xAxis": "semantic-judgment",
+      "yAxis": "pre-defined-workflow",
+      "governanceTier": "medium",
+      "attributionGap": false,
+      "extends": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow",
+      "composedOf": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/llm-function"
+      ],
+      "definedBy": "https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant.md"
     },
     {
       "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/autonomous-agentic-loop",
@@ -616,6 +656,19 @@
       "description": "Madeleine Clare Elish's term for the human operator who absorbs blame for failures of an automated system whose decisions are no longer separable post-hoc. Applied in AAP essay 5 to autonomous agents: when judgment elements blend at runtime in the Autonomous Agentic Loop Quadrant, the deploying organization commits to a principled attribution gap whose human end-point becomes the crumple zone unless a gap-bearer is pre-named (ADR-0009 / ADR-0008).",
       "sameAs": "https://en.wikipedia.org/wiki/Moral_crumple_zone",
       "citedBy": "https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant-2.md"
+    },
+    {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/llm-function",
+      "@type": ["Concept", "DefinedTerm"],
+      "name": "LLM function",
+      "alternateName": [
+        {"@value": "LLM function", "@language": "en"},
+        {"@value": "LLM 関数", "@language": "ja"}
+      ],
+      "description": "Architectural primitive of the LLM Workflow Quadrant Batch sub-form (3b): an ordinary function in a codebase whose body delegates the judgment to an LLM call, with a defined input type, a defined output schema, and one judgment responsibility. From the caller's perspective the LLM function behaves like any other function — defined input goes in, a value of a defined type comes out — except the output may fluctuate probabilistically since an LLM is the judging organ. Does not decide what to do next; the caller (deterministic control flow in the surrounding code) does. Canonical examples: match_line_items(invoice_lines, po_lines) -> Verdict (essay 4 invoice-matching), score_relevance(post_text) -> float and generate_comment(post_text) -> Optional[str] (Contemplative Agent feed-processing pipeline). Contrast with a general-purpose agent: an LLM function is narrow by design — fifty judgment categories produces fifty narrow functions, not one generalist.",
+      "appliesTo": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/llm-workflow/batch",
+      "definedBy": "https://github.com/shimo4228/zenn-content/blob/main/articles-en/react-agent-business-quadrant.md",
+      "instantiatedBy": "https://doi.org/10.5281/zenodo.19212118"
     },
 
     {
