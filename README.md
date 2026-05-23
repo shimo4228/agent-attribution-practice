@@ -252,11 +252,13 @@ This extraction was first compiled by Tatsuya Shimomoto ([@shimo4228](https://gi
 
 ## Related publication
 
-A companion position paper distils the architectural follow-up (essays 4–7) into a single harness-neutral statement:
+Two companion position papers distil the narrative spine into harness-neutral statements — the first covers the architectural follow-up (essays 4–7), the second the foundational trilogy (essays 1–3):
 
 > Shimomoto, T. (2026). *Distributing Accountability, Not Capability: Phase Separation and the LLM Workflow Quadrant in Autonomous AI Agent Architectures.* Zenodo. https://doi.org/10.5281/zenodo.20353789
 
-Open access (CC BY 4.0). The concept DOI above always resolves to the latest version.
+> Shimomoto, T. (2026). *The Two-Layer Black Box: Operator Visibility, Commercial Secrecy, and a Minimum Disclosure Set for Accountable Autonomous AI Agents.* Zenodo. https://doi.org/10.5281/zenodo.20355907
+
+Open access (CC BY 4.0). The concept DOIs above always resolve to the latest version.
 
 ## How to Cite
 

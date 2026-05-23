@@ -245,9 +245,11 @@ skill-design gradient essay から派生した。
 
 ## 関連発表
 
-architectural follow-up（essay 4–7）を harness-neutral な一つの statement に蒸留した companion position paper:
+二つの companion position paper が narrative spine を harness-neutral な statement に蒸留する — 一つ目は architectural follow-up（essay 4–7）、二つ目は基礎となる trilogy（essay 1–3）を扱う:
 
 > Shimomoto, T. (2026). *Distributing Accountability, Not Capability: Phase Separation and the LLM Workflow Quadrant in Autonomous AI Agent Architectures.* Zenodo. https://doi.org/10.5281/zenodo.20353789
+
+> Shimomoto, T. (2026). *The Two-Layer Black Box: Operator Visibility, Commercial Secrecy, and a Minimum Disclosure Set for Accountable Autonomous AI Agents.* Zenodo. https://doi.org/10.5281/zenodo.20355907
 
 オープンアクセス（CC BY 4.0）。上記 concept DOI は常に最新版に解決する。
 
