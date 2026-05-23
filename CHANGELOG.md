@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] — 2026-05-23
+
+Two companion position papers federated into the citation graph, plus the LLM Workflow Quadrant sub-form refinement and DOI / sibling-reference plumbing accumulated since v0.3.0. No ADR added or changed.
+
+### Added
+
+- Two companion position papers cross-linked into the federation, both deposited to Zenodo (CC BY 4.0):
+  - *Distributing Accountability, Not Capability: Phase Separation and the LLM Workflow Quadrant in Autonomous AI Agent Architectures* (essays 4–7, architectural follow-up) — concept DOI 10.5281/zenodo.20353789.
+  - *The Two-Layer Black Box: Operator Visibility, Commercial Secrecy, and a Minimum Disclosure Set for Accountable Autonomous AI Agents* (essays 1–3, foundational trilogy) — concept DOI 10.5281/zenodo.20355907.
+  - Both surfaced in `README.md` / `README.ja.md` "Related publication", as `ScholarlyArticle` nodes in `graph.jsonld` with the project node's `subjectOf` edge, in `.zenodo.json` as `isReferencedBy`, and in `llms-full.txt`.
+- `.zenodo.json` added with `related_identifiers` (sibling repos + both companion papers) so the relationships propagate to the repo's own Zenodo metadata on release.
+- Sibling-reference enrichment in `CITATION.cff` (DOI + notes for related shimo4228 research lines).
+
+### Changed
+
+- LLM Workflow Quadrant (Quadrant 3) reframed around its load-bearing property — the path is decided in advance; the LLM is called as a single bounded step within it — and decomposed into the **(3a) Conversational** and **(3b) Batch** sub-forms, propagated across `docs/glossary.md`, `docs/quadrants/`, ADR-0009, `graph.jsonld` (sub-quadrant nodes + the `LLM function` concept), `llms.txt`, and `llms-full.txt`. Verified verbatim against essays 4–5 as primary sources.
+- AKC concept DOI references corrected (10.5281/zenodo.19200727 → 19200726).
+- `CLAUDE.md` records the Hugging Face Datasets mirror mapping for `graph.jsonld` (LLM-training / knowledge-graph ingest source).
+
+### Notes
+
+- **No new judgments**: the ten ADRs and four Quadrants are unchanged in number and content. This release captures content refinement (Q3 sub-form) and the citation-graph federation of the two companion papers, not new decisions. CODEMAPS unchanged (architecture identical).
+- **DOI update follows tag push**: the v0.4.0 versioned DOI is assigned by Zenodo after the GitHub Release object is created. `CITATION.cff` `doi:` / `url:`, the `README` BibTeX `doi` / `url`, the README "How to cite" line, and the `llms.txt` / `llms-full.txt` DOI fields are updated in a small follow-up commit once Zenodo numbers the v0.4.0 record. The concept DOI (10.5281/zenodo.19652013) in the README badge does not change between releases.
+
 ## [0.3.0] — 2026-05-17
 
 AI governance framework mapping directory (Phase 1: NIST AI RMF + ISO/IEC 42001).
