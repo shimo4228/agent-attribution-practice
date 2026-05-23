@@ -243,6 +243,14 @@ Quadrants navigator は 2026-04-29 / 04-30 の architectural follow-up
 essay、ADR-0010 は 2026-05-01 / 05-02 の phase 区別 essay と
 skill-design gradient essay から派生した。
 
+## 関連発表
+
+architectural follow-up（essay 4–7）を harness-neutral な一つの statement に蒸留した companion position paper:
+
+> Shimomoto, T. (2026). *Distributing Accountability, Not Capability: Phase Separation and the LLM Workflow Quadrant in Autonomous AI Agent Architectures.* Zenodo. https://doi.org/10.5281/zenodo.20353789
+
+オープンアクセス（CC BY 4.0）。上記 concept DOI は常に最新版に解決する。
+
 ## 引用方法
 
 これらの architectural decision records を利用・参照する場合は、

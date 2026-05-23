@@ -65,6 +65,12 @@
       "scheme": "doi"
     },
     {
+      "identifier": "10.5281/zenodo.20353789",
+      "relation": "isReferencedBy",
+      "resource_type": "publication-workingpaper",
+      "scheme": "doi"
+    },
+    {
       "identifier": "https://github.com/shimo4228/shimo4228",
       "relation": "isPartOf",
       "resource_type": "other",

@@ -250,6 +250,14 @@ its siblings). ADRs remain English-only per repository convention.
 
 This extraction was first compiled by Tatsuya Shimomoto ([@shimo4228](https://github.com/shimo4228)) in April 2026. The ten ADRs and the four Business AI Quadrants re-express, in harness-neutral form, architectural decisions and triage judgments that surfaced through implementing and operating [contemplative-agent](https://github.com/shimo4228/contemplative-agent) and through the seven-essay narrative spine published in April–May 2026; the first eight ADRs were earlier archived as part of the [Agent Knowledge Cycle](https://github.com/shimo4228/agent-knowledge-cycle) governance triplet, while ADR-0009 and the Quadrants navigator emerged from the 2026-04-29 / 04-30 architectural follow-up essays, and ADR-0010 from the 2026-05-01 phase-distinction essay together with the 2026-05-02 skill-design gradient essay.
 
+## Related publication
+
+A companion position paper distils the architectural follow-up (essays 4–7) into a single harness-neutral statement:
+
+> Shimomoto, T. (2026). *Distributing Accountability, Not Capability: Phase Separation and the LLM Workflow Quadrant in Autonomous AI Agent Architectures.* Zenodo. https://doi.org/10.5281/zenodo.20353789
+
+Open access (CC BY 4.0). The concept DOI above always resolves to the latest version.
+
 ## How to Cite
 
 If you use or reference these architectural decision records, please cite:
