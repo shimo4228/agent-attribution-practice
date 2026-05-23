@@ -5,9 +5,9 @@ title: "Agent Attribution Practice: Ten Architectural Decision Records and Four 
 version: 0.4.0
 date-released: 2026-05-23
 license: MIT
-doi: 10.5281/zenodo.20251893
+doi: 10.5281/zenodo.20356057
 repository-code: "https://github.com/shimo4228/agent-attribution-practice"
-url: "https://doi.org/10.5281/zenodo.20251893"
+url: "https://doi.org/10.5281/zenodo.20356057"
 authors:
   - family-names: Shimomoto
     given-names: Tatsuya

@@ -269,15 +269,15 @@ If you use or reference these architectural decision records, please cite:
   author       = {Shimomoto, Tatsuya},
   title        = {Agent Attribution Practice (AAP)},
   year         = {2026},
-  doi          = {10.5281/zenodo.20251893},
-  url          = {https://doi.org/10.5281/zenodo.20251893},
+  doi          = {10.5281/zenodo.20356057},
+  url          = {https://doi.org/10.5281/zenodo.20356057},
   note         = {Ten architectural decision records on accountability distribution in autonomous AI agents (two experimental), paired with four Business AI Quadrants as the diagnostic frame and a Phase / Quadrant two-axis structure}
 }
 ```
 
 Or in text:
 
-> Shimomoto, T. (2026). Agent Attribution Practice (AAP). doi:10.5281/zenodo.20251893
+> Shimomoto, T. (2026). Agent Attribution Practice (AAP). doi:10.5281/zenodo.20356057
 
 ## License
 
