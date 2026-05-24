@@ -96,6 +96,19 @@ individual skill design, where the same axis decides whether a
 sub-component is a script-frozen pipeline step or a runtime LLM
 judgment.
 
+## Companion essay (social-consequence layer)
+
+Beyond the seven-essay spine, a companion essay carries the
+accountability-distribution argument into its social-consequence
+layer: how *externalized* accountability, when it cannot be named,
+converges violently onto the most visible individual — read through
+the analogy of industrial pollution and the scapegoat mechanism. It
+is a derivative, not part of the spine. First published on Substack;
+mirrored in the content repository:
+
+- [Where Does the Accountability Externalized by AI Go?](https://github.com/shimo4228/zenn-content/blob/main/substack/ai-externalized-accountability-pollution-en.md)
+  (EN) · [日本語版](https://github.com/shimo4228/zenn-content/blob/main/substack/ai-externalized-accountability-pollution.md)
+
 ## Related repositories
 
 This file focuses on the **lineage of ideas** (the seven articles).
