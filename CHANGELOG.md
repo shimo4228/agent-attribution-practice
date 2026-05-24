@@ -5,6 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] — 2026-05-24
+
+Social-consequence layer added on top of the seven-essay narrative spine: a normative, social-theoretical upper rationale reflecting the companion Substack essay. No ADR added or changed; the ten ADRs and four Quadrants are unchanged in number and content.
+
+### Added
+
+- `docs/social-consequence.md` (+ `.ja.md`) — the social-consequence layer's canonical structural claim: externalized accountability does not disappear, and whether it routes into institutions (litigation, compensation, regulation) or converges into violence depends on whether the consequence can be named. Reframes accountability distribution as a violence-prevention mechanism, the minimum disclosure set as an evidence base (effluent-record equivalent), and the pre-named gap-bearer as an institutional receptacle rather than a scapegoat. Harness-neutral and concept-level; concrete cases deferred to the essay.
+- New term *externalized accountability* in `docs/glossary.md` (+ `.ja.md`).
+- `graph.jsonld`: new `externalized-accountability` concept node plus a node for the companion Substack essay *Where Does the Accountability Externalized by AI Go?* — deliberately carrying no `narrativePosition` and excluded from the seven-essay spine Collection, so the layer's separation is enforced at the schema level. Added to the project node's `definesConcept`.
+- Social-consequence layer surfaced across the AI-facing and human-facing docs: `llms.txt`, `llms-full.txt`, `README.md` / `README.ja.md`, a `docs/thesis.md` (+ `.ja.md`) corollary, `docs/inspiration.md`, a `docs/manifesto.md` boundary cross-reference, `CLAUDE.md`, and `docs/CODEMAPS/architecture.md`.
+
+### Changed
+
+- `docs/inspiration.md`: the companion essay reframed from "a derivative, not part of the spine" to the normative upper rationale that sits on top of the spine.
+- Stale-count corrections across docs: "eight ADRs" → "ten" (thesis, manifesto, llms-full.txt), "six essays / six-essay" → "seven" (thesis, README, `.zenodo.json`, `CITATION.cff`). Corrected the Agent Knowledge Cycle governance-triplet description in `README.md` / `README.ja.md` (three ADRs — Security by Absence, Single External Adapter, Untrusted Content Boundary — not "the first eight").
+
+### Notes
+
+- **No new judgments**: the ten ADRs and four Quadrants are unchanged. The social-consequence layer is normative / social-theoretical upper rationale kept separate from the ADRs — it changes no ADR body and adds no control. The ADRs' harness / vendor neutrality is preserved (the essay's concrete socio-political cases live outside the repo). CODEMAPS structure otherwise unchanged.
+- **DOI update follows tag push**: the v0.5.0 versioned DOI is assigned by Zenodo after the GitHub Release object is created. `CITATION.cff` `doi:` / `url:`, the README BibTeX `doi` / `url`, the README "How to cite" line, and the `llms.txt` / `llms-full.txt` DOI fields are updated in a small follow-up commit once Zenodo numbers the v0.5.0 record. The concept DOI (10.5281/zenodo.19652013) in the README badge does not change between releases.
+
 ## [0.4.0] — 2026-05-23
 
 Two companion position papers federated into the citation graph, plus the LLM Workflow Quadrant sub-form refinement and DOI / sibling-reference plumbing accumulated since v0.3.0. No ADR added or changed.
