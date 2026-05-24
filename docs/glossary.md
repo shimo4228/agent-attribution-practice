@@ -19,6 +19,28 @@ Contrast with: *capability distribution*, which is the current dominant
 design axis (what the agent *can do*) and which does not produce an
 accountability chain.
 
+## Externalized accountability
+
+When a system internalizes its benefits privately and pushes its harms
+outward, the ability to say *whose judgment it was* is externalized
+along with the harm. That ability does not disappear; it takes one of
+two paths. When the consequence is **nameable** — attributable to a
+specific actor's act, with an institution able to take it up — anger
+flows into litigation, compensation, and regulation. When it is
+**un-nameable** — the harm diffuse, the cause untraceable — the anger
+converges violently onto the most visible individual (the scapegoat
+mechanism). The internal judgments recorded in the ADRs (causal
+traceability, the minimum disclosure set, a pre-named gap-bearer) are
+what move a consequence to the nameable side. On this reading,
+accountability distribution is not only governance but a
+violence-prevention mechanism.
+
+This is the central term of the *social-consequence layer*, a normative
+extension kept separate from the ADRs; see
+[`social-consequence.md`](social-consequence.md). Contrast with the
+ADR-internal framing, where the same judgments are about audit and
+post-incident reconstruction.
+
 ## Scaffolding
 
 All the non-weights components that shape an agent's behavior: system

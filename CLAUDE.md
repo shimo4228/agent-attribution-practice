@@ -81,12 +81,17 @@ ADR との lineage 対応:
 
 各記事の URL・タイトル・1 文サマリは [`docs/inspiration.md`](docs/inspiration.md) を正本として参照。
 
+### 社会的帰結レイヤー (第8エッセイ、別レイヤー)
+
+7 記事スパインの **上** に社会的帰結レイヤーが乗る (Substack companion essay "Where Does the Accountability Externalized by AI Go?" / 「AIによって外部化された責任は、どこへ行くのか」, 2026-05-24)。内部構造を扱う記事 1-7 とは **別レイヤー** で、spine には組み込まない (graph.jsonld でも `narrativePosition` を持たず seven-essay Collection の `hasPart` に入れない)。外部化された責任が暴力ではなく制度へ流れるようにする **規範的・社会理論的な上位根拠** であり、ADR 本文/実装仕様には直結させない (social-consequence.md が ADR を参照する一方向の bridge のみ。Girard/Thompson 等の具体社会参照は essay 側に置き、ADR の harness/vendor 中立規約を維持)。構造的主張の正本は [`docs/social-consequence.md`](docs/social-consequence.md)。minimum disclosure set = 排水記録 / gap-bearer = 制度的受け皿 という再解釈を含む。
+
 ## Core thesis
 
 > 「実装は溶ける、判断は残る」
 > 「能力の分配ではなく、**アカウンタビリティの分配**」
+> 「アカウンタビリティの分配はガバナンスであるだけでなく、**暴力防止の仕組み**である」(社会的帰結 corollary)
 
-詳細は [`docs/thesis.md`](docs/thesis.md)。
+詳細は [`docs/thesis.md`](docs/thesis.md)、社会的帰結 corollary は [`docs/social-consequence.md`](docs/social-consequence.md)。
 
 ## 書き方の規約
 

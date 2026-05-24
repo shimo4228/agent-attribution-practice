@@ -110,6 +110,17 @@ skill-design gradient resolution).
 See [`docs/inspiration.md`](docs/inspiration.md) for the full lineage
 with per-essay summaries and URLs.
 
+Beyond the spine, a companion essay opens a **social-consequence
+layer** — a normative extension that sits on top of the seven essays,
+not within them. It reads the same internal judgments from the outside:
+externalized accountability does not disappear, and whether it flows
+into institutions or converges into violence depends on whether the
+consequence can be named. On that reading, accountability distribution
+is not only governance but a violence-prevention mechanism. The
+harness-neutral structural claim is kept separate from the ADRs in
+[`docs/social-consequence.md`](docs/social-consequence.md); the concrete
+grounding lives in the essay itself.
+
 ## Relationship to other projects
 
 This repository is a **sibling** to two existing projects, not a fork:
@@ -220,11 +231,14 @@ deploying organization's jurisdiction.
 2. [`docs/adr/README.md`](docs/adr/README.md) — index of ADRs.
 3. [`docs/adr/0001-security-by-absence.md`](docs/adr/0001-security-by-absence.md) —
    the cleanest entry; the audit test at the end is runnable.
-4. The six essays in publication order (links above).
+4. The seven essays in publication order (links above).
 5. [`docs/quadrants/`](docs/quadrants/) — adoption navigator: decision
    tree, governance mapping, case studies, anti-patterns.
 6. [`docs/manifesto.md`](docs/manifesto.md) — civilization-scale questions
    the ADRs do not attempt to answer.
+7. [`docs/social-consequence.md`](docs/social-consequence.md) — the
+   social-consequence layer: why the internal judgments matter beyond
+   audit, as upper rationale rather than specification.
 
 **Japanese readers:** see [`README.ja.md`](README.ja.md),
 [`docs/thesis.ja.md`](docs/thesis.ja.md),
@@ -248,7 +262,7 @@ its siblings). ADRs remain English-only per repository convention.
 
 ## Origin
 
-This extraction was first compiled by Tatsuya Shimomoto ([@shimo4228](https://github.com/shimo4228)) in April 2026. The ten ADRs and the four Business AI Quadrants re-express, in harness-neutral form, architectural decisions and triage judgments that surfaced through implementing and operating [contemplative-agent](https://github.com/shimo4228/contemplative-agent) and through the seven-essay narrative spine published in April–May 2026; the first eight ADRs were earlier archived as part of the [Agent Knowledge Cycle](https://github.com/shimo4228/agent-knowledge-cycle) governance triplet, while ADR-0009 and the Quadrants navigator emerged from the 2026-04-29 / 04-30 architectural follow-up essays, and ADR-0010 from the 2026-05-01 phase-distinction essay together with the 2026-05-02 skill-design gradient essay.
+This extraction was first compiled by Tatsuya Shimomoto ([@shimo4228](https://github.com/shimo4228)) in April 2026. The ten ADRs and the four Business AI Quadrants re-express, in harness-neutral form, architectural decisions and triage judgments that surfaced through implementing and operating [contemplative-agent](https://github.com/shimo4228/contemplative-agent) and through the seven-essay narrative spine published in April–May 2026; three of these judgments — Security by Absence, the Single External Adapter rule, and the Untrusted Content Boundary — were earlier archived as the [Agent Knowledge Cycle](https://github.com/shimo4228/agent-knowledge-cycle) governance triplet and re-expressed here among ADRs 0001–0008, while ADR-0009 and the Quadrants navigator emerged from the 2026-04-29 / 04-30 architectural follow-up essays, and ADR-0010 from the 2026-05-01 phase-distinction essay together with the 2026-05-02 skill-design gradient essay.
 
 ## Related publication
 

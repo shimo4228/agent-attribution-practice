@@ -110,7 +110,8 @@
         "https://shimo4228.github.io/shimo4228/vocab#aap/concept/non-invasion-posture",
         "https://shimo4228.github.io/shimo4228/vocab#aap/concept/implementation-dissolves-judgment-persists",
         "https://shimo4228.github.io/shimo4228/vocab#aap/concept/phase-crossing-decision",
-        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/llm-function"
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/llm-function",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/externalized-accountability"
       ],
       "subjectOf": [
         "https://doi.org/10.5281/zenodo.20353789",
@@ -605,6 +606,23 @@
       ]
     },
     {
+      "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/externalized-accountability",
+      "@type": ["Concept", "DefinedTerm"],
+      "name": "externalized accountability",
+      "alternateName": [
+        {"@value": "externalized accountability", "@language": "en"},
+        {"@value": "外部化された責任", "@language": "ja"}
+      ],
+      "description": "Central term of AAP's social-consequence layer — a normative extension kept separate from the ADRs. When a system internalizes benefits privately and externalizes harm, the ability to say whose judgment it was is externalized with the harm, and does not disappear; it takes one of two paths. Nameable (attributable to a specific actor's act, an institution able to take it up) routes anger into litigation, compensation, and regulation. Un-nameable (harm diffuse, cause untraceable) converges anger violently onto the most visible individual via the scapegoat mechanism. The internal judgments AAP records — causal traceability, the minimum disclosure set, a pre-named gap-bearer — are what move a consequence to the nameable side, which makes accountability distribution a violence-prevention mechanism and not only governance.",
+      "subjectOf": "https://github.com/shimo4228/zenn-content/blob/main/substack/ai-externalized-accountability-pollution-en.md",
+      "definedBy": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/social-consequence.md",
+      "relatedTo": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/accountability-distribution",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/moral-crumple-zone"
+      ]
+    },
+    {
       "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap",
       "@type": ["Concept", "DefinedTerm"],
       "name": "attribution gap",
@@ -791,6 +809,21 @@
       "datePublished": "2026-05-02",
       "narrativePosition": 7,
       "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"}
+    },
+    {
+      "@id": "https://github.com/shimo4228/zenn-content/blob/main/substack/ai-externalized-accountability-pollution-en.md",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Where Does the Accountability Externalized by AI Go?",
+      "alternateName": [
+        {"@value": "Where Does the Accountability Externalized by AI Go?", "@language": "en"},
+        {"@value": "AIによって外部化された責任は、どこへ行くのか", "@language": "ja"}
+      ],
+      "description": "Companion essay forming AAP's social-consequence layer. A derivative that sits on top of the seven-essay narrative spine, not within it — deliberately carries no narrativePosition and is not part of the spine Collection. Extends the accountability-distribution argument outward: externalized accountability does not disappear; nameable consequence flows into institutions (litigation, compensation, regulation), un-nameable consequence converges violently onto the most visible individual (the scapegoat mechanism). Reframes the minimum disclosure set as an effluent-record-equivalent evidence base and the pre-named gap-bearer as an institutional receptacle that is the structural opposite of a scapegoat. The harness-neutral structural claim is recorded in docs/social-consequence.md; the concrete cases (industrial pollution, specific incidents) live in this essay. First published on Substack.",
+      "datePublished": "2026-05-24",
+      "inLanguage": ["en", "ja"],
+      "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"},
+      "isBasedOn": "https://doi.org/10.5281/zenodo.19652013",
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/externalized-accountability"
     },
 
     {

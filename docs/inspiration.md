@@ -102,9 +102,14 @@ Beyond the seven-essay spine, a companion essay carries the
 accountability-distribution argument into its social-consequence
 layer: how *externalized* accountability, when it cannot be named,
 converges violently onto the most visible individual — read through
-the analogy of industrial pollution and the scapegoat mechanism. It
-is a derivative, not part of the spine. First published on Substack;
-mirrored in the content repository:
+the analogy of industrial pollution and the scapegoat mechanism. This
+is the normative upper rationale — *why* the internal judgments matter
+beyond audit and post-mortem — and it sits **on top of** the spine, not
+within it: essays 1–7 describe the internal structure; this is where
+the argument exits into social consequence. The structural claim,
+harness-neutral and separated from the concrete cases, is recorded in
+[`social-consequence.md`](social-consequence.md). The essay itself was
+first published on Substack and mirrored in the content repository:
 
 - [Where Does the Accountability Externalized by AI Go?](https://github.com/shimo4228/zenn-content/blob/main/substack/ai-externalized-accountability-pollution-en.md)
   (EN) · [日本語版](https://github.com/shimo4228/zenn-content/blob/main/substack/ai-externalized-accountability-pollution.md)

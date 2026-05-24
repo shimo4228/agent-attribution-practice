@@ -34,7 +34,7 @@ And its structural sibling:
 > What organizations have spent centuries refining is not the
 > distribution of *capability*, but the distribution of **accountability**.
 
-These two lines are the thesis of this repository. The eight ADRs that
+These two lines are the thesis of this repository. The ten ADRs that
 follow are partial answers to "what should be constrained, and who is
 responsible" — discovered through the friction of running an actual
 agent in production, not deduced top-down from a governance theory.
@@ -96,9 +96,21 @@ not architectural. The ten ADRs plus the four quadrants form a
 route the work to where those answers apply. See
 [`quadrants/`](quadrants/) for the navigator.
 
+## Social-consequence corollary
+
+The judgments above are framed as internal control: what to constrain,
+who answers. A companion layer reads the same judgments from the
+outside — as the mechanism that decides whether the accountability an
+AI externalizes flows into institutions (litigation, compensation,
+regulation) or converges violently onto the most visible individual. On
+that reading, accountability distribution is not only governance; it is
+a violence-prevention mechanism. This is a normative extension, harder
+to verify than the ADRs, and is kept separate as upper rationale in
+[`social-consequence.md`](social-consequence.md).
+
 ## What this repository does not claim
 
-- That these eight are complete. They are what surfaced from one
+- That these ten are complete. They are what surfaced from one
   implementation. Other implementations will surface others.
 - That the specific implementations (Hooks, CLI, JSONL logs) are
   durable. They are not — implementation dissolves. The *judgment*
@@ -119,9 +131,12 @@ For readers new to the material:
 3. [`adr/0001-security-by-absence.md`](adr/0001-security-by-absence.md)
    as the cleanest entry point — the audit test at the end makes the
    principle concrete in a way that applies regardless of stack.
-4. The six essays linked in [`inspiration.md`](inspiration.md), in
+4. The seven essays linked in [`inspiration.md`](inspiration.md), in
    publication order, for the narrative that the ADRs encode.
 5. [`quadrants/`](quadrants/) for the adoption navigator — decision
    tree, governance mapping, case studies, anti-patterns.
 6. [`manifesto.md`](manifesto.md) for the open questions that motivate
    the work but that it does not try to answer.
+7. [`social-consequence.md`](social-consequence.md) for the
+   social-consequence layer — why the internal judgments matter beyond
+   audit, as upper rationale rather than specification.

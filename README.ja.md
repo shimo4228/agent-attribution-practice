@@ -106,6 +106,15 @@ follow-up (4 象限 triage → 語彙の診断と principled attribution gap →
 各記事の URL とタイトル、1 段落のサマリは
 [`docs/inspiration.md`](docs/inspiration.md) を正本として参照。
 
+スパインの **上** に、companion essay が **社会的帰結レイヤー** を開く
+— 7 記事の中ではなく、その上に乗る規範的拡張だ。同じ内部判断を外側から
+読む: 外部化された責任は消えず、それが制度へ流れるか暴力へ収束するかは、
+帰結が名指せるかどうかで決まる。この読みでは、accountability distribution は
+ガバナンスであるだけでなく暴力防止の仕組みである。harness-neutral な構造的
+主張は ADR から分離して
+[`docs/social-consequence.ja.md`](docs/social-consequence.ja.md) に置き、
+具体的 grounding は essay 側にある。
+
 ## 他プロジェクトとの関係
 
 この repo は既存 2 プロジェクトの **sibling** (fork ではない):
@@ -217,6 +226,9 @@ qualified legal / compliance counsel に残る。
    tree, governance mapping, case studies, anti-patterns)
 6. [`docs/manifesto.md`](docs/manifesto.md) — ADR が答えない文明 scale
    の問題
+7. [`docs/social-consequence.ja.md`](docs/social-consequence.ja.md) —
+   社会的帰結レイヤー: 内部判断が監査を超えてなぜ重要かを、仕様ではなく
+   上位根拠として
 
 ## この repo が主張しないこと
 
@@ -236,12 +248,13 @@ qualified legal / compliance counsel に残る。
 [contemplative-agent](https://github.com/shimo4228/contemplative-agent)
 の実装・運用と 2026 年 4–5 月公開の 7 部作 essay narrative spine を
 通じて浮上した architectural decision および triage 判断を、
-harness-neutral な形で再表現したもの。最初の 8 本はかつて
+harness-neutral な形で再表現したもの。このうち 3 つの判断 — Security by
+Absence、Single External Adapter、Untrusted Content Boundary — はかつて
 [Agent Knowledge Cycle](https://github.com/shimo4228/agent-knowledge-cycle)
-の governance triplet として archive されていた素材を含み、ADR-0009 と
-Quadrants navigator は 2026-04-29 / 04-30 の architectural follow-up
-essay、ADR-0010 は 2026-05-01 / 05-02 の phase 区別 essay と
-skill-design gradient essay から派生した。
+の governance triplet として archive されていたもので、ADRs 0001–0008 の
+中に再表現された。ADR-0009 と Quadrants navigator は 2026-04-29 / 04-30 の
+architectural follow-up essay、ADR-0010 は 2026-05-01 / 05-02 の phase
+区別 essay と skill-design gradient essay から派生した。
 
 ## 関連発表
 

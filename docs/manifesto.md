@@ -1,13 +1,13 @@
 # Manifesto — The Open Questions
 
 > **Status.** Draft / in-progress. This document captures the civilization-scale
-> questions that motivate the eight ADRs but that the ADRs themselves do not
+> questions that motivate the ten ADRs but that the ADRs themselves do not
 > try to answer. It is written as a provocation, not a position paper, and is
 > expected to be revised as the discussion develops.
 
 ## Why this document exists
 
-The eight ADRs in this repository are partial answers at the scale of an
+The ten ADRs in this repository are partial answers at the scale of an
 individual agent instance. They describe how to structurally distribute
 accountability across a running system. They do not — and cannot — answer
 larger questions:
@@ -73,7 +73,7 @@ pace-matching achieved voluntarily by the people closest to the work.
 ## What this repository claims
 
 Only that individual agent instances can be built with structural
-accountability, as an existence proof. The eight ADRs demonstrate that
+accountability, as an existence proof. The ten ADRs demonstrate that
 the technical pieces exist and compose. The demonstration is narrow.
 
 It does not claim that this solves the larger questions above. It
@@ -81,6 +81,15 @@ claims that the larger questions are open, that pretending they are
 closed is itself part of the problem, and that implementation-side
 proofs-of-concept are one input among many to how the larger
 discussion might eventually move.
+
+This document is distinct from the
+[social-consequence layer](social-consequence.md). The manifesto
+catalogues the *unanswered* — civilization-scale questions the ADRs do
+not try to answer. The social-consequence layer makes a normative claim
+the ADRs' existing answers already *serve*: that accountability
+distribution routes social consequence into institutions rather than
+onto a single face. Open questions here; rationale for the answered
+there.
 
 ## Who this document is addressed to
 

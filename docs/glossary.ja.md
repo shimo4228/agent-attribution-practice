@@ -21,6 +21,23 @@ repository の thesis: accountability distribution は agent にも
 対比: *capability distribution（能力の分配）* — 現状支配的な設計軸で
 agent が *何ができるか* を扱う — は accountability chain を生み出さない。
 
+## Externalized accountability（外部化された責任）
+
+システムが便益を私的に内部化し、害を外へ押し出すとき、*それが誰の
+判断だったか* を言う能力も害とともに外部化される。その能力は消えず、
+二つの経路のいずれかをとる。帰結が **nameable（名指せる）** — 特定
+actor の行為に帰属でき、制度が受け止められる — とき、怒りは訴訟・
+補償・規制へ流れる。**un-nameable（名指せない）** — 害が拡散し、原因が
+辿れない — とき、怒りは最も見える単一の個人へ暴力的に収束する
+（scapegoat mechanism）。ADR に記録された内部判断（causal traceability、
+minimum disclosure set、事前に名指された gap-bearer）こそが、帰結を
+nameable 側へ移す。この読みでは、accountability distribution は
+ガバナンスであるだけでなく暴力防止の仕組みである。
+
+これは *social-consequence layer* の中心用語であり、ADR から分離して
+置かれる規範的拡張である。[`social-consequence.ja.md`](social-consequence.ja.md)
+参照。同じ判断を監査・事故後再構成として扱う ADR 内部の枠組みと対比される。
+
 ## Capability distribution（能力の分配）
 
 Agent 設計で現状支配的な軸: *agent が何をできるか* を増やしたり制限

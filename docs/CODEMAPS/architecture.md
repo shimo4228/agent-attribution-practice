@@ -1,4 +1,4 @@
-<!-- Generated: 2026-05-17 | Files scanned: project root + docs/ tree | Token estimate: ~1600 -->
+<!-- Generated: 2026-05-24 | Files scanned: project root + docs/ tree | Token estimate: ~1650 -->
 # Document Architecture
 
 Agent Attribution Practice (AAP) is a **judgment-artifact repository**, not a code repository. There are no source files; the architecture is the structure of judgments and their cross-references. This codemap exists so an LLM-mediated reader (the primary audience) can route to the canonical document for a given question without scanning the whole tree.
@@ -16,6 +16,7 @@ agent-attribution-practice/
 ├── docs/
 │   ├── thesis.md / thesis.ja.md         one-page core argument
 │   ├── manifesto.md                     civilization-scale open questions
+│   ├── social-consequence.md / .ja.md   social-consequence layer (normative upper rationale; sits on the essay spine, separate from ADRs)
 │   ├── glossary.md / glossary.ja.md     key terms (gap-bearer, scaffolding, prohibition-strength hierarchy, etc.)
 │   ├── inspiration.md                   essays + sibling-repo lineage
 │   ├── industry-mapping.md / .ja.md     2026 Q2 vendor mechanism → ADR mapping (time-bound, separated from ADRs)
@@ -38,6 +39,7 @@ Each document answers a primary question. Cite the matching one when an LLM-medi
 | `README.md` | What is AAP at a glance, and how does it fit alongside contemplative-agent / AKC / industry mechanism layer? |
 | `docs/thesis.md` | What is the core argument — accountability distribution vs capability distribution? |
 | `docs/manifesto.md` | What civilization-scale open questions does AAP deliberately *not* answer? |
+| `docs/social-consequence.md` | Why do the internal judgments matter socially — how does accountability distribution route externalized accountability into institutions rather than violence? |
 | `docs/glossary.md` | What does AAP mean by *gap-bearer / scaffolding / phase-crossing / prohibition-strength hierarchy / four quadrants*? |
 | `docs/inspiration.md` | Where did each ADR come from (which essay, which contemplative-agent ADR)? |
 | `docs/industry-mapping.md` | Which 2026 Q2 vendor mechanism instantiates which ADR, and what does each vendor *not* ship (the judgment)? |

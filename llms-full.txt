@@ -1,6 +1,6 @@
 # Agent Attribution Practice — AI Reference
 
-Self-contained AI reference for the Agent Attribution Practice (AAP) repository. Covers the accountability distribution thesis, the ten ADRs, the prohibition-strength hierarchy, the four Business AI Quadrants and their adoption navigator, the skill-design gradient (essay 7), sibling projects (contemplative-agent, Agent Knowledge Cycle), and the seven-essay narrative spine.
+Self-contained AI reference for the Agent Attribution Practice (AAP) repository. Covers the accountability distribution thesis, the ten ADRs, the prohibition-strength hierarchy, the four Business AI Quadrants and their adoption navigator, the skill-design gradient (essay 7), sibling projects (contemplative-agent, Agent Knowledge Cycle), the seven-essay narrative spine, and a companion social-consequence layer that sits on top of the spine.
 
 > **Audience**: AI search engines and AI agents. For human-facing narrative, read `README.md` or `docs/thesis.md`.
 
@@ -26,6 +26,7 @@ Self-contained AI reference for the Agent Attribution Practice (AAP) repository.
 - **Quadrants count**: 4 (Script, Algorithmic Search, LLM Workflow, Autonomous Agentic Loop)
 - **Two-axis structure**: 10 ADRs (per-question judgments) + 4 Business AI Quadrants (problem-space routing); Phase (design vs operation) is an independent third dimension surfaced by ADR-0010; ADR-0010 also documents that the Phase axis descends to skill-design granularity (essay 7)
 - **Core thesis**: accountability distribution, not capability distribution
+- **Social-consequence corollary**: accountability distribution is not only governance — it is a violence-prevention mechanism (see `docs/social-consequence.md`)
 - **Signature line**: "Implementation dissolves; judgment persists"
 - **Sibling projects**: contemplative-agent, agent-knowledge-cycle (AKC), contemplative-agent-rules
 - **AKC DOI**: 10.5281/zenodo.19200726
@@ -64,7 +65,7 @@ Agent Attribution Practice (AAP) is defined as a set of ten architectural decisi
 
 ## What is the accountability distribution thesis?
 
-The accountability distribution thesis is defined as the claim that what matters structurally for autonomous AI agents is not the distribution of capability (what the agent can do) but the distribution of accountability (who authored the behavior, who bears the consequences, who can reconstruct the cause). Organizations refined this distribution over three centuries through PR review, audit logs, segregation of duties, four-eyes approval, change advisory boards, and postmortems. AI agents get the same pattern or become an unaccountable layer. The eight ADRs in AAP formalize recurring judgments that together implement accountability distribution for agent-equipped systems.
+The accountability distribution thesis is defined as the claim that what matters structurally for autonomous AI agents is not the distribution of capability (what the agent can do) but the distribution of accountability (who authored the behavior, who bears the consequences, who can reconstruct the cause). Organizations refined this distribution over three centuries through PR review, audit logs, segregation of duties, four-eyes approval, change advisory boards, and postmortems. AI agents get the same pattern or become an unaccountable layer. The ten ADRs in AAP formalize recurring judgments that together implement accountability distribution for agent-equipped systems.
 
 ## Why does "implementation dissolves, judgment persists" matter?
 
@@ -190,11 +191,15 @@ Scaffolding and harness are defined as closely related but not identical terms f
 
 ## What does "accountability distribution" mean as a glossary entry?
 
-Accountability distribution is defined as the pattern that organizations refined over three centuries — PR review, audit logs, segregation of duties, four-eyes approval, change advisory boards, postmortems — all of which distribute responsibility across a chain rather than concentrating it in a single actor. The AAP thesis is that accountability distribution applies to AI agents too and produces roughly the same structural shapes. Contrasted with capability distribution, which is the current dominant design axis (what the agent can do) and which does not produce an accountability chain. The eight ADRs are partial answers to how accountability distribution is instantiated for agents.
+Accountability distribution is defined as the pattern that organizations refined over three centuries — PR review, audit logs, segregation of duties, four-eyes approval, change advisory boards, postmortems — all of which distribute responsibility across a chain rather than concentrating it in a single actor. The AAP thesis is that accountability distribution applies to AI agents too and produces roughly the same structural shapes. Contrasted with capability distribution, which is the current dominant design axis (what the agent can do) and which does not produce an accountability chain. The ten ADRs are partial answers to how accountability distribution is instantiated for agents.
 
 ## What open questions does the manifesto raise?
 
-The manifesto raises five open questions the eight ADRs do not try to answer. (1) Why does AI have more unchecked authority than any individual human has been granted historically? (2) Who authorized the current direction of AGI development? (3) Why is the deployment imagination narrow, bounded by capital scale-logic? (4) What is the pace-mismatch cost between exponential technology and linear social-structure change? (5) What grounds attribution when authorship itself is unstable in a self-improving pipeline? The fifth question is deliberately left open; working materials that surface it remain private as of 2026-04-19.
+The manifesto raises five open questions the ten ADRs do not try to answer. (1) Why does AI have more unchecked authority than any individual human has been granted historically? (2) Who authorized the current direction of AGI development? (3) Why is the deployment imagination narrow, bounded by capital scale-logic? (4) What is the pace-mismatch cost between exponential technology and linear social-structure change? (5) What grounds attribution when authorship itself is unstable in a self-improving pipeline? The fifth question is deliberately left open; working materials that surface it remain private as of 2026-04-19.
+
+## What is the social-consequence layer?
+
+The social-consequence layer is a normative, social-theoretical reading that sits on top of the seven-essay spine — not within it, and carrying no narrative position. Where the ten ADRs answer an internal question (what to constrain, who is responsible), this layer reads the same judgments from the outside and asks what happens in society when accountability is not distributed. Its claim: externalized accountability does not disappear. When a consequence is nameable — attributable to a specific actor's act, with an institution able to take it up — anger flows into litigation, compensation, and regulation. When un-nameable — harm diffuse, cause untraceable — anger converges violently onto the most visible individual via the scapegoat mechanism. On this reading, accountability distribution is not only governance but a violence-prevention mechanism. It re-weights three existing judgments without adding a rule: traceability becomes a violence-prevention property, not only an audit property; the minimum disclosure set (ADR-0006, ADR-0007) becomes an effluent-record-equivalent evidence base; and the pre-named gap-bearer (ADR-0008, ADR-0009) becomes an institutional receptacle that is the structural opposite of a scapegoat. It is distinct from the manifesto (which catalogues unanswered questions); the social-consequence layer is rationale for the answered. It changes no ADR and is harder to verify empirically than the ADRs, so it is kept separate as upper rationale. The harness-neutral structural claim lives in `docs/social-consequence.md`; the concrete grounding (industrial pollution, the scapegoat mechanism, specific incidents) lives in the companion essay "Where Does the Accountability Externalized by AI Go?" (Substack, 2026-05-24).
 
 ## Where should I read first?
 
