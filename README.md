@@ -158,6 +158,10 @@ theory loops back to reshape the implementation.
 
 ## Relationship to industry mechanism layer
 
+> The next two sections position AAP against external mechanism layers
+> (vendor products, then governance frameworks). Skip to
+> [Reading order](#reading-order) if you only want the entry points.
+
 Through 2026 Q2, several industry releases populated the *mechanism
 layer* that AAP's principles describe — sub-millisecond policy
 gates, agent-identity primitives, sponsor systems, cross-vendor
@@ -223,6 +227,26 @@ of NIST AI RMF remains with NIST, of ISO/IEC 42001 with ISO/IEC
 and accredited certification bodies, and of any framework's
 application with qualified legal / compliance counsel for the
 deploying organization's jurisdiction.
+
+## Using this as an agent-adoption navigator
+
+This repository is meant to be *walked*, not only read. If you are
+deciding whether to put an autonomous agent into a given use case — or
+auditing one you already shipped — clone it, point your coding agent at
+`AGENTS.md`, and use it as a sounding board:
+
+1. [`docs/quadrants/decision-tree.md`](docs/quadrants/decision-tree.md) —
+   a five-question triage that routes the work to one of the four Quadrants.
+2. [`docs/quadrants/governance-mapping.md`](docs/quadrants/governance-mapping.md) —
+   the governance requirements for that Quadrant.
+3. The relevant ADRs — especially the triage pair (0009 / 0010).
+4. The **Phase axis** (ADR-0010) if the work is autonomy-related: design
+   phase or operation phase.
+5. [`docs/quadrants/anti-patterns.md`](docs/quadrants/anti-patterns.md) —
+   a final check against known failure modes.
+
+The ADRs are a starting point for judgment, not a verdict — re-interpret
+them against your own context.
 
 ## Reading order
 
