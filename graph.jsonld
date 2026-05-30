@@ -396,6 +396,22 @@
       "url": "https://www.iso.org/standard/42001",
       "recordedIn": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
     },
+    {
+      "@id": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "@type": ["PolicyFramework", "CreativeWork"],
+      "name": "EU AI Act",
+      "alternateName": [
+        {"@value": "Regulation (EU) 2024/1689", "@language": "en"},
+        {"@value": "Artificial Intelligence Act", "@language": "en"}
+      ],
+      "description": "European Union regulation establishing a risk-tiered obligation regime for AI systems (unacceptable / high / limited / minimal risk). In force 2024-08-01, with phased application: prohibited practices (Art 5) from 2025-02-02, general-purpose AI model obligations from 2025-08-02, Annex III high-risk obligations from 2026-08-02, Annex I product-embedded high-risk obligations from 2027-08-02. AAP records the judgment layer that structurally discharges the high-risk obligation stack (Art 9-15 provider duties, Art 26-27 deployer duties) for the autonomous-agent subset.",
+      "identifier": "Regulation (EU) 2024/1689",
+      "versionInfo": "OJ L, 2024/1689",
+      "datePublished": "2024-07-12",
+      "publisher": {"@type": "Organization", "name": "European Parliament and Council of the European Union"},
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "recordedIn": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
+    },
 
     {
       "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0001-security-by-absence.md",
@@ -408,7 +424,8 @@
       ],
       "mappedToFrameworkIn": [
         "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
-        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
       ]
     },
     {
@@ -422,7 +439,8 @@
       "instantiatedBy": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/industry-mapping.md",
       "mappedToFrameworkIn": [
         "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
-        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
       ]
     },
     {
@@ -436,7 +454,8 @@
       ],
       "mappedToFrameworkIn": [
         "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
-        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
       ]
     },
     {
@@ -450,7 +469,8 @@
       ],
       "mappedToFrameworkIn": [
         "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
-        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
       ]
     },
     {
@@ -464,7 +484,8 @@
       ],
       "mappedToFrameworkIn": [
         "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
-        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
       ]
     },
     {
@@ -479,7 +500,8 @@
       "instantiatedBy": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/industry-mapping.md",
       "mappedToFrameworkIn": [
         "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
-        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
       ]
     },
     {
@@ -493,7 +515,8 @@
       ],
       "mappedToFrameworkIn": [
         "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
-        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
       ]
     },
     {
@@ -506,7 +529,8 @@
       ],
       "mappedToFrameworkIn": [
         "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
-        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
       ]
     },
     {
@@ -524,7 +548,8 @@
       ],
       "mappedToFrameworkIn": [
         "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
-        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
       ]
     },
     {
@@ -543,7 +568,8 @@
       ],
       "mappedToFrameworkIn": [
         "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
-        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
       ]
     },
 
@@ -844,11 +870,12 @@
       "@id": "https://github.com/shimo4228/agent-attribution-practice/tree/main/docs/policy-mapping",
       "@type": ["ExternalReference", "Collection", "CreativeWork"],
       "name": "AI Governance Framework Mapping (2026 Q2 reading)",
-      "description": "Time-bound directory mapping AAP's ADRs and Quadrants to clauses of national / international AI governance frameworks (NIST AI RMF, ISO/IEC 42001, with EU AI Act and OECD AI Principles deferred to a later release). Sibling of industry-mapping.md but targeting a different reader audience (policy / compliance officer vs engineer / architect) and decaying on framework revision cycles (yearly to multi-year) rather than vendor product release cycles. Deliberately separated from ADR bodies so judgments stay framework-neutral.",
+      "description": "Time-bound directory mapping AAP's ADRs and Quadrants to clauses of national / international AI governance frameworks (NIST AI RMF, ISO/IEC 42001, EU AI Act, with OECD AI Principles deferred to a later release). Sibling of industry-mapping.md but targeting a different reader audience (policy / compliance officer vs engineer / architect) and decaying on framework revision cycles (yearly to multi-year) rather than vendor product release cycles. Deliberately separated from ADR bodies so judgments stay framework-neutral.",
       "temporalCoverage": "2026-04/2027-04",
       "hasPart": [
         "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/nist-ai-rmf.md",
-        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md"
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/iso-iec-42001.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md"
       ]
     },
     {
@@ -864,6 +891,13 @@
       "name": "ISO/IEC 42001 mapping to AAP ADRs",
       "description": "Per-ADR mapping of AAP's ten ADRs to ISO/IEC 42001:2023 body clauses (4–10, the Annex SL Harmonized Structure) and Annex A control areas (A.2–A.10). PDCA × Phase Separation section discusses how ADR-0010's Phase axis sits inside the AIMS PDCA cycle. Reverse index from ISO area to applicable ADRs. AAP-side reading, not a compliance attestation. Decays on ISO revision and on amendment publication.",
       "temporalCoverage": "2026-Q2/2028-Q4"
+    },
+    {
+      "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/policy-mapping/eu-ai-act.md",
+      "@type": ["ExternalReference", "CreativeWork"],
+      "name": "EU AI Act mapping to AAP ADRs",
+      "description": "Per-ADR mapping of AAP's ten ADRs to EU AI Act (Regulation (EU) 2024/1689) Articles — Art 5 risk tiers, Art 9 risk management, Art 10 data governance, Art 11/Annex IV documentation, Art 12/19 record-keeping, Art 13 transparency, Art 14 human oversight, Art 15 robustness/cybersecurity, Art 17 quality management, Art 26-27 deployer duties, Art 72 post-market monitoring. Distinguishes the Act's four risk tiers from AAP's prohibition-strength hierarchy (graduated structures grading different things). Reverse index from Article to applicable ADRs. Secondary-scholarship note records external convergence (Nannini et al. 2604.04604; Safin & Balta 2605.12105; Bhattarai & Vu 2602.09947) without folding it into the ADR lineage. AAP-side reading, not a compliance attestation. Faster decay than NIST/ISO through the 2026–2027 phase-in.",
+      "temporalCoverage": "2026-Q2/2027-Q2"
     }
   ]
 }

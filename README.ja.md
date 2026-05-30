@@ -182,13 +182,13 @@ ADR 自体は touch せずに済む。
 ## AI ガバナンス framework との関係
 
 AAP の ADR と Quadrant は、各国 / 国際の AI ガバナンス framework
-にも読み合わせる。Phase 1 では **NIST AI Risk Management
-Framework 1.0** (NIST.AI.100-1、2023 年 1 月) と **Generative AI
-Profile** (NIST.AI.600-1、2024 年 7 月)、**ISO/IEC 42001:2023**
-AI Management System (first edition、2023 年 12 月) を扱う。EU AI
-Act と OECD AI Principles は後続 phase に延期 ── decay cadence と
-条項粒度が十分異なるため、4 つを 1 release にまとめると noise が
-混ざる。
+にも読み合わせる。**NIST AI Risk Management Framework 1.0**
+(NIST.AI.100-1、2023 年 1 月) と **Generative AI Profile**
+(NIST.AI.600-1、2024 年 7 月)、**ISO/IEC 42001:2023** AI Management
+System (first edition、2023 年 12 月)、そして **EU AI Act**
+(Regulation (EU) 2024/1689、2024 年 8 月発効、2027 年まで段階適用)
+を扱う。OECD AI Principles は後続 phase に延期 ── decay cadence と
+条項粒度が十分異なるため、まとめると noise が混ざる。
 
 framework が ship するのは *構造* ── NIST は AI risk management
 を 4 つの function (GOVERN、MAP、MEASURE、MANAGE) を中心に組織化
@@ -196,7 +196,10 @@ framework が ship するのは *構造* ── NIST は AI risk management
 ISO 42001 は Annex SL Harmonized Structure (ISO 27001、ISO 9001、
 ISO 14001 と共有) と PDCA cycle 上に構築された AI Management System
 を規定し、Annex A controls が policy、role、lifecycle、data、
-transparency、third-party relationship を扱う。framework が ship
+transparency、third-party relationship を扱う; EU AI Act は
+*risk-tiered な義務レジーム* (禁止行為、high-risk の provider/deployer
+義務スタック ── human oversight、record-keeping、robustness ── と
+transparency 義務) を ship する。framework が ship
 していないのは、それら構造を autonomous-agent subset 向けに populate
 する *judgment layer* である: NIST function を restriction ではなく
 absence で answer すべきはいつか、AIMS のどの clause が non-LLM gate
@@ -206,8 +209,8 @@ AIMS の PDCA cycle 内で ADR-0009 の上に何を加えるか。AAP がその
 judgment layer を記録する; 両 layer は補完関係。
 
 各 AAP ADR の specific NIST function / GAI リスクカテゴリ / ISO
-42001 clause および Annex A area への対応 (および framework 側から
-入る reader のための reverse index) は
+42001 clause および Annex A area / EU AI Act Article への対応
+(および framework 側から入る reader のための reverse index) は
 [`docs/policy-mapping/`](docs/policy-mapping/README.ja.md) で保持
 される ── time-bound directory、製品 release cycle ではなく
 framework 改訂 cycle (年単位〜数年単位) で decay する。ADR 自体は
@@ -215,8 +218,9 @@ framework-neutral に保たれる。
 
 これは compliance attestation ではない。NIST AI RMF の authoritative
 interpretation は NIST、ISO/IEC 42001 は ISO/IEC と accredited
-certification body、framework の特定 jurisdiction への適用は
-qualified legal / compliance counsel に残る。
+certification body、EU AI Act は欧州委員会と各国 competent authority、
+framework の特定 jurisdiction への適用は qualified legal / compliance
+counsel に残る。
 
 ## agent 導入判断の navigator として使う
 

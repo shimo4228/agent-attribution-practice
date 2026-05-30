@@ -20,7 +20,7 @@ agent-attribution-practice/
 │   ├── glossary.md / glossary.ja.md     key terms (gap-bearer, scaffolding, prohibition-strength hierarchy, etc.)
 │   ├── inspiration.md                   essays + sibling-repo lineage
 │   ├── industry-mapping.md / .ja.md     2026 Q2 vendor mechanism → ADR mapping (time-bound, separated from ADRs)
-│   ├── policy-mapping/                  2026 Q2 AI governance framework → ADR mapping (time-bound, separated from ADRs; NIST AI RMF + ISO/IEC 42001 in Phase 1)
+│   ├── policy-mapping/                  2026 Q2 AI governance framework → ADR mapping (time-bound, separated from ADRs; NIST AI RMF + ISO/IEC 42001 + EU AI Act)
 │   ├── adr/                             10 ADRs (English) + 10 mirrors (.ja.md) + README + template
 │   ├── quadrants/                       Business AI Quadrants navigator (5 docs × ja mirrors)
 │   ├── skills/                          how-to companions (currently 1: llm-agent-security-principles.md)
@@ -46,6 +46,7 @@ Each document answers a primary question. Cite the matching one when an LLM-medi
 | `docs/policy-mapping/README.md` | What is the AI governance framework mapping directory, and what conventions govern its decay and revision? |
 | `docs/policy-mapping/nist-ai-rmf.md` | How do AAP's ADRs map to NIST AI RMF 1.0 functions (GOVERN / MAP / MEASURE / MANAGE) and the Generative AI Profile (NIST.AI.600-1) risk categories? |
 | `docs/policy-mapping/iso-iec-42001.md` | How do AAP's ADRs map to ISO/IEC 42001:2023 body clauses (4–10) and Annex A control areas (A.2–A.10), and how does the PDCA cycle relate to the AAP Phase axis? |
+| `docs/policy-mapping/eu-ai-act.md` | How do AAP's ADRs map to EU AI Act (Regulation (EU) 2024/1689) Articles (Art 9 / 12 / 14 / 15 etc.), how do the Act's risk tiers differ from AAP's prohibition-strength hierarchy, and which external scholarship (2604.04604 / 2605.12105 / 2602.09947) converges on the ADRs? |
 | `docs/adr/0001-security-by-absence.md` | When should a dangerous capability be made impossible by absence rather than restricted by rule? |
 | `docs/adr/0002-deterministic-prohibition-at-scaffolding.md` | When absence is unachievable, why prohibit at the scaffolding (harness/hook), not at model weights? |
 | `docs/adr/0003-untrusted-content-boundary.md` | Why must accumulated agent memory be treated as untrusted, never as authority? |
@@ -133,16 +134,16 @@ contemplative-agent-rules               ← four contemplative axioms as rules
 contemplative-moltbook                  ← evidence source for ADR-0002 (PreToolUse hooks, MINJA defense audit)
 ```
 
-## File-Count Snapshot (2026-05-17)
+## File-Count Snapshot (2026-05-31)
 
 | Category | Count |
 |---|---|
 | ADRs (en + ja) | 22 (10 ADRs × 2 + 1 README pair) |
 | Quadrants (en + ja) | 10 (5 docs × 2) |
-| Policy-mapping (en + ja) | 6 (README + NIST + ISO; each en + ja) |
+| Policy-mapping (en + ja) | 8 (README + NIST + ISO + EU AI Act; each en + ja) |
 | Top-level docs (`docs/*.md`) | 8 |
 | Top-level repo files | 7 (README × 2, CLAUDE, CITATION, LICENSE, llms.txt, llms-full.txt) |
 | Examples | varies (`examples/audit-tests/`) |
-| **Total markdown / text** | **62** |
+| **Total markdown / text** | **64** |
 
 When this count drifts substantially, regenerate this codemap.

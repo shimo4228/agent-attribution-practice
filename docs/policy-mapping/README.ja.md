@@ -37,9 +37,10 @@ sibling であり、対象とする reader (policy / compliance 担当 vs
 |---|---|---|---|
 | [nist-ai-rmf.md](nist-ai-rmf.md) (+ [ja](nist-ai-rmf.ja.md)) | NIST AI Risk Management Framework | RMF 1.0 (2023-01) + Generative AI Profile NIST.AI.600-1 (2024-07) | 年単位 (core RMF より GAI Profile の方が改訂頻度が高い見込み) |
 | [iso-iec-42001.md](iso-iec-42001.md) (+ [ja](iso-iec-42001.ja.md)) | ISO/IEC 42001 AI Management System | ISO/IEC 42001:2023 | 数年単位 (ISO の正式改訂サイクル) |
+| [eu-ai-act.md](eu-ai-act.md) (+ [ja](eu-ai-act.ja.md)) | EU AI Act (Regulation (EU) 2024/1689) | 2024-08-01 発効; 2027 まで段階適用 | delegated/implementing act・harmonised standard・Commission guideline ごと、それ以外は年単位 (2026–2027 の段階適用期は decay が速い) |
 
-EU AI Act と OECD AI Principles の mapping は後続 release に延期する
-(両者は NIST/ISO とは decay cadence と粒度が十分異なるため、同じ
+OECD AI Principles の mapping は後続 release に延期する (regulation/
+standard の file とは decay cadence と粒度が十分異なるため、同じ
 release にまとめると noise が混ざる)。
 
 ## Direction convention (方向の規約)

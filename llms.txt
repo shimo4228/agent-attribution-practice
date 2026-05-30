@@ -24,7 +24,7 @@
 - [Glossary](docs/glossary.md): key terms and English/Japanese mapping
 - [Inspiration and Lineage](docs/inspiration.md): essays, sibling projects, extraction path
 - [Industry mechanism layer mapping](docs/industry-mapping.md): time-bound 2026 Q2 snapshot mapping vendor mechanisms (Microsoft Agent 365, AWS Bedrock, Google Vertex AI, identity-security startups) to ADRs
-- [AI governance framework mapping](docs/policy-mapping/README.md): time-bound 2026 Q2 reading mapping AAP's ADRs and Quadrants to AI governance framework clauses (NIST AI RMF 1.0 + Generative AI Profile, ISO/IEC 42001:2023; EU AI Act and OECD AI Principles deferred to a later release)
+- [AI governance framework mapping](docs/policy-mapping/README.md): time-bound 2026 Q2 reading mapping AAP's ADRs and Quadrants to AI governance framework clauses (NIST AI RMF 1.0 + Generative AI Profile, ISO/IEC 42001:2023, EU AI Act (Regulation (EU) 2024/1689); OECD AI Principles deferred to a later release)
 - [Codemap — Document Architecture](docs/CODEMAPS/architecture.md): document-role index, two-axis + Phase structure, citation-dependency graph, invariants — read first when routing a citation to the canonical AAP document
 
 ## Architecture Decision Records
@@ -75,11 +75,12 @@ Through 2026 Q2, several industry releases populated the *mechanism layer* that 
 
 ## Policy framework mapping
 
-AAP also reads its ADRs and Quadrants against national / international AI governance frameworks. Phase 1 covers NIST AI Risk Management Framework 1.0 (NIST.AI.100-1, 2023-01) with the Generative AI Profile (NIST.AI.600-1, 2024-07) and ISO/IEC 42001:2023 AI Management System (first edition, 2023-12). EU AI Act and OECD AI Principles are deferred to Phase 2. NIST RMF ships the *structure* (GOVERN / MAP / MEASURE / MANAGE functions) and ISO 42001 ships the *management-system shape* (PDCA cycle, Annex SL Harmonized Structure, Annex A controls A.2–A.10); AAP records the *judgment layer* that populates them for the autonomous-agent subset. The mapping decays on framework revision cycles (yearly to multi-year) rather than on vendor product release cycles. Each framework file ships a per-ADR mapping plus a reverse index (framework clause → applicable ADR) for readers entering from the framework side.
+AAP also reads its ADRs and Quadrants against national / international AI governance frameworks. The mapping covers NIST AI Risk Management Framework 1.0 (NIST.AI.100-1, 2023-01) with the Generative AI Profile (NIST.AI.600-1, 2024-07), ISO/IEC 42001:2023 AI Management System (first edition, 2023-12), and the EU AI Act (Regulation (EU) 2024/1689, in force 2024-08, phased application through 2027). OECD AI Principles are deferred to a later release. NIST RMF ships the *structure* (GOVERN / MAP / MEASURE / MANAGE functions), ISO 42001 ships the *management-system shape* (PDCA cycle, Annex SL Harmonized Structure, Annex A controls A.2–A.10), and the EU AI Act ships a *risk-tiered obligation regime* (prohibited practices, the high-risk provider/deployer duty stack, transparency duties); AAP records the *judgment layer* that populates them for the autonomous-agent subset. The mapping decays on framework revision cycles (yearly to multi-year — faster for the EU AI Act through its 2026–2027 phase-in) rather than on vendor product release cycles. Each framework file ships a per-ADR mapping plus a reverse index (framework clause / Article → applicable ADR) for readers entering from the framework side.
 
 - [Policy mapping directory README](docs/policy-mapping/README.md): conventions, decay disclaimer, framework version pinning, revision procedure, sibling relationship to industry-mapping
 - [NIST AI RMF mapping](docs/policy-mapping/nist-ai-rmf.md): per-ADR mapping to NIST AI RMF functions and Generative AI Profile risk categories
 - [ISO/IEC 42001 mapping](docs/policy-mapping/iso-iec-42001.md): per-ADR mapping to ISO 42001 body clauses and Annex A control areas, with PDCA × Phase Separation discussion
+- [EU AI Act mapping](docs/policy-mapping/eu-ai-act.md): per-ADR mapping to EU AI Act Articles (Art 9 / 12 / 14 / 15 etc.), the risk-tier vs prohibition-strength-hierarchy distinction, and an external-convergence note (2604.04604 / 2605.12105 / 2602.09947)
 
 ## Narrative essays
 

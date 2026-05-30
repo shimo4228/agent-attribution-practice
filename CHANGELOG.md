@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+EU AI Act mapping added, completing the governance-framework triad in `docs/policy-mapping/`. No ADR added or changed; the ten ADRs and four Quadrants are unchanged in number and content.
+
+### Added
+
+- `docs/policy-mapping/eu-ai-act.md` (+ `.ja.md`) — EU AI Act (Regulation (EU) 2024/1689) mapping alongside the existing NIST AI RMF and ISO/IEC 42001 files. Per-ADR mapping of all ten ADRs to the Act's Articles (Art 5 risk tiers, Art 9 risk management, Art 10 data governance, Art 11/Annex IV documentation, Art 12/19 record-keeping, Art 13 transparency, Art 14 human oversight, Art 15 robustness/cybersecurity, Art 17 quality management, Art 26–27 deployer duties, Art 72 post-market monitoring), plus a reverse index (Article → ADR). Distinguishes the Act's four risk tiers from AAP's prohibition-strength hierarchy as graduated structures that grade *different things* (system danger vs single-capability foreclosure), not an identity. A *Secondary scholarship and external convergence* note records three 2026 sources that independently arrive at — or supply mechanism for — AAP judgments: Nannini et al., *AI Agents Under EU Law* (arXiv:2604.04604); Safin & Balta, *Autonomy and Agency in Agentic AI: Architectural Tactics for Regulated Contexts* (arXiv:2605.12105); Bhattarai & Vu, *Trustworthy Agentic AI Requires Deterministic Architectural Boundaries* (arXiv:2602.09947). They are kept as external citation surface, explicitly outside the ADR lineage.
+
+### Changed
+
+- `docs/policy-mapping/README.md` (+ `.ja.md`): EU AI Act added to the files table; the deferred-frameworks note narrowed to OECD AI Principles only.
+- `graph.jsonld`: new EU AI Act `PolicyFramework` node + EU AI Act mapping-document node; `eu-ai-act.md` appended to all ten ADRs' `mappedToFrameworkIn` and to the policy-mapping Collection `hasPart`; the directory node's deferred-list description narrowed to OECD.
+- Governance-framework coverage refreshed across `README.md` / `README.ja.md`, `llms.txt`, `llms-full.txt`, and `docs/CODEMAPS/architecture.md` (file-count snapshot 62 → 64) to show EU AI Act now covered and OECD deferred.
+
+### Notes
+
+- **No new judgments**: ADR bodies remain harness / vendor / framework-neutral; EU AI Act content lives only in the time-bound `policy-mapping/` directory. The architectural tactic *write staging* (Safin & Balta) is recorded as *mechanism* in the mapping layer and deliberately **not** folded into ADR-0005's body — consistent with *implementation dissolves; judgment persists*.
+- **Faster decay**: the EU AI Act file is expected to decay faster than NIST/ISO through the 2026–2027 phase-in (delegated acts, implementing acts, harmonised standards, Commission guidelines still arriving).
+
 ## [0.5.0] — 2026-05-24
 
 Social-consequence layer added on top of the seven-essay narrative spine: a normative, social-theoretical upper rationale reflecting the companion Substack essay. No ADR added or changed; the ten ADRs and four Quadrants are unchanged in number and content.

@@ -38,10 +38,11 @@ engineer / architect) and decay at different cadences.
 |---|---|---|---|
 | [nist-ai-rmf.md](nist-ai-rmf.md) (+ [ja](nist-ai-rmf.ja.md)) | NIST AI Risk Management Framework | RMF 1.0 (2023-01) + Generative AI Profile NIST.AI.600-1 (2024-07) | yearly (GAI Profile expected to revise more often than core RMF) |
 | [iso-iec-42001.md](iso-iec-42001.md) (+ [ja](iso-iec-42001.ja.md)) | ISO/IEC 42001 AI Management System | ISO/IEC 42001:2023 | multi-year (formal ISO revision cycle) |
+| [eu-ai-act.md](eu-ai-act.md) (+ [ja](eu-ai-act.ja.md)) | EU AI Act (Regulation (EU) 2024/1689) | in force 2024-08-01; phased application through 2027 | per delegated/implementing act, harmonised standard, or Commission guideline; else yearly (faster decay through the 2026–2027 phase-in) |
 
-EU AI Act and OECD AI Principles mappings are deferred to a later
-release (their decay cadences and granularity differ enough from
-NIST/ISO that bundling them in one release would create churn).
+The OECD AI Principles mapping is deferred to a later release
+(its decay cadence and granularity differ enough from the
+regulation/standard files that bundling it in would create churn).
 
 ## Direction convention
 

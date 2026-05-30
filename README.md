@@ -189,13 +189,15 @@ the ADRs themselves stay clean.
 ## Relationship to AI governance frameworks
 
 AAP's ADRs and Quadrants are also read against national /
-international AI governance frameworks. Phase 1 covers the **NIST
-AI Risk Management Framework 1.0** (NIST.AI.100-1, January 2023)
-with its **Generative AI Profile** (NIST.AI.600-1, July 2024) and
-**ISO/IEC 42001:2023** AI Management System (first edition,
-December 2023). EU AI Act and OECD AI Principles are deferred to
-a later phase — their decay cadences and clause granularity differ
-enough that bundling all four in one release would create churn.
+international AI governance frameworks. The mapping covers the
+**NIST AI Risk Management Framework 1.0** (NIST.AI.100-1, January
+2023) with its **Generative AI Profile** (NIST.AI.600-1, July
+2024), **ISO/IEC 42001:2023** AI Management System (first edition,
+December 2023), and the **EU AI Act** (Regulation (EU) 2024/1689,
+in force August 2024, phased application through 2027). OECD AI
+Principles are deferred to a later phase — their decay cadence and
+clause granularity differ enough that bundling them in would
+create churn.
 
 What the frameworks ship is the *structure* — NIST organizes AI
 risk management around four functions (GOVERN, MAP, MEASURE,
@@ -204,8 +206,12 @@ ISO 42001 specifies an AI Management System built on the Annex
 SL Harmonized Structure (shared with ISO 27001, ISO 9001, ISO
 14001) and a PDCA cycle, with Annex A controls covering policies,
 roles, lifecycle, data, transparency, and third-party
-relationships. What they do not ship is the *judgment layer* that
-populates these structures for the autonomous-agent subset:
+relationships; the EU AI Act ships a *risk-tiered obligation
+regime* (prohibited practices, the high-risk provider/deployer
+duty stack — human oversight, record-keeping, robustness — and
+transparency duties). What they do not ship is the *judgment
+layer* that populates these structures for the autonomous-agent
+subset:
 when a NIST function should be answered by absence rather than
 by restriction, which AIMS clause requires a non-LLM gate, where
 the gap-bearer named under ADR-0009 sits in the ISO 42001
@@ -215,8 +221,8 @@ judgment layer; the two layers are complementary.
 
 The per-framework mapping (each AAP ADR's relationship to specific
 NIST functions / GAI risk categories / ISO 42001 clauses and
-Annex A areas, plus a reverse index for readers entering from the
-framework side) is maintained in
+Annex A areas / EU AI Act Articles, plus a reverse index for
+readers entering from the framework side) is maintained in
 [`docs/policy-mapping/`](docs/policy-mapping/README.md), a
 deliberately time-bound directory that decays on framework
 revision cycles (yearly to multi-year) rather than on vendor
@@ -224,9 +230,10 @@ product release cycles. The ADRs themselves stay framework-neutral.
 
 This is not a compliance attestation. Authoritative interpretation
 of NIST AI RMF remains with NIST, of ISO/IEC 42001 with ISO/IEC
-and accredited certification bodies, and of any framework's
-application with qualified legal / compliance counsel for the
-deploying organization's jurisdiction.
+and accredited certification bodies, of the EU AI Act with the
+European Commission and national competent authorities, and of any
+framework's application with qualified legal / compliance counsel
+for the deploying organization's jurisdiction.
 
 ## Using this as an agent-adoption navigator
 
