@@ -3,7 +3,7 @@ Language: English | [日本語](README.ja.md)
 # AI governance framework mapping
 
 **Status:** Informational, time-bound (2026 Q2 reading)
-**Date:** 2026-05-17
+**Date:** 2026-06-03
 **Maintenance posture:** This directory decays. The ADRs do not.
 
 ## Purpose
@@ -128,6 +128,58 @@ landscape:
 
 A given ADR may have entries in one, both, or neither layer at any
 given time. The ADR itself remains the durable anchor.
+
+## Empirical corroboration
+
+The per-framework files above read AAP's judgments against
+governance-framework *text*. A separate and weaker question is
+whether *field evidence* points independently at the same
+judgments. Through 2026, several enterprise surveys converged on a
+finding adjacent to AAP's thesis: the dominant cause of AI-agent
+production failure is the absence of accountability structure, not
+a deficit of model capability. They are listed here as external
+citation surface, in the spirit of the non-attestation disclaimer —
+they are *not* part of the AAP ADR lineage (the ADRs were extracted
+from implementation, not from these surveys), and survey
+methodology and numbers decay faster than the framework text the
+rest of this directory maps.
+
+- **[Digital Applied, *AI Agent Scaling Gap*, March 2026](https://www.digitalapplied.com/blog/ai-agent-scaling-gap-march-2026-pilot-to-production).**
+  A 650-respondent enterprise survey: 78% run at least one agent
+  pilot, only 14% reach production scale, and five
+  organizational/operational gaps (legacy integration, output
+  quality at volume, monitoring absence, unclear ownership, domain
+  data) account for 89% of scaling failures. Organizations that
+  stood up an operations function *before* any incident saw
+  materially fewer production rollbacks. This corroborates the
+  design→operation optimization-axis inversion behind **ADR-0010**
+  (phase separation) and the *pre-named gap-bearer* commitment
+  behind **ADR-0008 / ADR-0009**: the accountable owner is named
+  before the failure, not appointed after it.
+- **[Grant Thornton, *2026 AI Impact Survey*](https://www.grantthornton.com/insights/press-releases/2026/april/grant-thornton-survey-on-ai-proof-gap).**
+  Of nearly 1,000 senior leaders, 78% lack full confidence they
+  could pass an independent AI-governance audit within 90 days, only
+  11% would prioritize risk and compliance as an AI success factor,
+  and among the roughly three-quarters operating autonomous systems
+  only about one in five has tested a response plan for AI failures.
+  This corroborates **ADR-0009** (triage before autonomy): an
+  un-triaged deployment cannot answer the accountability question on
+  demand.
+- **[CSA, *AI Agent Governance Framework Gap*, 2026](https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-agent-governance-framework-gap-20260403/).**
+  Of 235 large-enterprise security leaders, 92% are concerned about
+  AI-agent security yet most report significant governance gaps, 95%
+  doubt they could detect or contain a compromised agent, only 38%
+  monitor AI traffic (prompts, tool calls, outputs) end-to-end, and
+  only 17% continuously monitor agent-to-agent interaction. This
+  corroborates **ADR-0006** (causal traceability): the infrastructure
+  to reconstruct *which agent did what, on whose instruction, under
+  which credential* is largely absent in the field.
+
+These surveys are convergent, not foundational. AAP reached the same
+judgments inductively, from implementation friction; the surveys
+arrived at an adjacent conclusion independently and later. Treat the
+numbers as a 2026 snapshot that will decay; the ADRs they point at
+will not.
 
 ## What this directory does *not* claim
 

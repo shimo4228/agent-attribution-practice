@@ -3,14 +3,19 @@ Language: English | [日本語](eu-ai-act.ja.md)
 # EU AI Act — mapping to AAP ADRs
 
 **Status:** Informational, time-bound (2026 Q2 reading)
-**Date:** 2026-05-31
+**Date:** 2026-06-03
 **Framework version:** Regulation (EU) 2024/1689 (Artificial
 Intelligence Act), in force 2024-08-01. Read against the
 application-date schedule current at time of writing: prohibited
 practices (Art 5) applicable 2025-02-02; general-purpose AI model
-obligations applicable 2025-08-02; Annex III high-risk obligations
-applicable 2026-08-02; Annex I (product-embedded) high-risk
-obligations applicable 2027-08-02.
+obligations applicable 2025-08-02. The high-risk application dates
+were postponed by the Omnibus "Digital Package" provisional
+political agreement of 6 May 2026 (Council-confirmed 13 May 2026):
+stand-alone Annex III high-risk obligations move from 2026-08-02 to
+2 December 2027, and Annex I (product-embedded) high-risk
+obligations from 2027-08-02 to 2 August 2028. These postponed dates
+are provisional pending formal adoption and publication of the
+Omnibus in the Official Journal.
 **Maintenance posture:** This file decays. The ADRs do not.
 **Maintenance cadence:** at each delegated/implementing act,
 harmonised standard, or Commission guideline that changes how an

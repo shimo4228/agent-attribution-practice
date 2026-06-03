@@ -3,7 +3,7 @@
 # AI ガバナンス framework マッピング (AI governance framework mapping)
 
 **Status:** Informational, time-bound (2026 Q2 reading)
-**Date:** 2026-05-17
+**Date:** 2026-06-03
 **Maintenance posture:** This directory decays. The ADRs do not.
 
 ## Purpose
@@ -126,6 +126,54 @@ primitive、sponsor 制度、cross-vendor 監査、registry sync) を ADR
 任意の ADR は、ある時点で 1 layer のみ / 両 layer / どちらにも
 entry がない、いずれの状態でも成り立つ。ADR 自体は durable な
 anchor として残る。
+
+## Empirical corroboration (実証的な裏付け)
+
+上記の各 framework file は、AAP の判断を governance framework の
+*text* に対して読み合わせる。それとは別の、より弱い問いとして、
+*現場の証拠* が同じ判断を独立に指し示すか、というものがある。2026
+年を通じて、複数の enterprise survey が AAP の thesis に隣接する
+finding に収束した: AI agent の本番障害の支配的な原因は、model
+capability の不足ではなく accountability 構造の不在である、と。これ
+らは non-attestation disclaimer の精神に従い、external citation
+surface としてここに列挙する ── AAP の ADR lineage の一部では
+*ない* (ADR はこれら survey からではなく実装から抽出された)。survey
+の方法論と数字は、本ディレクトリが map する framework text よりも
+速く decay する。
+
+- **[Digital Applied, *AI Agent Scaling Gap*, March 2026](https://www.digitalapplied.com/blog/ai-agent-scaling-gap-march-2026-pilot-to-production).**
+  650 名規模の enterprise survey: 78% が少なくとも 1 つの agent
+  pilot を運用するが、production scale に到達したのは 14% のみ。
+  5 つの組織的 / 運用的 gap (legacy 統合、量産時の output 品質、
+  monitoring の不在、ownership の不明確さ、domain データ) が scaling
+  失敗の 89% を占める。incident の *前* に operations function を
+  立ち上げた組織は、本番 rollback が顕著に少なかった。これは
+  **ADR-0010** (phase separation) の背後にある design→operation の
+  最適化軸反転と、**ADR-0008 / ADR-0009** の背後にある *pre-named
+  gap-bearer* commitment を裏付ける: accountable な owner は障害の
+  後に任命されるのではなく、前に指名される。
+- **[Grant Thornton, *2026 AI Impact Survey*](https://www.grantthornton.com/insights/press-releases/2026/april/grant-thornton-survey-on-ai-proof-gap).**
+  約 1,000 名の senior leader のうち、78% が 90 日以内に独立した
+  AI governance 監査を通過できる full confidence を欠き、risk と
+  compliance を AI 成功要因として優先すべきとした回答は 11% のみ。
+  自律システムを運用する約 4 分の 3 のうち、AI 障害の response plan
+  をテスト済みなのは約 5 社に 1 社にとどまる。これは **ADR-0009**
+  (triage before autonomy) を裏付ける: triage されていない deployment
+  は、accountability の問いにオンデマンドで答えられない。
+- **[CSA, *AI Agent Governance Framework Gap*, 2026](https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-agent-governance-framework-gap-20260403/).**
+  235 名の large-enterprise security leader のうち、92% が AI agent
+  の security を懸念しつつ多数が重大な governance gap を報告し、95%
+  が compromised agent の検知・封じ込めに懐疑的で、AI traffic
+  (prompt・tool call・output) を end-to-end で monitoring するのは
+  38%、agent-to-agent interaction を継続的に monitoring するのは
+  17% のみ。これは **ADR-0006** (causal traceability) を裏付ける:
+  *どの agent が・誰の指示で・どの認証情報で・何をしたか* を再構成
+  する infrastructure は、現場では概ね欠けている。
+
+これらの survey は convergent であって foundational ではない。AAP は
+同じ判断に、実装の摩擦から帰納的に到達した; survey は隣接する結論に
+独立して、かつ後から到達した。数字は decay する 2026 snapshot として
+扱うこと; それらが指し示す ADR は decay しない。
 
 ## 本ディレクトリが主張しないこと
 

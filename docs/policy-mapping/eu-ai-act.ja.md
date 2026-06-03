@@ -3,12 +3,17 @@
 # EU AI Act — AAP ADR へのマッピング
 
 **Status:** Informational, time-bound (2026 Q2 reading)
-**Date:** 2026-05-31
+**Date:** 2026-06-03
 **Framework version:** Regulation (EU) 2024/1689 (Artificial
 Intelligence Act)、2024-08-01 発効。執筆時点の適用日程に対して読む:
 prohibited practices (Art 5) は 2025-02-02、general-purpose AI
-model 義務は 2025-08-02、Annex III high-risk 義務は 2026-08-02、
-Annex I (製品組込) high-risk 義務は 2027-08-02 に適用。
+model 義務は 2025-08-02 に適用。high-risk の適用日は、Omnibus
+"Digital Package" の暫定政治合意 (2026-05-06、Council 確認
+2026-05-13) により延期された: stand-alone な Annex III high-risk
+義務は 2026-08-02 から 2 December 2027 へ、Annex I (製品組込)
+high-risk 義務は 2027-08-02 から 2 August 2028 へ移動する。これら
+延期後の日付は、Omnibus が正式採択され Official Journal に公布
+されるまで暫定である。
 **Maintenance posture:** This file decays. The ADRs do not.
 **Maintenance cadence:** Article の読み方を変える delegated /
 implementing act・harmonised standard・Commission guideline が出る
