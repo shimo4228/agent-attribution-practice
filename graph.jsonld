@@ -404,7 +404,7 @@
         {"@value": "Regulation (EU) 2024/1689", "@language": "en"},
         {"@value": "Artificial Intelligence Act", "@language": "en"}
       ],
-      "description": "European Union regulation establishing a risk-tiered obligation regime for AI systems (unacceptable / high / limited / minimal risk). In force 2024-08-01, with phased application: prohibited practices (Art 5) from 2025-02-02, general-purpose AI model obligations from 2025-08-02, Annex III high-risk obligations from 2026-08-02, Annex I product-embedded high-risk obligations from 2027-08-02. AAP records the judgment layer that structurally discharges the high-risk obligation stack (Art 9-15 provider duties, Art 26-27 deployer duties) for the autonomous-agent subset.",
+      "description": "European Union regulation establishing a risk-tiered obligation regime for AI systems (unacceptable / high / limited / minimal risk). In force 2024-08-01, with phased application: prohibited practices (Art 5) from 2025-02-02, general-purpose AI model obligations from 2025-08-02. The Omnibus 'Digital Package' provisional agreement of 2026-05-06 postpones the high-risk dates (provisional pending formal adoption): stand-alone Annex III high-risk obligations to 2027-12-02 and Annex I product-embedded high-risk obligations to 2028-08-02. AAP records the judgment layer that structurally discharges the high-risk obligation stack (Art 9-15 provider duties, Art 26-27 deployer duties) for the autonomous-agent subset.",
       "identifier": "Regulation (EU) 2024/1689",
       "versionInfo": "OJ L, 2024/1689",
       "datePublished": "2024-07-12",
