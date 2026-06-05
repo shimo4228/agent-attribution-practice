@@ -292,7 +292,7 @@ architectural follow-up essay、ADR-0010 は 2026-05-01 / 05-02 の phase
 
 > Shimomoto, T. (2026). *The Two-Layer Black Box: Operator Visibility, Commercial Secrecy, and a Minimum Disclosure Set for Accountable Autonomous AI Agents.* Zenodo. https://doi.org/10.5281/zenodo.20355907
 
-オープンアクセス（CC BY 4.0）。上記 concept DOI は常に最新版に解決する。
+オープンアクセス（CC BY 4.0）。上記 concept DOI は常に最新版に解決する。両論文は SSRN にもクロスポスト済み: [Distributing Accountability, Not Capability](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6817598) · [The Two-Layer Black Box](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6823878)。
 
 ## 引用方法
 

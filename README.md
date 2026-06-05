@@ -303,7 +303,7 @@ Two companion position papers distil the narrative spine into harness-neutral st
 
 > Shimomoto, T. (2026). *The Two-Layer Black Box: Operator Visibility, Commercial Secrecy, and a Minimum Disclosure Set for Accountable Autonomous AI Agents.* Zenodo. https://doi.org/10.5281/zenodo.20355907
 
-Open access (CC BY 4.0). The concept DOIs above always resolve to the latest version.
+Open access (CC BY 4.0). The concept DOIs above always resolve to the latest version. Both papers are also cross-posted on SSRN: [Distributing Accountability, Not Capability](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6817598) · [The Two-Layer Black Box](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6823878).
 
 ## How to Cite
 
