@@ -59,12 +59,12 @@ See ADR-0007 for the position this repository takes on the distinction.
 
 ## Harness
 
-A closely related but not identical industry-engineering term for the non-weights layer of an AI agent. Popularized by Mitchell Hashimoto's *My AI Adoption Journey* (2025), Claude Code documentation, and the broader harness-engineering discourse since 2024.
+A closely related but not identical industry-engineering term for the non-weights layer of an AI agent. Popularized by Mitchell Hashimoto's *My AI Adoption Journey* (2026), Claude Code documentation, and the broader harness-engineering discourse since 2024.
 
 Scaffolding and harness overlap substantially — both name the wrapping around an LLM (system prompts, tool definitions, agent loop logic, memory APIs, runtime glue code) — but carry distinct connotations:
 
 - **Scaffolding** (Davidson et al. 2023, borrowing from Vygotsky's educational scaffolding) implies structure that is *transient* — external support meant to be internalized as practice matures — and emphasizes the *inspectable artifact* axis (version-controllable, diffable, operator-readable). The term carries a dissolution trajectory; the scaffolding is meant to fade.
-- **Harness** (Hashimoto 2025 and the engineering discourse) implies structure that is *durable* — a stable operational wrapper that evolves with the system — and emphasizes the *operational capability* axis (which tools the agent calls, which workflows the loop runs).
+- **Harness** (Hashimoto 2026 and the engineering discourse) implies structure that is *durable* — a stable operational wrapper that evolves with the system — and emphasizes the *operational capability* axis (which tools the agent calls, which workflows the loop runs).
 
 This repository chooses scaffolding as the primary term because the inspectability axis (not the capability axis) is load-bearing for accountability distribution; see ADR-0007 Scaffolding Visibility for the explicit choice.
 

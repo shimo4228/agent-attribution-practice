@@ -81,7 +81,7 @@ distribution の前提条件として扱う。
 
 Agent の非 weights 層に対する、scaffolding と密接に関連するが完全に
 同じではない業界エンジニアリング用語。Mitchell Hashimoto の *My AI
-Adoption Journey* (2025)、Claude Code documentation、2024 年以降の
+Adoption Journey* (2026)、Claude Code documentation、2024 年以降の
 harness engineering 言説で広まった。
 
 Scaffolding と harness は大きく重なる — どちらも LLM の周囲を包む
@@ -94,7 +94,7 @@ glue code) を名指す — が、含意が異なる:
   (version 管理可能、diff 可能、operator が読める) を強調する。
   Scaffolding は dissolution trajectory（消失軌道）を持つ: いずれは
   消えることを意図された構造。
-- **Harness** (Hashimoto 2025 とエンジニアリング言説) は *durable* な
+- **Harness** (Hashimoto 2026 とエンジニアリング言説) は *durable* な
   構造を含意する — system と共に進化する安定した運用上の wrapper —
   そして *operational capability* 軸 (どの tool が呼ばれるか、loop で
   どの workflow が走るか) を強調する。
