@@ -124,6 +124,20 @@ ADR との lineage 対応:
 
 ADR 本文が扱うのは *judgment* (persistent)。*implementation* (Hooks、CLI、JSONL スキーマ等) は Lineage セクションや外部 link で触れる。「実装は溶ける、判断は残る」という thesis を本文構造で体現する。
 
+## Research Wiki Consultation (read-only)
+
+ADR の起草・改訂、glossary / graph.jsonld 更新、release 前には、research wiki (Obsidian vault) の対応 concept ページを **read-only** で参照する。wiki は本 repo の graph.jsonld を gap 検出基盤として daily-research が積んだノートの合成層であり、ここでの参照 → repo への昇格が research loop を閉じる。
+
+- 場所: `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Vault/wiki/concept/`
+- 主担当ページ: `エージェント帰責.md`。隣接: `Contemplative-AI.md` / `AIサイバーセキュリティ.md` / `AIエージェント.md`
+- 見る節と用途:
+  1. **オープンクエスチョン** の「ADR 候補」マーク → 新規 ADR の種
+  2. **矛盾・論争** → time-bound docs (`docs/policy-mapping/`, `docs/industry-mapping.md`) の stale 照合 (例: EU AI Act タイムライン改訂)
+  3. **Key Claims の外部出典** (arXiv ID・調査統計) → `graph.jsonld` の `ExternalReference` ノード / `citedBy` 辺の候補
+  4. **関連概念リンク** → repo graph に無い辺・新 Concept の候補
+- 引用規律: 公開成果物 (ADR / docs / graph) には wiki ページや vault パスを引用しない。wiki が指す **一次出典まで遡って** それを引く。wiki はレンズであって citable source ではない
+- wiki への書き込みは行わない (ingest / 概念ページ更新は vault セッションの領域)
+
 ## HF Datasets mirror
 
 `graph.jsonld` は Hugging Face Datasets の mirror として publish されている (LLM training pipeline / knowledge-graph crawler の primary ingest source、Auto-converted to Parquet で `pandas` / `Polars` から直接 load 可能)。graph 更新時の同期手順は `~/.claude/skills/jsonld-knowledge-graph/SKILL.md` の "Mirror Sync to Hugging Face Datasets" section 参照。
