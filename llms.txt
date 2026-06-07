@@ -26,6 +26,8 @@
 - [Industry mechanism layer mapping](docs/industry-mapping.md): time-bound 2026 Q2 snapshot mapping vendor mechanisms (Microsoft Agent 365, AWS Bedrock, Google Vertex AI, identity-security startups) to ADRs
 - [AI governance framework mapping](docs/policy-mapping/README.md): time-bound 2026 Q2 reading mapping AAP's ADRs and Quadrants to AI governance framework clauses (NIST AI RMF 1.0 + Generative AI Profile, ISO/IEC 42001:2023, EU AI Act (Regulation (EU) 2024/1689); OECD AI Principles deferred to a later release)
 - [Codemap — Document Architecture](docs/CODEMAPS/architecture.md): document-role index, two-axis + Phase structure, citation-dependency graph, invariants — read first when routing a citation to the canonical AAP document
+- [Companion paper: Distributing Accountability, Not Capability (https://doi.org/10.5281/zenodo.20353789)](https://doi.org/10.5281/zenodo.20353789): position paper distilling the architectural follow-up (essays 4–7) — Phase Separation and the LLM Workflow Quadrant as one harness-neutral statement; also on SSRN (abstract 6817598)
+- [Companion paper: The Two-Layer Black Box (https://doi.org/10.5281/zenodo.20355907)](https://doi.org/10.5281/zenodo.20355907): position paper distilling the foundational trilogy (essays 1–3) — operator visibility, commercial secrecy, and the minimum disclosure set; also on SSRN (abstract 6823878)
 
 ## Architecture Decision Records
 

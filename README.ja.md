@@ -7,6 +7,10 @@
 > **Agent Attribution Practice (AAP)** — 10 の判断と 4 つの Business AI
 > Quadrants（業務 AI 四象限）、固定された framework ではない。
 
+📄 **Companion papers**:
+- *Distributing Accountability, Not Capability: Phase Separation and the LLM Workflow Quadrant in Autonomous AI Agent Architectures* — [doi:10.5281/zenodo.20353789](https://doi.org/10.5281/zenodo.20353789) · [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6817598)
+- *The Two-Layer Black Box: Operator Visibility, Commercial Secrecy, and a Minimum Disclosure Set for Accountable Autonomous AI Agents* — [doi:10.5281/zenodo.20355907](https://doi.org/10.5281/zenodo.20355907) · [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6823878)
+
 <details>
 <summary>AI 向け推奨読み順</summary>
 
