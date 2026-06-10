@@ -72,7 +72,7 @@
       "@id": "https://orcid.org/0009-0002-6168-4162",
       "@type": "Person",
       "name": "Tatsuya Shimomoto",
-      "alternateName": "shimo4228",
+      "alternateName": ["shimo4228", {"@value": "下本竜也", "@language": "ja"}],
       "sameAs": ["https://github.com/shimo4228", "https://orcid.org/0009-0002-6168-4162", "https://www.wikidata.org/wiki/Q140090100"]
     },
 
@@ -94,6 +94,8 @@
       "siblingOf": [
         "https://doi.org/10.5281/zenodo.19200726",
         "https://doi.org/10.5281/zenodo.19212118",
+        "https://doi.org/10.5281/zenodo.20263316",
+        "https://doi.org/10.5281/zenodo.20262112",
         "https://github.com/shimo4228/contemplative-agent-rules"
       ],
       "derivesFrom": "https://doi.org/10.5281/zenodo.19212118",
@@ -184,6 +186,36 @@
       "description": "The running implementation layer from which AAP's harness-neutral judgments were extracted before being re-expressed stripped of project identifiers. Autonomous AI agents grounded in four contemplative axioms; source-of-truth for the operational practice AAP records as ADRs.",
       "identifier": "10.5281/zenodo.19212118",
       "url": "https://github.com/shimo4228/contemplative-agent",
+      "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"}
+    },
+
+    {
+      "@id": "https://doi.org/10.5281/zenodo.20263316",
+      "sameAs": "https://www.wikidata.org/wiki/Q140090190",
+      "@type": ["EcosystemRepo", "ResearchLine", "ScholarlyArticle"],
+      "name": "Authorship Strategy",
+      "alternateName": [
+        {"@value": "Authorship Strategy", "@language": "en"},
+        {"@value": "著者戦略", "@language": "ja"}
+      ],
+      "description": "Normative framework, tactical catalog, and empirical baseline for being a known author under AI-mediated diffusion. Vocabulary sibling: shares the word 'attribution' with disjoint meaning — Authorship Strategy means credit for source, AAP means accountability for action. The two meanings are intentionally kept separate; do not conflate.",
+      "identifier": "10.5281/zenodo.20263316",
+      "url": "https://github.com/shimo4228/authorship-strategy",
+      "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"}
+    },
+
+    {
+      "@id": "https://doi.org/10.5281/zenodo.20262112",
+      "sameAs": "https://www.wikidata.org/wiki/Q140090189",
+      "@type": ["EcosystemRepo", "ResearchLine", "ScholarlyArticle"],
+      "name": "Attention, Not Self",
+      "alternateName": [
+        {"@value": "Attention, Not Self", "@language": "en"},
+        {"@value": "アテンション、ノット・セルフ", "@language": "ja"}
+      ],
+      "description": "Cross-disciplinary inquiry contrasting three Buddhist Abhidharma traditions (Theravāda, Sarvāstivāda, Yogācāra) with computational phenomenology. Cross-cutting sibling: specifies no agent mechanism or practice; occupies the agent-design lines' framing layer rather than their implementation layer.",
+      "identifier": "10.5281/zenodo.20262112",
+      "url": "https://github.com/shimo4228/attention-not-self",
       "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"}
     },
 
@@ -852,6 +884,18 @@
       "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"},
       "isBasedOn": "https://doi.org/10.5281/zenodo.19652013",
       "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/externalized-accountability"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2604.07778",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "The Accountability Horizon: An Impossibility Theorem for Governing Human-Agent Collectives",
+      "description": "External formal corroboration of the attribution gap. Proves an Accountability Incompleteness Theorem: once a human-agent collective's minimum compound autonomy exceeds a computable threshold (the Accountability Horizon) and its interaction graph contains a feedback cycle involving both human and artificial agents, no governance framework can simultaneously satisfy four accountability axioms — Attributability (responsibility requires individual causal contribution), Foreseeability Bound, Non-Vacuity, and Completeness. This converts the non-removability of the attribution gap from a contingent engineering limitation into a mathematical necessity. AAP reaches the same solution space independently and from implementation friction rather than formalism: the theorem shows one must relax Attributability or Foreseeability, and AAP's pre-named gap-bearer is a relaxation of Attributability — a named individual bears the gap without individual causal contribution (role responsibility). The theorem's feedforward exception (no impossibility absent a mixed human-agent feedback cycle) parallels AAP's triage and Phase axis: architectures that avoid the autonomous loop avoid the gap. Recorded as a citation surface only; AAP's ADR judgments and concept definitions are neither derived from nor coupled to this formalism.",
+      "datePublished": "2026-04-09",
+      "author": [
+        {"@type": "Person", "name": "Haileleol Tibebu"},
+        {"@type": "Person", "name": "Hewan Shemtaga"}
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap"
     },
 
     {
