@@ -180,7 +180,7 @@
       "@id": "https://doi.org/10.5281/zenodo.19212118",
       "sameAs": "https://www.wikidata.org/wiki/Q140090187",
       "@type": ["EcosystemRepo", "ResearchLine", "SoftwareSourceCode"],
-      "name": "contemplative-agent",
+      "name": "Contemplative Agent",
       "alternateName": [
         {"@value": "contemplative-agent", "@language": "en"},
         {"@value": "contemplative-agent", "@language": "ja"}
