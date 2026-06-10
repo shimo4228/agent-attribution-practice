@@ -2,6 +2,10 @@
   "@context": {
     "@vocab": "https://schema.org/",
     "shimo": "https://shimo4228.github.io/shimo4228/vocab#",
+    "sameAs": {"@id": "https://schema.org/sameAs", "@type": "@id"},
+    "about": {"@id": "https://schema.org/about", "@type": "@id"},
+    "isBasedOn": {"@id": "https://schema.org/isBasedOn", "@type": "@id"},
+    "relatedTo": {"@id": "https://schema.org/relatedTo", "@type": "@id"},
     "ResearchLine": "shimo:ResearchLine",
     "EcosystemRepo": "shimo:EcosystemRepo",
     "Concept": "shimo:Concept",
@@ -133,7 +137,6 @@
       "url": "https://doi.org/10.5281/zenodo.20353789",
       "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"},
       "datePublished": "2026-05-23",
-      "version": "v1",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": ["en", "ja"],
       "derivesFrom": "https://doi.org/10.5281/zenodo.19652013"
@@ -153,7 +156,6 @@
       "url": "https://doi.org/10.5281/zenodo.20355907",
       "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"},
       "datePublished": "2026-05-23",
-      "version": "v1",
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "inLanguage": ["en", "ja"],
       "derivesFrom": "https://doi.org/10.5281/zenodo.19652013"
