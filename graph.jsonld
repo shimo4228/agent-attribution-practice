@@ -900,6 +900,72 @@
       ],
       "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap"
     },
+    {
+      "@id": "https://arxiv.org/abs/2210.03629",
+      "sameAs": "https://www.wikidata.org/wiki/Q121160329",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "description": "Defines the autonomous-loop pattern — reasoning interleaved with acting — that ADR-0009 triages against; the Autonomous Agentic Loop Quadrant of the four Business AI Quadrants is named for this pattern.",
+      "datePublished": "2022-10-06",
+      "author": "Yao, S. et al.",
+      "identifier": "arXiv:2210.03629",
+      "url": "https://arxiv.org/abs/2210.03629"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2503.03704",
+      "sameAs": "https://www.wikidata.org/wiki/Q140181350",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Memory Injection Attacks on LLM Agents via Query-Only Interaction",
+      "description": "Names the MINJA class of memory-injection attacks delivered through query-only interaction. Motivates ADR-0002: in the contemplative-agent defense audit against MINJA-class attacks, probabilistic soft trust weighting on stored knowledge turned out to be armed but neutered, while the effective defense was a deterministic structural quarantine at the summarization boundary — external content never entered the LLM prompt at all.",
+      "datePublished": "2025-03-05",
+      "author": "Dong, S. et al.",
+      "identifier": "arXiv:2503.03704",
+      "url": "https://arxiv.org/abs/2503.03704"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2602.09947",
+      "sameAs": "https://www.wikidata.org/wiki/Q140181361",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Trustworthy Agentic AI Requires Deterministic Architectural Boundaries",
+      "description": "Argues that deterministic, architectural enforcement — not probabilistic learned behaviour — is necessary for trustworthy agentic AI, and names a lethal trifecta of untrusted input, privileged data access, and external action capability. Recorded in the EU AI Act mapping's secondary-scholarship note as external convergence with ADR-0002 (deterministic prohibition at the scaffolding layer) and ADR-0003 (untrusted-content boundary), both reached independently from operation; citation surface, not ADR lineage.",
+      "datePublished": "2026-02-10",
+      "author": "Bhattarai & Vu",
+      "identifier": "arXiv:2602.09947",
+      "url": "https://arxiv.org/abs/2602.09947"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2604.04604",
+      "sameAs": "https://www.wikidata.org/wiki/Q140181364",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "AI Agents Under EU Law",
+      "description": "Legal-scholarship mapping of agentic systems onto the EU AI Act. Its conclusion that high-risk agentic systems with untraceable behavioural drift cannot currently satisfy the Act's essential requirements converges with ADR-0006 (causal traceability) and ADR-0009 (triage before autonomy): both treat untraceability as disqualifying rather than as a tunable defect. Recorded in the EU AI Act mapping's secondary-scholarship note as external citation surface, not ADR lineage.",
+      "datePublished": "2026-04-06",
+      "author": "Nannini et al.",
+      "identifier": "arXiv:2604.04604",
+      "url": "https://arxiv.org/abs/2604.04604"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2605.01091",
+      "sameAs": "https://www.wikidata.org/wiki/Q140181365",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Governing What the EU AI Act Excludes: Accountability for Autonomous AI Agents in Smart City Critical Infrastructure",
+      "description": "Examines the EU AI Act's Annex III point 2 critical-infrastructure carve-out through a smart-city scenario in which individually compliant interacting agents produce a composite consequence no resident can demand an explanation for. Its core observation — a bounded AI system can be individually assessed, but a set of interacting autonomous agents cannot — is an independent, regulation-side description of the attribution gap AAP records from operation (ADR-0009): the gap is structural, not a compliance defect of any single actor. The paper's proposed layered governance architecture is mechanism and stays in the policy-mapping layer.",
+      "datePublished": "2026-05-01",
+      "author": "Butt, Iqbal & Iqbal",
+      "identifier": "arXiv:2605.01091",
+      "url": "https://arxiv.org/abs/2605.01091"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2605.12105",
+      "sameAs": "https://www.wikidata.org/wiki/Q140181366",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Autonomy and Agency in Agentic AI: Architectural Tactics for Regulated Contexts",
+      "description": "Proposes architectural tactics — among them checkpoints and write staging (converting an irreversible action into a reversible proposal that a human confirms before it commits) — for discharging human-oversight duties in regulated contexts. Recorded as mechanism an organization could use to instantiate ADR-0005 under EU AI Act Art 14: per the repository's thesis (implementation dissolves; judgment persists), the ADR records the judgment and these tactics stay in the policy-mapping mechanism layer.",
+      "datePublished": "2026-05-12",
+      "author": "Safin & Balta",
+      "identifier": "arXiv:2605.12105",
+      "url": "https://arxiv.org/abs/2605.12105"
+    },
 
     {
       "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/thesis.md",

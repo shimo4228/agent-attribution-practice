@@ -77,6 +77,48 @@
       "scheme": "doi"
     },
     {
+      "identifier": "10.48550/arXiv.2604.04604",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.48550/arXiv.2605.12105",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.48550/arXiv.2602.09947",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.48550/arXiv.2605.01091",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.48550/arXiv.2210.03629",
+      "relation": "references",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.48550/arXiv.2503.03704",
+      "relation": "references",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.48550/arXiv.2604.07778",
+      "relation": "references",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
       "identifier": "https://github.com/shimo4228/shimo4228",
       "relation": "isPartOf",
       "resource_type": "other",
