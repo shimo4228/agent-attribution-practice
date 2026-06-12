@@ -137,6 +137,11 @@ This repository is a **sibling** to two existing projects, not a fork:
   AKC v2.0.0 (2026-04-19) extracted the governance triplet from itself to
   make room for this repository.
 
+The installable "how" counterpart to ADR-0001..0004 ships as a standalone
+Agent Skill repository:
+[llm-agent-security-principles](https://github.com/shimo4228/llm-agent-security-principles)
+(formerly hosted here under `docs/skills/`).
+
 A layered view — the three co-evolve through mutual feedback:
 
 ```

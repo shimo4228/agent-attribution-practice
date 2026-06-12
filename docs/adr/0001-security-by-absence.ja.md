@@ -134,7 +134,8 @@ Security by Absence を持っていない — 持っているのは希望だ。*
 を CI に追加してこの check を決定論にする。
 
 完全な「how」 reference は
-[`docs/skills/llm-agent-security-principles.md`](../skills/llm-agent-security-principles.md)
+[llm-agent-security-principles](https://github.com/shimo4228/llm-agent-security-principles)
+skill（旧 `docs/skills/llm-agent-security-principles.md`、[`docs/skills/`](../skills/README.md) 参照）
 を参照。Audit-test の根拠、HTTP と credential ハードニング pattern、
 design-review checklist を含む。
 

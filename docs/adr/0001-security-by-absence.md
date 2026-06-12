@@ -118,7 +118,8 @@ Tune the exclusions to your project. The rule is: **if the answer to
 Security by Absence — you have hope.** Add the grep to CI to make the
 check deterministic.
 
-See [`docs/skills/llm-agent-security-principles.md`](../skills/llm-agent-security-principles.md)
+See the [llm-agent-security-principles](https://github.com/shimo4228/llm-agent-security-principles)
+skill (formerly `docs/skills/llm-agent-security-principles.md`; see [`docs/skills/`](../skills/README.md))
 for the full "how" reference, including the audit-test rationale,
 HTTP and credential hardening patterns, and a design-review checklist.
 

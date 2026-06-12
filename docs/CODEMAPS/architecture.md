@@ -1,4 +1,4 @@
-<!-- Generated: 2026-05-24 | Files scanned: project root + docs/ tree | Token estimate: ~1650 -->
+<!-- Generated: 2026-06-12 | Files scanned: project root + docs/ tree | Token estimate: ~1700 -->
 # Document Architecture
 
 Agent Attribution Practice (AAP) is a **judgment-artifact repository**, not a code repository. There are no source files; the architecture is the structure of judgments and their cross-references. This codemap exists so an LLM-mediated reader (the primary audience) can route to the canonical document for a given question without scanning the whole tree.
@@ -20,10 +20,10 @@ agent-attribution-practice/
 │   ├── glossary.md / glossary.ja.md     key terms (gap-bearer, scaffolding, prohibition-strength hierarchy, etc.)
 │   ├── inspiration.md                   essays + sibling-repo lineage
 │   ├── industry-mapping.md / .ja.md     2026 Q2 vendor mechanism → ADR mapping (time-bound, separated from ADRs)
-│   ├── policy-mapping/                  2026 Q2 AI governance framework → ADR mapping (time-bound, separated from ADRs; NIST AI RMF + ISO/IEC 42001 + EU AI Act)
+│   ├── policy-mapping/                  2026 Q2 AI governance framework → ADR mapping (time-bound, separated from ADRs; NIST AI RMF + ISO/IEC 42001 + EU AI Act + Singapore MGF for Agentic AI)
 │   ├── adr/                             10 ADRs (English) + 10 mirrors (.ja.md) + README + template
 │   ├── quadrants/                       Business AI Quadrants navigator (5 docs × ja mirrors)
-│   ├── skills/                          how-to companions (currently 1: llm-agent-security-principles.md)
+│   ├── skills/                          pointer README → standalone skill repo (llm-agent-security-principles)
 │   └── CODEMAPS/                        this directory
 ├── examples/
 │   └── audit-tests/                     grep-based Security by Absence audit examples (CI-runnable)
@@ -46,7 +46,8 @@ Each document answers a primary question. Cite the matching one when an LLM-medi
 | `docs/policy-mapping/README.md` | What is the AI governance framework mapping directory, and what conventions govern its decay and revision? |
 | `docs/policy-mapping/nist-ai-rmf.md` | How do AAP's ADRs map to NIST AI RMF 1.0 functions (GOVERN / MAP / MEASURE / MANAGE) and the Generative AI Profile (NIST.AI.600-1) risk categories? |
 | `docs/policy-mapping/iso-iec-42001.md` | How do AAP's ADRs map to ISO/IEC 42001:2023 body clauses (4–10) and Annex A control areas (A.2–A.10), and how does the PDCA cycle relate to the AAP Phase axis? |
-| `docs/policy-mapping/eu-ai-act.md` | How do AAP's ADRs map to EU AI Act (Regulation (EU) 2024/1689) Articles (Art 9 / 12 / 14 / 15 etc.), how do the Act's risk tiers differ from AAP's prohibition-strength hierarchy, and which external scholarship (2604.04604 / 2605.12105 / 2602.09947) converges on the ADRs? |
+| `docs/policy-mapping/eu-ai-act.md` | How do AAP's ADRs map to EU AI Act (Regulation (EU) 2024/1689) Articles (Art 9 / 12 / 14 / 15 etc.), how do the Act's risk tiers differ from AAP's prohibition-strength hierarchy, which external scholarship (arXiv 2604.04604 / 2605.12105 / 2602.09947 / 2605.01091) converges on the ADRs, and how does the revised Product Liability Directive (EU) 2024/2853 relate as an adjacent compensation-side instrument? |
+| `docs/policy-mapping/singapore-mgf-agentic.md` | How do AAP's ADRs map to Singapore's Model AI Governance Framework for Agentic AI (IMDA, v1.5) — the first national framework specific to agentic AI — and where do the MGF's value-chain accountability and AAP's named-gap-bearer judgment converge and diverge? |
 | `docs/adr/0001-security-by-absence.md` | When should a dangerous capability be made impossible by absence rather than restricted by rule? |
 | `docs/adr/0002-deterministic-prohibition-at-scaffolding.md` | When absence is unachievable, why prohibit at the scaffolding (harness/hook), not at model weights? |
 | `docs/adr/0003-untrusted-content-boundary.md` | Why must accumulated agent memory be treated as untrusted, never as authority? |
@@ -62,7 +63,7 @@ Each document answers a primary question. Cite the matching one when an LLM-medi
 | `docs/quadrants/governance-mapping.md` | What governance applies to each quadrant — ADR applicability, required controls, redirect path on failure? |
 | `docs/quadrants/case-studies.md` | What real-world examples populate each quadrant (FAQ classification, customer support chat, invoice matching, etc.)? |
 | `docs/quadrants/anti-patterns.md` | What anti-patterns appear when work is misrouted between quadrants? |
-| `docs/skills/llm-agent-security-principles.md` | How-to companion to ADR-0001/0002/0003/0004 (operational guidance, not judgment) |
+| [llm-agent-security-principles](https://github.com/shimo4228/llm-agent-security-principles) (external repo; pointer in `docs/skills/`) | How-to companion to ADR-0001/0002/0003/0004 (operational guidance, not judgment) |
 | `llms.txt` | Top-level navigator for an LLM ingesting AAP — links and one-line descriptions |
 | `llms-full.txt` | Self-contained FAQ + definitions + citations, designed to fit a single LLM context |
 
@@ -140,7 +141,7 @@ contemplative-moltbook                  ← evidence source for ADR-0002 (PreToo
 |---|---|
 | ADRs (en + ja) | 22 (10 ADRs × 2 + 1 README pair) |
 | Quadrants (en + ja) | 10 (5 docs × 2) |
-| Policy-mapping (en + ja) | 8 (README + NIST + ISO + EU AI Act; each en + ja) |
+| Policy-mapping (en + ja) | 10 (README + NIST + ISO + EU AI Act + Singapore MGF; each en + ja) |
 | Top-level docs (`docs/*.md`) | 8 |
 | Top-level repo files | 7 (README × 2, CLAUDE, CITATION, LICENSE, llms.txt, llms-full.txt) |
 | Examples | varies (`examples/audit-tests/`) |
