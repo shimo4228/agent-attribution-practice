@@ -5,6 +5,7 @@
     "sameAs": {"@id": "https://schema.org/sameAs", "@type": "@id"},
     "about": {"@id": "https://schema.org/about", "@type": "@id"},
     "isBasedOn": {"@id": "https://schema.org/isBasedOn", "@type": "@id"},
+    "isPartOf": {"@id": "https://schema.org/isPartOf", "@type": "@id"},
     "relatedTo": {"@id": "https://schema.org/relatedTo", "@type": "@id"},
     "ResearchLine": "shimo:ResearchLine",
     "EcosystemRepo": "shimo:EcosystemRepo",
@@ -48,6 +49,13 @@
     "narrativePosition": "shimo:narrativePosition"
   },
   "@graph": [
+    {
+      "@id": "https://github.com/shimo4228/shimo4228",
+      "@type": "EcosystemRepo",
+      "name": "Research Program Hub",
+      "description": "Hub repository of the shimo4228 research program; its graph.jsonld is the canonical relationship map of the research ecosystem, federating the Agent Attribution Practice line with its sibling and downstream lines.",
+      "url": "https://github.com/shimo4228/shimo4228"
+    },
     {
       "@id": "https://github.com/shimo4228/agent-attribution-practice#knowledge-graph",
       "@type": ["Dataset", "CreativeWork"],
@@ -95,6 +103,7 @@
       "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"},
       "license": "https://opensource.org/licenses/MIT",
       "inLanguage": ["en", "ja"],
+      "isPartOf": "https://github.com/shimo4228/shimo4228",
       "siblingOf": [
         "https://doi.org/10.5281/zenodo.19200726",
         "https://doi.org/10.5281/zenodo.19212118",
