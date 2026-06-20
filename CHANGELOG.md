@@ -15,6 +15,7 @@ EU AI Act mapping added, completing the governance-framework triad in `docs/poli
 
 ### Changed
 
+- `README.md` / `README.ja.md`: added a human-visible research-program hub back-link at the top of the "Relationship to other projects" / "他プロジェクトとの関係" section, pointing to `shimo4228/shimo4228`. Navigation only — no ADR, no machine-layer (`llms.txt` / `graph.jsonld`) change.
 - `docs/policy-mapping/README.md` (+ `.ja.md`): EU AI Act added to the files table; the deferred-frameworks note narrowed to OECD AI Principles only.
 - `graph.jsonld`: new EU AI Act `PolicyFramework` node + EU AI Act mapping-document node; `eu-ai-act.md` appended to all ten ADRs' `mappedToFrameworkIn` and to the policy-mapping Collection `hasPart`; the directory node's deferred-list description narrowed to OECD.
 - Governance-framework coverage refreshed across `README.md` / `README.ja.md`, `llms.txt`, `llms-full.txt`, and `docs/CODEMAPS/architecture.md` (file-count snapshot 62 → 64) to show EU AI Act now covered and OECD deferred.

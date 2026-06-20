@@ -140,6 +140,8 @@ grounding lives in the essay itself.
 
 This repository is a **sibling** to two existing projects, not a fork:
 
+The ecosystem hub — a human-readable index of all five research lines — is [`shimo4228/shimo4228`](https://github.com/shimo4228/shimo4228).
+
 - **[`contemplative-agent`](https://github.com/shimo4228/contemplative-agent)** —
   the running implementation. Each ADR here corresponds to one or more
   ADRs there, with project-specific details stripped out.

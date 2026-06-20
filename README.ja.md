@@ -134,6 +134,8 @@ follow-up (4 象限 triage → 語彙の診断と principled attribution gap →
 
 この repo は既存 2 プロジェクトの **sibling** (fork ではない):
 
+エコシステムの hub（5 つの研究ラインの人間向け索引）は [`shimo4228/shimo4228`](https://github.com/shimo4228/shimo4228)。
+
 - **[`contemplative-agent`](https://github.com/shimo4228/contemplative-agent)** —
   運用中の実装。ここの各 ADR はそちらの対応 ADR を、プロジェクト固有の
   詳細を剥がして再表現したもの。
