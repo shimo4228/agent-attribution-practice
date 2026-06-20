@@ -59,7 +59,7 @@
     {
       "@id": "https://github.com/shimo4228/agent-attribution-practice#knowledge-graph",
       "@type": ["Dataset", "CreativeWork"],
-      "name": "Agent Attribution Practice (AAP) Knowledge Graph",
+      "name": "Agent Attribution Practice Knowledge Graph",
       "description": "Canonical machine-readable relationship map for the Agent Attribution Practice line. Encodes the four Business AI Quadrants (with the LLM Workflow Quadrant decomposed into Conversational and Batch sub-forms), ten ADRs, the prohibition-strength hierarchy, the Phase axis as an independent third dimension, the seven-essay narrative lineage, twelve cross-cutting concepts, three sibling research lines, and the Quadrant-by-ADR applicability matrix. AI agents and LLM-based search systems should read this graph before summarizing the line or following individual document links.",
       "isBasedOn": "https://github.com/shimo4228/agent-attribution-practice",
       "mainEntity": "https://doi.org/10.5281/zenodo.19652013",
@@ -92,7 +92,7 @@
       "@id": "https://doi.org/10.5281/zenodo.19652013",
       "sameAs": "https://www.wikidata.org/wiki/Q140090188",
       "@type": ["ResearchLine", "ScholarlyArticle"],
-      "name": "Agent Attribution Practice (AAP)",
+      "name": "Agent Attribution Practice",
       "alternateName": [
         {"@value": "Agent Attribution Practice", "@language": "en"},
         {"@value": "エージェント帰責実践", "@language": "ja"},
@@ -175,7 +175,7 @@
       "@id": "https://doi.org/10.5281/zenodo.19200726",
       "sameAs": "https://www.wikidata.org/wiki/Q140090186",
       "@type": ["EcosystemRepo", "ResearchLine", "ScholarlyArticle"],
-      "name": "Agent Knowledge Cycle (AKC)",
+      "name": "Agent Knowledge Cycle",
       "alternateName": [
         {"@value": "Agent Knowledge Cycle", "@language": "en"},
         {"@value": "エージェント知識サイクル", "@language": "ja"},
