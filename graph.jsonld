@@ -95,7 +95,8 @@
       "name": "Agent Attribution Practice (AAP)",
       "alternateName": [
         {"@value": "Agent Attribution Practice", "@language": "en"},
-        {"@value": "エージェント帰責実践", "@language": "ja"}
+        {"@value": "エージェント帰責実践", "@language": "ja"},
+        "AAP"
       ],
       "description": "Harness-neutral ADRs on accountability distribution in autonomous AI agents — what to prohibit, where the prohibition lives, and who answers after failure. Paired with four Business AI Quadrants as the diagnostic frame for routing work to the architecture preserving accountability distribution. Refers to a practice.",
       "identifier": "10.5281/zenodo.19652013",
@@ -177,7 +178,8 @@
       "name": "Agent Knowledge Cycle (AKC)",
       "alternateName": [
         {"@value": "Agent Knowledge Cycle", "@language": "en"},
-        {"@value": "エージェント知識サイクル", "@language": "ja"}
+        {"@value": "エージェント知識サイクル", "@language": "ja"},
+        "AKC"
       ],
       "description": "Mechanism-side sibling capturing the six-phase knowledge cycle (Research, Extract, Curate, Promote, Measure, Maintain) that keeps an agent's skills, rules, and documentation aligned with reality. AKC v2.0.0 (2026-04-19) repositioned itself as mechanism-only; the archived AKC v1.x security triplet was re-expressed in AAP plus five additional ADRs. AKC covers how knowledge flows; AAP covers how attribution distributes — complementary and independent.",
       "identifier": "10.5281/zenodo.19200726",
@@ -192,7 +194,8 @@
       "name": "Contemplative Agent",
       "alternateName": [
         {"@value": "contemplative-agent", "@language": "en"},
-        {"@value": "contemplative-agent", "@language": "ja"}
+        {"@value": "contemplative-agent", "@language": "ja"},
+        "CA"
       ],
       "description": "The running implementation layer from which AAP's harness-neutral judgments were extracted before being re-expressed stripped of project identifiers. Autonomous AI agents grounded in four contemplative axioms; source-of-truth for the operational practice AAP records as ADRs.",
       "identifier": "10.5281/zenodo.19212118",
@@ -207,7 +210,8 @@
       "name": "Authorship Strategy",
       "alternateName": [
         {"@value": "Authorship Strategy", "@language": "en"},
-        {"@value": "著者戦略", "@language": "ja"}
+        {"@value": "著者戦略", "@language": "ja"},
+        "AS"
       ],
       "description": "Normative framework, tactical catalog, and empirical baseline for being a known author under AI-mediated diffusion. Vocabulary sibling: shares the word 'attribution' with disjoint meaning — Authorship Strategy means credit for source, AAP means accountability for action. The two meanings are intentionally kept separate; do not conflate.",
       "identifier": "10.5281/zenodo.20263316",
@@ -222,7 +226,8 @@
       "name": "Attention, Not Self",
       "alternateName": [
         {"@value": "Attention, Not Self", "@language": "en"},
-        {"@value": "アテンション、ノット・セルフ", "@language": "ja"}
+        {"@value": "アテンション、ノット・セルフ", "@language": "ja"},
+        "ANS"
       ],
       "description": "Cross-disciplinary inquiry contrasting three Buddhist Abhidharma traditions (Theravāda, Sarvāstivāda, Yogācāra) with computational phenomenology. Cross-cutting sibling: specifies no agent mechanism or practice; occupies the agent-design lines' framing layer rather than their implementation layer.",
       "identifier": "10.5281/zenodo.20262112",
