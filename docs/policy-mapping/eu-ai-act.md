@@ -3,7 +3,7 @@ Language: English | [日本語](eu-ai-act.ja.md)
 # EU AI Act — mapping to AAP ADRs
 
 **Status:** Informational, time-bound (2026 Q2 reading)
-**Date:** 2026-06-03
+**Date:** 2026-06-12
 **Framework version:** Regulation (EU) 2024/1689 (Artificial
 Intelligence Act), in force 2024-08-01. Read against the
 application-date schedule current at time of writing: prohibited
@@ -345,7 +345,7 @@ mapping above remains stable.
 ## Secondary scholarship and external convergence
 
 The Act has a fast-growing secondary literature; this file is not a
-review of it. Three 2026 sources are noted only because they
+review of it. Four 2026 sources are noted only because they
 independently arrive at — or supply mechanism for — judgments AAP
 records from implementation. They are *not* part of the AAP ADR
 lineage (the ADRs were extracted from `contemplative-agent`
@@ -383,6 +383,66 @@ disclaimer.
   **ADR-0002** (deterministic prohibition at the scaffolding layer)
   and **ADR-0003** (untrusted-content boundary) reached
   independently from operation.
+- **Butt, Iqbal & Iqbal, *Governing What the EU AI Act Excludes:
+  Accountability for Autonomous AI Agents in Smart City Critical
+  Infrastructure* (arXiv:2605.01091, 2026-05).** Examines the Act's
+  **Annex III point 2** carve-out, under which safety-component AI
+  in critical infrastructure sits outside the **Art 86** right to
+  explanation and the **Art 27** fundamental-rights impact
+  assessment, through a smart-city scenario: a traffic-signal agent
+  and a power-management agent each individually compliant with
+  their provider/deployer obligations, whose *interacting* behaviour
+  on the same corridor produces a composite consequence no resident
+  can demand an explanation for. Its core observation — a bounded AI
+  system can be individually assessed, but a set of interacting
+  autonomous agents cannot — is an independent, regulation-side
+  description of the **attribution gap** AAP records from operation
+  ([ADR-0009](../adr/0009-triage-before-autonomy.md);
+  [`../glossary.md`](../glossary.md)): the gap is structural, not a
+  compliance defect of any single actor. The paper's proposed remedy
+  (a layered governance architecture for multi-agent urban
+  deployments) is *mechanism* and stays in this mapping layer, per
+  the repository's thesis.
+
+## Adjacent EU instrument — revised Product Liability Directive
+
+One adjacent EU instrument is noted here because it legislates on
+the question AAP's vocabulary names, from the *compensation* side
+rather than the *obligation* side. **Directive (EU) 2024/2853**
+(revised Product Liability Directive; in force December 2024,
+applicable to products placed on the market or put into service
+from 2026-12-09) brings software — explicitly including AI systems
+within the meaning of Regulation (EU) 2024/1689 (Recital 13) —
+inside the "product" definition (Art 4(1)) and applies strict
+defect liability to it. Two of its design choices converge with
+AAP judgments:
+
+- **Post-market control extends the liability window (Art
+  7(2)(e)).** Defectiveness is assessed not only at the moment of
+  placing on the market but, *where the manufacturer retains
+  control over the product after that moment* (e.g. via updates),
+  at the moment the product left the manufacturer's control. The
+  factory-gate principle is abandoned for continuously updated
+  software. This is a liability-side anchor for the design /
+  operation distinction **ADR-0010** records as load-bearing: the
+  legislator, too, found that the deployment moment cannot close
+  the accountability question for systems that keep changing in
+  operation.
+- **A pre-named bearer for the residual gap.** With the proposed AI
+  Liability Directive withdrawn (Commission 2025 work programme),
+  the PLD is the principal EU-level compensation route for AI harm,
+  and it routes that harm to a subject named *in advance* — the
+  manufacturer — rather than located post-incident. This is an
+  institutional instance of the judgment **ADR-0009** records: the
+  attribution gap is absorbed by a subject identified before
+  deployment, not discovered after the failure.
+
+The convergence has a limit worth stating: strict liability routes
+*compensation*; it does not produce the causal *reconstruction*
+**ADR-0006** asks for. A regime can pay damages without anyone ever
+establishing which agent, under which instruction, caused the harm.
+Compensation routing and attribution reconstruction are different
+problems, and the PLD addresses only the first.
 
 ## Caveat
 

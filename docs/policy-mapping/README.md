@@ -3,7 +3,7 @@ Language: English | [日本語](README.ja.md)
 # AI governance framework mapping
 
 **Status:** Informational, time-bound (2026 Q2 reading)
-**Date:** 2026-06-03
+**Date:** 2026-06-12
 **Maintenance posture:** This directory decays. The ADRs do not.
 
 ## Purpose
@@ -11,10 +11,10 @@ Language: English | [日本語](README.ja.md)
 The ADRs in this repository record judgments about how attribution
 should be distributed in autonomous AI agent systems. National and
 international AI governance frameworks (NIST AI RMF, ISO/IEC 42001,
-EU AI Act, OECD AI Principles) ship the *governance framework
-layer* — control catalogs, management-system requirements, risk
-tiers, principle statements — that those judgments can be read
-against. This directory tracks, at the time of writing, how AAP's
+EU AI Act, Singapore's MGF for Agentic AI, OECD AI Principles) ship
+the *governance framework layer* — control catalogs,
+management-system requirements, risk tiers, practice catalogues,
+principle statements — that those judgments can be read against. This directory tracks, at the time of writing, how AAP's
 ten ADRs and four Business AI Quadrants relate to specific clauses
 of each framework.
 
@@ -39,6 +39,7 @@ engineer / architect) and decay at different cadences.
 | [nist-ai-rmf.md](nist-ai-rmf.md) (+ [ja](nist-ai-rmf.ja.md)) | NIST AI Risk Management Framework | RMF 1.0 (2023-01) + Generative AI Profile NIST.AI.600-1 (2024-07) | yearly (GAI Profile expected to revise more often than core RMF) |
 | [iso-iec-42001.md](iso-iec-42001.md) (+ [ja](iso-iec-42001.ja.md)) | ISO/IEC 42001 AI Management System | ISO/IEC 42001:2023 | multi-year (formal ISO revision cycle) |
 | [eu-ai-act.md](eu-ai-act.md) (+ [ja](eu-ai-act.ja.md)) | EU AI Act (Regulation (EU) 2024/1689) | in force 2024-08-01; phased application through 2027 | per delegated/implementing act, harmonised standard, or Commission guideline; else yearly (faster decay through the 2026–2027 phase-in) |
+| [singapore-mgf-agentic.md](singapore-mgf-agentic.md) (+ [ja](singapore-mgf-agentic.ja.md)) | Singapore Model AI Governance Framework for Agentic AI (IMDA) | v1.5 (2026-05-20, updated 2026-06-05); first released 2026-01-22 | per MGF version (IMDA calls it a living document; v1.0→v1.5 took under four months — fastest decay in this directory); else yearly |
 
 The OECD AI Principles mapping is deferred to a later release
 (its decay cadence and granularity differ enough from the
