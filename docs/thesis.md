@@ -96,6 +96,18 @@ not architectural. The ten ADRs plus the four quadrants form a
 route the work to where those answers apply. See
 [`quadrants/`](quadrants/) for the navigator.
 
+The same un-automatable remainder is reached from a second, epistemic
+direction. This thesis argues from accountability — consequences
+require a bearer, so a human is named in advance. The companion
+*Harness Alignment* paper argues from operator intent: intent has no
+verifier outside the operator, so any automated intent-check freezes
+intent into a specification and collapses to correctness work, leaving
+the same residue — a human gate on the writes that shape future
+behavior (Shimomoto 2026, [DOI 10.5281/zenodo.20578272](https://doi.org/10.5281/zenodo.20578272)).
+Accountability distribution is the normative twin of that epistemic
+remainder; neither reduces to the other. Recorded as a citation
+surface, not a derivation.
+
 ## Social-consequence corollary
 
 The judgments above are framed as internal control: what to constrain,

@@ -53,6 +53,12 @@
       "scheme": "doi"
     },
     {
+      "identifier": "10.5281/zenodo.20578272",
+      "relation": "references",
+      "resource_type": "publication-workingpaper",
+      "scheme": "doi"
+    },
+    {
       "identifier": "10.5281/zenodo.20263316",
       "relation": "isReferencedBy",
       "resource_type": "software",

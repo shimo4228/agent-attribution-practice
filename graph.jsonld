@@ -910,6 +910,22 @@
       "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap"
     },
     {
+      "@id": "https://doi.org/10.5281/zenodo.20578272",
+      "sameAs": "https://www.wikidata.org/wiki/Q140090144",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Harness Alignment and Harness Drift: Why Intent, Unlike Correctness, Resists Automation",
+      "description": "Epistemic-axis sibling (AKC research line) reaching AAP's same un-automatable remainder from a different ground. AAP argues from the normative axis (consequences require a bearer, so a pre-named gap-bearer is named in advance); this paper argues from the epistemic axis (operator intent has no verifier outside the operator and moves as judgment sharpens, so any automated intent-check freezes intent into a specification and collapses to correctness work, leaving a continuous, human-gated, bidirectional residue). Its Section 3 explicitly bridges to AAP's companion paper (10.5281/zenodo.20353789): 'an epistemic axis and a normative axis leave the same un-automatable remainder: a human named in advance, built into the structure where behavior-shaping writes occur' — the convergence AAP names as the human approval gate (ADR-0005) and the pre-named gap-bearer (ADR-0008/0009). Completes the previously one-directional federation: the paper cited AAP; AAP now cites back. Citation surface only; AAP's ADR judgments and concept definitions are neither derived from nor coupled to this paper.",
+      "datePublished": "2026-06-07",
+      "author": {"@id": "https://orcid.org/0009-0002-6168-4162"},
+      "identifier": "10.5281/zenodo.20578272",
+      "url": "https://doi.org/10.5281/zenodo.20578272",
+      "isPartOf": "https://doi.org/10.5281/zenodo.19200726",
+      "about": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/accountability-distribution",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer"
+      ]
+    },
+    {
       "@id": "https://arxiv.org/abs/2210.03629",
       "sameAs": "https://www.wikidata.org/wiki/Q121160329",
       "@type": ["ExternalReference", "ScholarlyArticle"],
