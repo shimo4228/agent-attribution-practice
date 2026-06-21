@@ -53,7 +53,7 @@
       "@id": "https://github.com/shimo4228/shimo4228",
       "@type": "EcosystemRepo",
       "name": "Research Program Hub",
-      "description": "Hub repository of the shimo4228 research program; its graph.jsonld is the canonical relationship map of the research ecosystem, federating the Agent Attribution Practice line with its sibling and downstream lines.",
+      "description": "Hub repository of the shimo4228 research ecosystem; its graph.jsonld is the canonical relationship map of the research ecosystem, federating the Agent Attribution Practice line with its sibling and downstream lines.",
       "url": "https://github.com/shimo4228/shimo4228"
     },
     {
