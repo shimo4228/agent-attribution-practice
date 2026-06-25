@@ -108,6 +108,26 @@ Accountability distribution is the normative twin of that epistemic
 remainder; neither reduces to the other. Recorded as a citation
 surface, not a derivation.
 
+The non-removability ADR-0009 records is corroborated from a third,
+formal direction. A 2026 impossibility theorem (Tibebu & Shemtaga,
+*The Accountability Horizon*,
+[arXiv:2604.07778](https://arxiv.org/abs/2604.07778)) proves an
+Accountability Incompleteness result: once a human-agent collective's
+compound autonomy exceeds a computable threshold and its interaction
+graph contains a feedback cycle involving both human and artificial
+agents, no governance framework can jointly satisfy Attributability,
+a Foreseeability bound, Non-Vacuity, and Completeness. This turns the
+gap's non-removability from a contingent engineering limitation into
+a mathematical necessity, and shows the only escape is to relax
+Attributability or Foreseeability — which is exactly what AAP's
+pre-named gap-bearer does: a named subject bears the gap without an
+individual causal contribution (role responsibility). The theorem's
+feedforward exception (no impossibility absent a mixed human-agent
+feedback cycle) parallels AAP's triage and Phase axis — architectures
+that avoid the autonomous loop avoid the gap. Recorded as a citation
+surface, not a derivation; the ADR judgments were extracted from
+operation, not from this formalism.
+
 ## Social-consequence corollary
 
 The judgments above are framed as internal control: what to constrain,

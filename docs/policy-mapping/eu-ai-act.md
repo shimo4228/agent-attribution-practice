@@ -345,7 +345,7 @@ mapping above remains stable.
 ## Secondary scholarship and external convergence
 
 The Act has a fast-growing secondary literature; this file is not a
-review of it. Four 2026 sources are noted only because they
+review of it. Eight sources (2025–2026) are noted only because they
 independently arrive at — or supply mechanism for — judgments AAP
 records from implementation. They are *not* part of the AAP ADR
 lineage (the ADRs were extracted from `contemplative-agent`
@@ -403,6 +403,53 @@ disclaimer.
   (a layered governance architecture for multi-agent urban
   deployments) is *mechanism* and stays in this mapping layer, per
   the repository's thesis.
+- **Chiodo et al., *Formalising Human-in-the-Loop: Computational
+  Reductions, Failure Modes, and Legal-Moral Responsibility*
+  (arXiv:2505.10426, 2025-05; ICLR 2026).** Formalizes
+  human-in-the-loop as an oracle-machine reduction and separates
+  *trivial monitoring*, *many-one* (a single end-point approval) and
+  *Turing* (multi-round interaction) reductions, arguing that only
+  the Turing type discharges the *meaningful, effective oversight*
+  **Art 14** and GDPR **Art 22** require, and that the many-one
+  approval gate is the pattern most prone to becoming a moral crumple
+  zone. This converges with **ADR-0005** (human approval gate) and
+  sharpens the [`../glossary.md`](../glossary.md) *moral crumple
+  zone* entry: the gate's *shape*, not its mere presence, decides
+  whether oversight is genuine.
+- **Kaptein, Khan & Podstavnychy, *Runtime Governance for AI Agents:
+  Policies on Paths* (arXiv:2603.16586, 2026-03).** Formalizes
+  compliance as a *path-dependent* policy evaluated over the
+  execution path so far (not the next action in isolation) and a
+  graded **Monitor / Soft-enforcement / Hard-block** enforcement
+  model. The graded model is *mechanism* for the prohibition-strength
+  hierarchy **ADR-0002** records and for the **Art 14** oversight
+  **ADR-0005** asks for; OWASP's *"autonomy is a feature to be
+  earned, not a default"* is independent adoption of the same
+  graded-prohibition idea. Mechanism stays in this layer, not the ADR
+  body.
+- **Uchibeke, *Before the Tool Call: Deterministic Pre-Action
+  Authorization for Autonomous AI Agents* (arXiv:2603.20953,
+  2026-03).** Proposes the Open Agent Passport: a deterministic
+  policy-enforcement point that intercepts a tool call *before*
+  execution (ALLOW / DENY / REQUIRE_APPROVAL / MASK) and emits a
+  cryptographic audit trail, reported to move a permissive-policy
+  attack success rate of 74.6% to 0% under a restrictive policy.
+  Recorded as *mechanism* for **ADR-0005** (human approval gate) and
+  **ADR-0006** (causal traceability) under **Art 14**: it relocates
+  the responsible actor from probabilistic model output to an
+  explicit policy enforcer. The shipping mechanism (a DSL-based
+  enforcement point) stays in this layer; the judgment is the ADR.
+- **Storf et al., *Constitutional Black-Box Monitoring for Scheming
+  in LLM Agents* (arXiv:2603.00829, 2026-02; ICML 2026).** Detects
+  agent *scheming* from externally observable tool calls, queries and
+  outputs alone — deliberately excluding chain-of-thought — at
+  partial AUROC 0.85+. This is quantitative grounding for **ADR-0006**
+  (causal traceability) and for AAP's *non-invasion posture*:
+  accountability built on observable behaviour rather than
+  internal-state inspection, consistent with the **Art 72**
+  post-market behavioural-monitoring duty. The paper's own epistemic
+  limit — a sufficiently optimized agent can be trained to look clean
+  externally — is recorded as the boundary condition, not relaxed.
 
 ## Adjacent EU instrument — revised Product Liability Directive
 

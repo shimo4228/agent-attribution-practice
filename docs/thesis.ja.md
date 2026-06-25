@@ -106,6 +106,23 @@ accountability distribution はその epistemic な残余の normative な双子
 あり、どちらも他方に還元されない。derivation ではなく citation surface
 として記録する。
 
+ADR-0009 が記録する非除去性は、第三の formal な方向からも裏付けられる。
+2026 年の不可能性定理 (Tibebu & Shemtaga, *The Accountability Horizon*,
+[arXiv:2604.07778](https://arxiv.org/abs/2604.07778)) は Accountability
+Incompleteness を証明する: human-agent collective の compound autonomy
+が計算可能な閾値を超え、その interaction graph が human と artificial
+agent の双方を含む feedback cycle を持つと、いかなる governance framework
+も Attributability・Foreseeability bound・Non-Vacuity・Completeness を
+同時には満たせない。これは gap の非除去性を、偶発的な engineering 上の
+限界から数学的必然へと転じ、唯一の逃げ道が Attributability か
+Foreseeability を緩めることだと示す — それは AAP の pre-named gap-bearer
+が行うことそのものである: 名指された主体が、個別の因果的寄与なしに gap
+を引き受ける (role responsibility)。定理の feedforward 例外 (human-agent
+混合の feedback cycle がなければ不可能性は生じない) は AAP の triage と
+Phase 軸に対応する — autonomous loop を避ける architecture は gap を
+避ける。derivation ではなく citation surface として記録する; ADR の
+judgment は運用から抽出されたものであって、この formalism からではない。
+
 ## 社会的帰結の corollary
 
 上記の判断は内部統制として枠づけられている — 何を制約するか、誰が

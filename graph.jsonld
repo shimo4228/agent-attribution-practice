@@ -996,6 +996,46 @@
       "identifier": "arXiv:2605.12105",
       "url": "https://arxiv.org/abs/2605.12105"
     },
+    {
+      "@id": "https://arxiv.org/abs/2505.10426",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Formalising Human-in-the-Loop: Computational Reductions, Failure Modes, and Legal-Moral Responsibility",
+      "description": "Formalizes human-in-the-loop as an oracle-machine reduction and separates trivial monitoring, many-one (a single end-point approval) and Turing (multi-round interaction) reductions, arguing only the Turing type discharges the meaningful, effective oversight EU AI Act Art 14 and GDPR Art 22 require, and that the many-one approval gate is the pattern most prone to becoming a moral crumple zone. Recorded in the EU AI Act mapping's secondary-scholarship note as external convergence with ADR-0005 (human approval gate) and as a sharpening of the moral-crumple-zone concept: the gate's shape, not its presence, decides whether oversight is genuine. Citation surface, not ADR lineage.",
+      "datePublished": "2025-05-15",
+      "author": "Chiodo, M. et al.",
+      "identifier": "arXiv:2505.10426",
+      "url": "https://arxiv.org/abs/2505.10426"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2603.16586",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Runtime Governance for AI Agents: Policies on Paths",
+      "description": "Formalizes compliance as a path-dependent policy evaluated over the execution path so far (not the next action in isolation) and a graded Monitor / Soft-enforcement / Hard-block enforcement model. Recorded in the EU AI Act mapping's secondary-scholarship note as external mechanism for ADR-0002 (the prohibition-strength hierarchy — graded enforcement is a known design family) and ADR-0005 (human approval gate under Art 14); OWASP's 'autonomy is a feature to be earned, not a default' is independent adoption of the same graded-prohibition idea. Citation surface, not ADR lineage.",
+      "datePublished": "2026-03-17",
+      "author": "Kaptein, M., Khan, V.-J. & Podstavnychy, A.",
+      "identifier": "arXiv:2603.16586",
+      "url": "https://arxiv.org/abs/2603.16586"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2603.20953",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Before the Tool Call: Deterministic Pre-Action Authorization for Autonomous AI Agents",
+      "description": "Proposes the Open Agent Passport: a deterministic policy-enforcement point that intercepts a tool call before execution (ALLOW / DENY / REQUIRE_APPROVAL / MASK) and emits a cryptographic audit trail, reported to move a permissive-policy attack success rate of 74.6% to 0% under a restrictive policy. Recorded in the EU AI Act mapping's secondary-scholarship note as mechanism for ADR-0005 (human approval gate) and ADR-0006 (causal traceability) under Art 14: it relocates the responsible actor from probabilistic model output to an explicit policy enforcer. Citation surface, not ADR lineage.",
+      "datePublished": "2026-03-21",
+      "author": "Uchibeke, U.",
+      "identifier": "arXiv:2603.20953",
+      "url": "https://arxiv.org/abs/2603.20953"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2603.00829",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Constitutional Black-Box Monitoring for Scheming in LLM Agents",
+      "description": "Detects agent scheming from externally observable tool calls, queries and outputs alone — deliberately excluding chain-of-thought — at partial AUROC 0.85+. Recorded in the EU AI Act mapping's secondary-scholarship note as quantitative grounding for ADR-0006 (causal traceability) and AAP's non-invasion posture: accountability built on observable behaviour rather than internal-state inspection, consistent with the Art 72 post-market behavioural-monitoring duty. The paper's own epistemic limit — a sufficiently optimized agent can be trained to look clean externally — is recorded as the boundary condition, not relaxed. Citation surface, not ADR lineage.",
+      "datePublished": "2026-02-28",
+      "author": "Storf, S. et al.",
+      "identifier": "arXiv:2603.00829",
+      "url": "https://arxiv.org/abs/2603.00829"
+    },
 
     {
       "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/thesis.md",
