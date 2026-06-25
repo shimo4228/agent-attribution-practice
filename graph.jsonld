@@ -1036,6 +1036,43 @@
       "identifier": "arXiv:2603.00829",
       "url": "https://arxiv.org/abs/2603.00829"
     },
+    {
+      "@id": "https://arxiv.org/abs/2601.23157",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "No More, No Less: Least-Privilege Language Models",
+      "description": "Redefines privilege in a language model as reachable internal computation during the forward pass, and shrinks the model's accessible function class at deployment time (Nested Least-Privilege Networks) without retraining or running multiple model deployments — least privilege realized as capability-management over a model that already possesses the capability. Recorded as a citation surface to mark a framing difference with ADR-0001 (Security by Absence), not as corroboration or lineage. The two address capability-induced risk at different layers: least-privilege LMs minimize which internal computation is reachable in a model that has the capability; Security by Absence operates upstream, deriving the capability set requirements-first from the work a role must actually do, so a capability that would otherwise need suppressing is never built. In AAP's originating implementation the suppress-versus-remove trade-off never arose — absence is a consequence of correctly scoped requirements, not a choice among neutralization mechanisms — and the same requirements-first reasoning later seeded the LLM-workflow and Phase quadrants. Non-adversarial positioning: a different intervention point, not a ranking. AAP's ADR judgments are neither derived from nor modified by this paper.",
+      "datePublished": "2026-01-30",
+      "author": "Rauba, P., Seputis, D., Vanagas, P. & van der Schaar, M.",
+      "identifier": "arXiv:2601.23157",
+      "url": "https://arxiv.org/abs/2601.23157"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2604.05150",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Compiled AI: Deterministic Code Generation for LLM-Based Workflow Automation",
+      "description": "Studies 'compiled AI': large language models generate executable code artifacts during a compilation phase, after which workflows execute deterministically without further model invocation (strictly one-shot; the paper places it alongside antecedents DSPy and LLM+P and contributes an enterprise/healthcare systems study, a four-stage generation-and-validation pipeline, and an evaluation framework reporting determinism, auditability, and ~57x token reduction at scale). Recorded as a citation surface, not as a new AAP concept. In AAP's frame it reduces to an external deployed instance of the Phase axis: applying Phase Separation (ADR-0010) at the operation phase so the operation-phase artifact lands in the Script Quadrant — deterministic scripts without LLMs, out of scope for the AAP ADRs, with failure routing to the code author by construction. The runtime artifact is therefore not the LLM Workflow Quadrant (which calls the LLM as a bounded runtime step) but the Script Quadrant it crosses into; the crossing is the phase-crossing decision ADR-0010 names. The paper emphasizes auditability but does not name who is accountable for the compiled judgment; AAP's answer is its existing one — the design-phase author owns the judgment crystallized into the artifact. Sibling in spirit to the Open Agent Passport (arXiv:2603.20953): both relocate the responsible actor from probabilistic runtime output toward a determinate, author-owned locus. Non-adversarial positioning; AAP introduces no new concept or quadrant from this paper, and its ADR judgments are neither derived from nor modified by it.",
+      "datePublished": "2026-04-06",
+      "author": "Trooskens, G. et al.",
+      "identifier": "arXiv:2604.05150",
+      "url": "https://arxiv.org/abs/2604.05150"
+    },
+    {
+      "@id": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB316",
+      "@type": ["ExternalReference", "Legislation"],
+      "name": "California AB-316 (Artificial intelligence: defenses)",
+      "description": "California statute, effective 2026-01-01, that bars a defendant who developed, modified, or used an AI system from asserting as a defense that the AI autonomously caused the plaintiff's harm; it reaches the whole supply chain (foundation-model developer, fine-tuner, integrator, deploying enterprise) and does not itself create strict liability — the ordinary causation, foreseeability, and comparative-fault defenses remain. Recorded as a citation surface, not as ADR lineage. It is a binding legal corroboration of judgments AAP records from implementation: that autonomy is not a liability shield, and that an identifiable subject must answer rather than the blame dissolving into the system (ADR-0008 one named accountable operator; ADR-0009 a gap-bearer named in advance). The convergence has the same limit the repository already states for the EU Product Liability Directive: removing the 'the AI did it' defense routes responsibility to a named human, but it does not by itself produce the causal reconstruction ADR-0006 asks for — eliminating a defense and reconstructing which agent under which instruction caused the harm are different problems. AAP's ADR judgments are neither derived from nor modified by this statute.",
+      "datePublished": "2026-01-01",
+      "identifier": "California AB-316",
+      "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB316"
+    },
+    {
+      "@id": "https://btlj.org/2026/06/multi-agent-ai-is-outpacing-the-liability-frameworks-built-for-single-agent-systems/",
+      "@type": ["ExternalReference", "Article"],
+      "name": "Multi-Agent AI is Outpacing the Liability Frameworks Built for Single-Agent Systems",
+      "description": "Legal-scholarship analysis (Berkeley Technology Law Journal, 2026-06) arguing that the property distinguishing multi-agent AI liability from other complex-causation scenarios is a traceability gap: accountability in interconnected autonomous systems requires traceability built in at the infrastructure level, because agent-to-agent interactions are typically opaque, unlogged, and not reconstructable after the fact. Recorded as a citation surface, not as ADR lineage. It is an independent legal-scholarship convergence with judgments AAP records from operation: ADR-0006 (causal traceability must be designed in, not reconstructed post-hoc) and ADR-0009 (for the autonomous-loop case the gap is structural, not an incidental compliance defect). Sibling in spirit to the Accountability Horizon impossibility theorem (arXiv:2604.07778) and the Nannini et al. EU-law reading already in this graph — three independent routes to the same structural conclusion. AAP's ADR judgments are neither derived from nor modified by this article.",
+      "datePublished": "2026-06",
+      "url": "https://btlj.org/2026/06/multi-agent-ai-is-outpacing-the-liability-frameworks-built-for-single-agent-systems/"
+    },
 
     {
       "@id": "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/thesis.md",
