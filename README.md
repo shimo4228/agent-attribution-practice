@@ -2,7 +2,7 @@ Language: English | [日本語](README.ja.md)
 
 # agent-attribution-practice
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19652013.svg)](https://doi.org/10.5281/zenodo.19652013) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/shimo4228/agent-attribution-practice) [![GitMCP](https://img.shields.io/endpoint?url=https://gitmcp.io/badge/shimo4228/agent-attribution-practice)](https://gitmcp.io/shimo4228/agent-attribution-practice) [![View Code Wiki](https://assets.codewiki.google/readme-badge/static.svg)](https://codewiki.google/github.com/shimo4228/agent-attribution-practice)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19652013.svg)](https://doi.org/10.5281/zenodo.19652013) [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/shimo4228/agent-attribution-practice) [![GitMCP](https://img.shields.io/endpoint?url=https://gitmcp.io/badge/shimo4228/agent-attribution-practice)](https://gitmcp.io/shimo4228/agent-attribution-practice)
 
 > **Agent Attribution Practice (AAP)** — ten judgments paired with four Business AI Quadrants, not a fixed framework.
 
