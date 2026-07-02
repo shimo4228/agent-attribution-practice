@@ -998,6 +998,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2505.10426",
+      "sameAs": "https://www.wikidata.org/wiki/Q140399074",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Formalising Human-in-the-Loop: Computational Reductions, Failure Modes, and Legal-Moral Responsibility",
       "description": "Formalizes human-in-the-loop as an oracle-machine reduction and separates trivial monitoring, many-one (a single end-point approval) and Turing (multi-round interaction) reductions, arguing only the Turing type discharges the meaningful, effective oversight EU AI Act Art 14 and GDPR Art 22 require, and that the many-one approval gate is the pattern most prone to becoming a moral crumple zone. Recorded in the EU AI Act mapping's secondary-scholarship note as external convergence with ADR-0005 (human approval gate) and as a sharpening of the moral-crumple-zone concept: the gate's shape, not its presence, decides whether oversight is genuine. Citation surface, not ADR lineage.",
@@ -1008,6 +1009,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2603.16586",
+      "sameAs": "https://www.wikidata.org/wiki/Q140399075",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Runtime Governance for AI Agents: Policies on Paths",
       "description": "Formalizes compliance as a path-dependent policy evaluated over the execution path so far (not the next action in isolation) and a graded Monitor / Soft-enforcement / Hard-block enforcement model. Recorded in the EU AI Act mapping's secondary-scholarship note as external mechanism for ADR-0002 (the prohibition-strength hierarchy — graded enforcement is a known design family) and ADR-0005 (human approval gate under Art 14); OWASP's 'autonomy is a feature to be earned, not a default' is independent adoption of the same graded-prohibition idea. Citation surface, not ADR lineage.",
@@ -1018,6 +1020,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2603.20953",
+      "sameAs": "https://www.wikidata.org/wiki/Q140399077",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Before the Tool Call: Deterministic Pre-Action Authorization for Autonomous AI Agents",
       "description": "Proposes the Open Agent Passport: a deterministic policy-enforcement point that intercepts a tool call before execution (ALLOW / DENY / REQUIRE_APPROVAL / MASK) and emits a cryptographic audit trail, reported to move a permissive-policy attack success rate of 74.6% to 0% under a restrictive policy. Recorded in the EU AI Act mapping's secondary-scholarship note as mechanism for ADR-0005 (human approval gate) and ADR-0006 (causal traceability) under Art 14: it relocates the responsible actor from probabilistic model output to an explicit policy enforcer. Citation surface, not ADR lineage.",
@@ -1028,6 +1031,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2603.00829",
+      "sameAs": "https://www.wikidata.org/wiki/Q140399078",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Constitutional Black-Box Monitoring for Scheming in LLM Agents",
       "description": "Detects agent scheming from externally observable tool calls, queries and outputs alone — deliberately excluding chain-of-thought — at partial AUROC 0.85+. Recorded in the EU AI Act mapping's secondary-scholarship note as quantitative grounding for ADR-0006 (causal traceability) and AAP's non-invasion posture: accountability built on observable behaviour rather than internal-state inspection, consistent with the Art 72 post-market behavioural-monitoring duty. The paper's own epistemic limit — a sufficiently optimized agent can be trained to look clean externally — is recorded as the boundary condition, not relaxed. Citation surface, not ADR lineage.",
@@ -1038,6 +1042,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2601.23157",
+      "sameAs": "https://www.wikidata.org/wiki/Q140399080",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "No More, No Less: Least-Privilege Language Models",
       "description": "Redefines privilege in a language model as reachable internal computation during the forward pass, and shrinks the model's accessible function class at deployment time (Nested Least-Privilege Networks) without retraining or running multiple model deployments — least privilege realized as capability-management over a model that already possesses the capability. Recorded as a citation surface to mark a framing difference with ADR-0001 (Security by Absence), not as corroboration or lineage. The two address capability-induced risk at different layers: least-privilege LMs minimize which internal computation is reachable in a model that has the capability; Security by Absence operates upstream, deriving the capability set requirements-first from the work a role must actually do, so a capability that would otherwise need suppressing is never built. In AAP's originating implementation the suppress-versus-remove trade-off never arose — absence is a consequence of correctly scoped requirements, not a choice among neutralization mechanisms — and the same requirements-first reasoning later seeded the LLM-workflow and Phase quadrants. Non-adversarial positioning: a different intervention point, not a ranking. AAP's ADR judgments are neither derived from nor modified by this paper.",
@@ -1048,6 +1053,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2604.05150",
+      "sameAs": "https://www.wikidata.org/wiki/Q140399082",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Compiled AI: Deterministic Code Generation for LLM-Based Workflow Automation",
       "description": "Studies 'compiled AI': large language models generate executable code artifacts during a compilation phase, after which workflows execute deterministically without further model invocation (strictly one-shot; the paper places it alongside antecedents DSPy and LLM+P and contributes an enterprise/healthcare systems study, a four-stage generation-and-validation pipeline, and an evaluation framework reporting determinism, auditability, and ~57x token reduction at scale). Recorded as a citation surface, not as a new AAP concept. In AAP's frame it reduces to an external deployed instance of the Phase axis: applying Phase Separation (ADR-0010) at the operation phase so the operation-phase artifact lands in the Script Quadrant — deterministic scripts without LLMs, out of scope for the AAP ADRs, with failure routing to the code author by construction. The runtime artifact is therefore not the LLM Workflow Quadrant (which calls the LLM as a bounded runtime step) but the Script Quadrant it crosses into; the crossing is the phase-crossing decision ADR-0010 names. The paper emphasizes auditability but does not name who is accountable for the compiled judgment; AAP's answer is its existing one — the design-phase author owns the judgment crystallized into the artifact. Sibling in spirit to the Open Agent Passport (arXiv:2603.20953): both relocate the responsible actor from probabilistic runtime output toward a determinate, author-owned locus. Non-adversarial positioning; AAP introduces no new concept or quadrant from this paper, and its ADR judgments are neither derived from nor modified by it.",
