@@ -23,7 +23,7 @@ agent-attribution-practice/
 │   ├── policy-mapping/                  2026 Q2 AI governance framework → ADR mapping (time-bound, separated from ADRs; NIST AI RMF + ISO/IEC 42001 + EU AI Act + Singapore MGF for Agentic AI)
 │   ├── adr/                             10 ADRs (English) + 10 mirrors (.ja.md) + README + template
 │   ├── quadrants/                       Business AI Quadrants navigator (5 docs × ja mirrors)
-│   ├── skills/                          pointer README → standalone skill repo (llm-agent-security-principles)
+│   ├── skills/                          pointer README → standalone skill repos (llm-agent-security-principles, agent-adoption-triage)
 │   └── CODEMAPS/                        this directory
 ├── examples/
 │   └── audit-tests/                     grep-based Security by Absence audit examples (CI-runnable)
@@ -64,6 +64,7 @@ Each document answers a primary question. Cite the matching one when an LLM-medi
 | `docs/quadrants/case-studies.md` | What real-world examples populate each quadrant (FAQ classification, customer support chat, invoice matching, etc.)? |
 | `docs/quadrants/anti-patterns.md` | What anti-patterns appear when work is misrouted between quadrants? |
 | [llm-agent-security-principles](https://github.com/shimo4228/llm-agent-security-principles) (external repo; pointer in `docs/skills/`) | How-to companion to ADR-0001/0002/0003/0004 (operational guidance, not judgment) |
+| [agent-adoption-triage](https://github.com/shimo4228/agent-adoption-triage) (external repo; pointer in `docs/skills/`) | How-to companion to ADR-0009/0010 — the `docs/quadrants/` navigator in installable skill form (operational guidance, not judgment) |
 | `llms.txt` | Top-level navigator for an LLM ingesting AAP — links and one-line descriptions |
 | `llms-full.txt` | Self-contained FAQ + definitions + citations, designed to fit a single LLM context |
 

@@ -150,10 +150,12 @@ The ecosystem hub — a human-readable index of all five research lines — is [
   AKC v2.0.0 (2026-04-19) extracted the governance triplet from itself to
   make room for this repository.
 
-The installable "how" counterpart to ADR-0001..0004 ships as a standalone
-Agent Skill repository:
+The installable "how" counterparts ship as standalone Agent Skill
+repositories:
 [llm-agent-security-principles](https://github.com/shimo4228/llm-agent-security-principles)
-(formerly hosted here under `docs/skills/`).
+for ADR-0001..0004 (formerly hosted here under `docs/skills/`), and
+[agent-adoption-triage](https://github.com/shimo4228/agent-adoption-triage)
+for ADR-0009/0010 (the `docs/quadrants/` navigator in installable form).
 
 A layered view — the three co-evolve through mutual feedback:
 

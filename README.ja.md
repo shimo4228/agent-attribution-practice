@@ -144,10 +144,12 @@ follow-up (4 象限 triage → 語彙の診断と principled attribution gap →
   sibling。AKC v2.0.0 (2026-04-19) が governance triplet を本 repo の
   ために抽出した。
 
-ADR-0001..0004 のインストール可能な「how」対応物は standalone な
-Agent Skill リポジトリとして出荷される:
+インストール可能な「how」対応物は standalone な Agent Skill
+リポジトリとして出荷される:
 [llm-agent-security-principles](https://github.com/shimo4228/llm-agent-security-principles)
-（旧 `docs/skills/` 同梱）。
+が ADR-0001..0004 に対応（旧 `docs/skills/` 同梱）、
+[agent-adoption-triage](https://github.com/shimo4228/agent-adoption-triage)
+が ADR-0009/0010 に対応（`docs/quadrants/` navigator のインストール可能形）。
 
 層構造 — 3 つは相互フィードバックで共進化する:
 
