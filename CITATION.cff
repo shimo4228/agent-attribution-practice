@@ -5,9 +5,9 @@ title: "Agent Attribution Practice: Ten Architectural Decision Records and Four 
 version: 0.6.0
 date-released: 2026-07-06
 license: MIT
-doi: 10.5281/zenodo.20361360
+doi: 10.5281/zenodo.21218784
 repository-code: "https://github.com/shimo4228/agent-attribution-practice"
-url: "https://doi.org/10.5281/zenodo.20361360"
+url: "https://doi.org/10.5281/zenodo.21218784"
 authors:
   - family-names: Shimomoto
     given-names: Tatsuya
@@ -78,6 +78,9 @@ identifiers:
   - type: swh
     value: "swh:1:snp:0764737393c3d7ac8087a5ca0a33249ceb76433d"
     description: "Software Heritage snapshot (intrinsic-identifier layer bootstrap; repo through v0.5.0)"
+  - type: swh
+    value: "swh:1:snp:3c4afbe597913e53e6238a580d2314af35c4fe55"
+    description: "Software Heritage snapshot of v0.6.0"
 references:
   - type: software
     title: "Agent Knowledge Cycle (AKC)"
