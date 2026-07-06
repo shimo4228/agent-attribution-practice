@@ -1,6 +1,6 @@
 # agent-attribution-practice
 
-自律 AI エージェントにおける **attribution の分配** (誰が書いたか、誰が原因か、誰が事後に辿れるか) に関する 7 つの判断を記録する DOI-targeted research project。`contemplative-agent` の実装・運用の摩擦から発見されたものを、harness-neutral に再表現している。
+自律 AI エージェントにおける **attribution の分配** (誰が書いたか、誰が原因か、誰が事後に辿れるか) に関する 10 の判断を記録する DOI-targeted research project。`contemplative-agent` の実装・運用の摩擦から発見されたものを、harness-neutral に再表現している。
 
 > Project name: **Agent Attribution Practice (AAP)** (2026-04-19 確定)。repo directory・GitHub URL ともに `agent-attribution-practice` で統一。
 

@@ -7,20 +7,13 @@
 > **Agent Attribution Practice (AAP)** — 10 の判断と 4 つの Business AI
 > Quadrants（業務 AI 四象限）、固定された framework ではない。
 
-📄 **Companion papers**:
-- *Distributing Accountability, Not Capability: Phase Separation and the LLM Workflow Quadrant in Autonomous AI Agent Architectures* — [doi:10.5281/zenodo.20353789](https://doi.org/10.5281/zenodo.20353789) · [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6817598)
-- *The Two-Layer Black Box: Operator Visibility, Commercial Secrecy, and a Minimum Disclosure Set for Accountable Autonomous AI Agents* — [doi:10.5281/zenodo.20355907](https://doi.org/10.5281/zenodo.20355907) · [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6823878)
-
-📝 **エッセイ**（ADR 群を抽出した narrative spine。各記事の要約は [`docs/inspiration.md`](docs/inspiration.md)）:
-1. [登れる壁に看板を立てても意味がない — AIエージェントに必要なのはガードレールではなくアカウンタビリティだ](https://github.com/shimo4228/zenn-content/blob/main/articles/ai-agent-accountability-wall.md)（2026-04-06）
-2. [事故のあとで因果を辿れるか](https://github.com/shimo4228/zenn-content/blob/main/articles/agent-causal-traceability-org-adoption.md)（2026-04-13）
-3. [AIエージェントのブラックボックスは二層ある — 技術の限界とビジネスの都合](https://github.com/shimo4228/zenn-content/blob/main/articles/agent-blackbox-capitalism-timescale.md)（2026-04-14）
-4. [ReAct エージェントが本当に必要な業務はどれか](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant.md)（2026-04-29）
-5. [(3) LLM ワークフロー象限が語彙から脱落している — 続・ReAct エージェントの適用域](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-2.md)（2026-04-30）
-6. [本番運用に ReAct は必要か — 設計フェーズと運用フェーズを分ける](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-3.md)（2026-05-01）
-7. [ワークフロー象限と ReAct 象限の間のグラデーション — 設計フェーズと運用フェーズがスキル設計を分ける](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-4.md)（2026-05-02）
-
-🌐 **社会的帰結レイヤー**（spine の上に乗る companion essay。spine 内ではない — [`docs/social-consequence.md`](docs/social-consequence.md) 参照）: [AIによって外部化された責任は、どこへ行くのか](https://github.com/shimo4228/zenn-content/blob/main/substack/ai-externalized-accountability-pollution.md)（[English](https://github.com/shimo4228/zenn-content/blob/main/substack/ai-externalized-accountability-pollution-en.md)）
+自律 AI エージェントにおける **attribution** (誰が書いたか、誰が原因か、
+誰が事後に辿れるか) の分配に関する 10 の判断と、その分配が成り立つ
+アーキテクチャに業務を振り分ける 4 象限の診断フレーム。
+[`contemplative-agent`](https://github.com/shimo4228/contemplative-agent)
+の実装・運用の摩擦から発見されたものであり、トップダウンの設計判断では
+ない。自律エージェントをある用途に入れてよいか — 入れるならどう入れる
+か — を判断するアーキテクト・オペレーター・ガバナンス読者に向ける。
 
 <details>
 <summary>AI 向け推奨読み順</summary>
@@ -35,27 +28,16 @@ https://github.com/shimo4228/shimo4228/blob/main/graph.jsonld
 
 </details>
 
-自律 AI エージェントにおける **attribution** (誰が書いたか、誰が原因か、
-誰が事後に辿れるか) の分配に関する 10 の判断と、その分配が成り立つ
-アーキテクチャに業務を振り分ける 4 象限の診断フレーム。
-[`contemplative-agent`](https://github.com/shimo4228/contemplative-agent)
-の実装・運用の摩擦から発見されたものであり、トップダウンの設計判断ではない。
-
 ## なぜこの repo が存在するか
 
 現状の AI ガバナンスは **看板フェーズ** にいる。システムプロンプトに
 「X するな」と書き、倫理ガイドラインを PDF で公開し、安全委員会を設置
-する。執行のないテキスト。登れる壁に立てた看板。
-
-歴史的に効いてきたのは看板ではなく **構造としてのアカウンタビリティ**
-だ。実装されていない capability は呼び出せない。blast radius は設計で
-限定される。行動を変える変更は必ず名前のある人間のサインオフを通る。
-事故後には因果を遡行できる。人間社会はこのパターンを 3 世紀かけて
-磨いた。エージェントも同じパターンを採るか、さもなくば説明責任の
-切れた層になる。
-
-この repo の 10 本の ADR は「**何を制約すべきか、誰が責任を負うか**」
-という形の判断を記録する。フレームワークから演繹したものではなく、
+する。執行のないテキスト — 登れる壁に立てた看板。歴史的に効いてきたの
+は看板ではなく **構造としてのアカウンタビリティ** だ: 実装されていない
+capability は呼び出せない。blast radius は設計で限定される。行動を変え
+る変更は必ず名前のある人間のサインオフを通る。事故後には因果を遡行でき
+る。この repo の 10 本の ADR は「**何を制約すべきか、誰が責任を負うか**」
+という形の判断を記録する — フレームワークから演繹したものではなく、
 実装から抽出したものだ。
 
 ## 10 の判断
@@ -71,21 +53,16 @@ https://github.com/shimo4228/shimo4228/blob/main/graph.jsonld
 | [0007](docs/adr/0007-scaffolding-visibility.ja.md) | Scaffolding Visibility — 振る舞いは不透明な weight ではなくファイルに存在する | accepted |
 | [0008](docs/adr/0008-one-agent-one-human.ja.md) | One Agent, One Human — アカウンタビリティチェーンは名前のある個人で終端する | **experimental** |
 | [0009](docs/adr/0009-triage-before-autonomy.ja.md) | Triage Before Autonomy — autonomous-loop アーキテクチャの採用は除去できない attribution gap（寄与の事後分離不能ギャップ）を引き受ける commitment になる | **experimental** |
-| [0010](docs/adr/0010-phase-separation.ja.md) | Phase Separation Between Design and Operation — Autonomous Agentic Loop Quadrant を operation phase に置く場合は Phase-crossing decision（フェーズ越境判定）を deployment 時に明示 | **experimental** |
+| [0010](docs/adr/0010-phase-separation.ja.md) | Phase Separation — Autonomous Agentic Loop Quadrant を operation phase に置く場合は Phase-crossing decision（フェーズ越境判定）を deployment 時に明示 | **experimental** |
 
-最初の 3 本は **禁止強度の階層** を成す: absence > scaffolding
-enforcement > untrusted boundary。次の 2 本 (0004, 0005) が構造的
-トポロジと human-in-the-loop を加える。中央の 2 本 (0006, 0007) は
-それら制約が要求する artifact — 辿るべき記録と、検査可能な scaffolding。
-8 本目は人間側の終端。ADRs 0009 と 0010 が **triage pair**: 0009 が
-problem-space triage (どの Quadrant か)、0010 が時間軸の triage
-(operation phase に置いた場合の Phase-crossing decision)。Phase と
-Quadrant は独立な dimension で、ADR-0010 は procedural な rule で
-あって architectural な partition ではない。
+最初の 3 本は **禁止強度の階層** を成す (absence > scaffolding
+enforcement > untrusted boundary)。0004 と 0005 が構造的トポロジと
+human-in-the-loop を加え、0006 と 0007 はそれら制約が要求する
+artifact — 辿るべき記録と、検査可能な scaffolding。0008 は人間側の
+終端。ADRs 0009 と 0010 は **triage pair** — problem-space triage と
+時間軸 (Phase) の triage。Phase と Quadrant は独立な dimension。
 
 ## 4 つの Business AI Quadrants（業務 AI 四象限）
-
-10 本の ADR と pair で adoption の診断フレームを成す:
 
 |  | ワークフロー定義可 | 探索的 |
 |---|---|---|
@@ -93,194 +70,127 @@ Quadrant は独立な dimension で、ADR-0010 は procedural な rule で
 | **意味判断が必要** | (3) LLM Workflow 象限 | (4) Autonomous Agentic Loop 象限 |
 
 現行 LLM 応用の大半は **LLM Workflow 象限** (決定論制御フロー + 役割を
-明示した bounded LLM 呼び出し) で済むはずだが、業界の語彙にこの象限の
-肯定形の名前がないため、**Autonomous Agentic Loop 象限** (実行時に LLM
-自身が次の行動を決めるアーキテクチャ) に消去法で routing される。前者
-を後者に被せると trilogy が診断したアカウンタビリティ崩壊の構造的源泉
-になり、後者を pre-named gap-bearer（事前命名された責任引受者）なしで
-運用すると ADR-0009 が防ぐべき configuration になる。詳細は
-[`docs/quadrants/`](docs/quadrants/) の navigator (decision tree,
-governance mapping, case studies, anti-patterns) を参照。
-
-10 ADRs と 4 Quadrants は **二軸構造** を成す: ADRs は問いへの応答
-(*何を制約すべきか、誰が責任を負うか*)、Quadrants は問いを切る軸
-(どのアーキテクチャに業務を振り分ければ accountability distribution
-が成立するか)。Phase (design / operation) は Quadrant と独立な第 3 の
-dimension で、どの Quadrant も両 phase に出現しうる。ADR-0010 の
-load-bearing rule は operation phase × Quadrant 4 の placement に
-対してだけ Phase-crossing decision を要求する narrow なもの。
-
-## narrative (記事系譜)
-
-ADR の背後の argument は、2026 年 4-5 月に zenn で公開された 7 部作
-essay として展開された。最初の 3 つは trilogy (問題提起 → 事故後の
-因果遡行 → ブラックボックス二層分析)、後の 4 つは architectural
-follow-up (4 象限 triage → 語彙の診断と principled attribution gap →
-設計 / 運用 phase の区別 → skill-design gradient への phase descent)。
-
-各記事の URL とタイトル、1 段落のサマリは
-[`docs/inspiration.md`](docs/inspiration.md) を正本として参照。
-
-スパインの **上** に、companion essay が **社会的帰結レイヤー** を開く
-— 7 記事の中ではなく、その上に乗る規範的拡張だ。同じ内部判断を外側から
-読む: 外部化された責任は消えず、それが制度へ流れるか暴力へ収束するかは、
-帰結が名指せるかどうかで決まる。この読みでは、accountability distribution は
-ガバナンスであるだけでなく暴力防止の仕組みである。harness-neutral な構造的
-主張は ADR から分離して
-[`docs/social-consequence.ja.md`](docs/social-consequence.ja.md) に置き、
-具体的 grounding は essay 側にある。
-
-## 他プロジェクトとの関係
-
-この repo は既存 2 プロジェクトの **sibling** (fork ではない):
-
-エコシステムの hub（5 つの研究ラインの人間向け索引）は [`shimo4228/shimo4228`](https://github.com/shimo4228/shimo4228)。
-
-- **[`contemplative-agent`](https://github.com/shimo4228/contemplative-agent)** —
-  運用中の実装。ここの各 ADR はそちらの対応 ADR を、プロジェクト固有の
-  詳細を剥がして再表現したもの。
-- **[Agent Knowledge Cycle (AKC)](https://github.com/shimo4228/agent-knowledge-cycle)** —
-  contemplative-agent 設計の *mechanism* 側を genre-neutral に保った
-  sibling。AKC v2.0.0 (2026-04-19) が governance triplet を本 repo の
-  ために抽出した。
-
-インストール可能な「how」対応物は standalone な Agent Skill
-リポジトリとして出荷される:
-[llm-agent-security-principles](https://github.com/shimo4228/llm-agent-security-principles)
-が ADR-0001..0004 に対応（旧 `docs/skills/` 同梱）、
-[agent-adoption-triage](https://github.com/shimo4228/agent-adoption-triage)
-が ADR-0009/0010 に対応（`docs/quadrants/` navigator のインストール可能形）。
-
-層構造 — 3 つは相互フィードバックで共進化する:
-
-```
-  ─── theory layer ────────────────────────────────────────────
-
-        AKC  ◄─────────────────────────────────►  AAP
-        (mechanism — サイクル)                    (content — 実践)
-        知識の流れ方                              attribution の分配
-
-              ▲                                         ▲
-              │                                         │
-              ▼                                         ▼
-
-  ─── implementation layer ────────────────────────────────────
-
-                         contemplative-agent
-                         (動いている system)
-```
-
-実装を動かすと摩擦が立ち上がる。摩擦が mechanism pattern (AKC) と
-attribution judgment (AAP) を生み、磨かれた理論がまた実装に戻って
-形を変える。
-
-## 業界の mechanism layer との関係
-
-> 続く 2 節は AAP を外部の mechanism layer (vendor 製品、次いで
-> governance framework) に位置づける。入口だけ知りたければ
-> [読む順序](#読む順序) へ飛ばしてよい。
-
-2026 Q2 に複数の industry release が AAP principle の *mechanism
-layer* を populate した ── sub-millisecond ポリシーゲート、agent
-identity primitive、sponsor 制度、cross-vendor 監査、cross-cloud
-registry sync。
-
-Mechanism layer が ship していないのは judgment layer である。
-Sponsor は assign できるが、**誰が** sponsor になるべきか・それが
-何の commitment を意味するかは product に含まれない。Cross-cloud
-registry は sync できるが、Single External Adapter の設計判断
-(設計時に blast radius を bound する、事後 observation ではない)
-は product に含まれない。Policy engine は agent action を
-intercept できるが、prohibition-strength hierarchy (absence >
-scaffolding > untrusted boundary) でどの prohibition がどの層に
-属するか決める判断は product に含まれない。AAP がこの judgment
-layer を埋める。両 layer は補完関係で、mechanism layer の普及は
-judgment layer の必要性を **減らすのではなく増す**。
-
-各 artifact がどの ADR の mechanism instance に対応するか、何を
-ship して何を ship していないかの per-artifact 対応は
-[`docs/industry-mapping.md`](docs/industry-mapping.md)
-(time-bound、製品の進化と共に decay する別ファイル) で保持される。
-ADR 自体は touch せずに済む。
-
-## AI ガバナンス framework との関係
-
-AAP の ADR と Quadrant は、各国 / 国際の AI ガバナンス framework
-にも読み合わせる。**NIST AI Risk Management Framework 1.0**
-(NIST.AI.100-1、2023 年 1 月) と **Generative AI Profile**
-(NIST.AI.600-1、2024 年 7 月)、**ISO/IEC 42001:2023** AI Management
-System (first edition、2023 年 12 月)、そして **EU AI Act**
-(Regulation (EU) 2024/1689、2024 年 8 月発効、2027 年まで段階適用)
-を扱う。OECD AI Principles は後続 phase に延期 ── decay cadence と
-条項粒度が十分異なるため、まとめると noise が混ざる。
-
-framework が ship するのは *構造* ── NIST は AI risk management
-を 4 つの function (GOVERN、MAP、MEASURE、MANAGE) を中心に組織化
-し、GAI Profile が generative-AI 固有のリスクカテゴリを追加する;
-ISO 42001 は Annex SL Harmonized Structure (ISO 27001、ISO 9001、
-ISO 14001 と共有) と PDCA cycle 上に構築された AI Management System
-を規定し、Annex A controls が policy、role、lifecycle、data、
-transparency、third-party relationship を扱う; EU AI Act は
-*risk-tiered な義務レジーム* (禁止行為、high-risk の provider/deployer
-義務スタック ── human oversight、record-keeping、robustness ── と
-transparency 義務) を ship する。framework が ship
-していないのは、それら構造を autonomous-agent subset 向けに populate
-する *judgment layer* である: NIST function を restriction ではなく
-absence で answer すべきはいつか、AIMS のどの clause が non-LLM gate
-を要求するか、ADR-0009 で named された gap-bearer は ISO 42001 の
-accountability chain のどこに位置するか、Phase-crossing decision が
-AIMS の PDCA cycle 内で ADR-0009 の上に何を加えるか。AAP がその
-judgment layer を記録する; 両 layer は補完関係。
-
-各 AAP ADR の specific NIST function / GAI リスクカテゴリ / ISO
-42001 clause および Annex A area / EU AI Act Article への対応
-(および framework 側から入る reader のための reverse index) は
-[`docs/policy-mapping/`](docs/policy-mapping/README.ja.md) で保持
-される ── time-bound directory、製品 release cycle ではなく
-framework 改訂 cycle (年単位〜数年単位) で decay する。ADR 自体は
-framework-neutral に保たれる。
-
-これは compliance attestation ではない。NIST AI RMF の authoritative
-interpretation は NIST、ISO/IEC 42001 は ISO/IEC と accredited
-certification body、EU AI Act は欧州委員会と各国 competent authority、
-framework の特定 jurisdiction への適用は qualified legal / compliance
-counsel に残る。
+明示した bounded LLM 呼び出し) に属し、**Autonomous Agentic Loop 象限**
+ではない。前者を後者に routing することが essay 群の診断したアカウンタ
+ビリティ崩壊の構造的源泉であり、後者を pre-named gap-bearer（事前命名
+された責任引受者）なしで運用することが ADR-0009 の防ぐ failure mode。
+ADRs は問いへの応答 (*何を制約すべきか、誰が責任を負うか*)、Quadrants
+は業務をその応答が成立する場所へ振り分ける — **二軸構造** であり、
+Phase (design / operation) は独立な第 3 の dimension。
 
 ## agent 導入判断の navigator として使う
 
-この repo は読むだけでなく **walk する** ことを意図している。ある
-用途に自律エージェントを入れてよいか判断したい — あるいは既に入れた
-ものを監査したい — なら、clone して coding agent を `AGENTS.md` に
-向け、壁打ち相手として使う:
+この repo は読むだけでなく **walk する** ことを意図している。ある用途
+に自律エージェントを入れてよいか判断したい — あるいは既に入れたものを
+監査したい — なら、clone して coding agent を `AGENTS.md` に向け、
+壁打ち相手として使う:
 
-1. [`docs/quadrants/decision-tree.ja.md`](docs/quadrants/decision-tree.ja.md)
-   — 5 問の triage で業務を 4 象限のどれかに振り分ける
-2. [`docs/quadrants/governance-mapping.ja.md`](docs/quadrants/governance-mapping.ja.md)
-   — その象限の governance 要件
+1. [`docs/quadrants/decision-tree.ja.md`](docs/quadrants/decision-tree.ja.md) — 5 問の triage で業務を 4 象限のどれかに振り分ける
+2. [`docs/quadrants/governance-mapping.ja.md`](docs/quadrants/governance-mapping.ja.md) — その象限の governance 要件
 3. 関連 ADR — 特に triage pair (0009 / 0010)
-4. autonomy 関連なら **Phase 軸** (ADR-0010): design phase か
-   operation phase か
-5. [`docs/quadrants/anti-patterns.ja.md`](docs/quadrants/anti-patterns.ja.md)
-   — 既知の失敗モードとの最終照合
+4. autonomy 関連なら **Phase 軸** (ADR-0010): design phase か operation phase か
+5. [`docs/quadrants/anti-patterns.ja.md`](docs/quadrants/anti-patterns.ja.md) — 既知の失敗モードとの最終照合
+
+*Worked example:* 返金承認を自律で回す loop は step 1 で Autonomous
+Agentic Loop 象限に振り分けられ、step 3 で全 10 ADR が load-bearing に
+なる — 稼働前の pre-named gap-bearer (ADR-0009) を含む。完全なシナリオ
+集: [`docs/quadrants/case-studies.ja.md`](docs/quadrants/case-studies.ja.md)。
+
+同じ navigator はインストール可能な standalone Agent Skill としても
+出荷されている:
+[agent-adoption-triage](https://github.com/shimo4228/agent-adoption-triage)
+(`docs/quadrants/` navigator、ADR-0009/0010) と
+[llm-agent-security-principles](https://github.com/shimo4228/llm-agent-security-principles)
+(security 判断、ADR-0001..0004)。
 
 ADR は判断の出発点であって正解ではない — 自分の context に応じて
 re-interpret する。
 
+## エッセイと論文
+
+ADR の背後の argument は、2026 年 4-5 月公開の **7 部作 essay spine**
+として展開された — trilogy (問題提起 → 事故後の因果遡行 → ブラック
+ボックス二層分析) + architectural follow-up 4 本 (4 象限 triage →
+語彙の診断 → phase の区別 → skill-design gradient)。各記事の要約は
+[`docs/inspiration.md`](docs/inspiration.md):
+
+1. [登れる壁に看板を立てても意味がない — AIエージェントに必要なのはガードレールではなくアカウンタビリティだ](https://github.com/shimo4228/zenn-content/blob/main/articles/ai-agent-accountability-wall.md)（2026-04-06）
+2. [事故のあとで因果を辿れるか](https://github.com/shimo4228/zenn-content/blob/main/articles/agent-causal-traceability-org-adoption.md)（2026-04-13）
+3. [AIエージェントのブラックボックスは二層ある — 技術の限界とビジネスの都合](https://github.com/shimo4228/zenn-content/blob/main/articles/agent-blackbox-capitalism-timescale.md)（2026-04-14）
+4. [ReAct エージェントが本当に必要な業務はどれか](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant.md)（2026-04-29）
+5. [(3) LLM ワークフロー象限が語彙から脱落している — 続・ReAct エージェントの適用域](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-2.md)（2026-04-30）
+6. [本番運用に ReAct は必要か — 設計フェーズと運用フェーズを分ける](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-3.md)（2026-05-01）
+7. [ワークフロー象限と ReAct 象限の間のグラデーション — 設計フェーズと運用フェーズがスキル設計を分ける](https://github.com/shimo4228/zenn-content/blob/main/articles/react-agent-business-quadrant-4.md)（2026-05-02）
+
+二つの **companion position paper** が spine を harness-neutral な
+statement に蒸留する（オープンアクセス CC BY 4.0。concept DOI は常に
+最新版に解決する）:
+
+- Shimomoto, T. (2026). *Distributing Accountability, Not Capability: Phase Separation and the LLM Workflow Quadrant in Autonomous AI Agent Architectures*（essay 4–7）. Zenodo. [doi:10.5281/zenodo.20353789](https://doi.org/10.5281/zenodo.20353789) · [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6817598)
+- Shimomoto, T. (2026). *The Two-Layer Black Box: Operator Visibility, Commercial Secrecy, and a Minimum Disclosure Set for Accountable Autonomous AI Agents*（essay 1–3）. Zenodo. [doi:10.5281/zenodo.20355907](https://doi.org/10.5281/zenodo.20355907) · [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6823878)
+
+スパインの **上** に — 7 記事の中ではなく — companion essay が
+**社会的帰結レイヤー** を開く: 外部化された責任は消えず、それが制度へ
+流れるか暴力へ収束するかは、帰結が名指せるかどうかで決まる。Essay:
+[AIによって外部化された責任は、どこへ行くのか](https://github.com/shimo4228/zenn-content/blob/main/substack/ai-externalized-accountability-pollution.md)
+（[English](https://github.com/shimo4228/zenn-content/blob/main/substack/ai-externalized-accountability-pollution-en.md)）。
+harness-neutral な構造的主張は ADR から分離して
+[`docs/social-consequence.ja.md`](docs/social-consequence.ja.md) に置く。
+
+## 他プロジェクトとの関係
+
+この repo は既存 2 プロジェクトの **sibling** (fork ではない)。
+エコシステムの hub（全研究ラインの人間向け索引）は
+[`shimo4228/shimo4228`](https://github.com/shimo4228/shimo4228)。
+
+```mermaid
+graph TD
+  AKC["Agent Knowledge Cycle (AKC)<br/>mechanism — 知識の流れ方"]
+  AAP["Agent Attribution Practice (AAP)<br/>content — attribution の分配"]
+  CA["contemplative-agent<br/>動いている system"]
+  AKC <--> AAP
+  CA <--> AKC
+  CA <--> AAP
+```
+
+一文で: 実装
+([`contemplative-agent`](https://github.com/shimo4228/contemplative-agent))
+を動かすと摩擦が立ち上がり、摩擦が mechanism pattern
+([Agent Knowledge Cycle](https://github.com/shimo4228/agent-knowledge-cycle))
+と attribution judgment (本 repo) に蒸留され、磨かれた理論がまた実装に
+戻って形を変える。
+
+## 外部レイヤーとの対応 (time-bound、ADR の外に隔離)
+
+- **業界の mechanism layer** — 2026 年の industry release 群は
+  *mechanism* (ポリシーゲート、agent identity primitive、sponsor 制度、
+  cross-vendor 監査) を ship するが、AAP の記録する *judgment layer* —
+  誰が sponsor になるべきか、どの prohibition がどの層に属するか、
+  blast radius を設計時にどう bound するか — は ship しない。
+  per-artifact 対応: [`docs/industry-mapping.md`](docs/industry-mapping.md)。
+- **AI ガバナンス framework** — ADR と Quadrant は NIST AI RMF 1.0
+  (Generative AI Profile 含む)、ISO/IEC 42001:2023、EU AI Act、
+  Singapore Model AI Governance Framework for Agentic AI に読み合わせ
+  る。framework が ship するのは *構造*、AAP はそれを autonomous-agent
+  subset 向けに populate する judgment layer を記録する。per-framework
+  対応と reverse index:
+  [`docs/policy-mapping/`](docs/policy-mapping/README.ja.md)。これは
+  一つの読みであり citation surface であって、compliance attestation
+  ではない。
+
+両 directory はそれぞれの cadence (製品 release、framework 改訂) で
+decay する。ADR 自体は vendor / framework neutral に保たれる。
+
 ## 読む順序
 
-1. [`docs/thesis.ja.md`](docs/thesis.ja.md) — *accountability distribution*、
-   1 page の argument
-2. [`docs/adr/README.ja.md`](docs/adr/README.ja.md) — ADR 索引
-3. [`docs/adr/0001-security-by-absence.ja.md`](docs/adr/0001-security-by-absence.ja.md)
-   — 最もクリーンな入口。末尾の audit test はそのまま動く
-4. 7 記事 (上記 link) を発表順で
-5. [`docs/quadrants/`](docs/quadrants/) — adoption navigator (decision
-   tree, governance mapping, case studies, anti-patterns)
-6. [`docs/manifesto.md`](docs/manifesto.md) — ADR が答えない文明 scale
-   の問題
-7. [`docs/social-consequence.ja.md`](docs/social-consequence.ja.md) —
-   社会的帰結レイヤー: 内部判断が監査を超えてなぜ重要かを、仕様ではなく
-   上位根拠として
+1. [`docs/thesis.ja.md`](docs/thesis.ja.md) — *accountability distribution*、1 page の argument
+2. [`docs/glossary.ja.md`](docs/glossary.ja.md) — 用語定義 (accountability distribution、externalized accountability、attribution gap)
+3. [`docs/adr/README.ja.md`](docs/adr/README.ja.md) — ADR 索引
+4. [`docs/adr/0001-security-by-absence.ja.md`](docs/adr/0001-security-by-absence.ja.md) — 最もクリーンな入口。末尾の audit test はそのまま動く
+5. 7 記事 (上記 link) を発表順で
+6. [`docs/quadrants/`](docs/quadrants/) — adoption navigator (decision tree, governance mapping, case studies, anti-patterns)
+7. [`docs/manifesto.md`](docs/manifesto.md) — ADR が答えない文明 scale の問題
+8. [`docs/social-consequence.ja.md`](docs/social-consequence.ja.md) — 社会的帰結レイヤー: 内部判断が監査を超えてなぜ重要か
 
 ## この repo が主張しないこと
 
@@ -294,34 +204,15 @@ re-interpret する。
 
 ## 出自
 
-この抽出は 2026 年 4 月に Tatsuya Shimomoto
-([@shimo4228](https://github.com/shimo4228)) によって最初にまとめ
-られた。10 本の ADR と 4 つの Business AI Quadrants は、
-[contemplative-agent](https://github.com/shimo4228/contemplative-agent)
-の実装・運用と 2026 年 4–5 月公開の 7 部作 essay narrative spine を
-通じて浮上した architectural decision および triage 判断を、
-harness-neutral な形で再表現したもの。このうち 3 つの判断 — Security by
-Absence、Single External Adapter、Untrusted Content Boundary — はかつて
-[Agent Knowledge Cycle](https://github.com/shimo4228/agent-knowledge-cycle)
-の governance triplet として archive されていたもので、ADRs 0001–0008 の
-中に再表現された。ADR-0009 と Quadrants navigator は 2026-04-29 / 04-30 の
-architectural follow-up essay、ADR-0010 は 2026-05-01 / 05-02 の phase
-区別 essay と skill-design gradient essay から派生した。
-
-## 関連発表
-
-二つの companion position paper が narrative spine を harness-neutral な statement に蒸留する — 一つ目は architectural follow-up（essay 4–7）、二つ目は基礎となる trilogy（essay 1–3）を扱う:
-
-> Shimomoto, T. (2026). *Distributing Accountability, Not Capability: Phase Separation and the LLM Workflow Quadrant in Autonomous AI Agent Architectures.* Zenodo. https://doi.org/10.5281/zenodo.20353789
-
-> Shimomoto, T. (2026). *The Two-Layer Black Box: Operator Visibility, Commercial Secrecy, and a Minimum Disclosure Set for Accountable Autonomous AI Agents.* Zenodo. https://doi.org/10.5281/zenodo.20355907
-
-オープンアクセス（CC BY 4.0）。上記 concept DOI は常に最新版に解決する。両論文は SSRN にもクロスポスト済み: [Distributing Accountability, Not Capability](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6817598) · [The Two-Layer Black Box](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6823878)。
+2026 年 4 月に Tatsuya Shimomoto
+([@shimo4228](https://github.com/shimo4228)、
+[ORCID 0009-0002-6168-4162](https://orcid.org/0009-0002-6168-4162))
+が最初にまとめた。10 本の ADR と 4 つの Quadrants は、
+contemplative-agent の実装・運用と 7 部作 essay spine を通じて浮上した
+判断を harness-neutral な形で再表現したもの。ADR ごとの完全な系譜は
+[`docs/inspiration.md`](docs/inspiration.md) を参照。
 
 ## 引用方法
-
-これらの architectural decision records を利用・参照する場合は、
-以下のように引用してほしい:
 
 ```bibtex
 @software{shimomoto2026aap,
@@ -337,6 +228,11 @@ architectural follow-up essay、ADR-0010 は 2026-05-01 / 05-02 の phase
 あるいは文中で:
 
 > Shimomoto, T. (2026). Agent Attribution Practice (AAP). doi:10.5281/zenodo.20361360
+
+冒頭の badge は **concept DOI**
+([10.5281/zenodo.19652013](https://doi.org/10.5281/zenodo.19652013)、
+常に最新版へ解決) を、上の BibTeX は現行 release の **version DOI** を
+指す。
 
 ## License
 
