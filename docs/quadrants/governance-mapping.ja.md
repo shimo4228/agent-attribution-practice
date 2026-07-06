@@ -13,7 +13,7 @@
 | (1) Script | Light (AAP の射程外) | — | code review, tests | code author / pipeline owner |
 | (2) Algorithmic Search | Light (AAP の射程外) | — | algorithm validation, search-space audit | algorithm author |
 | (3) LLM Workflow | Medium | 0001, 0003, 0004, 0005, 0006, 0007 | scaffolding visibility, audit log, behavior change の approval, schema 準拠の呼び出し | 失敗した LLM 呼び出しの role owner → routing-logic designer → upstream-data owner |
-| (4) Autonomous Agentic Loop | High | **10 本の ADR すべて** | + pre-named gap-bearer（事前命名された責任引受者）(0008 + 0009)、外部行動ごとの human approval (0005)、完全 causal trace (0006)、accountable operator 1 名 (0008)、**operation phase 配置時は Phase-crossing decision の記録 (0010) を要する** | pre-named gap-bearer (principled gap; 部品レベルの redirect は閉ざされる) |
+| (4) Autonomous Agentic Loop | High | **10 本の ADR すべて** | + pre-named gap-bearer（事前命名された責任引受者）(0008 + 0009)、behavior-modifying write への human approval (0005)、完全 causal trace (0006)、accountable operator 1 名 (0008)、**operation phase 配置時は Phase-crossing decision の記録 (0010) を要する** | pre-named gap-bearer (principled gap; 部品レベルの redirect は閉ざされる) |
 
 ### Phase 注記 (Quadrant とは独立)
 
@@ -93,7 +93,7 @@ decision を加える。
 | [0002 Deterministic Prohibition at Scaffolding](../adr/0002-deterministic-prohibition-at-scaffolding.ja.md) | Absence にできない capability は LLM の **外** で PreToolUse hook や structural quarantine で gate する。 |
 | [0003 Untrusted Content Boundary](../adr/0003-untrusted-content-boundary.ja.md) | Episode log、蓄積メモリ、self-authored distillation はすべて loop に読み戻す時 untrusted として扱う。 |
 | [0004 Single External Adapter](../adr/0004-single-external-adapter.ja.md) | One agent process = one external adapter。Multi-surface deploy は agent の分割が要る。 |
-| [0005 Human Approval Gate](../adr/0005-human-approval-gate.ja.md) | **Load-bearing**。あらゆる behavior-modifying write が named human を通る。あらゆる external action が human approval gate を通る; alternative は無制限の autonomous side effect。 |
+| [0005 Human Approval Gate](../adr/0005-human-approval-gate.ja.md) | **Load-bearing**。あらゆる behavior-modifying write — skills、rules、identity、constitution — が named human を通り、承認・却下の双方に audit record を残す。この gate は runtime の全アクションに "OK" をクリックさせるものではない; runtime の side effect は ADR-0001/0002/0004 が構造的に bound する。 |
 | [0006 Causal Traceability](../adr/0006-causal-traceability.ja.md) | **Load-bearing**。Loop の iteration、tool 呼び出し、observation、prompt は append-only で log される。部品レベル redirect が閉ざされていても、causal trace は post-incident reconstruction を可能にしなければならない。 |
 | [0007 Scaffolding Visibility](../adr/0007-scaffolding-visibility.ja.md) | Loop の prompt template、available tools、system prompt、終了条件は version-controlled なファイル。 |
 | [0008 One Agent, One Human](../adr/0008-one-agent-one-human.ja.md) | **Load-bearing**。Agent process に名前のある人間が 1 人結びつけられる。Rotation は formal なら compatible。 |

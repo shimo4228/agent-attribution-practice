@@ -166,8 +166,11 @@
     アシスタント deployment の accountable operator*。
   - **Pre-named gap-bearer。** 同じ operator (個人権限を超える業務なら
     上位の role)。
-  - **ADR-0005.** あらゆる external action (report 公開、email 送信、
-    channel 投稿) が Alice の approval gate を通る。
+  - **ADR-0005.** Behavior-modifying write (loop の prompt、tool、
+    終了条件への変更) が Alice の approval gate を通る。加えて
+    deployment 固有の選択として — ADR の floor より厳しい設定 —
+    Alice は outward-facing な action (report 公開、email 送信、
+    channel 投稿) も gate する。
 - **Redirect 経路。** 部品レベル redirect は閉ざされる。Report が
   誤っていたら Alice が redirect 先 (gap-bearer commitment 通り)。
   Post-incident options: 再訓練、re-architect (一部業務を LLM
@@ -234,10 +237,11 @@
   これはこの象限の本質的な性質で、tooling 限界ではない。計画に織り
   込む。
 - **Required commitments。** ADR-0008 named operator + ADR-0009 named
-  gap-bearer。構築された答えの external publication にあたっては
-  ADR-0005 approval gate (deployment ごとに、各答えを approval-gated
+  gap-bearer。ADR-0005 approval gate は behavior-modifying write に
+  かかる; 構築された各答えの external publication まで gate するかは
+  ADR の floor を超える deployment 判断 (各答えを approval-gated
   artifact として扱うか、deployment envelope を approval-gated にして
-  答えを stream するか — 設計判断)。
+  答えを stream するか)。
 
 ## (Skill-design gradient case) 同じジョブ、別 phase、別形態
 

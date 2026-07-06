@@ -14,7 +14,7 @@ Language: English | [日本語](governance-mapping.ja.md)
 | (1) Script | Light (out of scope for AAP) | — | code review, tests | code author / pipeline owner |
 | (2) Algorithmic Search | Light (out of scope for AAP) | — | algorithm validation, search-space audit | algorithm author |
 | (3) LLM Workflow | Medium | 0001, 0003, 0004, 0005, 0006, 0007 | scaffolding visibility, audit log, approval on behavior change, schema-conformant calls | role owner of the failing LLM call → routing-logic designer → upstream-data owner |
-| (4) Autonomous Agentic Loop | High | **all ten ADRs** | + pre-named gap-bearer (0008 + 0009), human approval on every external action (0005), full causal trace (0006), one accountable operator (0008), **operation-phase placement requires a recorded Phase-crossing decision (0010)** | the pre-named gap-bearer (principled gap; redirect at component level is foreclosed) |
+| (4) Autonomous Agentic Loop | High | **all ten ADRs** | + pre-named gap-bearer (0008 + 0009), human approval on behavior-modifying writes (0005), full causal trace (0006), one accountable operator (0008), **operation-phase placement requires a recorded Phase-crossing decision (0010)** | the pre-named gap-bearer (principled gap; redirect at component level is foreclosed) |
 
 ### Phase note (orthogonal to Quadrant)
 
@@ -96,7 +96,7 @@ placement is operation-phase.
 | [0002 Deterministic Prohibition at Scaffolding](../adr/0002-deterministic-prohibition-at-scaffolding.md) | Capabilities that cannot be made absent are gated by PreToolUse hooks or structural quarantine, *outside* the LLM. |
 | [0003 Untrusted Content Boundary](../adr/0003-untrusted-content-boundary.md) | Episode logs, accumulated memory, and self-authored distillation are all treated as untrusted when read back into the loop. |
 | [0004 Single External Adapter](../adr/0004-single-external-adapter.md) | One agent process = one external adapter. Multi-surface deployments require splitting agents. |
-| [0005 Human Approval Gate](../adr/0005-human-approval-gate.md) | **Load-bearing.** Every behavior-modifying write goes through a named human. Every external action passes a human approval gate; the alternative is unbounded autonomous side effects. |
+| [0005 Human Approval Gate](../adr/0005-human-approval-gate.md) | **Load-bearing.** Every behavior-modifying write — skills, rules, identity, constitution — goes through a named human, with an audit record for approved and rejected decisions alike. The gate is not a runtime "OK" click on every action; runtime side effects are bounded structurally by ADR-0001/0002/0004 instead. |
 | [0006 Causal Traceability](../adr/0006-causal-traceability.md) | **Load-bearing.** The loop's iterations, tool calls, observations, and prompts are logged in append-only form. Causal trace must enable post-incident reconstruction even though component-level redirect is foreclosed. |
 | [0007 Scaffolding Visibility](../adr/0007-scaffolding-visibility.md) | The loop's prompt template, available tools, system prompt, and termination criteria are version-controlled files. |
 | [0008 One Agent, One Human](../adr/0008-one-agent-one-human.md) | **Load-bearing.** Exactly one named human is bound to the agent process. Rotation is compatible if formal. |

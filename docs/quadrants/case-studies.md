@@ -186,9 +186,11 @@ Language: English | [日本語](case-studies.ja.md)
     accountable operator for this research assistant deployment.*
   - **Pre-named gap-bearer.** Same operator (or a higher-level role
     if the work crosses individual authority).
-  - **ADR-0005.** Every external action (publishing the report,
-    sending email, posting to a channel) passes through Alice's
-    approval gate.
+  - **ADR-0005.** Behavior-modifying writes (changes to the loop's
+    prompts, tools, or termination criteria) pass through Alice's
+    approval gate. As a deployment-specific choice — stricter than
+    the ADR floor — Alice also gates outward-facing actions
+    (publishing the report, sending email, posting to a channel).
 - **Redirect path.** Component-level redirect is foreclosed. If the
   report is wrong, Alice is the redirect target (per the gap-bearer
   commitment). Post-incident options: retrain, re-architect (move
@@ -237,7 +239,7 @@ Language: English | [日本語](case-studies.ja.md)
 - **Applicable ADRs for the LLM Workflow portion.** 0001, 0003,
   0005, 0006, 0007.
 - **Applicable ADRs for the Autonomous Agentic Loop portion (if
-  used).** All nine.
+  used).** All ten.
 - **Boundary discipline.** The handoff between the two portions is
   itself a structural choice and is logged. The Autonomous Agentic
   Loop portion has its own named gap-bearer, distinct from the
@@ -255,17 +257,18 @@ the 2026-04-29 essay.*
   - Q3 (workflow definable?) — No. The next search depends on
     observations. Bounding would prevent the work.
 - **Architecture.** ReAct-style loop with retrieval tools.
-- **Applicable ADRs.** All nine.
+- **Applicable ADRs.** All ten.
 - **Reported operator experience.** Strong results on the work
   itself; reduced predictability under operation. The number of
   iterations and the path the loop takes vary across runs. This is
   the intrinsic property of the quadrant, not a tooling limitation.
   Plan for it.
 - **Required commitments.** ADR-0008 named operator + ADR-0009 named
-  gap-bearer. ADR-0005 approval gate on any external publication of
-  the constructed answer (some deployments treat each answer as
-  itself an approval-gated artifact; others treat the deployment
-  envelope as approval-gated and let answers stream).
+  gap-bearer. ADR-0005 approval gate on behavior-modifying writes;
+  gating external publication of each constructed answer is a
+  deployment choice beyond the ADR floor (some deployments treat
+  each answer as itself an approval-gated artifact; others treat the
+  deployment envelope as approval-gated and let answers stream).
 
 ## (Skill-design gradient case) Same job, different phase, different shape
 
