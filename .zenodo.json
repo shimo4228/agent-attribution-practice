@@ -131,6 +131,18 @@
       "scheme": "url"
     },
     {
+      "identifier": "https://github.com/shimo4228/llm-agent-security-principles",
+      "relation": "isSourceOf",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/shimo4228/agent-adoption-triage",
+      "relation": "isSourceOf",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
       "identifier": "https://huggingface.co/datasets/Shimo4228/agent-attribution-practice",
       "relation": "isVariantFormOf",
       "resource_type": "dataset",

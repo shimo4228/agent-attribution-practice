@@ -253,6 +253,36 @@
     },
 
     {
+      "@id": "https://github.com/shimo4228/llm-agent-security-principles",
+      "@type": ["EcosystemRepo", "SoftwareSourceCode"],
+      "name": "llm-agent-security-principles",
+      "description": "Standalone installable Agent Skill packaging the security judgments of ADR-0001..0004 (security by absence, deterministic prohibition at scaffolding, untrusted content boundary, single external adapter) in runnable form. The 'how' counterpart to the ADRs' 'why'; formerly hosted inside the AAP repository under docs/skills/.",
+      "url": "https://github.com/shimo4228/llm-agent-security-principles",
+      "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"},
+      "isBasedOn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0001-security-by-absence.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0002-deterministic-prohibition-at-scaffolding.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0003-untrusted-content-boundary.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0004-single-external-adapter.md"
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#concept/prohibition-strength-hierarchy"
+    },
+
+    {
+      "@id": "https://github.com/shimo4228/agent-adoption-triage",
+      "@type": ["EcosystemRepo", "SoftwareSourceCode"],
+      "name": "agent-adoption-triage",
+      "description": "Standalone installable Agent Skill packaging the docs/quadrants/ navigator — the five-question triage, Business AI Quadrant routing, per-quadrant governance sets, and anti-pattern checklist — in runnable form. The 'how' counterpart to the triage pair ADR-0009/0010's 'why'.",
+      "url": "https://github.com/shimo4228/agent-adoption-triage",
+      "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"},
+      "isBasedOn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0009-triage-before-autonomy.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0010-phase-separation.md"
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#concept/four-business-ai-quadrants"
+    },
+
+    {
       "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/script",
       "@type": ["Quadrant", "DefinedTerm"],
       "name": "Script Quadrant",
