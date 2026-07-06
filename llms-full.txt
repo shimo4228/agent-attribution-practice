@@ -8,7 +8,7 @@ Self-contained AI reference for the Agent Attribution Practice (AAP) repository.
 
 - **Project name**: Agent Attribution Practice (AAP)
 - **Abbreviation**: AAP
-- **Version**: v0.5.0
+- **Version**: v0.6.0
 - **License**: MIT
 - **Author**: Tatsuya Shimomoto
 - **GitHub handle**: shimo4228
@@ -18,7 +18,7 @@ Self-contained AI reference for the Agent Attribution Practice (AAP) repository.
 - **Companion position paper (architectural follow-up)**: *Distributing Accountability, Not Capability: Phase Separation and the LLM Workflow Quadrant in Autonomous AI Agent Architectures* — distils essays 4–7 into one harness-neutral statement; Zenodo concept DOI 10.5281/zenodo.20353789 (v1 = 10.5281/zenodo.20353790), CC BY 4.0, open access; also on SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6817598
 - **Companion position paper (foundational trilogy)**: *The Two-Layer Black Box: Operator Visibility, Commercial Secrecy, and a Minimum Disclosure Set for Accountable Autonomous AI Agents* — distils essays 1–3 into one harness-neutral statement; Zenodo concept DOI 10.5281/zenodo.20355907 (v1 = 10.5281/zenodo.20355908), CC BY 4.0, open access; also on SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6823878
 - **Created**: 2026-04-19
-- **Released**: 2026-05-24 (v0.5.0); 2026-05-23 (v0.4.0); 2026-05-17 (v0.3.0); 2026-05-01 (v0.2.0); 2026-04-19 (v0.1.0)
+- **Released**: 2026-07-06 (v0.6.0); 2026-05-24 (v0.5.0); 2026-05-23 (v0.4.0); 2026-05-17 (v0.3.0); 2026-05-01 (v0.2.0); 2026-04-19 (v0.1.0)
 - **Primary language**: English
 - **Japanese mirror**: README.ja.md
 - **ADR count**: 10 (ADR-0001 through ADR-0010)

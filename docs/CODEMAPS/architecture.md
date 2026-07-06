@@ -1,4 +1,4 @@
-<!-- Generated: 2026-06-12 | Files scanned: project root + docs/ tree | Token estimate: ~1700 -->
+<!-- Generated: 2026-07-06 | Files scanned: project root + docs/ tree | Token estimate: ~1700 -->
 # Document Architecture
 
 Agent Attribution Practice (AAP) is a **judgment-artifact repository**, not a code repository. There are no source files; the architecture is the structure of judgments and their cross-references. This codemap exists so an LLM-mediated reader (the primary audience) can route to the canonical document for a given question without scanning the whole tree.
@@ -8,8 +8,12 @@ Agent Attribution Practice (AAP) is a **judgment-artifact repository**, not a co
 ```
 agent-attribution-practice/
 ├── README.md / README.ja.md             human + LLM landing (English primary, Japanese mirror)
-├── CLAUDE.md                            agent / contributor instructions (cold-start context)
-├── CITATION.cff                         Zenodo DOI metadata
+├── CLAUDE.md → AGENTS.md                agent / contributor instructions (cold-start context)
+├── CHANGELOG.md                         release history (Keep a Changelog)
+├── CITATION.cff                         Zenodo DOI metadata (+ SWHID identifiers)
+├── codemeta.json                        CodeMeta software metadata (derived from CITATION.cff)
+├── .zenodo.json                         Zenodo deposit metadata + citation-graph edges (related_identifiers)
+├── graph.jsonld                         concept-level knowledge graph (schema.org triples; HF Datasets mirror)
 ├── LICENSE                              MIT
 ├── llms.txt                             AI navigator (Answer.AI llms.txt standard)
 ├── llms-full.txt                        AI self-contained Q&A reference
@@ -143,9 +147,9 @@ contemplative-moltbook                  ← evidence source for ADR-0002 (PreToo
 | ADRs (en + ja) | 22 (10 ADRs × 2 + 1 README pair) |
 | Quadrants (en + ja) | 10 (5 docs × 2) |
 | Policy-mapping (en + ja) | 10 (README + NIST + ISO + EU AI Act + Singapore MGF; each en + ja) |
-| Top-level docs (`docs/*.md`) | 8 |
-| Top-level repo files | 7 (README × 2, CLAUDE, CITATION, LICENSE, llms.txt, llms-full.txt) |
-| Examples | varies (`examples/audit-tests/`) |
-| **Total markdown / text** | **64** |
+| Top-level docs (`docs/*.md`) | 10 (thesis / social-consequence / glossary / industry-mapping each en + ja; manifesto + inspiration en only) |
+| Top-level repo md / txt | 7 (README × 2, CLAUDE → AGENTS, CHANGELOG, llms.txt, llms-full.txt) |
+| Other (CODEMAPS + skills README + examples README) | 4 |
+| **Total markdown / text** | **63** |
 
 When this count drifts substantially, regenerate this codemap.

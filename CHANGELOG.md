@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] — 2026-07-06
+
 Governance-framework coverage grew from three frameworks to four (EU AI Act, then Singapore MGF for Agentic AI); the security-principles skill was externalized to a standalone repo and joined by a second standalone skill repo (agent-adoption-triage); the citation / identifier federation was extended (harness-alignment paper, Wikidata cited-work QIDs, AI-native preprint placements, SWHID, CodeMeta); the README pair was fully rewritten. No ADR added or changed in number or content; one Quadrant-doc description of ADR-0005 was corrected to match the ADR body.
 
 ### Added

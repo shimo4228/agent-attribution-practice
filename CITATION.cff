@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
 type: software
 title: "Agent Attribution Practice: Ten Architectural Decision Records and Four Business AI Quadrants on Accountability Distribution in Autonomous AI Agents"
-version: 0.5.0
-date-released: 2026-05-24
+version: 0.6.0
+date-released: 2026-07-06
 license: MIT
 doi: 10.5281/zenodo.20361360
 repository-code: "https://github.com/shimo4228/agent-attribution-practice"
@@ -33,14 +33,17 @@ abstract: >-
   Phase-crossing decision when an Autonomous Agentic Loop component
   is placed in the operation phase of a deployment. Phase and
   Quadrant are independent dimensions. Includes thesis, manifesto,
-  glossary, lineage, a security-principles skill, an adoption
-  navigator (decision tree, governance mapping, case studies,
-  anti-patterns), AI-facing reference files (llms.txt, llms-full.txt)
-  per the Answer.AI standard, an industry mechanism layer mapping
-  (vendor product instantiations of the ADRs), and an AI governance
-  framework mapping (per-ADR readings against NIST AI Risk Management
-  Framework 1.0 with its Generative AI Profile and ISO/IEC 42001:2023;
-  EU AI Act and OECD AI Principles deferred to a later release).
+  glossary, lineage, an adoption navigator (decision tree, governance
+  mapping, case studies, anti-patterns), two standalone installable
+  skill repositories (llm-agent-security-principles for ADR-0001..0004,
+  agent-adoption-triage for ADR-0009/0010), AI-facing reference files
+  (llms.txt, llms-full.txt) per the Answer.AI standard, an industry
+  mechanism layer mapping (vendor product instantiations of the ADRs),
+  and an AI governance framework mapping (per-ADR readings against
+  NIST AI Risk Management Framework 1.0 with its Generative AI Profile,
+  ISO/IEC 42001:2023, the EU AI Act (Regulation (EU) 2024/1689), and
+  Singapore's Model AI Governance Framework for Agentic AI; OECD AI
+  Principles deferred to a later release).
 keywords:
   - AI agents
   - AI safety
@@ -68,6 +71,9 @@ keywords:
   - PDCA cycle
   - AI governance frameworks
   - policy framework mapping
+  - EU AI Act
+  - Model AI Governance Framework for Agentic AI
+  - agentic AI governance
 identifiers:
   - type: swh
     value: "swh:1:snp:0764737393c3d7ac8087a5ca0a33249ceb76433d"

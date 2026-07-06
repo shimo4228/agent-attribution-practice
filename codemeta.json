@@ -11,8 +11,8 @@
     }
   ],
   "codeRepository": "https://github.com/shimo4228/agent-attribution-practice",
-  "datePublished": "2026-05-24",
-  "description": "Ten architectural decision records (two experimental) and four Business AI Quadrants recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system, and how a piece of work is routed (by Quadrant) and timed (by lifecycle phase) into the architectural regime where that distribution operates. Extracted from the contemplative-agent implementation, the archived Agent Knowledge Cycle (AKC) governance triplet, and a seven-essay narrative spine published in April–May 2026; re-expressed in harness-neutral form. ADR-0001 Security by Absence, ADR-0002 Deterministic Prohibition at the Scaffolding Layer, and ADR-0003 Untrusted Content Boundary form a prohibition-strength hierarchy. ADRs 0009 Triage Before Autonomy and 0010 Phase Separation form a triage pair: 0009 routes work among the four Business AI Quadrants (Script, Algorithmic Search, LLM Workflow, Autonomous Agentic Loop), and 0010 surfaces the Phase-crossing decision when an Autonomous Agentic Loop component is placed in the operation phase of a deployment. Phase and Quadrant are independent dimensions. Includes thesis, manifesto, glossary, lineage, a security-principles skill, an adoption navigator (decision tree, governance mapping, case studies, anti-patterns), AI-facing reference files (llms.txt, llms-full.txt) per the Answer.AI standard, an industry mechanism layer mapping (vendor product instantiations of the ADRs), and an AI governance framework mapping (per-ADR readings against NIST AI Risk Management Framework 1.0 with its Generative AI Profile and ISO/IEC 42001:2023; EU AI Act and OECD AI Principles deferred to a later release).",
+  "datePublished": "2026-07-06",
+  "description": "Ten architectural decision records (two experimental) and four Business AI Quadrants recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system, and how a piece of work is routed (by Quadrant) and timed (by lifecycle phase) into the architectural regime where that distribution operates. Extracted from the contemplative-agent implementation, the archived Agent Knowledge Cycle (AKC) governance triplet, and a seven-essay narrative spine published in April–May 2026; re-expressed in harness-neutral form. ADR-0001 Security by Absence, ADR-0002 Deterministic Prohibition at the Scaffolding Layer, and ADR-0003 Untrusted Content Boundary form a prohibition-strength hierarchy. ADRs 0009 Triage Before Autonomy and 0010 Phase Separation form a triage pair: 0009 routes work among the four Business AI Quadrants (Script, Algorithmic Search, LLM Workflow, Autonomous Agentic Loop), and 0010 surfaces the Phase-crossing decision when an Autonomous Agentic Loop component is placed in the operation phase of a deployment. Phase and Quadrant are independent dimensions. Includes thesis, manifesto, glossary, lineage, an adoption navigator (decision tree, governance mapping, case studies, anti-patterns), two standalone installable skill repositories (llm-agent-security-principles for ADR-0001..0004, agent-adoption-triage for ADR-0009/0010), AI-facing reference files (llms.txt, llms-full.txt) per the Answer.AI standard, an industry mechanism layer mapping (vendor product instantiations of the ADRs), and an AI governance framework mapping (per-ADR readings against NIST AI Risk Management Framework 1.0 with its Generative AI Profile, ISO/IEC 42001:2023, the EU AI Act (Regulation (EU) 2024/1689), and Singapore's Model AI Governance Framework for Agentic AI; OECD AI Principles deferred to a later release).",
   "identifier": "https://doi.org/10.5281/zenodo.20361360",
   "keywords": [
     "AI agents",
@@ -40,10 +40,13 @@
     "AIMS",
     "PDCA cycle",
     "AI governance frameworks",
-    "policy framework mapping"
+    "policy framework mapping",
+    "EU AI Act",
+    "Model AI Governance Framework for Agentic AI",
+    "agentic AI governance"
   ],
   "license": "https://spdx.org/licenses/MIT",
   "name": "Agent Attribution Practice: Ten Architectural Decision Records and Four Business AI Quadrants on Accountability Distribution in Autonomous AI Agents",
   "url": "https://doi.org/10.5281/zenodo.20361360",
-  "version": "0.5.0"
+  "version": "0.6.0"
 }

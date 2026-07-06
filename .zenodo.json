@@ -7,7 +7,7 @@
       "orcid": "0009-0002-6168-4162"
     }
   ],
-  "description": "Architectural decision records and four Business AI Quadrants recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system, and how a piece of work is routed (by Quadrant) and timed (by lifecycle phase) into the architectural regime where that distribution operates. Extracted from the contemplative-agent implementation, the archived Agent Knowledge Cycle (AKC) governance triplet, and a seven-essay narrative spine published in April–May 2026; re-expressed in harness-neutral form. Includes a prohibition-strength hierarchy (Security by Absence > Deterministic Prohibition at the Scaffolding Layer > Untrusted Content Boundary), a triage pair routing work among the four Business AI Quadrants (Script, Algorithmic Search, LLM Workflow, Autonomous Agentic Loop), Phase Separation surfacing the Phase-crossing decision, plus an industry mechanism layer mapping and an AI governance framework mapping (NIST AI Risk Management Framework 1.0 with its Generative AI Profile and ISO/IEC 42001:2023; EU AI Act and OECD AI Principles deferred to a later release), and a social-consequence layer (normative upper rationale) extending the framework to how accountability externalized by AI routes into institutions rather than violence.",
+  "description": "Architectural decision records and four Business AI Quadrants recording how attribution — who authored the behavior, who bears its consequences, who can reconstruct its cause — is distributed across an autonomous AI agent system, and how a piece of work is routed (by Quadrant) and timed (by lifecycle phase) into the architectural regime where that distribution operates. Extracted from the contemplative-agent implementation, the archived Agent Knowledge Cycle (AKC) governance triplet, and a seven-essay narrative spine published in April–May 2026; re-expressed in harness-neutral form. Includes a prohibition-strength hierarchy (Security by Absence > Deterministic Prohibition at the Scaffolding Layer > Untrusted Content Boundary), a triage pair routing work among the four Business AI Quadrants (Script, Algorithmic Search, LLM Workflow, Autonomous Agentic Loop), Phase Separation surfacing the Phase-crossing decision, plus an industry mechanism layer mapping and an AI governance framework mapping (NIST AI Risk Management Framework 1.0 with its Generative AI Profile, ISO/IEC 42001:2023, the EU AI Act (Regulation (EU) 2024/1689), and Singapore's Model AI Governance Framework for Agentic AI; OECD AI Principles deferred to a later release), and a social-consequence layer (normative upper rationale) extending the framework to how accountability externalized by AI routes into institutions rather than violence.",
   "access_right": "open",
   "license": "MIT",
   "keywords": [
@@ -36,7 +36,10 @@
     "AIMS",
     "PDCA cycle",
     "AI governance frameworks",
-    "policy framework mapping"
+    "policy framework mapping",
+    "EU AI Act",
+    "Model AI Governance Framework for Agentic AI",
+    "agentic AI governance"
   ],
   "language": "eng",
   "related_identifiers": [

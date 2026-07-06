@@ -1,8 +1,8 @@
-<!-- Generated: 2026-05-17 | Total codemaps: 1 | Token estimate: ~260 -->
+<!-- Generated: 2026-07-06 | Total codemaps: 1 | Token estimate: ~260 -->
 # Codemaps Index
 
 Architectural documentation for **agent-attribution-practice (AAP)** — a DOI-registered judgment-artifact repository (10 ADRs + 4 Business AI Quadrants + Phase axis, English primary with Japanese mirror).
-**Last Updated**: 2026-05-17 | **Repo**: 62 markdown / text files, no source code (judgment-artifact repo)
+**Last Updated**: 2026-07-06 | **Repo**: see the file-count snapshot in [architecture.md](architecture.md) (canonical), no source code (judgment-artifact repo)
 
 ---
 
