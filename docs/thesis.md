@@ -147,6 +147,18 @@ to verify than the ADRs, and is kept separate as upper rationale in
 - That the specific implementations (Hooks, CLI, JSONL logs) are
   durable. They are not — implementation dissolves. The *judgment*
   encoded in each ADR is what is meant to persist.
+- That the judgment layer refreshes itself. "Implementation dissolves;
+  judgment persists" says how long a judgment lasts, not how it stays
+  current. This repository separates the two cadences — the ADRs as
+  the durable anchor, [`policy-mapping/`](policy-mapping/) as the
+  layer that decays and is re-checked on its own schedule — and
+  treaty-level AI governance shows the same shape: principled layers
+  revised on review cycles measured in years, with dynamic-update
+  mechanisms that refresh only the implementation layer beneath them.
+  Neither settles the refresh mechanism for the judgment layer itself.
+  Here, an ADR is revised when operating friction contradicts it; no
+  cadence, trigger, or reinterpretation mechanism is defined. That
+  remains an open design question.
 - That these principles answer the civilization-scale questions about
   AI direction, labor, or consent. Those remain open; see
   [`manifesto.md`](manifesto.md).

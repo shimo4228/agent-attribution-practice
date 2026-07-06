@@ -140,6 +140,16 @@ judgment は運用から抽出されたものであって、この formalism か
 - 具体実装 (Hooks、CLI、JSONL log) が durable である。Durable では
   ない — implementation dissolves。各 ADR に込められた *judgment* が
   persist する対象。
+- 判断層が自ら鮮度を保つ。「実装は溶ける、判断は残る」は判断が
+  どれだけ持続するかを言うのであって、どう最新に保たれるかは言わない。
+  本 repository は 2 つの cadence を分離している — ADR が durable な
+  anchor、[`policy-mapping/`](policy-mapping/) が独自のスケジュールで
+  decay し再点検される層。条約レベルの AI governance も同型を示す:
+  原則層は年単位のレビューサイクルで改訂され、動的更新機構が refresh
+  するのはその下の実装層のみ。どちらも判断層それ自体の refresh 機構
+  には答えていない。本 repository では ADR は運用の摩擦が判断と矛盾
+  した時に改訂されるが、その cadence・トリガー・再解釈機構は未定義。
+  これは open な設計課題として残る。
 - これらの原則が AI 方向性、労働、社会的合意についての文明 scale の
   問題に答える。Open のまま; [`manifesto.md`](manifesto.md) 参照。
 - Top-down policy framework が誤っている。それは別の層、別の方法で
