@@ -161,6 +161,70 @@ observability) without a clean one-to-one ADR mapping:
   [Observability vs structural enforcement](glossary.md#observability-vs-structural-enforcement)
   glossary entry records the distinction.
 
+## AI liability insurance as an accountability market (2026 H1)
+
+Through the first half of 2026 the insurance industry moved AI risk
+out of the coverage gray zone and began underwriting it as a
+distinct product — a market-side instantiation of judgments the
+ADRs record at the design layer:
+
+- **[ISO/Verisk generative-AI CGL exclusions](https://core.verisk.com/Insights/Emerging-Issues/Articles/2025/July/Week-4/Emerging-Risks-in-ISO-General-Liability-Multistate-Filing)**
+  (effective 2026-01-01). Verisk's ISO introduced optional
+  endorsement forms — CG 40 47 (Coverages A and B), CG 40 48
+  (Coverage B only), CG 35 08 (products/completed operations) —
+  letting carriers explicitly exclude generative-AI liability from
+  commercial general liability policies
+  ([Gallagher confirms](https://www.ajg.com/news-and-insights/iso-introduces-generative-ai-exclusion-in-commercial-general-liability-policies/)
+  the forms appearing on live policies). The exclusions are
+  carrier-optional, not industry-automatic; their effect is to push
+  AI risk toward dedicated products.
+- **[Munich Re aiSure](https://www.munichre.com/en/solutions/for-industry-clients/insure-ai.html)**.
+  Performance-warranty-backed AI insurance covering defined AI
+  performance failures; documented limits run to roughly $5M for
+  standard model policies and up to $15M initial capacity via the
+  [Mosaic partnership](https://www.mosaicinsurance.com/resources/press-releases/~/mosaic-partners-with-munich-res-aisure-to-provide-pioneering-coverage-for-ai-vendors/).
+  A separate provider, AIUC, writes AI-agent policies up to $50M.
+- **[Klaimee](https://www.ycombinator.com/launches/QCC-klaimee-insures-your-ai-agents)**
+  (Y Combinator). Four-step chain — risk evaluation → certification
+  report → financial guarantee → AI liability insurance — using
+  100+ behavioral probes (prompt injection, jailbreak, decision
+  drift, data leakage, biased output) to score agents on eight risk
+  dimensions (scope, data exfiltration, unauthorized action, output
+  integrity, adversarial manipulation, behavioral stability, model
+  drift, operational control), graded A–F; the grades inform
+  underwriting.
+- **[Mount](https://www.ycombinator.com/launches/QUI-mount-the-ai-agent-insurance-carrier)**
+  (Y Combinator, Spring 2026). Positions as "The AI Agent Insurance
+  Carrier" (scan/red-team → quantify residual risk → insure). At
+  the time of writing it has not publicly disclosed a fronting
+  carrier or admitted-carrier authority, so "carrier" is
+  self-positioning, not a verified regulatory status.
+
+Regulatory adjacency: the Colorado AI Act
+([SB 24-205](https://leg.colorado.gov/bills/sb24-205)) grants
+deployers a rebuttable presumption of reasonable care where a
+documented risk-management program (e.g. aligned to an AI risk
+management framework or AI management system standard) exists —
+provable oversight becomes a condition for favorable legal and
+underwriting treatment. No jurisdiction has enacted a named
+"reasonable oversight standard"; claims to that effect circulating
+in 2026 commentary blend the Colorado presumption, human-oversight
+obligations in EU law, and a withdrawn EU liability proposal.
+
+The AAP reading: an insurer contractually named in advance as the
+financial receiver of an agent's losses is the market formalizing
+the *pre-named gap-bearer* judgment
+([ADR-0008](adr/0008-one-agent-one-human.md) /
+[ADR-0009](adr/0009-triage-before-autonomy.md) territory), and the
+grading dimensions the market converged on independently overlap
+the properties the ADRs treat as accountability-relevant (scope,
+unauthorized action, behavioral stability, operational control).
+The caveat below applies with full force: a policy pays for a loss;
+it does not decide who should have approved the action. Whether
+insurance substitutes for or presupposes the design-layer
+principles (approval gates, causal traceability) is an open
+question this repository tracks on the judgment side.
+
 ## ADRs without a clean 2026 Q2 mechanism instance
 
 | ADR | Reason no clean instance |

@@ -1164,6 +1164,282 @@
       "name": "EU AI Act mapping to AAP ADRs",
       "description": "Per-ADR mapping of AAP's ten ADRs to EU AI Act (Regulation (EU) 2024/1689) Articles — Art 5 risk tiers, Art 9 risk management, Art 10 data governance, Art 11/Annex IV documentation, Art 12/19 record-keeping, Art 13 transparency, Art 14 human oversight, Art 15 robustness/cybersecurity, Art 17 quality management, Art 26-27 deployer duties, Art 72 post-market monitoring. Distinguishes the Act's four risk tiers from AAP's prohibition-strength hierarchy (graduated structures grading different things). Reverse index from Article to applicable ADRs. Secondary-scholarship note records external convergence (Nannini et al. 2604.04604; Safin & Balta 2605.12105; Bhattarai & Vu 2602.09947) without folding it into the ADR lineage. AAP-side reading, not a compliance attestation. Faster decay than NIST/ISO through the 2026–2027 phase-in.",
       "temporalCoverage": "2026-Q2/2027-Q2"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2601.15059",
+      "@type": [
+        "ExternalReference",
+        "ScholarlyArticle"
+      ],
+      "name": "The Responsibility Vacuum: Organizational Failure in Scaled Agent Systems",
+      "description": "A theoretical model defining the responsibility vacuum: in scaled agent deployments, decisions execute through formally correct approvals while no entity holds both approval authority and the epistemic capacity to understand them; once decision-generation throughput exceeds human verification capacity, review degrades into ritual, and adding automated verification amplifies rather than closes the gap by accelerating cognitive offloading. Purely conceptual — the paper presents no empirical data and states the result follows from its assumptions. Recorded against the approval-gate concept as an external formalization of a distinction AAP treats as load-bearing: an approval gate's existence and its effectiveness as verification are separate axes, and static strength tiers do not by themselves capture throughput-driven decay. Citation surface, not ADR lineage.",
+      "datePublished": "2026-01-21",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Oleg Romanchuk"
+        },
+        {
+          "@type": "Person",
+          "name": "Roman Bondar"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/approval-gate"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2602.10701",
+      "@type": [
+        "ExternalReference",
+        "ScholarlyArticle"
+      ],
+      "name": "Don't blame me: How Intelligent Support Affects Moral Responsibility in Human Oversight",
+      "description": "A between-subjects experiment (N=274, Prolific): participants overseeing an autonomous drone across ten critical situations had their action options restricted to 6/4/2/1; those reduced to a single approve-only option rated their own moral responsibility for crashes significantly lower, while responsibility attributed to the AI and its developer did not change across conditions — the lost human responsibility was not reassigned. The paper frames this as a safety-versus-responsibility trade-off in oversight-interface design, explained via the causal and epistemic conditions of moral responsibility; it does not use 'evaporation' vocabulary and does not cite Elish. AAP reads it as experimental pressure to treat the approval gate as graded — how many degrees of freedom the gate leaves the human — rather than binary. Citation surface, not ADR lineage.",
+      "datePublished": "2026-02-11",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Cedric Faas"
+        },
+        {
+          "@type": "Person",
+          "name": "Richard Uth"
+        },
+        {
+          "@type": "Person",
+          "name": "Sarah Sterz"
+        },
+        {
+          "@type": "Person",
+          "name": "Markus Langer"
+        },
+        {
+          "@type": "Person",
+          "name": "Anna Maria Feit"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/approval-gate"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2603.13236",
+      "@type": [
+        "ExternalReference",
+        "ScholarlyArticle"
+      ],
+      "name": "Human Attribution of Causality to AI Across Agency, Misuse, and Misalignment",
+      "description": "Five vignette experiments (Prolific UK/US, recruited N≈689, banking-hack scenarios, 0–100 attribution measures) showing that human causal attribution tracks autonomy — AI M=80.4 vs human M=42.2 at medium autonomy, reversing to human M=82.0 vs AI M=62.2 at low autonomy; that humans are attributed more than AIs in identical swapped roles (M=92.23 vs 25.27); that a present developer absorbs attribution from the user but not from the AI; and that decomposing the AI shifts attribution onto the agentic component (78.36 vs 68.69) while halving user attribution (50.91 → 25.04). The paper positions its results as running counter to the responsibility gap (citing Reed; Santoni de Sio & Mecacci); it cites neither Matthias nor Elish, so the link to the moral-crumple-zone concept is AAP's reading, not the paper's claim: the experiments condition when blame concentrates on the nearest human — strongly at low autonomy — rather than confirming a uniform crumple-zone dynamic. Citation surface, not ADR lineage.",
+      "datePublished": "2026-02-17",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Maria Victoria Carro"
+        },
+        {
+          "@type": "Person",
+          "name": "David Lagnado"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/moral-crumple-zone"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2605.17467",
+      "@type": [
+        "ExternalReference",
+        "ScholarlyArticle"
+      ],
+      "name": "VerifyMAS: Hypothesis Verification for Failure Attribution in LLM Multi-Agent Systems",
+      "description": "Reframes failure attribution in LLM multi-agent systems as two-stage hypothesis verification — an error hypothesis is validated against the full trajectory with entail / neutral / contradict outputs before the responsible agent is localized — over a 14-type error taxonomy classified by local / global / hybrid detectability. Roughly doubles agent-level micro-F1 on Aegis-Bench (Qwen2.5-7B 27.55 → 47.92; GPT-4.1 37.48 → 49.52), yet pair-level micro-F1 on the out-of-distribution Who&When benchmark stays single-digit for every model tested (max 7.39). Recorded as the technical-layer counterpart to the Accountability Horizon impossibility theorem (arXiv:2604.07778) already in this graph: computational attribution can be sharpened and still leaves the attribution gap's normative layer untouched, and even the computational layer remains largely unsolved out of distribution. Citation surface, not ADR lineage.",
+      "datePublished": "2026-05-17",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Hezhe Qiao"
+        },
+        {
+          "@type": "Person",
+          "name": "Hanghang Tong"
+        },
+        {
+          "@type": "Person",
+          "name": "Ee-Peng Lim"
+        },
+        {
+          "@type": "Person",
+          "name": "Bing Liu"
+        },
+        {
+          "@type": "Person",
+          "name": "Guansong Pang"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2604.02767",
+      "@type": [
+        "ExternalReference",
+        "ScholarlyArticle"
+      ],
+      "name": "SentinelAgent: Intent-Verified Delegation Chains for Securing Federal Multi-Agent AI Systems",
+      "description": "Proposes a Delegation Chain Calculus for multi-agent delegation: seven properties, six deterministically verifiable at runtime by a non-LLM Delegation Authority Service — including authority narrowing (a delegatee can hold no more authority than its delegator) and forensic reconstructibility — while the seventh, intent preservation, is argued to be irreducibly probabilistic via a practical-infeasibility proposition (a Rice's-theorem analogy the author explicitly does not claim as a formal proof). Reports 100% TPR / 0% FPR on DelegationBench v4 (516 scenarios), a benchmark constructed by the same single author as the defense — a construct-validity limit the paper itself concedes. Recorded for the deterministic six as technical conditions under which accountability distribution across delegation chains becomes implementable, with the probabilistic status of intent preservation as the boundary the design must absorb rather than assume away. Citation surface, not ADR lineage.",
+      "datePublished": "2026-04-03",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "KrishnaSaiReddy Patil"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/accountability-distribution"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2606.07539",
+      "@type": [
+        "ExternalReference",
+        "ScholarlyArticle"
+      ],
+      "name": "Prompt Governance? On Governing Technologies Governed by Natural Language",
+      "description": "A PRISMA systematic review of 287 LLM papers plus analysis of policy instruments (EU GPAI Code of Practice, US EO 14319 and an OMB memorandum, UK and Singapore documents), examining system prompts as a governance instrument across eight goal categories (Alignment, Accessibility, Adaptability, Performance, Stability, Security, Implementation, Auditability). Finds fragmented and contradictory evidence: readable instruction text does not imply predictable behavior, models often fail stated instruction priorities, and policy that treats system prompts as stable, interpretable control mechanisms conflates textual specification with behavioral compliance. Accepted as a full paper to ACM FAccT 2026. Recorded as empirical support for the ordering AAP's prohibition-strength hierarchy asserts: natural-language scaffolding sits below deterministic enforcement in reliability. Citation surface, not ADR lineage.",
+      "datePublished": "2026-04-29",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Anna Neumann"
+        },
+        {
+          "@type": "Person",
+          "name": "Holli Sargeant"
+        },
+        {
+          "@type": "Person",
+          "name": "Jatinder Singh"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#concept/prohibition-strength-hierarchy"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2606.00518",
+      "@type": [
+        "ExternalReference",
+        "ScholarlyArticle"
+      ],
+      "name": "Acting with AI: An Interaction-Based Framework for Agentic Tort Liability",
+      "description": "Proposes an interaction-based framework for agentic tort liability, drawing on Bratman's planning theory and concerted-action doctrine: harm pathways are typed as autonomous drift, pure tool use, or collaborative planning, each mapped to existing doctrine (frolic-and-detour under respondeat superior with strict products liability; product defect and failure to warn; the control test, professional malpractice, and negligent misrepresentation), with liability derived ex post from a timestamped stateful interaction log and a four-element Reasonable Agent standard (constraint verification gates, epistemic transparency, runtime grounding, forensic logging). Recorded as the principal counter-axis to AAP's pre-named gap-bearer: allocation from actual interaction patterns after the fact, offered as a fault-preserving alternative to ex-ante role-based assignment — while its constraint-verification gates and forensic logging converge with the territory of ADR-0005 and ADR-0006. Citation surface, not ADR lineage.",
+      "datePublished": "2026-05-30",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Yiheng Yao"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer"
+    },
+    {
+      "@id": "https://yalelawjournal.org/note/nondeterministic-torts-a-technical-approach-to-ai-liability",
+      "@type": [
+        "ExternalReference",
+        "Article"
+      ],
+      "name": "Nondeterministic Torts: A Technical Approach to AI Liability",
+      "description": "Yale Law Journal Note (vol. 135, 2026) arguing that LLM nondeterminism — identical inputs producing an unbounded range of outputs — is itself the doctrinal key to AI tort liability: because application-level product developers knowingly deploy unpredictable systems, they are consistently the least cost avoiders, justifying concentrated, ex-ante developer liability. Recorded as the counterweight to the interaction-based ex-post allocation of arXiv:2606.00518 in this graph: the pair shows legal scholarship actively contesting whether responsibility should be fixed before deployment — AAP's pre-named gap-bearer is one such ex-ante form — or derived from interaction records afterwards. Citation surface, not ADR lineage.",
+      "datePublished": "2026",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Trent Kannegieter"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2605.16872",
+      "@type": [
+        "ExternalReference",
+        "ScholarlyArticle"
+      ],
+      "name": "Some[Body] Must Receive That Pain for Agent Accountability",
+      "description": "Argues that punishment can function as corrective feedback only for entities satisfying four structural conditions — boundary, locus of accumulation, consolidation, substrate response — and that current LLM agents, as freely copied and reset software-defined composites, satisfy none of them (citing 100% jailbreak success against safety-aligned LLMs; frozen weights and editable context; catastrophic forgetting down to 26% benchmark retention; punishment that vanishes with the prompt). Concludes accountability must anchor to a continuous human principal with meaningful real-time control, liability proportional to actual control bandwidth, and non-revocable halt authority (consequence-agency coupling). Recorded as a mechanistic route to the same endpoint as AAP's implementation-dissolves-judgment-persists: the implementation layer cannot bear judgment because it lacks a substrate on which consequences accumulate. arXiv preprint; no venue at time of recording. Citation surface, not ADR lineage.",
+      "datePublished": "2026-05-16",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Botao Amber Hu"
+        },
+        {
+          "@type": "Person",
+          "name": "Helena Rong"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/implementation-dissolves-judgment-persists"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2604.05568",
+      "@type": [
+        "ExternalReference",
+        "ScholarlyArticle"
+      ],
+      "name": "Beyond Tools and Persons: Who Are They? Classifying Robots and AI Agents for Proportional Governance",
+      "description": "Replaces the tool/person dichotomy with a classification of autonomous entities by integration depth across Cyber-Physical-Social-Thinking (CPST) space — Confined Actors, Socially-Aware Interactors, CPST-Integrated Agents — each matched to proportional governance from enhanced product liability through relational contract models to qualified legal personhood. Its load-bearing claim for AAP: initial classification choices institutionally lock in governance possibilities for a generation (with the common-carrier legal fiction as precedent), corroborating implementation-dissolves-judgment-persists from an entity-ontology angle — while its periodic-reassessment and tier-transition protocols mark the internal tension that classification persists by institutional cost, not automatically. A structurally similar trichotomy in arXiv:2603.18633 is by the same authors, so it is elaboration, not independent convergence. Citation surface, not ADR lineage.",
+      "datePublished": "2026-04-07",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Huansheng Ning"
+        },
+        {
+          "@type": "Person",
+          "name": "Jianguo Ding"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/implementation-dissolves-judgment-persists"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2602.04896",
+      "@type": [
+        "ExternalReference",
+        "ScholarlyArticle"
+      ],
+      "name": "Steering Externalities: Benign Activation Steering Unintentionally Increases Jailbreak Risk for Large Language Models",
+      "description": "Shows that activation steering with entirely benign objectives (strict compliance, JSON output formatting) unintentionally erodes safety guardrails, acting as a 'force multiplier' that raises jailbreak attack success rates above 80% on standard benchmarks — the paper's own coinage is 'steering externalities'. Recorded as empirical reinforcement for AAP's non-invasion posture, which had rested primarily on normative grounds (auditability of behavior logs; the ethical status of internal states): internal intervention itself, even well-intentioned, carries measured safety risk. A sibling systematic audit (arXiv:2603.24543) attributes such shifts — up to 57 percentage points in attack success rate, in both directions — to overlap between steering vectors and latent refusal directions. Citation surface, not ADR lineage.",
+      "datePublished": "2026-02-03",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Chen Xiong"
+        },
+        {
+          "@type": "Person",
+          "name": "Zhiyuan He"
+        },
+        {
+          "@type": "Person",
+          "name": "Pin-Yu Chen"
+        },
+        {
+          "@type": "Person",
+          "name": "Ching-Yun Ko"
+        },
+        {
+          "@type": "Person",
+          "name": "Tsung-Yi Ho"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/non-invasion-posture"
+    },
+    {
+      "@id": "https://arxiv.org/abs/2606.15980",
+      "@type": [
+        "ExternalReference",
+        "ScholarlyArticle"
+      ],
+      "name": "Do Activation Monitors Survive Model Updates? Benchmarking, Predicting, and Repairing Activation-Monitor Staleness",
+      "description": "First systematic benchmark of whether frozen activation-monitor probes survive routine model updates: quantization-style updates largely preserve probe performance, but fine-tuning-style updates — QLoRA especially — frequently make monitors stale, with non-uniform degradation (privacy probes most fragile, refusal-compliance probes comparatively robust). Recorded as the operational-fragility half of the empirical case for AAP's non-invasion posture: monitoring infrastructure that depends on internal states must stay synchronized with model lifecycle management or silently fail, whereas behavior-level observation does not inherit this coupling. Single-author arXiv preprint; no venue at time of recording. Citation surface, not ADR lineage.",
+      "datePublished": "2026-06-14",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Evan Duan"
+        }
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/non-invasion-posture"
     }
   ]
 }

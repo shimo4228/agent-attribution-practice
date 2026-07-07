@@ -148,6 +148,64 @@ cross-environment observability) を populate するが、ADR との
   [Observability vs structural enforcement](glossary.ja.md#observability-vs-structural-enforcementobservability-vs-構造的強制)
   glossary エントリが区別を記録する。
 
+## accountability の市場としての AI 賠償責任保険 (2026 上半期)
+
+2026 年上半期、保険業界は AI リスクを補償のグレーゾーンから外へ動かし、
+独立した商品として引き受け始めた。ADR が設計層の判断として記録してきた
+ものの、市場側での具体化である:
+
+- **[ISO/Verisk の生成 AI CGL 除外裏書き](https://core.verisk.com/Insights/Emerging-Issues/Articles/2025/July/Week-4/Emerging-Risks-in-ISO-General-Liability-Multistate-Filing)**
+  (2026-01-01 発効)。Verisk の ISO はオプションの裏書き様式 —
+  CG 40 47 (Coverage A + B)、CG 40 48 (Coverage B のみ)、CG 35 08
+  (生産物・完成作業) — を導入し、企業総合賠償責任保険 (CGL) から
+  生成 AI 起因の賠償責任を明示的に除外できるようにした
+  ([Gallagher が実ポリシーでの出現を確認](https://www.ajg.com/news-and-insights/iso-introduces-generative-ai-exclusion-in-commercial-general-liability-policies/))。
+  除外は保険会社ごとの任意採用であり業界一律ではないが、効果として
+  AI リスクを専用商品へ押し出す。
+- **[Munich Re aiSure](https://www.munichre.com/en/solutions/for-industry-clients/insure-ai.html)**。
+  性能保証 (performance warranty) を裏付けとする AI 保険。
+  文書化された限度額は標準的なモデル保険で約 $5M、
+  [Mosaic 提携](https://www.mosaicinsurance.com/resources/press-releases/~/mosaic-partners-with-munich-res-aisure-to-provide-pioneering-coverage-for-ai-vendors/)
+  経由の初期キャパシティで最大 $15M。別プロバイダの AIUC は
+  AI エージェント損失を最大 $50M まで引き受ける。
+- **[Klaimee](https://www.ycombinator.com/launches/QCC-klaimee-insures-your-ai-agents)**
+  (Y Combinator)。リスク評価 → 認証レポート → 金融保証 → AI 賠償
+  責任保険の 4 ステップ。100 本超の行動プローブ (プロンプト
+  インジェクション・ジェイルブレイク・決定ドリフト・データ漏洩・
+  バイアス出力) で 8 次元リスクスコア (スコープ、データ抜き取り、
+  無許可アクション、出力整合性、敵対的操作、行動安定性、モデル
+  ドリフト、オペレーショナルコントロール) を算出し A–F の
+  レターグレードに変換、グレードは引受判断に入る。
+- **[Mount](https://www.ycombinator.com/launches/QUI-mount-the-ai-agent-insurance-carrier)**
+  (Y Combinator, Spring 2026)。「The AI Agent Insurance Carrier」を
+  自称し、スキャン / レッドチーム → 残余リスク定量化 → 付保、と
+  位置づける。執筆時点で fronting carrier や認可キャリアとしての
+  地位は公開されておらず、「carrier」は自己ポジショニングであって
+  検証済みの規制上の地位ではない。
+
+規制面の隣接: Colorado AI Act
+([SB 24-205](https://leg.colorado.gov/bills/sb24-205)) は、文書化
+されたリスク管理プログラム (AI リスク管理フレームワークや AI
+マネジメントシステム標準への準拠等) が存在する場合に deployer へ
+「合理的注意」の反証可能な推定を与える — 立証可能な監督が、法的
+にも引受上も有利な扱いの条件になる。なお「合理的監督基準
+(reasonable oversight standard)」という名前の法基準を制定した
+法域は存在しない。2026 年の言説に流通するその種の主張は、
+Colorado の推定・EU 法の人間監視義務・撤回済みの EU 責任指令案を
+混合した合成である。
+
+AAP の読み: エージェントの損失の金融的受け皿として保険会社が
+契約上事前に指名されることは、*pre-named gap-bearer* の判断
+([ADR-0008](adr/0008-one-agent-one-human.ja.md) /
+[ADR-0009](adr/0009-triage-before-autonomy.ja.md) の領域) を市場が
+形式化したものであり、市場が独立に収束したグレーディング次元
+(スコープ、無許可アクション、行動安定性、オペレーショナル
+コントロール) は ADR が accountability 関連とみなす性質群と重なる。
+下の Caveat はここにも全面的に適用される: 保険は損失に支払うが、
+その行動を誰が承認すべきだったかは決めない。保険が設計層の原則
+(承認ゲート・因果追跡可能性) を代替するのか前提とするのかは、
+本 repo が判断側で追跡するオープンクエスチョンである。
+
 ## 2026 Q2 時点で clean な mechanism instance を持たない ADR
 
 | ADR | clean instance がない理由 |
