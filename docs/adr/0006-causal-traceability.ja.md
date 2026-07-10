@@ -130,6 +130,13 @@ causal traceability を壊す。
 非対称性 (incident は upstream の投資より桁違いに高くつく) は、
 agent にも同様にあてはまる。
 
+installable な「how」対応物は
+[agent-observability-patterns](https://github.com/shimo4228/agent-observability-patterns)
+skill repository ([`docs/skills/`](../skills/README.md) 参照) を見よ:
+replayable audit log の schema、zero-wrong replay-gate harness、
+observation-before-intervention の各パターンが、この決定が要求する
+再構成の基盤を供給する。
+
 ---
 
 **Lineage。** Thesis は

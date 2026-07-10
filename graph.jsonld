@@ -283,6 +283,20 @@
     },
 
     {
+      "@id": "https://github.com/shimo4228/agent-observability-patterns",
+      "@type": ["EcosystemRepo", "SoftwareSourceCode"],
+      "name": "agent-observability-patterns",
+      "description": "Standalone installable repository of three Agent Skills — replayable-audit-logs, read-only-instruments, shadow-mode-validation — packaging observation-precedes-intervention design patterns in runnable form. The 'how' counterpart to ADR-0006 Causal Traceability (replayable logs supply the post-incident reconstruction substrate) and ADR-0005 Human Approval Gate (instruments and shadow records supply the evidence a named approver signs off from). Manually curated generalization of the operational variant inside the contemplative-agent project.",
+      "url": "https://github.com/shimo4228/agent-observability-patterns",
+      "creator": {"@id": "https://orcid.org/0009-0002-6168-4162"},
+      "isBasedOn": [
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0006-causal-traceability.md",
+        "https://github.com/shimo4228/agent-attribution-practice/blob/main/docs/adr/0005-human-approval-gate.md"
+      ],
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/approval-gate"
+    },
+
+    {
       "@id": "https://shimo4228.github.io/shimo4228/vocab#aap/quadrant/script",
       "@type": ["Quadrant", "DefinedTerm"],
       "name": "Script Quadrant",

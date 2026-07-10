@@ -121,6 +121,12 @@ skill file is an uncovered path and violates the invariant.
   the room at every decision that changes what the agent does or how it
   represents itself.
 
+See the [agent-observability-patterns](https://github.com/shimo4228/agent-observability-patterns)
+skill repository (see [`docs/skills/`](../skills/README.md)) for the
+installable "how" counterpart: read-only instruments and shadow-mode
+validation supply the data a named approver signs off from, instead of
+approving on intuition.
+
 ---
 
 **Lineage.** This principle was crystallized in [contemplative-agent `docs/adr/0012-human-approval-gate.md`](https://github.com/shimo4228/contemplative-agent). The 2026-04-17 note in that ADR — extending the gate to manual CRUD — is included here as part of the decision, not as a later amendment.

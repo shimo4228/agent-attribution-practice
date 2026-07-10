@@ -102,9 +102,12 @@ the loop goes live. Full scenarios:
 
 The same navigator ships as installable standalone Agent Skills:
 [agent-adoption-triage](https://github.com/shimo4228/agent-adoption-triage)
-(the `docs/quadrants/` navigator, ADR-0009/0010) and
+(the `docs/quadrants/` navigator, ADR-0009/0010),
 [llm-agent-security-principles](https://github.com/shimo4228/llm-agent-security-principles)
-(the security judgments, ADR-0001..0004).
+(the security judgments, ADR-0001..0004), and
+[agent-observability-patterns](https://github.com/shimo4228/agent-observability-patterns)
+(the observability patterns behind ADR-0006/0005: replayable audit
+logs, read-only instruments, shadow-mode validation).
 
 The ADRs are a starting point for judgment, not a verdict —
 re-interpret them against your own context.

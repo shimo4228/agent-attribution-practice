@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Third standalone Agent Skill repository: [`agent-observability-patterns`](https://github.com/shimo4228/agent-observability-patterns) — three skills (replayable-audit-logs, read-only-instruments, shadow-mode-validation) packaging observation-precedes-intervention design patterns as the installable "how" counterpart to ADR-0006 Causal Traceability (replayable logs supply the post-incident reconstruction substrate) and ADR-0005 Human Approval Gate (instruments and shadow records supply the evidence a named approver signs off from). Generalized from the operational variant inside contemplative-agent; manually curated, no automated sync. Cross-linked from `docs/skills/README.md` / ADR-0005 / ADR-0006 (en + ja) / `README` ×2 / `docs/CODEMAPS/architecture.md` / `llms.txt`, and federated into the machine-readable layer: a `SoftwareSourceCode` node with `isBasedOn` edges to ADR-0006/0005 in `graph.jsonld`, the *Skill references* answer in `llms-full.txt`, an `isSourceOf` entry in `.zenodo.json`, and the skill-repository count in `codemeta.json`.
+
 ## [0.6.0] — 2026-07-06
 
 Governance-framework coverage grew from three frameworks to four (EU AI Act, then Singapore MGF for Agentic AI); the security-principles skill was externalized to a standalone repo and joined by a second standalone skill repo (agent-adoption-triage); the citation / identifier federation was extended (harness-alignment paper, Wikidata cited-work QIDs, AI-native preprint placements, SWHID, CodeMeta); the README pair was fully rewritten. No ADR added or changed in number or content; one Quadrant-doc description of ADR-0005 was corrected to match the ADR body.

@@ -127,6 +127,12 @@ This convergence is not decorative. The decision cost asymmetry that
 makes humans adopt these practices (an incident costs orders of magnitude
 more than the upstream investment) applies identically to agents.
 
+See the [agent-observability-patterns](https://github.com/shimo4228/agent-observability-patterns)
+skill repository (see [`docs/skills/`](../skills/README.md)) for the
+installable "how" counterpart: replayable audit-log schemas, the
+zero-wrong replay-gate harness, and the observation-before-intervention
+patterns that supply the reconstruction substrate this decision demands.
+
 ---
 
 **Lineage.** The thesis was written up in

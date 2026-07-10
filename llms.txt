@@ -65,6 +65,7 @@ Adoption-side documents that operationalize the ten ADRs across the four Busines
 
 - [LLM Agent Security Principles](https://github.com/shimo4228/llm-agent-security-principles): the how-to counterpart to ADR-0001, ADR-0002, ADR-0003, ADR-0004 — a standalone installable skill repository (formerly hosted in `docs/skills/`)
 - [Agent Adoption Triage](https://github.com/shimo4228/agent-adoption-triage): the how-to counterpart to ADR-0009, ADR-0010 — the `docs/quadrants/` navigator (five-question triage, per-quadrant governance sets, anti-patterns) as a standalone installable skill repository
+- [Agent Observability Patterns](https://github.com/shimo4228/agent-observability-patterns): the how-to counterpart to ADR-0006, ADR-0005 — three skills (replayable audit logs, read-only instruments, shadow-mode validation) supplying the post-incident reconstruction substrate and the evidence a named approver signs off from, as a standalone installable skill repository
 
 ## Related projects
 

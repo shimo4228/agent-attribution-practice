@@ -99,9 +99,12 @@ Agentic Loop 象限に振り分けられ、step 3 で全 10 ADR が load-bearing
 同じ navigator はインストール可能な standalone Agent Skill としても
 出荷されている:
 [agent-adoption-triage](https://github.com/shimo4228/agent-adoption-triage)
-(`docs/quadrants/` navigator、ADR-0009/0010) と
+(`docs/quadrants/` navigator、ADR-0009/0010)、
 [llm-agent-security-principles](https://github.com/shimo4228/llm-agent-security-principles)
-(security 判断、ADR-0001..0004)。
+(security 判断、ADR-0001..0004)、
+[agent-observability-patterns](https://github.com/shimo4228/agent-observability-patterns)
+(ADR-0006/0005 の背後にある観測性パターン: replayable audit logs、
+read-only instruments、shadow-mode validation)。
 
 ADR は判断の出発点であって正解ではない — 自分の context に応じて
 re-interpret する。
