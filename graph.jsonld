@@ -984,7 +984,7 @@
       "@id": "https://doi.org/10.1007/s13347-021-00450-x",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Four Responsibility Gaps with Artificial Intelligence: Why They Matter and How to Address Them",
-      "description": "Decomposes the responsibility gap (Matthias 2004) into four interconnected gaps — in culpability, moral accountability, public accountability, and active responsibility — caused by different sources (technical, organisational, legal, ethical, societal), and answers with socio-technical design for meaningful human control (Philosophy & Technology 34(4): 1057–1084). Recorded as the discourse-refinement pole next to the origin node (Matthias 2004). Bibliographic data, the four gap names, and the meaningful-human-control proposal were verified against the authors' institutional repository record (TU Delft); which of the four gaps AAP's pre-named gap-bearer addresses is deliberately not asserted pending a full-text read. Citation surface, not ADR lineage.",
+      "description": "Decomposes the responsibility gap (Matthias 2004) into four interconnected gaps — in culpability, moral accountability, public accountability, and active responsibility — caused by different sources (technical, organisational, legal, ethical, societal), and answers with socio-technical design for meaningful human control (MHC), specified as a tracking condition (the socio-technical system responds to the relevant human agents' reasons) and a tracing condition (at least one human along the design-development-use chain possesses sufficient knowledge of the system's capabilities and limitations, and sufficient moral awareness of, and capacity to comply with, her role as potential target of legitimate response for the system's behavior) (Philosophy & Technology 34(4): 1057–1084). The tracing condition is the closest published kin to AAP's pre-named gap-bearer — one nameable human on the chain, required explicitly to avoid both scapegoating (citing Elish 2019) and impunity, the same pair AAP frames as the moral crumple zone and the gap-bearer as its structural opposite. The difference: MHC is a design-time capacity-alignment program on which gaps can be minimised; AAP records the attribution gap as non-removable and requires a deployment-time naming instead. Mapping onto the four gaps (asserted after a full-text read of the CC BY 4.0 published version): the gap-bearer speaks most directly to the moral accountability gap (a named target of legitimate response, with causal traceability supplying the explanation substrate); the triage and Phase-crossing decisions are active-responsibility artifacts; the culpability gap is deliberately not closed (role responsibility without individual causal contribution); public accountability is touched only via the social-consequence layer. Citation surface, not ADR lineage.",
       "datePublished": "2021",
       "author": [
         {"@type": "Person", "name": "Filippo Santoni de Sio"},
@@ -992,7 +992,10 @@
       ],
       "identifier": "10.1007/s13347-021-00450-x",
       "url": "https://doi.org/10.1007/s13347-021-00450-x",
-      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap"
+      "about": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer"
+      ]
     },
     {
       "@id": "https://doi.org/10.5281/zenodo.20578272",
