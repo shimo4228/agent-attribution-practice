@@ -967,6 +967,34 @@
       "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap"
     },
     {
+      "@id": "https://doi.org/10.1007/s10676-004-3422-1",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "The Responsibility Gap: Ascribing Responsibility for the Actions of Learning Automata",
+      "description": "Origin of the responsibility-gap discourse that AAP's attribution gap belongs to (Ethics and Information Technology 6(3): 175–183). Argues that as a machine learns, its behavior ceases to be predictable by its manufacturer or operator, so the control-and-foreseeability basis of traditional responsibility ascription fails — leaving society the choice of forgoing such machines or living with a gap that traditional concepts cannot bridge. AAP reaches the same wall from the opposite temporal side: Matthias locates the failure ex ante (learning outruns the operator's predictive grasp), while ADR-0009's attribution gap is ex post (runtime blending forecloses the separability that redirect requires). The pre-named gap-bearer is not a third option dissolving Matthias's dilemma but a structured form of its second horn — role responsibility for a gap that stays open; the gap is borne, not bridged. Citation surface, not ADR lineage; the ADR judgments were extracted from operation, not from this literature.",
+      "datePublished": "2004",
+      "author": {"@type": "Person", "name": "Andreas Matthias"},
+      "identifier": "10.1007/s10676-004-3422-1",
+      "url": "https://doi.org/10.1007/s10676-004-3422-1",
+      "about": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer"
+      ]
+    },
+    {
+      "@id": "https://doi.org/10.1007/s13347-021-00450-x",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Four Responsibility Gaps with Artificial Intelligence: Why They Matter and How to Address Them",
+      "description": "Decomposes the responsibility gap (Matthias 2004) into four interconnected gaps — in culpability, moral accountability, public accountability, and active responsibility — caused by different sources (technical, organisational, legal, ethical, societal), and answers with socio-technical design for meaningful human control (Philosophy & Technology 34(4): 1057–1084). Recorded as the discourse-refinement pole next to the origin node (Matthias 2004). Bibliographic data, the four gap names, and the meaningful-human-control proposal were verified against the authors' institutional repository record (TU Delft); which of the four gaps AAP's pre-named gap-bearer addresses is deliberately not asserted pending a full-text read. Citation surface, not ADR lineage.",
+      "datePublished": "2021",
+      "author": [
+        {"@type": "Person", "name": "Filippo Santoni de Sio"},
+        {"@type": "Person", "name": "Giulio Mecacci"}
+      ],
+      "identifier": "10.1007/s13347-021-00450-x",
+      "url": "https://doi.org/10.1007/s13347-021-00450-x",
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap"
+    },
+    {
       "@id": "https://doi.org/10.5281/zenodo.20578272",
       "sameAs": "https://www.wikidata.org/wiki/Q140090144",
       "@type": ["ExternalReference", "ScholarlyArticle"],

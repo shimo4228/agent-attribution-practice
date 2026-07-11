@@ -360,6 +360,28 @@ owns a separable contribution. The gap is intrinsic to the
 Autonomous Agentic Loop Quadrant, not a maturity problem that better
 tooling will solve. See ADR-0009 and the 2026-04-30 essay.
 
+The term *responsibility gap* originates with Matthias (2004): a
+learning machine's behavior ceases to be predictable by its
+manufacturer or operator, so the control-and-foreseeability basis
+of traditional responsibility ascription fails. AAP's attribution
+gap is the narrower, architectural form — it locates the failure
+not in ex-ante foreseeability but in ex-post separability of
+contributions. Santoni de Sio & Mecacci (2021) decompose the
+responsibility gap into four interconnected gaps — in culpability,
+moral accountability, public accountability, and active
+responsibility. See the [thesis](thesis.md) for how the pre-named
+gap-bearer relates to Matthias's dilemma.
+
+> Matthias, A. (2004). The Responsibility Gap: Ascribing
+> Responsibility for the Actions of Learning Automata. *Ethics and
+> Information Technology* 6(3): 175–183.
+> https://doi.org/10.1007/s10676-004-3422-1
+>
+> Santoni de Sio, F., & Mecacci, G. (2021). Four Responsibility
+> Gaps with Artificial Intelligence: Why They Matter and How to
+> Address Them. *Philosophy & Technology* 34(4): 1057–1084.
+> https://doi.org/10.1007/s13347-021-00450-x
+
 ## Redirect (attribution context)
 
 The operator's act, after an incident, of routing responsibility to

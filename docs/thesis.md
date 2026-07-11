@@ -128,6 +128,36 @@ that avoid the autonomous loop avoid the gap. Recorded as a citation
 surface, not a derivation; the ADR judgments were extracted from
 operation, not from this formalism.
 
+The gap itself has a two-decade prior in the ethics of technology.
+Matthias named the *responsibility gap*: as a machine learns, its
+behavior ceases to be predictable by its manufacturer or operator,
+and with that the control-and-foreseeability basis of traditional
+responsibility ascription fails — leaving society the choice of
+forgoing such machines or living with a gap that traditional
+concepts cannot bridge (*Ethics and Information Technology* 6(3),
+2004, [DOI 10.1007/s10676-004-3422-1](https://doi.org/10.1007/s10676-004-3422-1)).
+AAP reaches the same wall from the other temporal side. Matthias
+locates the failure ex ante — learning outruns the operator's
+predictive grasp; ADR-0009 locates it ex post — runtime blending
+forecloses the separability that redirect requires. The
+autonomous-loop case also sharpens the ex-ante horn: the unverified
+behavior space is not a defect rate that better testing drives
+toward zero, it is the flexibility the architecture is purchased
+for, so a due-diligence model of ascription cannot be restored by
+more verification. AAP's response is not a third option that
+dissolves Matthias's dilemma; it is his second horn made structural.
+Triage records whether the autonomy is required at all, and where
+the loop is adopted, a pre-named gap-bearer holds role
+responsibility for a gap that stays open. The gap is borne, not
+bridged. Santoni de Sio and Mecacci later decomposed the gap into
+four interconnected gaps — in culpability, moral accountability,
+public accountability, and active responsibility — and answered
+with socio-technical design for meaningful human control
+(*Philosophy & Technology* 34(4), 2021,
+[DOI 10.1007/s13347-021-00450-x](https://doi.org/10.1007/s13347-021-00450-x)).
+Recorded as a citation surface, not a derivation; the ADR judgments
+were extracted from operation, not from this literature.
+
 ## Social-consequence corollary
 
 The judgments above are framed as internal control: what to constrain,

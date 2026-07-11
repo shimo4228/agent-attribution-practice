@@ -24,6 +24,7 @@
     "Autonomous Agentic Loop Quadrant",
     "Business AI Quadrants",
     "attribution gap",
+    "responsibility gap",
     "moral crumple zone",
     "phase separation",
     "design vs operation phase",
@@ -183,6 +184,18 @@
     },
     {
       "identifier": "10.48550/arXiv.2603.00829",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1007/s10676-004-3422-1",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1007/s13347-021-00450-x",
       "relation": "references",
       "resource_type": "publication-article",
       "scheme": "doi"
