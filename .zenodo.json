@@ -205,6 +205,24 @@
       "relation": "references",
       "resource_type": "publication-article",
       "scheme": "doi"
+    },
+    {
+      "identifier": "10.1007/s11023-024-09674-0",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.4324/9781315201399-5",
+      "relation": "references",
+      "resource_type": "publication-section",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1080/0020174X.2024.2410995",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
     }
   ]
 }

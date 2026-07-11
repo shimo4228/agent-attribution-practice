@@ -1031,6 +1031,55 @@
       ]
     },
     {
+      "@id": "https://doi.org/10.1007/s11023-024-09674-0",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Find the Gap: AI, Responsible Agency and Vulnerability",
+      "description": "Philosophical re-diagnosis of the responsibility gap (Minds and Machines 34:20, CC BY, read in full). Argues the epistemic and control conditions are red herrings for what is unique to AI/AS — cognitive science shows individual humans routinely fail both (implicit bias, priming, confabulation) while responsibility practices remain justified — and adopts the agency-cultivation (instrumentalist, proleptic) account on which those practices are justified by cultivating future responsible agency. The distinctive gap is then a vulnerability gap: the absence in an AI/AS of any identifiable agent who stands in the right role relation of trust to the vulnerable party and is reciprocally vulnerable to that relation — machine components are constitutively invulnerable to moral emotions, and the humans inside the system are blocked by many-hands organisational structure from occupying the answerable role. Its clinician thought experiment isolates the mechanism AAP's role-responsibility reading also stands on: an inventor-clinician who built and deployed the diagnostic system remains unambiguously answerable despite not knowing why the system erred — role relation, not knowledge or control, carries answerability. Supplies the normative justification for the glossary condition that a named human without authority and standing is not yet a gap-bearer: naming without empowerment manufactures a moral-crumple-zone occupant (their airline desk agent case, explicitly distinguished from Danaher's retribution gap — a human target exists but has no pertinent agency), and adds that the crumple-zone position is a moral injury to its occupant as well as a failure toward the harmed party. Citation surface, not ADR lineage.",
+      "datePublished": "2024-06-05",
+      "author": [
+        {"@type": "Person", "name": "Shannon Vallor"},
+        {"@type": "Person", "name": "Tillmann Vierkant"}
+      ],
+      "identifier": "10.1007/s11023-024-09674-0",
+      "url": "https://doi.org/10.1007/s11023-024-09674-0",
+      "about": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/moral-crumple-zone"
+      ]
+    },
+    {
+      "@id": "https://doi.org/10.4324/9781315201399-5",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Technologically Blurred Accountability? Technology, Responsibility Gaps and the Robustness of Our Everyday Conceptual Scheme",
+      "description": "Early deflationist formalization of the responsibility gap, read in full via the CC BY-ND open-access book chapter (in Moral Agency and the Politics of Responsibility, Routledge, first published 2018, pp. 51-67; widely cited as 2017). Gives the gap its condition form: a situation where (1) it seems fitting to hold some person(s) to account for some phi to some degree D, and either (2.1) there is no candidate who it is fitting to hold to account, or (2.2) the candidates' fitting degrees do not match D. Locates the worry specifically in accountability (distinguished from attributability and answerability) and argues no technological case satisfies the conditions — causal arguments (nudging, autonomous agents, many hands) and epistemic arguments (novelty, psychological shaping, foreseeability, epistemic many hands) each fail, leaving only 'blurred responsibility': a real indeterminacy in the degree-norms of negligence under technologically structured multiple agency, removable only by stipulation — 'publicly known conventions for responsibility's assignation, conventions which are not grounded in robust metaphysical facts about responsible agency'. Relation to AAP: that concession is the convergence point — the pre-named gap-bearer is exactly such a publicly known convention, stipulated at deployment time and recorded; AAP takes no side on the metaphysical existence of the gap (its attribution gap is an architectural separability claim), but its operational answer is the one this deflationist analysis says the residual indeterminacy requires. Citation surface, not ADR lineage.",
+      "datePublished": "2018",
+      "author": [
+        {"@type": "Person", "name": "Sebastian Köhler"},
+        {"@type": "Person", "name": "Neil Roughley"},
+        {"@type": "Person", "name": "Hanno Sauer"}
+      ],
+      "identifier": "10.4324/9781315201399-5",
+      "url": "https://doi.org/10.4324/9781315201399-5",
+      "about": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer"
+      ]
+    },
+    {
+      "@id": "https://doi.org/10.1080/0020174X.2024.2410995",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Artificial Agents: Responsibility & Control Gaps",
+      "description": "Deflationist counter-pole to the attribution gap, recorded at abstract level — full-text read pending: the CC BY publisher copy and repository mirrors (Taylor & Francis, PhilArchive, University of Groningen portal) all sit behind bot protection as of 2026-07-11; bibliographic data and core claims verified via the publisher abstract, the Groningen portal record, and PhilPapers (Inquiry, published online 2024-10-03). Argues that responsibility gaps do not exist and that the real, dangerous phenomenon is the control gap: a discrepancy between the causal control an agent exercises and the moral control it should possess or emulate; control gaps expose others to morally unacceptable risks and ought to be closed. Relation to AAP (provisional until full-text read): the control-gap axis separates capability-side from normative-side control, adjacent to AAP's capability-distribution vs accountability-distribution distinction, but the paper's eliminativism about responsibility gaps runs opposite to AAP's premise that the attribution gap is non-removable and must be borne — recorded as a counter-axis pole for the attribution-gap concept. Citation surface, not ADR lineage.",
+      "datePublished": "2024-10-03",
+      "author": [
+        {"@type": "Person", "name": "Herman Veluwenkamp"},
+        {"@type": "Person", "name": "Frank Hindriks"}
+      ],
+      "identifier": "10.1080/0020174X.2024.2410995",
+      "url": "https://doi.org/10.1080/0020174X.2024.2410995",
+      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/attribution-gap"
+    },
+    {
       "@id": "https://arxiv.org/abs/2210.03629",
       "sameAs": "https://www.wikidata.org/wiki/Q121160329",
       "@type": ["ExternalReference", "ScholarlyArticle"],
