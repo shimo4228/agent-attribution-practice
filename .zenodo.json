@@ -199,6 +199,12 @@
       "relation": "references",
       "resource_type": "publication-article",
       "scheme": "doi"
+    },
+    {
+      "identifier": "10.1007/s11948-025-00560-1",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
     }
   ]
 }

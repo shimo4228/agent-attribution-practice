@@ -1014,6 +1014,23 @@
       ]
     },
     {
+      "@id": "https://doi.org/10.1007/s11948-025-00560-1",
+      "@type": ["ExternalReference", "ScholarlyArticle"],
+      "name": "Responsibility Gaps, LLMs & Organisations: Many Agents, Many Levels, and Many Interactions",
+      "description": "Business-ethics treatment of the distribution dimension of responsibility gaps for general-purpose AI models, LLM-specific (Science and Engineering Ethics 31:36, CC BY-NC-ND). Distinguishes the responsibility attribution gap (whether any agent can meaningfully bear responsibility — Matthias's dimension) from the responsibility distribution gap (how much each identified agent bears — the problem of many hands, extended here to collective outcomes). Its M3 approach (many agents; many levels — micro/meso/macro/supra; many interactions) is a non-distributive solution: interactions accumulate influence rather than dilute responsibility, so agents who serve as nodes of interaction — paradigmatically LLM-developing organisations, given their causal-chain-origin position and superior foresight capacity — should bear greater responsibility for harmful LLM outcomes. Relation to AAP: both refuse diffusion-to-meaninglessness, resolved at different loci — M3 concentrates residual responsibility on the most-connected collective agent (the developing organisation, with CEOs and executives as internal nodes), while AAP's one-agent-one-human and pre-named gap-bearer judgments terminate the deployment-side chain at a named individual. Complementary rather than opposed: M3 supplies normative grounds for developer-side organisational ascription that AAP's deployment-side, individual-terminating judgments do not cover, and vice versa — organisational responsibility distributes without terminating unless a person is named. Citation surface, not ADR lineage.",
+      "datePublished": "2025-11-13",
+      "author": [
+        {"@type": "Person", "name": "Mihaela Constantinescu"},
+        {"@type": "Person", "name": "Muel Kaptein"}
+      ],
+      "identifier": "10.1007/s11948-025-00560-1",
+      "url": "https://doi.org/10.1007/s11948-025-00560-1",
+      "about": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/accountability-distribution",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer"
+      ]
+    },
+    {
       "@id": "https://arxiv.org/abs/2210.03629",
       "sameAs": "https://www.wikidata.org/wiki/Q121160329",
       "@type": ["ExternalReference", "ScholarlyArticle"],
