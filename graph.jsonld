@@ -968,6 +968,7 @@
     },
     {
       "@id": "https://doi.org/10.1007/s10676-004-3422-1",
+      "sameAs": "https://www.wikidata.org/wiki/Q29398229",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "The Responsibility Gap: Ascribing Responsibility for the Actions of Learning Automata",
       "description": "Origin of the responsibility-gap discourse that AAP's attribution gap belongs to (Ethics and Information Technology 6(3): 175–183). Argues that as a machine learns, its behavior ceases to be predictable by its manufacturer or operator, so the control-and-foreseeability basis of traditional responsibility ascription fails — leaving society the choice of forgoing such machines or living with a gap that traditional concepts cannot bridge. AAP reaches the same wall from the opposite temporal side: Matthias locates the failure ex ante (learning outruns the operator's predictive grasp), while ADR-0009's attribution gap is ex post (runtime blending forecloses the separability that redirect requires). The pre-named gap-bearer is not a third option dissolving Matthias's dilemma but a structured form of its second horn — role responsibility for a gap that stays open; the gap is borne, not bridged. Citation surface, not ADR lineage; the ADR judgments were extracted from operation, not from this literature.",
@@ -982,6 +983,7 @@
     },
     {
       "@id": "https://doi.org/10.1007/s13347-021-00450-x",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517402",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Four Responsibility Gaps with Artificial Intelligence: Why They Matter and How to Address Them",
       "description": "Decomposes the responsibility gap (Matthias 2004) into four interconnected gaps — in culpability, moral accountability, public accountability, and active responsibility — caused by different sources (technical, organisational, legal, ethical, societal), and answers with socio-technical design for meaningful human control (MHC), specified as a tracking condition (the socio-technical system responds to the relevant human agents' reasons) and a tracing condition (at least one human along the design-development-use chain possesses sufficient knowledge of the system's capabilities and limitations, and sufficient moral awareness of, and capacity to comply with, her role as potential target of legitimate response for the system's behavior) (Philosophy & Technology 34(4): 1057–1084). The tracing condition is the closest published kin to AAP's pre-named gap-bearer — one nameable human on the chain, required explicitly to avoid both scapegoating (citing Elish 2019) and impunity, the same pair AAP frames as the moral crumple zone and the gap-bearer as its structural opposite. The difference: MHC is a design-time capacity-alignment program on which gaps can be minimised; AAP records the attribution gap as non-removable and requires a deployment-time naming instead. Mapping onto the four gaps (asserted after a full-text read of the CC BY 4.0 published version): the gap-bearer speaks most directly to the moral accountability gap (a named target of legitimate response, with causal traceability supplying the explanation substrate); the triage and Phase-crossing decisions are active-responsibility artifacts; the culpability gap is deliberately not closed (role responsibility without individual causal contribution); public accountability is touched only via the social-consequence layer. Citation surface, not ADR lineage.",
@@ -1015,6 +1017,7 @@
     },
     {
       "@id": "https://doi.org/10.1007/s11948-025-00560-1",
+      "sameAs": "https://www.wikidata.org/wiki/Q139578789",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Responsibility Gaps, LLMs & Organisations: Many Agents, Many Levels, and Many Interactions",
       "description": "Business-ethics treatment of the distribution dimension of responsibility gaps for general-purpose AI models, LLM-specific (Science and Engineering Ethics 31:36, CC BY-NC-ND). Distinguishes the responsibility attribution gap (whether any agent can meaningfully bear responsibility — Matthias's dimension) from the responsibility distribution gap (how much each identified agent bears — the problem of many hands, extended here to collective outcomes). Its M3 approach (many agents; many levels — micro/meso/macro/supra; many interactions) is a non-distributive solution: interactions accumulate influence rather than dilute responsibility, so agents who serve as nodes of interaction — paradigmatically LLM-developing organisations, given their causal-chain-origin position and superior foresight capacity — should bear greater responsibility for harmful LLM outcomes. Relation to AAP: both refuse diffusion-to-meaninglessness, resolved at different loci — M3 concentrates residual responsibility on the most-connected collective agent (the developing organisation, with CEOs and executives as internal nodes), while AAP's one-agent-one-human and pre-named gap-bearer judgments terminate the deployment-side chain at a named individual. Complementary rather than opposed: M3 supplies normative grounds for developer-side organisational ascription that AAP's deployment-side, individual-terminating judgments do not cover, and vice versa — organisational responsibility distributes without terminating unless a person is named. Citation surface, not ADR lineage.",
@@ -1032,6 +1035,7 @@
     },
     {
       "@id": "https://doi.org/10.1007/s11023-024-09674-0",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517406",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Find the Gap: AI, Responsible Agency and Vulnerability",
       "description": "Philosophical re-diagnosis of the responsibility gap (Minds and Machines 34:20, CC BY, read in full). Argues the epistemic and control conditions are red herrings for what is unique to AI/AS — cognitive science shows individual humans routinely fail both (implicit bias, priming, confabulation) while responsibility practices remain justified — and adopts the agency-cultivation (instrumentalist, proleptic) account on which those practices are justified by cultivating future responsible agency. The distinctive gap is then a vulnerability gap: the absence in an AI/AS of any identifiable agent who stands in the right role relation of trust to the vulnerable party and is reciprocally vulnerable to that relation — machine components are constitutively invulnerable to moral emotions, and the humans inside the system are blocked by many-hands organisational structure from occupying the answerable role. Its clinician thought experiment isolates the mechanism AAP's role-responsibility reading also stands on: an inventor-clinician who built and deployed the diagnostic system remains unambiguously answerable despite not knowing why the system erred — role relation, not knowledge or control, carries answerability. Supplies the normative justification for the glossary condition that a named human without authority and standing is not yet a gap-bearer: naming without empowerment manufactures a moral-crumple-zone occupant (their airline desk agent case, explicitly distinguished from Danaher's retribution gap — a human target exists but has no pertinent agency), and adds that the crumple-zone position is a moral injury to its occupant as well as a failure toward the harmed party. Citation surface, not ADR lineage.",
@@ -1049,6 +1053,7 @@
     },
     {
       "@id": "https://doi.org/10.4324/9781315201399-5",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517400",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Technologically Blurred Accountability? Technology, Responsibility Gaps and the Robustness of Our Everyday Conceptual Scheme",
       "description": "Early deflationist formalization of the responsibility gap, read in full via the CC BY-ND open-access book chapter (in Moral Agency and the Politics of Responsibility, Routledge, first published 2018, pp. 51-67; widely cited as 2017). Gives the gap its condition form: a situation where (1) it seems fitting to hold some person(s) to account for some phi to some degree D, and either (2.1) there is no candidate who it is fitting to hold to account, or (2.2) the candidates' fitting degrees do not match D. Locates the worry specifically in accountability (distinguished from attributability and answerability) and argues no technological case satisfies the conditions — causal arguments (nudging, autonomous agents, many hands) and epistemic arguments (novelty, psychological shaping, foreseeability, epistemic many hands) each fail, leaving only 'blurred responsibility': a real indeterminacy in the degree-norms of negligence under technologically structured multiple agency, removable only by stipulation — 'publicly known conventions for responsibility's assignation, conventions which are not grounded in robust metaphysical facts about responsible agency'. Relation to AAP: that concession is the convergence point — the pre-named gap-bearer is exactly such a publicly known convention, stipulated at deployment time and recorded; AAP takes no side on the metaphysical existence of the gap (its attribution gap is an architectural separability claim), but its operational answer is the one this deflationist analysis says the residual indeterminacy requires. Citation surface, not ADR lineage.",
@@ -1067,9 +1072,10 @@
     },
     {
       "@id": "https://doi.org/10.1080/0020174X.2024.2410995",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517404",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Artificial Agents: Responsibility & Control Gaps",
-      "description": "Deflationist counter-pole to the attribution gap, recorded at abstract level — full-text read pending: the CC BY publisher copy and repository mirrors (Taylor & Francis, PhilArchive, University of Groningen portal) all sit behind bot protection as of 2026-07-11; bibliographic data and core claims verified via the publisher abstract, the Groningen portal record, and PhilPapers (Inquiry, published online 2024-10-03). Argues that responsibility gaps do not exist and that the real, dangerous phenomenon is the control gap: a discrepancy between the causal control an agent exercises and the moral control it should possess or emulate; control gaps expose others to morally unacceptable risks and ought to be closed. Relation to AAP (provisional until full-text read): the control-gap axis separates capability-side from normative-side control, adjacent to AAP's capability-distribution vs accountability-distribution distinction, but the paper's eliminativism about responsibility gaps runs opposite to AAP's premise that the attribution gap is non-removable and must be borne — recorded as a counter-axis pole for the attribution-gap concept. Citation surface, not ADR lineage.",
+      "description": "Deflationist counter-pole to the attribution gap (Inquiry, published online 2024-10-03, CC BY; read in full). Argues the very concept of a responsibility gap — blame is fitting for an artificial agent's act yet no human can be blamed — is incoherent: by 'reason implies can', fitting blame entails attributable blame, so the two defining conditions cannot hold together. Apparent gaps dissolve via the no-blame point (defeaters — justification, excuse, exemption — mean blame was never fitting), the indirect-blame point (enablers — designers, engineers, manufacturers, regulators — bear indirect responsibility even where operators are excused or absent), and the anthropomorphic mistake (minimal agents should be compared to young children, not adult humans). The real phenomenon is the control gap: the causal control an agent actually has falls short of the moral control (reason-responsiveness) it should have or emulate; control gaps expose others to morally unacceptable risk, grounding a second-order duty of moral control borne by the agent or its enablers, dischargeable four ways — securing moral agency, meaningful human control, safety engineering, social control. Relation to AAP: the eliminativism targets the metaphysical conception of the gap (a blame shortfall — their footnote 1 limits the claim to it), while AAP's attribution gap is an architectural separability claim about ex-post redirect, which this framework files under the 'epistemic obstacles' it explicitly brackets — so the opposition is narrower than the slogan suggests. Their meaningful-human-control route again lands on a nameable, aware human ('traceable back to a human operator or enabler, who is aware of this'), and their risk-lowering route (re-engineering the agent or its operating circumstances) parallels AAP's structural constraint judgments. Counter-axis pole for the attribution-gap concept. Citation surface, not ADR lineage.",
       "datePublished": "2024-10-03",
       "author": [
         {"@type": "Person", "name": "Herman Veluwenkamp"},
@@ -1278,6 +1284,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2601.15059",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517380",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1299,6 +1306,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2602.10701",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517385",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1332,6 +1340,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2603.13236",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517387",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1353,6 +1362,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2605.17467",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517394",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1386,6 +1396,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2604.02767",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517390",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1403,6 +1414,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2606.07539",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517397",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1428,6 +1440,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2606.00518",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517395",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1462,6 +1475,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2605.16872",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517393",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1483,6 +1497,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2604.05568",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517392",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1504,6 +1519,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2602.04896",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517382",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1537,6 +1553,7 @@
     },
     {
       "@id": "https://arxiv.org/abs/2606.15980",
+      "sameAs": "https://www.wikidata.org/wiki/Q140517398",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
