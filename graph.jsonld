@@ -85,12 +85,11 @@
       "@type": "Person",
       "name": "Tatsuya Shimomoto",
       "alternateName": ["shimo4228", {"@value": "下本竜也", "@language": "ja"}],
-      "sameAs": ["https://github.com/shimo4228", "https://orcid.org/0009-0002-6168-4162", "https://www.wikidata.org/wiki/Q140090100"]
+      "sameAs": ["https://github.com/shimo4228", "https://orcid.org/0009-0002-6168-4162"]
     },
 
     {
       "@id": "https://doi.org/10.5281/zenodo.19652013",
-      "sameAs": "https://www.wikidata.org/wiki/Q140090188",
       "@type": ["ResearchLine", "ScholarlyArticle"],
       "name": "Agent Attribution Practice",
       "alternateName": [
@@ -136,7 +135,6 @@
     {
       "@id": "https://doi.org/10.5281/zenodo.20353789",
       "sameAs": [
-        "https://www.wikidata.org/wiki/Q140090128",
         "https://airaxiv.com/papers/view/2607.0006/",
         "https://aixiv.science/abs/aixiv.260702.000005"
       ],
@@ -159,7 +157,6 @@
     {
       "@id": "https://doi.org/10.5281/zenodo.20355907",
       "sameAs": [
-        "https://www.wikidata.org/wiki/Q140090133",
         "https://airaxiv.com/papers/view/2607.0007/",
         "https://aixiv.science/abs/aixiv.260702.000008"
       ],
@@ -181,7 +178,6 @@
 
     {
       "@id": "https://doi.org/10.5281/zenodo.19200726",
-      "sameAs": "https://www.wikidata.org/wiki/Q140090186",
       "@type": ["EcosystemRepo", "ResearchLine", "ScholarlyArticle"],
       "name": "Agent Knowledge Cycle",
       "alternateName": [
@@ -197,7 +193,6 @@
 
     {
       "@id": "https://doi.org/10.5281/zenodo.19212118",
-      "sameAs": "https://www.wikidata.org/wiki/Q140090187",
       "@type": ["EcosystemRepo", "ResearchLine", "SoftwareSourceCode"],
       "name": "Contemplative Agent",
       "alternateName": [
@@ -213,7 +208,6 @@
 
     {
       "@id": "https://doi.org/10.5281/zenodo.20263316",
-      "sameAs": "https://www.wikidata.org/wiki/Q140090190",
       "@type": ["EcosystemRepo", "ResearchLine", "ScholarlyArticle"],
       "name": "Authorship Strategy",
       "alternateName": [
@@ -229,7 +223,6 @@
 
     {
       "@id": "https://doi.org/10.5281/zenodo.20262112",
-      "sameAs": "https://www.wikidata.org/wiki/Q140090189",
       "@type": ["EcosystemRepo", "ResearchLine", "ScholarlyArticle"],
       "name": "Attention, Not Self",
       "alternateName": [
@@ -955,7 +948,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2604.07778",
-      "sameAs": "https://www.wikidata.org/wiki/Q140181289",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "The Accountability Horizon: An Impossibility Theorem for Governing Human-Agent Collectives",
       "description": "External formal corroboration of the attribution gap. Proves an Accountability Incompleteness Theorem: once a human-agent collective's minimum compound autonomy exceeds a computable threshold (the Accountability Horizon) and its interaction graph contains a feedback cycle involving both human and artificial agents, no governance framework can simultaneously satisfy four accountability axioms — Attributability (responsibility requires individual causal contribution), Foreseeability Bound, Non-Vacuity, and Completeness. This converts the non-removability of the attribution gap from a contingent engineering limitation into a mathematical necessity. AAP reaches the same solution space independently and from implementation friction rather than formalism: the theorem shows one must relax Attributability or Foreseeability, and AAP's pre-named gap-bearer is a relaxation of Attributability — a named individual bears the gap without individual causal contribution (role responsibility). The theorem's feedforward exception (no impossibility absent a mixed human-agent feedback cycle) parallels AAP's triage and Phase axis: architectures that avoid the autonomous loop avoid the gap. Recorded as a citation surface only; AAP's ADR judgments and concept definitions are neither derived from nor coupled to this formalism.",
@@ -968,7 +960,6 @@
     },
     {
       "@id": "https://doi.org/10.1007/s10676-004-3422-1",
-      "sameAs": "https://www.wikidata.org/wiki/Q29398229",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "The Responsibility Gap: Ascribing Responsibility for the Actions of Learning Automata",
       "description": "Origin of the responsibility-gap discourse that AAP's attribution gap belongs to (Ethics and Information Technology 6(3): 175–183). Argues that as a machine learns, its behavior ceases to be predictable by its manufacturer or operator, so the control-and-foreseeability basis of traditional responsibility ascription fails — leaving society the choice of forgoing such machines or living with a gap that traditional concepts cannot bridge. AAP reaches the same wall from the opposite temporal side: Matthias locates the failure ex ante (learning outruns the operator's predictive grasp), while ADR-0009's attribution gap is ex post (runtime blending forecloses the separability that redirect requires). The pre-named gap-bearer is not a third option dissolving Matthias's dilemma but a structured form of its second horn — role responsibility for a gap that stays open; the gap is borne, not bridged. Citation surface, not ADR lineage; the ADR judgments were extracted from operation, not from this literature.",
@@ -983,7 +974,6 @@
     },
     {
       "@id": "https://doi.org/10.1007/s13347-021-00450-x",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517402",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Four Responsibility Gaps with Artificial Intelligence: Why They Matter and How to Address Them",
       "description": "Decomposes the responsibility gap (Matthias 2004) into four interconnected gaps — in culpability, moral accountability, public accountability, and active responsibility — caused by different sources (technical, organisational, legal, ethical, societal), and answers with socio-technical design for meaningful human control (MHC), specified as a tracking condition (the socio-technical system responds to the relevant human agents' reasons) and a tracing condition (at least one human along the design-development-use chain possesses sufficient knowledge of the system's capabilities and limitations, and sufficient moral awareness of, and capacity to comply with, her role as potential target of legitimate response for the system's behavior) (Philosophy & Technology 34(4): 1057–1084). The tracing condition is the closest published kin to AAP's pre-named gap-bearer — one nameable human on the chain, required explicitly to avoid both scapegoating (citing Elish 2019) and impunity, the same pair AAP frames as the moral crumple zone and the gap-bearer as its structural opposite. The difference: MHC is a design-time capacity-alignment program on which gaps can be minimised; AAP records the attribution gap as non-removable and requires a deployment-time naming instead. Mapping onto the four gaps (asserted after a full-text read of the CC BY 4.0 published version): the gap-bearer speaks most directly to the moral accountability gap (a named target of legitimate response, with causal traceability supplying the explanation substrate); the triage and Phase-crossing decisions are active-responsibility artifacts; the culpability gap is deliberately not closed (role responsibility without individual causal contribution); public accountability is touched only via the social-consequence layer. Citation surface, not ADR lineage.",
@@ -1001,7 +991,6 @@
     },
     {
       "@id": "https://doi.org/10.5281/zenodo.20578272",
-      "sameAs": "https://www.wikidata.org/wiki/Q140090144",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Harness Alignment and Harness Drift: Why Intent, Unlike Correctness, Resists Automation",
       "description": "Epistemic-axis sibling (AKC research line) reaching AAP's same un-automatable remainder from a different ground. AAP argues from the normative axis (consequences require a bearer, so a pre-named gap-bearer is named in advance); this paper argues from the epistemic axis (operator intent has no verifier outside the operator and moves as judgment sharpens, so any automated intent-check freezes intent into a specification and collapses to correctness work, leaving a continuous, human-gated, bidirectional residue). Its Section 3 explicitly bridges to AAP's companion paper (10.5281/zenodo.20353789): 'an epistemic axis and a normative axis leave the same un-automatable remainder: a human named in advance, built into the structure where behavior-shaping writes occur' — the convergence AAP names as the human approval gate (ADR-0005) and the pre-named gap-bearer (ADR-0008/0009). Completes the previously one-directional federation: the paper cited AAP; AAP now cites back. Citation surface only; AAP's ADR judgments and concept definitions are neither derived from nor coupled to this paper.",
@@ -1017,7 +1006,6 @@
     },
     {
       "@id": "https://doi.org/10.1007/s11948-025-00560-1",
-      "sameAs": "https://www.wikidata.org/wiki/Q139578789",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Responsibility Gaps, LLMs & Organisations: Many Agents, Many Levels, and Many Interactions",
       "description": "Business-ethics treatment of the distribution dimension of responsibility gaps for general-purpose AI models, LLM-specific (Science and Engineering Ethics 31:36, CC BY-NC-ND). Distinguishes the responsibility attribution gap (whether any agent can meaningfully bear responsibility — Matthias's dimension) from the responsibility distribution gap (how much each identified agent bears — the problem of many hands, extended here to collective outcomes). Its M3 approach (many agents; many levels — micro/meso/macro/supra; many interactions) is a non-distributive solution: interactions accumulate influence rather than dilute responsibility, so agents who serve as nodes of interaction — paradigmatically LLM-developing organisations, given their causal-chain-origin position and superior foresight capacity — should bear greater responsibility for harmful LLM outcomes. Relation to AAP: both refuse diffusion-to-meaninglessness, resolved at different loci — M3 concentrates residual responsibility on the most-connected collective agent (the developing organisation, with CEOs and executives as internal nodes), while AAP's one-agent-one-human and pre-named gap-bearer judgments terminate the deployment-side chain at a named individual. Complementary rather than opposed: M3 supplies normative grounds for developer-side organisational ascription that AAP's deployment-side, individual-terminating judgments do not cover, and vice versa — organisational responsibility distributes without terminating unless a person is named. Citation surface, not ADR lineage.",
@@ -1035,7 +1023,6 @@
     },
     {
       "@id": "https://doi.org/10.1007/s11023-024-09674-0",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517406",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Find the Gap: AI, Responsible Agency and Vulnerability",
       "description": "Philosophical re-diagnosis of the responsibility gap (Minds and Machines 34:20, CC BY, read in full). Argues the epistemic and control conditions are red herrings for what is unique to AI/AS — cognitive science shows individual humans routinely fail both (implicit bias, priming, confabulation) while responsibility practices remain justified — and adopts the agency-cultivation (instrumentalist, proleptic) account on which those practices are justified by cultivating future responsible agency. The distinctive gap is then a vulnerability gap: the absence in an AI/AS of any identifiable agent who stands in the right role relation of trust to the vulnerable party and is reciprocally vulnerable to that relation — machine components are constitutively invulnerable to moral emotions, and the humans inside the system are blocked by many-hands organisational structure from occupying the answerable role. Its clinician thought experiment isolates the mechanism AAP's role-responsibility reading also stands on: an inventor-clinician who built and deployed the diagnostic system remains unambiguously answerable despite not knowing why the system erred — role relation, not knowledge or control, carries answerability. Supplies the normative justification for the glossary condition that a named human without authority and standing is not yet a gap-bearer: naming without empowerment manufactures a moral-crumple-zone occupant (their airline desk agent case, explicitly distinguished from Danaher's retribution gap — a human target exists but has no pertinent agency), and adds that the crumple-zone position is a moral injury to its occupant as well as a failure toward the harmed party. Citation surface, not ADR lineage.",
@@ -1053,7 +1040,6 @@
     },
     {
       "@id": "https://doi.org/10.4324/9781315201399-5",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517400",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Technologically Blurred Accountability? Technology, Responsibility Gaps and the Robustness of Our Everyday Conceptual Scheme",
       "description": "Early deflationist formalization of the responsibility gap, read in full via the CC BY-ND open-access book chapter (in Moral Agency and the Politics of Responsibility, Routledge, first published 2018, pp. 51-67; widely cited as 2017). Gives the gap its condition form: a situation where (1) it seems fitting to hold some person(s) to account for some phi to some degree D, and either (2.1) there is no candidate who it is fitting to hold to account, or (2.2) the candidates' fitting degrees do not match D. Locates the worry specifically in accountability (distinguished from attributability and answerability) and argues no technological case satisfies the conditions — causal arguments (nudging, autonomous agents, many hands) and epistemic arguments (novelty, psychological shaping, foreseeability, epistemic many hands) each fail, leaving only 'blurred responsibility': a real indeterminacy in the degree-norms of negligence under technologically structured multiple agency, removable only by stipulation — 'publicly known conventions for responsibility's assignation, conventions which are not grounded in robust metaphysical facts about responsible agency'. Relation to AAP: that concession is the convergence point — the pre-named gap-bearer is exactly such a publicly known convention, stipulated at deployment time and recorded; AAP takes no side on the metaphysical existence of the gap (its attribution gap is an architectural separability claim), but its operational answer is the one this deflationist analysis says the residual indeterminacy requires. Citation surface, not ADR lineage.",
@@ -1072,7 +1058,6 @@
     },
     {
       "@id": "https://doi.org/10.1080/0020174X.2024.2410995",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517404",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Artificial Agents: Responsibility & Control Gaps",
       "description": "Deflationist counter-pole to the attribution gap (Inquiry, published online 2024-10-03, CC BY; read in full). Argues the very concept of a responsibility gap — blame is fitting for an artificial agent's act yet no human can be blamed — is incoherent: by 'reason implies can', fitting blame entails attributable blame, so the two defining conditions cannot hold together. Apparent gaps dissolve via the no-blame point (defeaters — justification, excuse, exemption — mean blame was never fitting), the indirect-blame point (enablers — designers, engineers, manufacturers, regulators — bear indirect responsibility even where operators are excused or absent), and the anthropomorphic mistake (minimal agents should be compared to young children, not adult humans). The real phenomenon is the control gap: the causal control an agent actually has falls short of the moral control (reason-responsiveness) it should have or emulate; control gaps expose others to morally unacceptable risk, grounding a second-order duty of moral control borne by the agent or its enablers, dischargeable four ways — securing moral agency, meaningful human control, safety engineering, social control. Relation to AAP: the eliminativism targets the metaphysical conception of the gap (a blame shortfall — their footnote 1 limits the claim to it), while AAP's attribution gap is an architectural separability claim about ex-post redirect, which this framework files under the 'epistemic obstacles' it explicitly brackets — so the opposition is narrower than the slogan suggests. Their meaningful-human-control route again lands on a nameable, aware human ('traceable back to a human operator or enabler, who is aware of this'), and their risk-lowering route (re-engineering the agent or its operating circumstances) parallels AAP's structural constraint judgments. Counter-axis pole for the attribution-gap concept. Citation surface, not ADR lineage.",
@@ -1087,7 +1072,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2210.03629",
-      "sameAs": "https://www.wikidata.org/wiki/Q121160329",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "ReAct: Synergizing Reasoning and Acting in Language Models",
       "description": "Defines the autonomous-loop pattern — reasoning interleaved with acting — that ADR-0009 triages against; the Autonomous Agentic Loop Quadrant of the four Business AI Quadrants is named for this pattern.",
@@ -1098,7 +1082,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2503.03704",
-      "sameAs": "https://www.wikidata.org/wiki/Q140181350",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Memory Injection Attacks on LLM Agents via Query-Only Interaction",
       "description": "Names the MINJA class of memory-injection attacks delivered through query-only interaction. Motivates ADR-0002: in the contemplative-agent defense audit against MINJA-class attacks, probabilistic soft trust weighting on stored knowledge turned out to be armed but neutered, while the effective defense was a deterministic structural quarantine at the summarization boundary — external content never entered the LLM prompt at all.",
@@ -1109,7 +1092,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2602.09947",
-      "sameAs": "https://www.wikidata.org/wiki/Q140181361",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Trustworthy Agentic AI Requires Deterministic Architectural Boundaries",
       "description": "Argues that deterministic, architectural enforcement — not probabilistic learned behaviour — is necessary for trustworthy agentic AI, and names a lethal trifecta of untrusted input, privileged data access, and external action capability. Recorded in the EU AI Act mapping's secondary-scholarship note as external convergence with ADR-0002 (deterministic prohibition at the scaffolding layer) and ADR-0003 (untrusted-content boundary), both reached independently from operation; citation surface, not ADR lineage.",
@@ -1120,7 +1102,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2604.04604",
-      "sameAs": "https://www.wikidata.org/wiki/Q140181364",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "AI Agents Under EU Law",
       "description": "Legal-scholarship mapping of agentic systems onto the EU AI Act. Its conclusion that high-risk agentic systems with untraceable behavioural drift cannot currently satisfy the Act's essential requirements converges with ADR-0006 (causal traceability) and ADR-0009 (triage before autonomy): both treat untraceability as disqualifying rather than as a tunable defect. Recorded in the EU AI Act mapping's secondary-scholarship note as external citation surface, not ADR lineage.",
@@ -1131,7 +1112,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2605.01091",
-      "sameAs": "https://www.wikidata.org/wiki/Q140181365",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Governing What the EU AI Act Excludes: Accountability for Autonomous AI Agents in Smart City Critical Infrastructure",
       "description": "Examines the EU AI Act's Annex III point 2 critical-infrastructure carve-out through a smart-city scenario in which individually compliant interacting agents produce a composite consequence no resident can demand an explanation for. Its core observation — a bounded AI system can be individually assessed, but a set of interacting autonomous agents cannot — is an independent, regulation-side description of the attribution gap AAP records from operation (ADR-0009): the gap is structural, not a compliance defect of any single actor. The paper's proposed layered governance architecture is mechanism and stays in the policy-mapping layer.",
@@ -1142,7 +1122,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2605.12105",
-      "sameAs": "https://www.wikidata.org/wiki/Q140181366",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Autonomy and Agency in Agentic AI: Architectural Tactics for Regulated Contexts",
       "description": "Proposes architectural tactics — among them checkpoints and write staging (converting an irreversible action into a reversible proposal that a human confirms before it commits) — for discharging human-oversight duties in regulated contexts. Recorded as mechanism an organization could use to instantiate ADR-0005 under EU AI Act Art 14: per the repository's thesis (implementation dissolves; judgment persists), the ADR records the judgment and these tactics stay in the policy-mapping mechanism layer.",
@@ -1153,7 +1132,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2505.10426",
-      "sameAs": "https://www.wikidata.org/wiki/Q140399074",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Formalising Human-in-the-Loop: Computational Reductions, Failure Modes, and Legal-Moral Responsibility",
       "description": "Formalizes human-in-the-loop as an oracle-machine reduction and separates trivial monitoring, many-one (a single end-point approval) and Turing (multi-round interaction) reductions, arguing only the Turing type discharges the meaningful, effective oversight EU AI Act Art 14 and GDPR Art 22 require, and that the many-one approval gate is the pattern most prone to becoming a moral crumple zone. Recorded in the EU AI Act mapping's secondary-scholarship note as external convergence with ADR-0005 (human approval gate) and as a sharpening of the moral-crumple-zone concept: the gate's shape, not its presence, decides whether oversight is genuine. Citation surface, not ADR lineage.",
@@ -1164,7 +1142,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2603.16586",
-      "sameAs": "https://www.wikidata.org/wiki/Q140399075",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Runtime Governance for AI Agents: Policies on Paths",
       "description": "Formalizes compliance as a path-dependent policy evaluated over the execution path so far (not the next action in isolation) and a graded Monitor / Soft-enforcement / Hard-block enforcement model. Recorded in the EU AI Act mapping's secondary-scholarship note as external mechanism for ADR-0002 (the prohibition-strength hierarchy — graded enforcement is a known design family) and ADR-0005 (human approval gate under Art 14); OWASP's 'autonomy is a feature to be earned, not a default' is independent adoption of the same graded-prohibition idea. Citation surface, not ADR lineage.",
@@ -1175,7 +1152,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2603.20953",
-      "sameAs": "https://www.wikidata.org/wiki/Q140399077",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Before the Tool Call: Deterministic Pre-Action Authorization for Autonomous AI Agents",
       "description": "Proposes the Open Agent Passport: a deterministic policy-enforcement point that intercepts a tool call before execution (ALLOW / DENY / REQUIRE_APPROVAL / MASK) and emits a cryptographic audit trail, reported to move a permissive-policy attack success rate of 74.6% to 0% under a restrictive policy. Recorded in the EU AI Act mapping's secondary-scholarship note as mechanism for ADR-0005 (human approval gate) and ADR-0006 (causal traceability) under Art 14: it relocates the responsible actor from probabilistic model output to an explicit policy enforcer. Citation surface, not ADR lineage.",
@@ -1186,7 +1162,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2603.00829",
-      "sameAs": "https://www.wikidata.org/wiki/Q140399078",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Constitutional Black-Box Monitoring for Scheming in LLM Agents",
       "description": "Detects agent scheming from externally observable tool calls, queries and outputs alone — deliberately excluding chain-of-thought — at partial AUROC 0.85+. Recorded in the EU AI Act mapping's secondary-scholarship note as quantitative grounding for ADR-0006 (causal traceability) and AAP's non-invasion posture: accountability built on observable behaviour rather than internal-state inspection, consistent with the Art 72 post-market behavioural-monitoring duty. The paper's own epistemic limit — a sufficiently optimized agent can be trained to look clean externally — is recorded as the boundary condition, not relaxed. Citation surface, not ADR lineage.",
@@ -1197,7 +1172,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2601.23157",
-      "sameAs": "https://www.wikidata.org/wiki/Q140399080",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "No More, No Less: Least-Privilege Language Models",
       "description": "Redefines privilege in a language model as reachable internal computation during the forward pass, and shrinks the model's accessible function class at deployment time (Nested Least-Privilege Networks) without retraining or running multiple model deployments — least privilege realized as capability-management over a model that already possesses the capability. Recorded as a citation surface to mark a framing difference with ADR-0001 (Security by Absence), not as corroboration or lineage. The two address capability-induced risk at different layers: least-privilege LMs minimize which internal computation is reachable in a model that has the capability; Security by Absence operates upstream, deriving the capability set requirements-first from the work a role must actually do, so a capability that would otherwise need suppressing is never built. In AAP's originating implementation the suppress-versus-remove trade-off never arose — absence is a consequence of correctly scoped requirements, not a choice among neutralization mechanisms — and the same requirements-first reasoning later seeded the LLM-workflow and Phase quadrants. Non-adversarial positioning: a different intervention point, not a ranking. AAP's ADR judgments are neither derived from nor modified by this paper.",
@@ -1208,7 +1182,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2604.05150",
-      "sameAs": "https://www.wikidata.org/wiki/Q140399082",
       "@type": ["ExternalReference", "ScholarlyArticle"],
       "name": "Compiled AI: Deterministic Code Generation for LLM-Based Workflow Automation",
       "description": "Studies 'compiled AI': large language models generate executable code artifacts during a compilation phase, after which workflows execute deterministically without further model invocation (strictly one-shot; the paper places it alongside antecedents DSPy and LLM+P and contributes an enterprise/healthcare systems study, a four-stage generation-and-validation pipeline, and an evaluation framework reporting determinism, auditability, and ~57x token reduction at scale). Recorded as a citation surface, not as a new AAP concept. In AAP's frame it reduces to an external deployed instance of the Phase axis: applying Phase Separation (ADR-0010) at the operation phase so the operation-phase artifact lands in the Script Quadrant — deterministic scripts without LLMs, out of scope for the AAP ADRs, with failure routing to the code author by construction. The runtime artifact is therefore not the LLM Workflow Quadrant (which calls the LLM as a bounded runtime step) but the Script Quadrant it crosses into; the crossing is the phase-crossing decision ADR-0010 names. The paper emphasizes auditability but does not name who is accountable for the compiled judgment; AAP's answer is its existing one — the design-phase author owns the judgment crystallized into the artifact. Sibling in spirit to the Open Agent Passport (arXiv:2603.20953): both relocate the responsible actor from probabilistic runtime output toward a determinate, author-owned locus. Non-adversarial positioning; AAP introduces no new concept or quadrant from this paper, and its ADR judgments are neither derived from nor modified by it.",
@@ -1284,7 +1257,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2601.15059",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517380",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1306,7 +1278,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2602.10701",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517385",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1340,7 +1311,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2603.13236",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517387",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1362,7 +1332,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2605.17467",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517394",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1396,7 +1365,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2604.02767",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517390",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1414,7 +1382,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2606.07539",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517397",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1440,7 +1407,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2606.00518",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517395",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1475,7 +1441,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2605.16872",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517393",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1497,7 +1462,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2604.05568",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517392",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1519,7 +1483,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2602.04896",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517382",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
@@ -1553,7 +1516,6 @@
     },
     {
       "@id": "https://arxiv.org/abs/2606.15980",
-      "sameAs": "https://www.wikidata.org/wiki/Q140517398",
       "@type": [
         "ExternalReference",
         "ScholarlyArticle"
