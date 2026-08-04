@@ -2,22 +2,26 @@
 
 # EU AI Act — AAP ADR へのマッピング
 
-**Status:** Informational, time-bound (2026 Q2 reading)
-**Date:** 2026-06-12
+**Status:** Informational, time-bound (2026 Q3 reading)
+**Date:** 2026-08-04
 **Framework version:** Regulation (EU) 2024/1689 (Artificial
-Intelligence Act)、2024-08-01 発効。執筆時点の適用日程に対して読む:
-prohibited practices (Art 5) は 2025-02-02、general-purpose AI
-model 義務は 2025-08-02 に適用。high-risk の適用日は、Omnibus
-"Digital Package" の暫定政治合意 (2026-05-06、Council 確認
-2026-05-13) により延期された: stand-alone な Annex III high-risk
-義務は 2026-08-02 から 2 December 2027 へ、Annex I (製品組込)
-high-risk 義務は 2027-08-02 から 2 August 2028 へ移動する。これら
-延期後の日付は、Omnibus が正式採択され Official Journal に公布
-されるまで暫定である。
+Intelligence Act)、2024-08-01 発効。Regulation (EU) 2026/1744
+(Digital Omnibus on AI、2026-07-27 発効) による改正後の版として読む。
+執筆時点の適用日程に対して読む: prohibited practices (Art 5) は
+2025-02-02、general-purpose AI model 義務は 2025-08-02、透明性義務
+(Art 50) は 2026-08-02 に適用 (Art 50 は Omnibus でも延期されて
+いない)。high-risk の適用日は Digital Omnibus on AI により延期された
+── 2025-11-19 に欧州委員会が提案、2026-06-16 に欧州議会が第一読会で
+採択、2026-06-29 に Council が承認、2026-07-08 に署名、2026-07-24 に
+Official Journal で公布され、公布の 3 日後にあたる 2026-07-27 に発効
+した。したがってこの延期は暫定的な政治合意ではなく確定した法である:
+stand-alone な Annex III high-risk 義務は 2026-08-02 から
+2 December 2027 へ、Annex I (製品組込) high-risk 義務は 2027-08-02
+から 2 August 2028 へ移動する。
 **Maintenance posture:** This file decays. The ADRs do not.
 **Maintenance cadence:** Article の読み方を変える delegated /
 implementing act・harmonised standard・Commission guideline が出る
-たび、それ以外は年単位。2026–2027 の段階適用期は NIST/ISO より
+たび、それ以外は年単位。2026–2028 の段階適用期は NIST/ISO より
 decay が速い見込み。
 
 > **本記述は AAP の reading である**。以下の per-ADR mapping は、
@@ -456,7 +460,7 @@ routing と attribution の再構成は別の問題であり、PLD が扱うの�
 
 ## Caveat
 
-EU AI Act は 2026–2027 にかけて active な段階適用期にあり、delegated
+EU AI Act は 2026–2028 にかけて active な段階適用期にあり、delegated
 act・implementing act・Commission guideline・harmonised standard が
 なお到着しつつある。Article の wording は stable だが、*各 Article を
 どう読むか* はまだ settle していない。本 mapping はそうした instrument

@@ -2,25 +2,31 @@ Language: English | [日本語](eu-ai-act.ja.md)
 
 # EU AI Act — mapping to AAP ADRs
 
-**Status:** Informational, time-bound (2026 Q2 reading)
-**Date:** 2026-06-12
+**Status:** Informational, time-bound (2026 Q3 reading)
+**Date:** 2026-08-04
 **Framework version:** Regulation (EU) 2024/1689 (Artificial
-Intelligence Act), in force 2024-08-01. Read against the
-application-date schedule current at time of writing: prohibited
-practices (Art 5) applicable 2025-02-02; general-purpose AI model
-obligations applicable 2025-08-02. The high-risk application dates
-were postponed by the Omnibus "Digital Package" provisional
-political agreement of 6 May 2026 (Council-confirmed 13 May 2026):
-stand-alone Annex III high-risk obligations move from 2026-08-02 to
-2 December 2027, and Annex I (product-embedded) high-risk
-obligations from 2027-08-02 to 2 August 2028. These postponed dates
-are provisional pending formal adoption and publication of the
-Omnibus in the Official Journal.
+Intelligence Act), in force 2024-08-01, as amended by
+Regulation (EU) 2026/1744 (Digital Omnibus on AI), in force
+2026-07-27. Read against the application-date schedule current at
+time of writing: prohibited practices (Art 5) applicable
+2025-02-02; general-purpose AI model obligations applicable
+2025-08-02; transparency duties (Art 50) applicable 2026-08-02
+(not postponed by the Omnibus). The high-risk application dates
+were postponed by the Digital Omnibus on AI — proposed by the
+Commission on 2025-11-19, adopted at the European Parliament's
+first reading on 2026-06-16, approved by the Council on
+2026-06-29, signed on 2026-07-08, published in the Official
+Journal on 2026-07-24, and in force from 2026-07-27 (the third day
+following publication). The postponement is settled law rather
+than a provisional political agreement: stand-alone Annex III
+high-risk obligations move from 2026-08-02 to 2 December 2027, and
+Annex I (product-embedded) high-risk obligations from 2027-08-02
+to 2 August 2028.
 **Maintenance posture:** This file decays. The ADRs do not.
 **Maintenance cadence:** at each delegated/implementing act,
 harmonised standard, or Commission guideline that changes how an
 Article is read; otherwise yearly. Faster decay than NIST/ISO is
-expected through the 2026–2027 phase-in.
+expected through the 2026–2028 phase-in.
 
 > **This is AAP's reading.** Each per-ADR mapping below records
 > how AAP reads the relationship between one of its ADRs and one
@@ -493,7 +499,7 @@ problems, and the PLD addresses only the first.
 
 ## Caveat
 
-The EU AI Act is in active phase-in through 2026–2027, with
+The EU AI Act is in active phase-in through 2026–2028, with
 delegated acts, implementing acts, Commission guidelines, and
 harmonised standards still arriving. Article wording is stable;
 *how each Article is read* is not yet settled. This mapping will be
