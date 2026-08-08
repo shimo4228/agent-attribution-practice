@@ -1446,7 +1446,7 @@
         "ScholarlyArticle"
       ],
       "name": "Some[Body] Must Receive That Pain for Agent Accountability",
-      "description": "Argues that punishment can function as corrective feedback only for entities satisfying four structural conditions — boundary, locus of accumulation, consolidation, substrate response — and that current LLM agents, as freely copied and reset software-defined composites, satisfy none of them (citing 100% jailbreak success against safety-aligned LLMs; frozen weights and editable context; catastrophic forgetting down to 26% benchmark retention; punishment that vanishes with the prompt). Concludes accountability must anchor to a continuous human principal with meaningful real-time control, liability proportional to actual control bandwidth, and non-revocable halt authority (consequence-agency coupling). Recorded as a mechanistic route to the same endpoint as AAP's implementation-dissolves-judgment-persists: the implementation layer cannot bear judgment because it lacks a substrate on which consequences accumulate. arXiv preprint; no venue at time of recording. Citation surface, not ADR lineage.",
+      "description": "Argues that punishment can function as corrective feedback only for entities satisfying four structural conditions — boundary, locus of accumulation, consolidation, substrate response — and that current LLM agents, as freely copied and reset software-defined composites, satisfy none of them (citing 100% jailbreak success against safety-aligned LLMs; frozen weights and editable context; catastrophic forgetting down to 26% benchmark retention; punishment that vanishes with the prompt). Concludes accountability must anchor to a continuous human principal with meaningful real-time control, liability proportional to actual control bandwidth, and non-revocable halt authority (consequence-agency coupling). Recorded as a mechanistic route to the same endpoint as AAP's implementation-dissolves-judgment-persists: the implementation layer cannot bear judgment because it lacks a substrate on which consequences accumulate. Also recorded as the first citation surface aimed at the naming mechanism itself (one-agent-one-human / pre-named gap-bearer) rather than at its boundary conditions: a pre-named human who lacks the three conditions formally satisfies the gap-bearer requirement while reproducing a moral crumple zone in name only — the existing decisions require the addressee's existence but not the addressee's effectiveness, and neither adjusts liability weight to the control bandwidth that shrinks where autonomous agent loops structurally lose control separability (proportionality left as an open question). Counter-material: the paper's own interim recommendation tethers high-stakes deployment to human principals meeting all three conditions until coupling-capable architectures exist, so it functions as an intensification demand on the naming approach, not a refutation. arXiv preprint; no venue at time of recording. Citation surface, not ADR lineage.",
       "datePublished": "2026-05-16",
       "author": [
         {
@@ -1458,7 +1458,11 @@
           "name": "Helena Rong"
         }
       ],
-      "about": "https://shimo4228.github.io/shimo4228/vocab#aap/concept/implementation-dissolves-judgment-persists"
+      "about": [
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/implementation-dissolves-judgment-persists",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/pre-named-gap-bearer",
+        "https://shimo4228.github.io/shimo4228/vocab#aap/concept/moral-crumple-zone"
+      ]
     },
     {
       "@id": "https://arxiv.org/abs/2604.05568",
