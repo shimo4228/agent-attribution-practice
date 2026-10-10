@@ -14,7 +14,7 @@ authors:
     orcid: "https://orcid.org/0009-0002-6168-4162"
     alias: shimo4228
 abstract: >-
-  Ten architectural decision records (two experimental) and four
+  Ten architectural decision records (three experimental) and four
   Business AI Quadrants recording how attribution — who authored
   the behavior, who bears its consequences, who can reconstruct its
   cause — is distributed across an autonomous AI agent system, and
