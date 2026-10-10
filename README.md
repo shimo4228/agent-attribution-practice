@@ -193,7 +193,11 @@ First compiled by Tatsuya Shimomoto
 in April 2026. AAP's sibling
 [Agent Knowledge Cycle](https://github.com/shimo4228/agent-knowledge-cycle)
 distils the same implementation friction into mechanism patterns (how
-knowledge flows), where AAP records how attribution is distributed.
+knowledge flows), where AAP records how attribution is distributed. Both
+loop back through the running system: operating
+[`contemplative-agent`](https://github.com/shimo4228/contemplative-agent)
+surfaces the friction they distil, and the refined judgments reshape that
+implementation.
 
 ## How to Cite
 

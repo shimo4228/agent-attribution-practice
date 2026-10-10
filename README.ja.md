@@ -95,7 +95,7 @@ ADR は判断の出発点であって正解ではありません。自分の文�
 
 ## 出自
 
-2026 年 4 月に Tatsuya Shimomoto（[@shimo4228](https://github.com/shimo4228)、[ORCID 0009-0002-6168-4162](https://orcid.org/0009-0002-6168-4162)）が最初にまとめました。AAP の兄弟プロジェクトである [Agent Knowledge Cycle](https://github.com/shimo4228/agent-knowledge-cycle) は、同じ実装の摩擦を仕組みのパターン（知識の流れ方）に蒸留し、AAP は attribution の分配を記録します。
+2026 年 4 月に Tatsuya Shimomoto（[@shimo4228](https://github.com/shimo4228)、[ORCID 0009-0002-6168-4162](https://orcid.org/0009-0002-6168-4162)）が最初にまとめました。AAP の兄弟プロジェクトである [Agent Knowledge Cycle](https://github.com/shimo4228/agent-knowledge-cycle) は、同じ実装の摩擦を仕組みのパターン（知識の流れ方）に蒸留し、AAP は attribution の分配を記録します。両者は動いているシステムを通じて循環します。[`contemplative-agent`](https://github.com/shimo4228/contemplative-agent) の運用が両者の蒸留する摩擦を生み、磨かれた判断がその実装を作り変えます。
 
 ## 引用方法
 
