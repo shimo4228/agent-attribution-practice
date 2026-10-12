@@ -93,6 +93,24 @@
       "scheme": "doi"
     },
     {
+      "identifier": "10.2139/ssrn.6817598",
+      "relation": "isReferencedBy",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.2139/ssrn.6823878",
+      "relation": "isReferencedBy",
+      "resource_type": "publication-preprint",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.17351/ests2019.260",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
       "identifier": "10.48550/arXiv.2604.04604",
       "relation": "references",
       "resource_type": "publication-article",
